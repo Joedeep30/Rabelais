@@ -1,41 +1,76 @@
 'use client';
 
-import { useActionState, useState } from 'react';
-import { submitRdvForm, type RdvFormState } from './actions';
+import { useState, type FormEvent } from 'react';
 
 export default function RdvForm() {
-  const [state, formAction, isPending] = useActionState<RdvFormState, FormData>(
-    submitRdvForm,
-    null
-  );
+  const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
+  const [errorMsg, setErrorMsg] = useState('');
   const [dateType, setDateType] = useState('text');
   const [dateValue, setDateValue] = useState('');
 
-  if (state?.success) {
+  async function handleSubmit(e: FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    setStatus('sending');
+
+    const formData = new FormData(e.currentTarget);
+
+    // Collect checked examens into a string
+    const examens = formData.getAll('examens').join(', ');
+    formData.delete('examens');
+    formData.append('Examens demandés', examens || 'Aucun');
+
+    try {
+      const res = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        body: formData,
+      });
+      const data = await res.json();
+
+      if (data.success) {
+        setStatus('success');
+      } else {
+        setStatus('error');
+        setErrorMsg(data.message || 'Erreur lors de l\'envoi.');
+      }
+    } catch {
+      setStatus('error');
+      setErrorMsg('Erreur de connexion. Veuillez réessayer ou nous contacter au 04 78 95 09 08.');
+    }
+  }
+
+  if (status === 'success') {
     return (
       <div className="bg-green-50 border border-green-300 p-8 text-center rounded-sm">
         <div className="text-green-600 text-[48px] mb-4">✓</div>
         <h3 className="text-green-800 text-[22px] font-bold mb-4">Demande envoyée !</h3>
         <p className="text-green-700 text-[16px] font-light leading-relaxed">
-          {state.message}
+          Votre demande de rendez-vous a bien été envoyée. Nous vous recontacterons dans les meilleurs délais.
         </p>
       </div>
     );
   }
 
   return (
-    <form action={formAction} className="space-y-6">
+    <form onSubmit={handleSubmit} className="space-y-6">
+      {/* Web3Forms config */}
+      <input type="hidden" name="access_key" value="27fa05a8-0839-4cc1-a62c-d20c45745a67" />
+      <input type="hidden" name="subject" value="Nouvelle demande de RDV - Centre Ophtalmologique Rabelais" />
+      <input type="hidden" name="from_name" value="Centre Ophtalmologique Rabelais" />
+      <input type="hidden" name="replyto" value="contact@centrerabelaislyon.fr" />
+      {/* Honeypot anti-spam */}
+      <input type="checkbox" name="botcheck" className="hidden" style={{ display: 'none' }} />
+
       {/* Error message */}
-      {state?.success === false && (
+      {status === 'error' && (
         <div className="bg-red-50 border border-red-300 p-4 text-red-700 text-[14px] rounded-sm">
-          {state.message}
+          {errorMsg}
         </div>
       )}
 
       {/* Civilité + Nom + Prénom */}
       <div className="grid md:grid-cols-3 gap-6">
         <select
-          name="civilite"
+          name="Civilité"
           required
           className="w-full bg-[#f8f8f8] border border-[#e0e0e0] p-4 text-[#888888] rounded-none focus:ring-2 focus:ring-[#003399] focus:border-transparent text-[15px] font-light appearance-none transition-all"
           style={{
@@ -51,14 +86,14 @@ export default function RdvForm() {
         </select>
         <input
           type="text"
-          name="nom"
+          name="Nom"
           placeholder="Saisir votre nom... *"
           required
           className="w-full bg-[#f8f8f8] border border-[#e0e0e0] p-4 text-[#888888] placeholder-[#aaaaaa] rounded-none focus:ring-2 focus:ring-[#003399] focus:border-transparent text-[15px] font-light transition-all"
         />
         <input
           type="text"
-          name="prenom"
+          name="Prénom"
           placeholder="Saisir votre prénom... *"
           required
           className="w-full bg-[#f8f8f8] border border-[#e0e0e0] p-4 text-[#888888] placeholder-[#aaaaaa] rounded-none focus:ring-2 focus:ring-[#003399] focus:border-transparent text-[15px] font-light transition-all"
@@ -69,14 +104,14 @@ export default function RdvForm() {
       <div className="grid md:grid-cols-2 gap-6">
         <input
           type="tel"
-          name="telephone"
+          name="Téléphone"
           placeholder="Votre téléphone *"
           required
           className="w-full bg-[#f8f8f8] border border-[#e0e0e0] p-4 text-[#888888] placeholder-[#aaaaaa] rounded-none focus:ring-2 focus:ring-[#003399] focus:border-transparent text-[15px] font-light transition-all"
         />
         <input
           type="email"
-          name="email"
+          name="Email"
           placeholder="Votre adresse email *"
           required
           className="w-full bg-[#f8f8f8] border border-[#e0e0e0] p-4 text-[#888888] placeholder-[#aaaaaa] rounded-none focus:ring-2 focus:ring-[#003399] focus:border-transparent text-[15px] font-light transition-all"
@@ -88,7 +123,7 @@ export default function RdvForm() {
         <p className="text-[#888888] text-[14px] font-light mb-2">Date de naissance</p>
         <input
           type={dateType}
-          name="date_naissance"
+          name="Date de naissance"
           placeholder="Date de naissance *"
           required
           value={dateValue}
@@ -103,7 +138,7 @@ export default function RdvForm() {
       <div>
         <input
           type="text"
-          name="adresse"
+          name="Adresse"
           placeholder="N° de voie et rue"
           className="w-full bg-[#f8f8f8] border border-[#e0e0e0] p-4 text-[#888888] placeholder-[#aaaaaa] rounded-none focus:ring-2 focus:ring-[#003399] focus:border-transparent text-[15px] font-light transition-all"
         />
@@ -111,13 +146,13 @@ export default function RdvForm() {
       <div className="grid md:grid-cols-2 gap-6">
         <input
           type="text"
-          name="code_postal"
+          name="Code postal"
           placeholder="Code postal"
           className="w-full bg-[#f8f8f8] border border-[#e0e0e0] p-4 text-[#888888] placeholder-[#aaaaaa] rounded-none focus:ring-2 focus:ring-[#003399] focus:border-transparent text-[15px] font-light transition-all"
         />
         <input
           type="text"
-          name="ville"
+          name="Ville"
           placeholder="Ville"
           className="w-full bg-[#f8f8f8] border border-[#e0e0e0] p-4 text-[#888888] placeholder-[#aaaaaa] rounded-none focus:ring-2 focus:ring-[#003399] focus:border-transparent text-[15px] font-light transition-all"
         />
@@ -126,7 +161,7 @@ export default function RdvForm() {
       {/* Motif de consultation */}
       <div>
         <select
-          name="motif"
+          name="Motif de consultation"
           required
           className="w-full bg-[#f8f8f8] border border-[#e0e0e0] p-4 text-[#888888] rounded-none focus:ring-2 focus:ring-[#003399] focus:border-transparent text-[15px] font-light appearance-none transition-all"
           style={{
@@ -137,16 +172,16 @@ export default function RdvForm() {
           }}
         >
           <option value="">Sélectionnez un motif de consultation *</option>
-          <option value="dmla">Consultation DMLA</option>
-          <option value="photo">Photobiomodulation (PBM)</option>
-          <option value="oct">Examen OCT</option>
-          <option value="angio">Angiographie</option>
-          <option value="ivt">Injection intra-vitréenne (IVT)</option>
-          <option value="pdt">Photothérapie Dynamique (PDT)</option>
-          <option value="laser">Laser (PPR, SLT, YAG, IP)</option>
-          <option value="eyelight">Eyelight (Sécheresse oculaire)</option>
-          <option value="urgence">Urgence ophtalmologique</option>
-          <option value="autre">Autre</option>
+          <option value="Consultation DMLA">Consultation DMLA</option>
+          <option value="Photobiomodulation (PBM)">Photobiomodulation (PBM)</option>
+          <option value="Examen OCT">Examen OCT</option>
+          <option value="Angiographie">Angiographie</option>
+          <option value="Injection intra-vitréenne (IVT)">Injection intra-vitréenne (IVT)</option>
+          <option value="Photothérapie Dynamique (PDT)">Photothérapie Dynamique (PDT)</option>
+          <option value="Laser (PPR, SLT, YAG, IP)">Laser (PPR, SLT, YAG, IP)</option>
+          <option value="Eyelight (Sécheresse oculaire)">Eyelight (Sécheresse oculaire)</option>
+          <option value="Urgence ophtalmologique">Urgence ophtalmologique</option>
+          <option value="Autre">Autre</option>
         </select>
       </div>
 
@@ -184,7 +219,7 @@ export default function RdvForm() {
 
       {/* Message */}
       <textarea
-        name="message"
+        name="Message"
         rows={5}
         placeholder="Votre message / Précisions complémentaires"
         className="w-full bg-[#f8f8f8] border border-[#e0e0e0] p-4 text-[#888888] placeholder-[#aaaaaa] rounded-none focus:ring-2 focus:ring-[#003399] focus:border-transparent text-[15px] font-light transition-all resize-vertical"
@@ -194,7 +229,7 @@ export default function RdvForm() {
       <div>
         <input
           type="text"
-          name="medecin_traitant"
+          name="Médecin traitant"
           placeholder="Médecin traitant / Ophtalmologiste adressant"
           className="w-full bg-[#f8f8f8] border border-[#e0e0e0] p-4 text-[#888888] placeholder-[#aaaaaa] rounded-none focus:ring-2 focus:ring-[#003399] focus:border-transparent text-[15px] font-light transition-all"
         />
@@ -212,10 +247,10 @@ export default function RdvForm() {
       <div className="mt-8 text-center pt-4">
         <button
           type="submit"
-          disabled={isPending}
+          disabled={status === 'sending'}
           className="bg-[#003399] hover:bg-blue-800 disabled:bg-gray-400 disabled:cursor-not-allowed text-white font-bold uppercase tracking-widest py-4 px-16 transition-colors text-[12px] rounded-[50px]"
         >
-          {isPending ? 'Envoi en cours...' : 'Envoyer ma demande'}
+          {status === 'sending' ? 'Envoi en cours...' : 'Envoyer ma demande'}
         </button>
       </div>
     </form>
