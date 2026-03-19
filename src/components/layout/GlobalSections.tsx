@@ -1,0 +1,166 @@
+"use client";
+
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+
+export default function GlobalSections() {
+  const pathname = usePathname();
+  const isHomePage = pathname === '/';
+
+  return (
+    <>
+      {/* Content Rendered ONLY on the Homepage */}
+      {isHomePage && (
+        <>
+          {/* Split Content Sections */}
+          <section id="home-page-content" className="w-full flex flex-col pt-0 pb-0">
+
+        {/* --- Block 1: Offre de Soins --- */}
+        <div className="flex flex-col md:flex-row w-full bg-white">
+          {/* Text Container (Left) */}
+          <div className="w-full md:w-1/2 flex items-center justify-center p-12 md:p-24 bg-white z-10 shadow-[20px_0_20px_-20px_rgba(0,0,0,0.1)]">
+            <div className="max-w-[450px] text-center flex flex-col items-center">
+              <h2 className="text-[#a68d71] text-[20px] md:text-[24px] font-[Gotham] font-light tracking-[2px] uppercase mb-[20px] pb-[15px] relative">
+                Offre de Soins
+                {/* Small horizontal gold line */}
+                <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[30px] h-[1px] bg-[#a68d71]"></span>
+              </h2>
+              <p className="text-[#646464] text-[14px] md:text-[15px] font-[Gotham] font-light leading-[1.8] mt-[25px] mb-[40px]">
+                Le Centre Ophtalmologique Rabelais est une structure de soins spécialisée dans l'imagerie ophtalmologique et dans la prise en charge des maladies rétiniennes
+              </p>
+              <Link prefetch={true} 
+                href="/offre-de-soins" 
+                className="bg-[#003399] hover:bg-blue-800 text-white text-[11px] font-[Gotham] font-bold tracking-[2px] uppercase py-[15px] px-[35px] rounded-[50px] transition-colors"
+              >
+                Plus d'infos
+              </Link>
+            </div>
+          </div>
+          {/* Image Container (Right) */}
+          <div 
+            className="w-full md:w-1/2 min-h-[450px] md:min-h-[550px] bg-cover bg-center"
+            style={{ backgroundImage: "url('https://centrerabelaislyon.fr/wp-content/uploads/2015/09/post1.png')" }}
+          ></div>
+        </div>
+
+        {/* --- Block 2: Plateau Technique --- */}
+        <div className="flex flex-col md:flex-row-reverse w-full bg-[#f8f8f8]">
+          {/* Text Container (Right) */}
+          <div className="w-full md:w-1/2 flex items-center justify-center p-12 md:p-24 bg-[#f8f8f8] z-10 shadow-[-20px_0_20px_-20px_rgba(0,0,0,0.05)]">
+            <div className="max-w-[450px] text-center flex flex-col items-center">
+              <h2 className="text-[#a68d71] text-[20px] md:text-[24px] font-[Gotham] font-light tracking-[2px] uppercase mb-[20px] pb-[15px] relative">
+                Plateau Technique
+                <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[30px] h-[1px] bg-[#a68d71]"></span>
+              </h2>
+              <p className="text-[#646464] text-[14px] md:text-[15px] font-[Gotham] font-light leading-[1.8] mt-[25px] mb-[40px]">
+                Le Centre Rabelais met un point d’honneur à toujours équiper son plateau technique avec le matériel d’imagerie de toute dernière génération &nbsp;
+              </p>
+              <Link prefetch={true} 
+                href="/plateau-technique" 
+                className="bg-[#003399] hover:bg-blue-800 text-white text-[11px] font-[Gotham] font-bold tracking-[2px] uppercase py-[15px] px-[35px] rounded-[50px] transition-colors"
+              >
+                Plus d'infos
+              </Link>
+            </div>
+          </div>
+          {/* Image Container (Left) */}
+          <div 
+            className="w-full md:w-1/2 min-h-[450px] md:min-h-[550px] bg-cover bg-center"
+            style={{ backgroundImage: "url('https://centrerabelaislyon.fr/wp-content/uploads/2015/09/post2.png')" }}
+          ></div>
+        </div>
+
+        {/* --- Block 3: Équipe Médicale --- */}
+        <div className="flex flex-col md:flex-row w-full bg-white">
+          {/* Text Container (Left) */}
+          <div className="w-full md:w-1/2 flex items-center justify-center p-12 md:p-24 bg-white z-10 shadow-[20px_0_20px_-20px_rgba(0,0,0,0.1)]">
+            <div className="max-w-[450px] text-center flex flex-col items-center">
+              <h2 className="text-[#a68d71] text-[20px] md:text-[24px] font-[Gotham] font-light tracking-[2px] uppercase mb-[20px] pb-[15px] relative">
+                Équipe Médicale
+                <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[30px] h-[1px] bg-[#a68d71]"></span>
+              </h2>
+              <p className="text-[#646464] text-[14px] md:text-[15px] font-[Gotham] font-light leading-[1.8] mt-[25px] mb-[10px]">
+                Notre équipe médicale est constituée d'ophtalmologistes et d'orthoptistes spécialisés dans ce domaine ainsi que d'une infirmière diplômée d'État. Tous les médecins du centre sont conventionnés et exercent en secteur 2 (conventionnés à honoraires libres).
+              </p>
+              <p className="text-[#003399] text-[11px] font-bold tracking-[1px] uppercase mt-[10px] mb-[30px]">
+                WE SPEAK ENGLISH / SI PARLA ITALIANO
+              </p>
+              <Link prefetch={true} 
+                href="/equipe-medicale" 
+                className="bg-[#003399] hover:bg-blue-800 text-white text-[11px] font-[Gotham] font-bold tracking-[2px] uppercase py-[15px] px-[35px] rounded-[50px] transition-colors"
+              >
+                Plus d'infos
+              </Link>
+            </div>
+          </div>
+          {/* Image Container (Right) */}
+          <div 
+            className="w-full md:w-1/2 min-h-[450px] md:min-h-[550px] bg-cover bg-center"
+            style={{ backgroundImage: "url('https://centrerabelaislyon.fr/wp-content/uploads/2015/09/post4.png')" }}
+          ></div>
+        </div>
+
+          </section>
+
+          {/* Exact Visual Clone Frame of Form */}
+          <section id="home-page-contact" className="py-24 bg-cover bg-center relative" style={{ backgroundImage: "url('https://centrerabelaislyon.fr/wp-content/themes/Placeholder/images/new-img-background.png')" }}>
+        <div className="absolute inset-0 bg-transparent"></div>
+        <div className="container mx-auto px-4 relative z-10 max-w-3xl">
+          <div className="text-center mb-[60px]">
+            <h2 className="text-black text-[35px] md:text-[45px] font-[Gotham] font-light uppercase tracking-wider">
+              Demande de <strong className="font-bold">Rendez-vous</strong>
+            </h2>
+          </div>
+          
+          <div className="bg-white/10 backdrop-blur-sm p-8 md:p-12 border border-white/20">
+            <form className="space-y-6">
+              <div className="flex gap-4 mb-6">
+                <label className="text-white flex items-center gap-2 font-light cursor-pointer"><input type="radio" name="civilite" className="accent-[#a68d71]" /> Madame</label>
+                <label className="text-white flex items-center gap-2 font-light cursor-pointer"><input type="radio" name="civilite" className="accent-[#a68d71]" /> Monsieur</label>
+              </div>
+              <div className="grid md:grid-cols-2 gap-6">
+                <input type="text" placeholder="Nom *" className="w-full bg-white/90 border-0 p-4 text-gray-800 placeholder-gray-500 rounded-none focus:ring-2 focus:ring-[#003399]" />
+                <input type="text" placeholder="Prénom *" className="w-full bg-white/90 border-0 p-4 text-gray-800 placeholder-gray-500 rounded-none focus:ring-2 focus:ring-[#003399]" />
+              </div>
+              <div className="grid md:grid-cols-2 gap-6">
+                <input type="tel" placeholder="Téléphone *" className="w-full bg-white/90 border-0 p-4 text-gray-800 placeholder-gray-500 rounded-none focus:ring-2 focus:ring-[#003399]" />
+                <input type="email" placeholder="Email *" className="w-full bg-white/90 border-0 p-4 text-gray-800 placeholder-gray-500 rounded-none focus:ring-2 focus:ring-[#003399]" />
+              </div>
+              <select className="w-full bg-white/90 border-0 p-4 text-gray-800 placeholder-gray-500 rounded-none focus:ring-2 focus:ring-[#003399] appearance-none">
+                <option value="">Sélectionnez un motif de consultation *</option>
+                <option value="dmla">Consultation DMLA</option>
+                <option value="photo">Photobiomodulation</option>
+                <option value="oct">Examen OCT</option>
+              </select>
+              
+              <div className="bg-white/90 p-4 flex items-center gap-4">
+                 <label className="bg-gray-200 hover:bg-gray-300 text-gray-800 px-4 py-2 cursor-pointer text-sm font-semibold uppercase tracking-wider transition-colors">
+                    Joindre une Ordonnance
+                    <input type="file" className="hidden" accept=".pdf,.jpg,.png" />
+                 </label>
+                 <span className="text-gray-500 text-sm font-light italic">Max 128MB. (pdf, jpg, png)</span>
+              </div>
+
+              <textarea rows={4} placeholder="Votre message" className="w-full bg-white/90 border-0 p-4 text-gray-800 placeholder-gray-500 rounded-none focus:ring-2 focus:ring-[#003399]"></textarea>
+              
+              <div className="flex items-start gap-3 mt-4">
+                <input type="checkbox" id="rgpd" className="mt-1 accent-[#a68d71]" />
+                <label htmlFor="rgpd" className="text-sm text-white/80 font-light leading-relaxed">
+                  En soumettant ce formulaire, j'accepte que les informations saisies soient exploitées dans le cadre de la demande de rendez-vous et de la relation commerciale qui peut en découler.
+                </label>
+              </div>
+
+              <div className="mt-8 text-center pt-4">
+                <button type="button" className="bg-[#003399] hover:bg-blue-800 text-white font-bold uppercase tracking-widest py-4 px-12 transition-colors w-full md:w-auto">
+                  Envoyer
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+          </section>
+        </>
+      )}
+    </>
+  );
+}

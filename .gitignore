@@ -39,3 +39,26 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# temp scraping files
+live_*.html
+temp_*.html
+mq.html
+team.html
+font.css
+style.css
+responsive.css
+download_fonts.js
+fetch.js
+fetch_css.js
+get_banners.js
+
+# agent/gemini
+.agent/
+.gemini/
+.agents/
+
+# project docs (not for deploy)
+*.md
+!README.md
+GBP-contenu-optimise.txt

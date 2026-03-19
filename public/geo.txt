@@ -1,0 +1,31 @@
+# GEO Optimization File for Centre Ophtalmologique Rabelais Lyon
+# This file provides structured geographic data to help search engines understand the exact physical location and service areas of the clinic.
+
+geo.position: 45.756100; 4.831900
+geo.placename: Lyon
+geo.region: FR-69
+
+# STRUCTURED NAP (Name, Address, Phone)
+Business Name: Centre Ophtalmologique Rabelais
+Street Address: 2, Rue Antoine de Saint-Exupéry
+Postal Code: 69002
+City: Lyon
+District: Lyon 2ème (Presqu'île / Bellecour)
+Country: France
+Phone: +33 4 78 95 09 08
+
+# LATITUDE & LONGITUDE
+Latitude: 45.756100
+Longitude: 4.831900
+
+# LOCAL SERVICE AREAS (Zones de chalandise prioritaires)
+- Primary: Lyon 2ème, Lyon Presqu'île, Bellecour.
+- Secondary: Tous les arrondissements de Lyon (Lyon 1, Lyon 3, Lyon 6, Lyon 7, etc.).
+- Regional: Métropole de Lyon (Villeurbanne, Bron, Caluire-et-Cuire, Oullins, Sainte-Foy-lès-Lyon, Vénissieux).
+
+# TRANSIT & ACCESSIBILITY
+Metro: Lignes A et D (Station Bellecour à proximité).
+Bus: Lignes C20, C9, C10, 40, 15, 35.
+
+# TARGET INTENT
+Patients from the Auvergne-Rhône-Alpes region seeking highly specialized retinal care (AMD/DMLA, macular diseases, photobiomodulation) rather than general ophthalmology.

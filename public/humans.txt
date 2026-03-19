@@ -1,0 +1,18 @@
+/* TEAM */
+  Clinic: Centre Ophtalmologique Rabelais
+  Medical Director: Dr Maddalena Quaranta (Retina Specialist)
+  Location: Lyon, France.
+  Contact: 04 78 95 09 08
+
+/* SITE */
+  Theme: Medical & Clinical Excellence, Pixel-Perfect Clone
+  Stack: Next.js (App Router), React, Tailwind CSS
+  Hosting: Vercel
+  Database: Supabase (PostgreSQL)
+  Design System: Gotham Typography, Custom Premium Aesthetics
+  Language: French, English, Italian
+  Last Updated: 2026
+
+/* SEO & AI STRUCTURE */
+  This site is optimized specifically for deep local SEO mapping (GEO) and AI Answer Engine indexing (LLM/RAG).
+  See ai.txt and geo.txt for structured machine-readable metadata.
