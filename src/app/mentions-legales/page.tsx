@@ -101,7 +101,7 @@ export default function MentionsLegalesPage() {
 
               <h3>Nous Contacter</h3>
               <p>
-                Pour toute question, contactez le cabinet à l’adresse <a href="mailto:jeffos101@gmail.com" className="font-bold hover:underline">jeffos101@gmail.com</a>.
+                Pour toute question, contactez le cabinet à l’adresse <a href="mailto:contact@centrerabelaislyon.fr" className="font-bold hover:underline">contact@centrerabelaislyon.fr</a>.
                 <br /><br />
                 Les messages ne sont pas lus en temps réel et ne constituent pas un moyen d’obtenir un renseignement de nature médicale. L’adresse n’est pas sécurisée.
               </p>
