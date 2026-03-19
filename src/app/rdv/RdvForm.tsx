@@ -17,7 +17,7 @@ export default function RdvForm() {
     // Collect checked examens into a string
     const examens = formData.getAll('examens').join(', ');
     formData.delete('examens');
-    formData.append('Examens demandés', examens || 'Aucun');
+    formData.append('Examens demandes', examens || 'Aucun');
 
     try {
       const res = await fetch('https://api.web3forms.com/submit', {
@@ -70,7 +70,7 @@ export default function RdvForm() {
       {/* Civilité + Nom + Prénom */}
       <div className="grid md:grid-cols-3 gap-6">
         <select
-          name="Civilité"
+          name="Civilite"
           required
           className="w-full bg-[#f8f8f8] border border-[#e0e0e0] p-4 text-[#888888] rounded-none focus:ring-2 focus:ring-[#003399] focus:border-transparent text-[15px] font-light appearance-none transition-all"
           style={{
@@ -80,7 +80,7 @@ export default function RdvForm() {
             backgroundSize: '20px',
           }}
         >
-          <option value="">Civilité*</option>
+          <option value="">Civilite*</option>
           <option value="Madame">Madame</option>
           <option value="Monsieur">Monsieur</option>
         </select>
@@ -93,7 +93,7 @@ export default function RdvForm() {
         />
         <input
           type="text"
-          name="Prénom"
+          name="Prenom"
           placeholder="Saisir votre prénom... *"
           required
           className="w-full bg-[#f8f8f8] border border-[#e0e0e0] p-4 text-[#888888] placeholder-[#aaaaaa] rounded-none focus:ring-2 focus:ring-[#003399] focus:border-transparent text-[15px] font-light transition-all"
@@ -104,7 +104,7 @@ export default function RdvForm() {
       <div className="grid md:grid-cols-2 gap-6">
         <input
           type="tel"
-          name="Téléphone"
+          name="Telephone"
           placeholder="Votre téléphone *"
           required
           className="w-full bg-[#f8f8f8] border border-[#e0e0e0] p-4 text-[#888888] placeholder-[#aaaaaa] rounded-none focus:ring-2 focus:ring-[#003399] focus:border-transparent text-[15px] font-light transition-all"
@@ -161,7 +161,7 @@ export default function RdvForm() {
       {/* Motif de consultation */}
       <div>
         <select
-          name="Motif de consultation"
+          name="Motif"
           required
           className="w-full bg-[#f8f8f8] border border-[#e0e0e0] p-4 text-[#888888] rounded-none focus:ring-2 focus:ring-[#003399] focus:border-transparent text-[15px] font-light appearance-none transition-all"
           style={{
@@ -171,15 +171,15 @@ export default function RdvForm() {
             backgroundSize: '20px',
           }}
         >
-          <option value="">Sélectionnez un motif de consultation *</option>
+          <option value="">Selectionnez un motif de consultation *</option>
           <option value="Consultation DMLA">Consultation DMLA</option>
           <option value="Photobiomodulation (PBM)">Photobiomodulation (PBM)</option>
           <option value="Examen OCT">Examen OCT</option>
           <option value="Angiographie">Angiographie</option>
-          <option value="Injection intra-vitréenne (IVT)">Injection intra-vitréenne (IVT)</option>
-          <option value="Photothérapie Dynamique (PDT)">Photothérapie Dynamique (PDT)</option>
+          <option value="Injection intra-vitreenne (IVT)">Injection intra-vitreenne (IVT)</option>
+          <option value="Phototherapie Dynamique (PDT)">Phototherapie Dynamique (PDT)</option>
           <option value="Laser (PPR, SLT, YAG, IP)">Laser (PPR, SLT, YAG, IP)</option>
-          <option value="Eyelight (Sécheresse oculaire)">Eyelight (Sécheresse oculaire)</option>
+          <option value="Eyelight (Secheresse oculaire)">Eyelight (Secheresse oculaire)</option>
           <option value="Urgence ophtalmologique">Urgence ophtalmologique</option>
           <option value="Autre">Autre</option>
         </select>
@@ -192,12 +192,12 @@ export default function RdvForm() {
           {[
             'OCT Maculaire',
             'OCT du Nerf Optique',
-            'Angiographie Fluorescéine',
+            'Angiographie Fluoresceine',
             'Angiographie ICG',
             'OCT-Angiographie',
-            'Rétinographie',
+            'Retinographie',
             'Champ Visuel',
-            'Pachymétrie',
+            'Pachymetrie',
             'Autre(s) examen(s)',
           ].map((exam) => (
             <label key={exam} className="flex items-center gap-2 text-[#888888] text-[14px] font-light cursor-pointer">
@@ -229,7 +229,7 @@ export default function RdvForm() {
       <div>
         <input
           type="text"
-          name="Médecin traitant"
+          name="Medecin traitant"
           placeholder="Médecin traitant / Ophtalmologiste adressant"
           className="w-full bg-[#f8f8f8] border border-[#e0e0e0] p-4 text-[#888888] placeholder-[#aaaaaa] rounded-none focus:ring-2 focus:ring-[#003399] focus:border-transparent text-[15px] font-light transition-all"
         />
