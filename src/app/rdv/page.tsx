@@ -55,29 +55,32 @@ export default function RdvPage() {
 
           {/* Form */}
           <form className="space-y-6">
-            {/* Civilité */}
-            <div className="flex gap-6 mb-2">
-              <label className="text-[#888888] flex items-center gap-2 font-light cursor-pointer text-[15px]">
-                <input type="radio" name="civilite" value="Madame" className="accent-[#c2aa84] w-4 h-4" />
-                Madame
-              </label>
-              <label className="text-[#888888] flex items-center gap-2 font-light cursor-pointer text-[15px]">
-                <input type="radio" name="civilite" value="Monsieur" className="accent-[#c2aa84] w-4 h-4" />
-                Monsieur
-              </label>
-            </div>
-
-            {/* Nom + Prénom */}
-            <div className="grid md:grid-cols-2 gap-6">
+            {/* Civilité + Nom + Prénom */}
+            <div className="grid md:grid-cols-3 gap-6">
+              <select
+                name="civilite"
+                required
+                className="w-full bg-[#f8f8f8] border border-[#e0e0e0] p-4 text-[#888888] rounded-none focus:ring-2 focus:ring-[#003399] focus:border-transparent text-[15px] font-light appearance-none transition-all"
+                style={{
+                  backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%23888888'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E")`,
+                  backgroundRepeat: 'no-repeat',
+                  backgroundPosition: 'right 16px center',
+                  backgroundSize: '20px',
+                }}
+              >
+                <option value="">Civilité*</option>
+                <option value="Madame">Madame</option>
+                <option value="Monsieur">Monsieur</option>
+              </select>
               <input
                 type="text"
-                placeholder="Nom *"
+                placeholder="Saisir votre nom... *"
                 required
                 className="w-full bg-[#f8f8f8] border border-[#e0e0e0] p-4 text-[#888888] placeholder-[#aaaaaa] rounded-none focus:ring-2 focus:ring-[#003399] focus:border-transparent text-[15px] font-light transition-all"
               />
               <input
                 type="text"
-                placeholder="Prénom *"
+                placeholder="Saisir votre prénom... *"
                 required
                 className="w-full bg-[#f8f8f8] border border-[#e0e0e0] p-4 text-[#888888] placeholder-[#aaaaaa] rounded-none focus:ring-2 focus:ring-[#003399] focus:border-transparent text-[15px] font-light transition-all"
               />
@@ -87,13 +90,13 @@ export default function RdvPage() {
             <div className="grid md:grid-cols-2 gap-6">
               <input
                 type="tel"
-                placeholder="Téléphone *"
+                placeholder="Votre téléphone *"
                 required
                 className="w-full bg-[#f8f8f8] border border-[#e0e0e0] p-4 text-[#888888] placeholder-[#aaaaaa] rounded-none focus:ring-2 focus:ring-[#003399] focus:border-transparent text-[15px] font-light transition-all"
               />
               <input
                 type="email"
-                placeholder="Email *"
+                placeholder="Votre adresse email *"
                 required
                 className="w-full bg-[#f8f8f8] border border-[#e0e0e0] p-4 text-[#888888] placeholder-[#aaaaaa] rounded-none focus:ring-2 focus:ring-[#003399] focus:border-transparent text-[15px] font-light transition-all"
               />
@@ -101,7 +104,29 @@ export default function RdvPage() {
 
             {/* Date de naissance */}
             <div>
+              <p className="text-[#888888] text-[14px] font-light mb-2">Date de naissance</p>
               <DateInput />
+            </div>
+
+            {/* Adresse */}
+            <div>
+              <input
+                type="text"
+                placeholder="N° de voie et rue"
+                className="w-full bg-[#f8f8f8] border border-[#e0e0e0] p-4 text-[#888888] placeholder-[#aaaaaa] rounded-none focus:ring-2 focus:ring-[#003399] focus:border-transparent text-[15px] font-light transition-all"
+              />
+            </div>
+            <div className="grid md:grid-cols-2 gap-6">
+              <input
+                type="text"
+                placeholder="Code postal"
+                className="w-full bg-[#f8f8f8] border border-[#e0e0e0] p-4 text-[#888888] placeholder-[#aaaaaa] rounded-none focus:ring-2 focus:ring-[#003399] focus:border-transparent text-[15px] font-light transition-all"
+              />
+              <input
+                type="text"
+                placeholder="Ville"
+                className="w-full bg-[#f8f8f8] border border-[#e0e0e0] p-4 text-[#888888] placeholder-[#aaaaaa] rounded-none focus:ring-2 focus:ring-[#003399] focus:border-transparent text-[15px] font-light transition-all"
+              />
             </div>
 
             {/* Motif de consultation */}
