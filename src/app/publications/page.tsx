@@ -1,6 +1,5 @@
 import { Metadata } from 'next';
-
-export const metadata: Metadata = {
+import PublicationImage from '@/components/PublicationImage';export const metadata: Metadata = {
   title: 'Publications Scientifiques | Centre Ophtalmologique Rabelais Lyon',
   description: 'Retrouvez toutes les publications scientifiques (Glaucome, OCT, DMLA) rédigées par l\'équipe médicale du Centre Ophtalmologique Rabelais.',
   alternates: {
@@ -27,7 +26,7 @@ const publications: Publication[] = [
     date: "Juin 2021",
     year: 2021,
     pdfUrl: "https://centrerabelaislyon.fr/wp-content/uploads/2021/06/1-s2.0-S0181551221001789-main.pdf",
-    imageUrl: "/images/publications/art-cystic-2021.png",
+    imageUrl: "/images/publications/art-cystic-2021.jpg",
   },
   {
     title: "The long-term effects of anti-VEGF therapy on the OCT angiographic appearance of neovascularization in AMD",
@@ -36,7 +35,7 @@ const publications: Publication[] = [
     date: "Août 2020",
     year: 2020,
     pdfUrl: "https://centrerabelaislyon.fr/wp-content/uploads/2020/08/The-long-term-effects-of-anti-vascular-endothelial-growth-factor-therapy-on-the-optical-coherence-tomography-angiographic-appearance-of-neovascularization-in-age-related-macular-degeneration.pdf",
-    imageUrl: "/images/publications/art-vegf-2020.png",
+    imageUrl: "/images/publications/art-vegf-2020.jpg",
   },
   {
     title: "Place de l'OCT dans le bilan de chirurgie réfractive",
@@ -265,7 +264,7 @@ export default function PublicationsPage() {
               <div key={`book-${i}`} className="group bg-[#f8f8f8] border border-[#e8e8e8] hover:shadow-lg transition-all duration-300 overflow-hidden flex flex-col">
                 {pub.imageUrl && (
                   <div className="relative w-full aspect-[3/4] overflow-hidden bg-gray-100">
-                    <img 
+                    <PublicationImage 
                       src={pub.imageUrl} 
                       alt={pub.title}
                       className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
@@ -300,7 +299,7 @@ export default function PublicationsPage() {
                 {/* Preview Image */}
                 {pub.imageUrl && (
                   <div className="relative w-full md:w-[180px] h-[140px] md:h-[130px] shrink-0 overflow-hidden bg-gray-100 group">
-                    <img 
+                    <PublicationImage 
                       src={pub.imageUrl} 
                       alt={pub.title}
                       className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
