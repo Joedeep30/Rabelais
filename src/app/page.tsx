@@ -32,7 +32,7 @@ export default function Home() {
           </Link>
           
           <h1 className="text-white text-[38px] md:text-[54px] font-[Gotham] font-light leading-[1.1] tracking-wide mb-[25px]">
-            Bienvenue au <span className="font-normal font-[Gotham]">Centre Ophtalmologique Rabelais</span><br />de Lyon
+            Bienvenue au <span className="font-normal font-[Gotham]">Centre Rabelais</span><br />de Lyon
           </h1>
           
           {/* Left-aligned line divider */}
