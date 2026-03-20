@@ -1,5 +1,4 @@
 import { Metadata } from 'next';
-import Image from 'next/image';
 
 export const metadata: Metadata = {
   title: 'Publications Scientifiques | Centre Ophtalmologique Rabelais Lyon',
@@ -266,12 +265,10 @@ export default function PublicationsPage() {
               <div key={`book-${i}`} className="group bg-[#f8f8f8] border border-[#e8e8e8] hover:shadow-lg transition-all duration-300 overflow-hidden flex flex-col">
                 {pub.imageUrl && (
                   <div className="relative w-full aspect-[3/4] overflow-hidden bg-gray-100">
-                    <Image 
+                    <img 
                       src={pub.imageUrl} 
                       alt={pub.title}
-                      fill
-                      className="object-cover group-hover:scale-105 transition-transform duration-500"
-                      sizes="(max-width: 768px) 50vw, 20vw"
+                      className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     />
                   </div>
                 )}
@@ -303,12 +300,10 @@ export default function PublicationsPage() {
                 {/* Preview Image */}
                 {pub.imageUrl && (
                   <div className="relative w-full md:w-[180px] h-[140px] md:h-[130px] shrink-0 overflow-hidden bg-gray-100 group">
-                    <Image 
+                    <img 
                       src={pub.imageUrl} 
                       alt={pub.title}
-                      fill
-                      className="object-cover group-hover:scale-105 transition-transform duration-500"
-                      sizes="180px"
+                      className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     />
                   </div>
                 )}
