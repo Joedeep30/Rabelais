@@ -53,7 +53,7 @@ export default function PlanDuSitePage() {
                 <li><Link prefetch={true} href="/publications">Publications</Link></li>
                 <li><Link prefetch={true} href="/dois-je-consulter">Dois-je consulter ?</Link></li>
                 <li><Link prefetch={true} href="/directions">Comment se rendre au Centre ?</Link></li>
-                <li><Link prefetch={true} href="/#home-page-contact">Demande de rendez-vous</Link></li>
+                <li><Link prefetch={true} href="/rdv">Demande de rendez-vous</Link></li>
                 <li><Link prefetch={true} href="/mentions-legales">Mentions légales & confidentialité</Link></li>
                 <li><Link prefetch={true} href="/liens-utiles">Liens Utiles</Link></li>
                 <li><Link prefetch={true} href="/plan-du-site">Plan du site</Link></li>

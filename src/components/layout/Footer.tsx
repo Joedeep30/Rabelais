@@ -29,7 +29,7 @@ export default function Footer() {
           <h3 className="text-[#a68d71] text-[13px] font-light mb-6 uppercase tracking-[2px] inline-block border-b border-[#a68d71] pb-2">Supplémentaire</h3>
           <ul className="space-y-4">
             <li><Link prefetch={true} href="/directions" className="hover:text-[#a68d71] transition-colors">Comment Se Rendre Au Centre?</Link></li>
-            <li><Link prefetch={true} href="/#home-page-contact" className="hover:text-[#a68d71] transition-colors">Demande De Rendez-Vous</Link></li>
+            <li><Link prefetch={true} href="/rdv" className="hover:text-[#a68d71] transition-colors">Demande De Rendez-Vous</Link></li>
             <li><Link prefetch={true} href="/mentions-legales" className="hover:text-[#a68d71] transition-colors">Mentions Légales & Confidentialité</Link></li>
             <li><Link prefetch={true} href="/requete-rgpd" className="hover:text-[#a68d71] transition-colors">Requête RGPD</Link></li>
             <li><Link prefetch={true} href="/liens-utiles" className="hover:text-[#a68d71] transition-colors">Liens Utiles</Link></li>
