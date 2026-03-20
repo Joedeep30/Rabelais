@@ -1,5 +1,5 @@
 import { Metadata } from 'next';
-import Link from 'next/link';
+import Image from 'next/image';
 
 export const metadata: Metadata = {
   title: 'Publications Scientifiques | Centre Ophtalmologique Rabelais Lyon',
@@ -8,6 +8,217 @@ export const metadata: Metadata = {
     canonical: 'https://centrerabelaislyon.fr/publications'
   }
 };
+
+type Publication = {
+  title: string;
+  authors: string;
+  journal?: string;
+  date: string;
+  year: number;
+  pdfUrl?: string;
+  imageUrl?: string;
+  type?: 'article' | 'book';
+};
+
+const publications: Publication[] = [
+  {
+    title: "Cystic maculopathy in the internal nuclear layer in glaucoma patients",
+    authors: "Dr Maddalena Quaranta-El Maftouhi",
+    journal: "Graefe's Archive for Clinical and Experimental Ophthalmology",
+    date: "Juin 2021",
+    year: 2021,
+    pdfUrl: "https://centrerabelaislyon.fr/wp-content/uploads/2021/06/1-s2.0-S0181551221001789-main.pdf",
+    imageUrl: "https://centrerabelaislyon.fr/wp-content/uploads/2021/06/Capture-decran-2021-06-04-a-20.51.35-1.png",
+  },
+  {
+    title: "The long-term effects of anti-VEGF therapy on the OCT angiographic appearance of neovascularization in AMD",
+    authors: "Dr Maddalena Quaranta-El Maftouhi",
+    journal: "International Journal of Retina and Vitreous",
+    date: "Août 2020",
+    year: 2020,
+    pdfUrl: "https://centrerabelaislyon.fr/wp-content/uploads/2020/08/The-long-term-effects-of-anti-vascular-endothelial-growth-factor-therapy-on-the-optical-coherence-tomography-angiographic-appearance-of-neovascularization-in-age-related-macular-degeneration.pdf",
+    imageUrl: "https://centrerabelaislyon.fr/wp-content/uploads/2020/08/Capture-decran-2020-08-22-a-12.04.35.png",
+  },
+  {
+    title: "Place de l'OCT dans le bilan de chirurgie réfractive",
+    authors: "Dr Adil El Maftouhi",
+    journal: "Réalités Ophtalmologiques",
+    date: "Janvier 2020",
+    year: 2020,
+    pdfUrl: "https://centrerabelaislyon.fr/wp-content/uploads/2020/01/RO-231-Adil-El-Maftouhi.pdf",
+    imageUrl: "https://centrerabelaislyon.fr/wp-content/uploads/2020/01/Capture-decran-2020-01-18-a-12.40.06.png",
+  },
+  {
+    title: "Dégénérescence kystique de la couche nucléaire interne chez les patients glaucomateux",
+    authors: "Dr Maddalena Quaranta-El Maftouhi",
+    journal: "Réalités Ophtalmologiques",
+    date: "Mai 2019",
+    year: 2019,
+    pdfUrl: "https://centrerabelaislyon.fr/wp-content/uploads/2019/05/EL-MAFTOUHI_RG-kystes.pdf",
+    imageUrl: "https://centrerabelaislyon.fr/wp-content/uploads/2019/05/Capture-decran-2019-05-06-a-14.34.06.png",
+  },
+  {
+    title: "Intérêt de l'OCT dans la quantification de la sécheresse oculaire",
+    authors: "Dr Adil El Maftouhi",
+    journal: "Les Cahiers d'Ophtalmologie",
+    date: "Février 2019",
+    year: 2019,
+    pdfUrl: "https://centrerabelaislyon.fr/wp-content/uploads/2019/02/CDO225_P0_Dossier-Secheresse-A.ElMaftouhi-v2.pdf",
+    imageUrl: "https://centrerabelaislyon.fr/wp-content/uploads/2019/02/Capture-d'écran-2019-02-17-à-17.15.52.png",
+  },
+  {
+    title: "Dual Antagonism of PDGF and VEGF in Neovascular Age-Related Macular Degeneration",
+    authors: "Dr Maddalena Quaranta-El Maftouhi et al.",
+    journal: "Ophthalmologica (Phase 2b Study)",
+    date: "2017",
+    year: 2017,
+    pdfUrl: "https://centrerabelaislyon.fr/wp-content/uploads/2017/04/Dual-Antagonism-of-PDGF-and-VEGF-in-Neovascular-Age-Related-Macular-Degeneration.pdf",
+    imageUrl: "https://centrerabelaislyon.fr/wp-content/uploads/2017/04/Capture-decran-2017-04-10-a-16.43.09.png",
+  },
+  {
+    title: "Angio-OCT In Everyday Ophthalmic Practice",
+    authors: "Dr Maddalena Quaranta-El Maftouhi",
+    journal: "Jaypee (Book)",
+    date: "2016",
+    year: 2016,
+    type: "book",
+    imageUrl: "https://centrerabelaislyon.fr/wp-content/uploads/2016/05/Capture-decran-2017-09-20-a-21.16.47.png",
+  },
+  {
+    title: "Comparison between OCT-A and fluorescein angiography in diabetic retinopathy",
+    authors: "Dr Maddalena Quaranta-El Maftouhi",
+    journal: "Journal Français d'Ophtalmologie",
+    date: "2016",
+    year: 2016,
+    pdfUrl: "https://centrerabelaislyon.fr/wp-content/uploads/2016/05/1-s2.0-S0181551215003897-main.pdf",
+    imageUrl: "https://centrerabelaislyon.fr/wp-content/uploads/2016/05/Capture-d'écran-2016-01-03-à-09.51.30-copie.png",
+  },
+  {
+    title: "Practical Handbook of OCT Angiography",
+    authors: "Dr Maddalena Quaranta-El Maftouhi",
+    journal: "Jaypee (Book)",
+    date: "2016",
+    year: 2016,
+    type: "book",
+    imageUrl: "https://centrerabelaislyon.fr/wp-content/uploads/2016/03/Capture-decran-2017-09-20-a-21.17.02.png",
+  },
+  {
+    title: "Chronic Central Serous Chorioretinopathy Imaged by OCT-Angiography",
+    authors: "Dr Maddalena Quaranta-El Maftouhi",
+    journal: "American Journal of Ophthalmology",
+    date: "2015",
+    year: 2015,
+    pdfUrl: "https://centrerabelaislyon.fr/wp-content/uploads/2015/09/Chronic_Central_Serous_Chorioretinopathy_Ima-2.pdf",
+    imageUrl: "https://centrerabelaislyon.fr/wp-content/uploads/2016/01/Capture-d'écran-2016-01-03-à-09.49.47-copie.png",
+  },
+  {
+    title: "L'angio-OCT en pratique",
+    authors: "Dr Maddalena Quaranta-El Maftouhi",
+    journal: "Elsevier Masson (Livre)",
+    date: "2015",
+    year: 2015,
+    type: "book",
+    imageUrl: "https://centrerabelaislyon.fr/wp-content/uploads/2015/10/Capture-decran-2017-09-20-a-21.17.13.png",
+  },
+  {
+    title: "Switch from aflibercept to ranibizumab: Up to 2 years follow-up",
+    authors: "Dr Maddalena Quaranta-El Maftouhi et al.",
+    journal: "GMS Ophthalmology Cases",
+    date: "2014",
+    year: 2014,
+    pdfUrl: "https://centrerabelaislyon.fr/wp-content/uploads/2016/01/Ophthal-Cases-N-4-2014-Ranib-after-Afliber-Switch.pdf",
+    imageUrl: "https://centrerabelaislyon.fr/wp-content/uploads/2016/01/Capture-d'écran-2016-01-03-à-09.50.57-copie.png",
+  },
+  {
+    title: "Imagerie en Ophtalmologie",
+    authors: "Dr Maddalena Quaranta-El Maftouhi",
+    journal: "Elsevier Masson (Livre)",
+    date: "2014",
+    year: 2014,
+    type: "book",
+    imageUrl: "https://centrerabelaislyon.fr/wp-content/uploads/2015/10/Capture-decran-2017-09-20-a-21.17.37.png",
+  },
+  {
+    title: "Clinical Guide to Angio-OCT: Non Invasive, Dyeless OCT Angiography",
+    authors: "Dr Maddalena Quaranta-El Maftouhi",
+    journal: "Jaypee (Book)",
+    date: "2014",
+    year: 2014,
+    type: "book",
+    imageUrl: "https://centrerabelaislyon.fr/wp-content/uploads/2015/10/Capture-decran-2017-09-20-a-21.17.24.png",
+  },
+  {
+    title: "Encyclopédie RÉTINE",
+    authors: "Dr Maddalena Quaranta-El Maftouhi (co-auteur)",
+    journal: "Éditions Lavoisier",
+    date: "2012",
+    year: 2012,
+    type: "book",
+    imageUrl: "https://centrerabelaislyon.fr/wp-content/uploads/2015/10/Capture-decran-2017-09-20-a-21.17.49.png",
+  },
+  {
+    title: "Manuale Pratico Di Angiografia OCT",
+    authors: "Dr Maddalena Quaranta-El Maftouhi",
+    journal: "Fabiano Group (Libro)",
+    date: "2014",
+    year: 2014,
+    type: "book",
+    imageUrl: "https://centrerabelaislyon.fr/wp-content/uploads/2015/10/Capture-decran-2017-09-20-a-21.17.30.png",
+  },
+  {
+    title: "Outer retinal cysts in exudative age-related macular degeneration: a spectral domain OCT study",
+    authors: "Dr Maddalena Quaranta-El Maftouhi, Dr Adil El Maftouhi",
+    journal: "Journal Français d'Ophtalmologie",
+    date: "2010",
+    year: 2010,
+    pdfUrl: "https://centrerabelaislyon.fr/wp-content/uploads/2016/01/Outer-retinal-cysts.pdf",
+  },
+  {
+    title: "Gonioscopy remains a standard technique: role of high-resolution OCT",
+    authors: "Dr Maddalena Quaranta-El Maftouhi",
+    journal: "Journal Français d'Ophtalmologie",
+    date: "2009",
+    year: 2009,
+    pdfUrl: "https://centrerabelaislyon.fr/wp-content/uploads/2016/01/Gonioscopy-remains-a-standard-technique.pdf",
+  },
+  {
+    title: "Application of anterior segment OCT to the study of glaucoma",
+    authors: "Dr Maddalena Quaranta-El Maftouhi",
+    journal: "Journal Français d'Ophtalmologie",
+    date: "2008",
+    year: 2008,
+    pdfUrl: "https://centrerabelaislyon.fr/wp-content/uploads/2016/01/Application-of-anterior-segment-OCT.pdf",
+  },
+  {
+    title: "Optical coherence tomography in tamoxifen retinopathy",
+    authors: "Dr Maddalena Quaranta-El Maftouhi",
+    journal: "Graefe's Archive for Clinical and Experimental Ophthalmology",
+    date: "2006",
+    year: 2006,
+    pdfUrl: "https://centrerabelaislyon.fr/wp-content/uploads/2016/01/OCT-in-tamoxifen-retinopathy.pdf",
+  },
+  {
+    title: "OCT3 exploration of anterior segment",
+    authors: "Dr Maddalena Quaranta-El Maftouhi et al.",
+    journal: "Journal Français d'Ophtalmologie",
+    date: "2004",
+    year: 2004,
+  },
+  {
+    title: "Multiple choroidal neovascularizations at the border of a myopic posterior macular staphyloma",
+    authors: "Dr Maddalena Quaranta-El Maftouhi",
+    journal: "American Journal of Ophthalmology",
+    date: "2000",
+    year: 2000,
+  },
+  {
+    title: "Indocyanine green videoangiography of angioid streaks",
+    authors: "Dr Maddalena Quaranta-El Maftouhi",
+    journal: "British Journal of Ophthalmology",
+    date: "1995",
+    year: 1995,
+  },
+];
 
 export default function PublicationsPage() {
   return (
@@ -35,85 +246,105 @@ export default function PublicationsPage() {
       </section>
 
       {/* Intro Section */}
-      <section className="py-20 px-4 max-w-4xl mx-auto text-center">
-        <p className="text-[#888888] text-[16px] md:text-[18px] font-light leading-[1.8] mb-12">
-          Afin d’apporter la meilleure prise en charge à ses patients, l’équipe médicale du Centre Ophtalmologique Rabelais est impliquée dans une forte activité scientifique, faisant l’objet de nombreuses publications dans des journaux ophtalmologiques nationaux et internationaux, avec également des interventions orales dans divers congrès.
+      <section className="py-16 px-4 max-w-5xl mx-auto text-center">
+        <p className="text-[#888888] text-[16px] md:text-[18px] font-light leading-[1.8] mb-4">
+          Afin d&apos;apporter la meilleure prise en charge à ses patients, l&apos;équipe médicale du Centre Ophtalmologique Rabelais est impliquée dans une forte activité scientifique, faisant l&apos;objet de nombreuses publications dans des journaux ophtalmologiques nationaux et internationaux.
         </p>
+      </section>
 
-        {/* Publications Feed */}
-        <div className="space-y-12 text-left">
-          
-          {/* Pub 1 */}
-          <div className="bg-[#f8f8f8] p-8 shadow-sm flex flex-col md:flex-row gap-8 items-center border-l-4 border-[#003399]">
-            <div className="flex-1">
-              <span className="text-sm font-bold text-[#c2aa84] uppercase tracking-[2px] mb-2 block">Juin 2021</span>
-              <h3 className="text-xl font-bold text-slate-800 mb-3">Cystic maculopathy in the internal nuclear layer in glaucoma patients</h3>
-              <p className="text-[14px] text-[#888888] font-light leading-relaxed mb-4">
-                Journal Français d’ophtalmologie sur le thème du Glaucome. Auteur : Dr Maddalena Quaranta.
-              </p>
-              <a href="https://centrerabelaislyon.fr/wp-content/uploads/2021/06/1-s2.0-S0181551221001789-main.pdf" target="_blank" rel="noopener noreferrer" className="text-[#003399] font-bold text-[12px] uppercase tracking-[1px] hover:underline">
-                [ Voir la publication PDF ]
-              </a>
-            </div>
+      {/* Publications Grid */}
+      <section className="pb-24 px-4 max-w-6xl mx-auto w-full">
+        
+        {/* Books Section */}
+        <div className="mb-16">
+          <h2 className="text-[#a68d71] text-[20px] md:text-[24px] font-[Gotham] font-light tracking-[2px] uppercase mb-10 pb-[15px] text-center relative">
+            Ouvrages & Livres
+            <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[30px] h-[1px] bg-[#a68d71]"></span>
+          </h2>
+          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-6">
+            {publications.filter(p => p.type === 'book').map((pub, i) => (
+              <div key={`book-${i}`} className="group bg-[#f8f8f8] border border-[#e8e8e8] hover:shadow-lg transition-all duration-300 overflow-hidden flex flex-col">
+                {pub.imageUrl && (
+                  <div className="relative w-full aspect-[3/4] overflow-hidden bg-gray-100">
+                    <Image 
+                      src={pub.imageUrl} 
+                      alt={pub.title}
+                      fill
+                      className="object-cover group-hover:scale-105 transition-transform duration-500"
+                      sizes="(max-width: 768px) 50vw, 20vw"
+                    />
+                  </div>
+                )}
+                <div className="p-4 flex-1 flex flex-col">
+                  <span className="text-[11px] font-bold text-[#c2aa84] uppercase tracking-[1px] mb-2">{pub.date}</span>
+                  <h3 className="text-[13px] font-bold text-slate-800 leading-[1.4] mb-2">{pub.title}</h3>
+                  <p className="text-[11px] text-[#888888] font-light mt-auto">{pub.authors}</p>
+                  {pub.journal && <p className="text-[10px] text-[#aaa] italic mt-1">{pub.journal}</p>}
+                </div>
+              </div>
+            ))}
           </div>
-
-          {/* Pub 2 */}
-          <div className="bg-white border border-gray-100 p-8 shadow-sm flex flex-col md:flex-row gap-8 items-center border-l-4 border-[#c2aa84]">
-            <div className="flex-1">
-              <span className="text-sm font-bold text-[#c2aa84] uppercase tracking-[2px] mb-2 block">Août 2020</span>
-              <h3 className="text-xl font-bold text-slate-800 mb-3">The long-term effects of anti-vascular endothelial growth factor therapy on the OCT angiographic appearance of neovascularization in AMD</h3>
-              <p className="text-[14px] text-[#888888] font-light leading-relaxed mb-4">
-                Publication dans le journal International Journal of Retina and Vitreous sur le comportement des néovaisseaux observé en OCT-A durant le traitement par IVT.
-              </p>
-              <a href="https://centrerabelaislyon.fr/wp-content/uploads/2020/08/The-long-term-effects-of-anti-vascular-endothelial-growth-factor-therapy-on-the-optical-coherence-tomography-angiographic-appearance-of-neovascularization-in-age-related-macular-degeneration.pdf" target="_blank" rel="noopener noreferrer" className="text-[#003399] font-bold text-[12px] uppercase tracking-[1px] hover:underline">
-                [ Voir la publication PDF ]
-              </a>
-            </div>
-          </div>
-
-          {/* Pub 3 */}
-          <div className="bg-[#f8f8f8] p-8 shadow-sm flex flex-col md:flex-row gap-8 items-center border-l-4 border-[#003399]">
-            <div className="flex-1">
-              <span className="text-sm font-bold text-[#c2aa84] uppercase tracking-[2px] mb-2 block">Janvier 2020</span>
-              <h3 className="text-xl font-bold text-slate-800 mb-3">Place de l’OCT dans le bilan de chirurgie réfractive</h3>
-              <p className="text-[14px] text-[#888888] font-light leading-relaxed mb-4">
-                Le rapport de la Société Française d’Ophtalmologie a porté sur le thème de l’imagerie par OCT.
-              </p>
-              <a href="https://centrerabelaislyon.fr/wp-content/uploads/2020/01/RO-231-Adil-El-Maftouhi.pdf" target="_blank" rel="noopener noreferrer" className="text-[#003399] font-bold text-[12px] uppercase tracking-[1px] hover:underline">
-                [ Voir la publication PDF ]
-              </a>
-            </div>
-          </div>
-
-          {/* Pub 4 */}
-          <div className="bg-white border border-gray-100 p-8 shadow-sm flex flex-col md:flex-row gap-8 items-center border-l-4 border-[#c2aa84]">
-            <div className="flex-1">
-              <span className="text-sm font-bold text-[#c2aa84] uppercase tracking-[2px] mb-2 block">Mai 2019</span>
-              <h3 className="text-xl font-bold text-slate-800 mb-3">Dégénérescence kystique de la nucléaire interne chez les patients glaucomateux</h3>
-              <p className="text-[14px] text-[#888888] font-light leading-relaxed mb-4">
-                Paru dans le journal Réalités Ophtalmologiques.
-              </p>
-              <a href="https://centrerabelaislyon.fr/wp-content/uploads/2019/05/EL-MAFTOUHI_RG-kystes.pdf" target="_blank" rel="noopener noreferrer" className="text-[#003399] font-bold text-[12px] uppercase tracking-[1px] hover:underline">
-                [ Voir la publication PDF ]
-              </a>
-            </div>
-          </div>
-
-          {/* Pub 5 */}
-          <div className="bg-[#f8f8f8] p-8 shadow-sm flex flex-col md:flex-row gap-8 items-center border-l-4 border-[#003399]">
-            <div className="flex-1">
-              <span className="text-sm font-bold text-[#c2aa84] uppercase tracking-[2px] mb-2 block">Février 2019</span>
-              <h3 className="text-xl font-bold text-slate-800 mb-3">Intérêt de l’OCT dans la quantification de la sécheresse oculaire</h3>
-              <p className="text-[14px] text-[#888888] font-light leading-relaxed mb-4">
-                Publication des cahiers d’ophtalmologie.
-              </p>
-              <a href="https://centrerabelaislyon.fr/wp-content/uploads/2019/02/CDO225_P0_Dossier-Secheresse-A.ElMaftouhi-v2.pdf" target="_blank" rel="noopener noreferrer" className="text-[#003399] font-bold text-[12px] uppercase tracking-[1px] hover:underline">
-                [ Voir la publication PDF ]
-              </a>
-            </div>
-          </div>
-
         </div>
+
+        {/* Articles Section */}
+        <div>
+          <h2 className="text-[#a68d71] text-[20px] md:text-[24px] font-[Gotham] font-light tracking-[2px] uppercase mb-10 pb-[15px] text-center relative">
+            Publications Scientifiques
+            <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[30px] h-[1px] bg-[#a68d71]"></span>
+          </h2>
+          <div className="space-y-6">
+            {publications.filter(p => p.type !== 'book').map((pub, i) => (
+              <div 
+                key={`article-${i}`} 
+                className={`flex flex-col md:flex-row gap-6 p-6 transition-all duration-300 hover:shadow-md ${
+                  i % 2 === 0 ? 'bg-[#f8f8f8] border-l-4 border-[#003399]' : 'bg-white border border-gray-100 border-l-4 border-[#c2aa84]'
+                }`}
+              >
+                {/* Preview Image */}
+                {pub.imageUrl && (
+                  <div className="relative w-full md:w-[180px] h-[140px] md:h-[130px] shrink-0 overflow-hidden bg-gray-100 group">
+                    <Image 
+                      src={pub.imageUrl} 
+                      alt={pub.title}
+                      fill
+                      className="object-cover group-hover:scale-105 transition-transform duration-500"
+                      sizes="180px"
+                    />
+                  </div>
+                )}
+                
+                {/* Text Content */}
+                <div className="flex-1 min-w-0">
+                  <div className="flex items-center gap-3 mb-2 flex-wrap">
+                    <span className="text-[12px] font-bold text-[#c2aa84] uppercase tracking-[2px]">{pub.date}</span>
+                    {pub.journal && (
+                      <span className="text-[11px] text-[#aaa] italic hidden md:inline">— {pub.journal}</span>
+                    )}
+                  </div>
+                  <h3 className="text-[16px] md:text-[18px] font-bold text-slate-800 leading-[1.4] mb-2">{pub.title}</h3>
+                  <p className="text-[13px] text-[#666] font-light mb-2">
+                    <span className="text-[#003399] font-medium">{pub.authors}</span>
+                  </p>
+                  {pub.journal && (
+                    <p className="text-[12px] text-[#aaa] italic md:hidden mb-3">{pub.journal}</p>
+                  )}
+                  {pub.pdfUrl && (
+                    <a 
+                      href={pub.pdfUrl} 
+                      target="_blank" 
+                      rel="noopener noreferrer" 
+                      className="inline-flex items-center gap-2 text-[#003399] font-bold text-[11px] uppercase tracking-[1px] hover:text-[#c2aa84] transition-colors"
+                    >
+                      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+                      Voir la publication PDF
+                    </a>
+                  )}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
       </section>
 
     </main>
