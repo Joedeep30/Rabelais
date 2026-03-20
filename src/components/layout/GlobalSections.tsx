@@ -164,62 +164,12 @@ export default function GlobalSections() {
 
           </section>
 
-          {/* Exact Visual Clone Frame of Form */}
-          <section id="home-page-contact" className="py-24 bg-cover bg-center relative" style={{ backgroundImage: "url('https://centrerabelaislyon.fr/wp-content/themes/Placeholder/images/new-img-background.png')" }}>
-        <div className="absolute inset-0 bg-transparent"></div>
-        <div className="container mx-auto px-4 relative z-10 max-w-3xl">
-          <div className="text-center mb-[60px]">
-            <h2 className="text-black text-[35px] md:text-[45px] font-[Gotham] font-light uppercase tracking-wider">
-              Demande de <strong className="font-bold">Rendez-vous</strong>
-            </h2>
-          </div>
-          
-          <div className="bg-white/10 backdrop-blur-sm p-8 md:p-12 border border-white/20">
-            <form className="space-y-6">
-              <div className="flex gap-4 mb-6">
-                <label className="text-white flex items-center gap-2 font-light cursor-pointer"><input type="radio" name="civilite" className="accent-[#a68d71]" /> Madame</label>
-                <label className="text-white flex items-center gap-2 font-light cursor-pointer"><input type="radio" name="civilite" className="accent-[#a68d71]" /> Monsieur</label>
-              </div>
-              <div className="grid md:grid-cols-2 gap-6">
-                <input type="text" placeholder="Nom *" className="w-full bg-white/90 border-0 p-4 text-gray-800 placeholder-gray-500 rounded-none focus:ring-2 focus:ring-[#003399]" />
-                <input type="text" placeholder="Prénom *" className="w-full bg-white/90 border-0 p-4 text-gray-800 placeholder-gray-500 rounded-none focus:ring-2 focus:ring-[#003399]" />
-              </div>
-              <div className="grid md:grid-cols-2 gap-6">
-                <input type="tel" placeholder="Téléphone *" className="w-full bg-white/90 border-0 p-4 text-gray-800 placeholder-gray-500 rounded-none focus:ring-2 focus:ring-[#003399]" />
-                <input type="email" placeholder="Email *" className="w-full bg-white/90 border-0 p-4 text-gray-800 placeholder-gray-500 rounded-none focus:ring-2 focus:ring-[#003399]" />
-              </div>
-              <select className="w-full bg-white/90 border-0 p-4 text-gray-800 placeholder-gray-500 rounded-none focus:ring-2 focus:ring-[#003399] appearance-none">
-                <option value="">Sélectionnez un motif de consultation *</option>
-                <option value="dmla">Consultation DMLA</option>
-                <option value="photo">Photobiomodulation</option>
-                <option value="oct">Examen OCT</option>
-              </select>
-              
-              <div className="bg-white/90 p-4 flex items-center gap-4">
-                 <label className="bg-gray-200 hover:bg-gray-300 text-gray-800 px-4 py-2 cursor-pointer text-sm font-semibold uppercase tracking-wider transition-colors">
-                    Joindre une Ordonnance
-                    <input type="file" className="hidden" accept=".pdf,.jpg,.png" />
-                 </label>
-                 <span className="text-gray-500 text-sm font-light italic">Max 128MB. (pdf, jpg, png)</span>
-              </div>
-
-              <textarea rows={4} placeholder="Votre message" className="w-full bg-white/90 border-0 p-4 text-gray-800 placeholder-gray-500 rounded-none focus:ring-2 focus:ring-[#003399]"></textarea>
-              
-              <div className="flex items-start gap-3 mt-4">
-                <input type="checkbox" id="rgpd" className="mt-1 accent-[#a68d71]" />
-                <label htmlFor="rgpd" className="text-sm text-white/80 font-light leading-relaxed">
-                  En soumettant ce formulaire, j'accepte que les informations saisies soient exploitées dans le cadre de la demande de rendez-vous et de la relation commerciale qui peut en découler.
-                </label>
-              </div>
-
-              <div className="mt-8 text-center pt-4">
-                <button type="button" className="bg-[#003399] hover:bg-blue-800 text-white font-bold uppercase tracking-widest py-4 px-12 transition-colors w-full md:w-auto">
-                  Envoyer
-                </button>
-              </div>
-            </form>
-          </div>
-        </div>
+          {/* Lyon Panorama Section (matches original - no embedded form) */}
+          <section 
+            id="home-page-contact" 
+            className="w-full h-[400px] md:h-[500px] bg-cover bg-center relative"
+            style={{ backgroundImage: "url('https://centrerabelaislyon.fr/wp-content/themes/Placeholder/images/new-img-background.png')" }}
+          >
           </section>
         </>
       )}
