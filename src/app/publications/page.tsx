@@ -27,7 +27,7 @@ const publications: Publication[] = [
     date: "Juin 2021",
     year: 2021,
     pdfUrl: "https://centrerabelaislyon.fr/wp-content/uploads/2021/06/1-s2.0-S0181551221001789-main.pdf",
-    imageUrl: "https://centrerabelaislyon.fr/wp-content/uploads/2021/06/Capture-decran-2021-06-04-a-20.51.35-1.png",
+    imageUrl: "/images/publications/art-cystic-2021.png",
   },
   {
     title: "The long-term effects of anti-VEGF therapy on the OCT angiographic appearance of neovascularization in AMD",
@@ -36,7 +36,7 @@ const publications: Publication[] = [
     date: "Août 2020",
     year: 2020,
     pdfUrl: "https://centrerabelaislyon.fr/wp-content/uploads/2020/08/The-long-term-effects-of-anti-vascular-endothelial-growth-factor-therapy-on-the-optical-coherence-tomography-angiographic-appearance-of-neovascularization-in-age-related-macular-degeneration.pdf",
-    imageUrl: "https://centrerabelaislyon.fr/wp-content/uploads/2020/08/Capture-decran-2020-08-22-a-12.04.35.png",
+    imageUrl: "/images/publications/art-vegf-2020.png",
   },
   {
     title: "Place de l'OCT dans le bilan de chirurgie réfractive",
@@ -45,7 +45,7 @@ const publications: Publication[] = [
     date: "Janvier 2020",
     year: 2020,
     pdfUrl: "https://centrerabelaislyon.fr/wp-content/uploads/2020/01/RO-231-Adil-El-Maftouhi.pdf",
-    imageUrl: "https://centrerabelaislyon.fr/wp-content/uploads/2020/01/Capture-decran-2020-01-18-a-12.40.06.png",
+    imageUrl: "/images/publications/art-oct-refractif-2020.png",
   },
   {
     title: "Dégénérescence kystique de la couche nucléaire interne chez les patients glaucomateux",
@@ -54,7 +54,7 @@ const publications: Publication[] = [
     date: "Mai 2019",
     year: 2019,
     pdfUrl: "https://centrerabelaislyon.fr/wp-content/uploads/2019/05/EL-MAFTOUHI_RG-kystes.pdf",
-    imageUrl: "https://centrerabelaislyon.fr/wp-content/uploads/2019/05/Capture-decran-2019-05-06-a-14.34.06.png",
+    imageUrl: "/images/publications/art-glaucome-2019.png",
   },
   {
     title: "Intérêt de l'OCT dans la quantification de la sécheresse oculaire",
@@ -63,7 +63,7 @@ const publications: Publication[] = [
     date: "Février 2019",
     year: 2019,
     pdfUrl: "https://centrerabelaislyon.fr/wp-content/uploads/2019/02/CDO225_P0_Dossier-Secheresse-A.ElMaftouhi-v2.pdf",
-    imageUrl: "https://centrerabelaislyon.fr/wp-content/uploads/2019/02/Capture-d'écran-2019-02-17-à-17.15.52.png",
+    imageUrl: "/images/publications/art-secheresse-2019.png",
   },
   {
     title: "Dual Antagonism of PDGF and VEGF in Neovascular Age-Related Macular Degeneration",
@@ -72,7 +72,7 @@ const publications: Publication[] = [
     date: "2017",
     year: 2017,
     pdfUrl: "https://centrerabelaislyon.fr/wp-content/uploads/2017/04/Dual-Antagonism-of-PDGF-and-VEGF-in-Neovascular-Age-Related-Macular-Degeneration.pdf",
-    imageUrl: "https://centrerabelaislyon.fr/wp-content/uploads/2017/04/Capture-decran-2017-04-10-a-16.43.09.png",
+    imageUrl: "/images/publications/art-pdgf-2017.png",
   },
   {
     title: "Angio-OCT In Everyday Ophthalmic Practice",
@@ -81,7 +81,7 @@ const publications: Publication[] = [
     date: "2016",
     year: 2016,
     type: "book",
-    imageUrl: "https://centrerabelaislyon.fr/wp-content/uploads/2016/05/Capture-decran-2017-09-20-a-21.16.47.png",
+    imageUrl: "/images/publications/book-angio-oct.png",
   },
   {
     title: "Comparison between OCT-A and fluorescein angiography in diabetic retinopathy",
@@ -90,7 +90,7 @@ const publications: Publication[] = [
     date: "2016",
     year: 2016,
     pdfUrl: "https://centrerabelaislyon.fr/wp-content/uploads/2016/05/1-s2.0-S0181551215003897-main.pdf",
-    imageUrl: "https://centrerabelaislyon.fr/wp-content/uploads/2016/05/Capture-d'écran-2016-01-03-à-09.51.30-copie.png",
+    imageUrl: "/images/publications/art-diabetic-2016.png",
   },
   {
     title: "Practical Handbook of OCT Angiography",
@@ -99,7 +99,7 @@ const publications: Publication[] = [
     date: "2016",
     year: 2016,
     type: "book",
-    imageUrl: "https://centrerabelaislyon.fr/wp-content/uploads/2016/03/Capture-decran-2017-09-20-a-21.17.02.png",
+    imageUrl: "/images/publications/book-practical-handbook.png",
   },
   {
     title: "Chronic Central Serous Chorioretinopathy Imaged by OCT-Angiography",
@@ -108,7 +108,7 @@ const publications: Publication[] = [
     date: "2015",
     year: 2015,
     pdfUrl: "https://centrerabelaislyon.fr/wp-content/uploads/2015/09/Chronic_Central_Serous_Chorioretinopathy_Ima-2.pdf",
-    imageUrl: "https://centrerabelaislyon.fr/wp-content/uploads/2016/01/Capture-d'écran-2016-01-03-à-09.49.47-copie.png",
+    imageUrl: "/images/publications/art-csc-2015.png",
   },
   {
     title: "L'angio-OCT en pratique",
@@ -117,7 +117,7 @@ const publications: Publication[] = [
     date: "2015",
     year: 2015,
     type: "book",
-    imageUrl: "https://centrerabelaislyon.fr/wp-content/uploads/2015/10/Capture-decran-2017-09-20-a-21.17.13.png",
+    imageUrl: "/images/publications/book-angio-oct-pratique.png",
   },
   {
     title: "Switch from aflibercept to ranibizumab: Up to 2 years follow-up",
@@ -126,7 +126,7 @@ const publications: Publication[] = [
     date: "2014",
     year: 2014,
     pdfUrl: "https://centrerabelaislyon.fr/wp-content/uploads/2016/01/Ophthal-Cases-N-4-2014-Ranib-after-Afliber-Switch.pdf",
-    imageUrl: "https://centrerabelaislyon.fr/wp-content/uploads/2016/01/Capture-d'écran-2016-01-03-à-09.50.57-copie.png",
+    imageUrl: "/images/publications/art-switch-2014.png",
   },
   {
     title: "Imagerie en Ophtalmologie",
@@ -135,7 +135,7 @@ const publications: Publication[] = [
     date: "2014",
     year: 2014,
     type: "book",
-    imageUrl: "https://centrerabelaislyon.fr/wp-content/uploads/2015/10/Capture-decran-2017-09-20-a-21.17.37.png",
+    imageUrl: "/images/publications/book-imagerie.png",
   },
   {
     title: "Clinical Guide to Angio-OCT: Non Invasive, Dyeless OCT Angiography",
@@ -144,7 +144,7 @@ const publications: Publication[] = [
     date: "2014",
     year: 2014,
     type: "book",
-    imageUrl: "https://centrerabelaislyon.fr/wp-content/uploads/2015/10/Capture-decran-2017-09-20-a-21.17.24.png",
+    imageUrl: "/images/publications/book-clinical-guide.png",
   },
   {
     title: "Encyclopédie RÉTINE",
@@ -153,7 +153,7 @@ const publications: Publication[] = [
     date: "2012",
     year: 2012,
     type: "book",
-    imageUrl: "https://centrerabelaislyon.fr/wp-content/uploads/2015/10/Capture-decran-2017-09-20-a-21.17.49.png",
+    imageUrl: "/images/publications/book-retine.png",
   },
   {
     title: "Manuale Pratico Di Angiografia OCT",
@@ -162,7 +162,7 @@ const publications: Publication[] = [
     date: "2014",
     year: 2014,
     type: "book",
-    imageUrl: "https://centrerabelaislyon.fr/wp-content/uploads/2015/10/Capture-decran-2017-09-20-a-21.17.30.png",
+    imageUrl: "/images/publications/book-manuale.png",
   },
   {
     title: "Outer retinal cysts in exudative age-related macular degeneration: a spectral domain OCT study",
