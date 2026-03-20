@@ -251,15 +251,13 @@ export default function PublicationsPage() {
           <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-6">
             {publications.filter(p => p.type === 'book').map((pub, i) => (
               <div key={`book-${i}`} className="group bg-[#f8f8f8] border border-[#e8e8e8] hover:shadow-lg transition-all duration-300 overflow-hidden flex flex-col">
-                {pub.imageUrl && (
-                  <div className="relative w-full aspect-[3/4] overflow-hidden bg-gray-100">
-                    <PublicationImage 
-                      src={pub.imageUrl} 
-                      alt={pub.title}
-                      className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                    />
-                  </div>
-                )}
+                <div className="relative w-full aspect-[3/4] overflow-hidden bg-[#f0f0f0] border-b border-[#e8e8e8] flex items-center justify-center">
+                  <PublicationImage 
+                    src={pub.imageUrl || "/images/publications/placeholder.png"} 
+                    alt={pub.title}
+                    className={`absolute inset-0 w-full h-full transition-transform duration-500 group-hover:scale-105 ${pub.imageUrl ? 'object-cover' : 'object-contain p-10 opacity-30 grayscale'}`}
+                  />
+                </div>
                 <div className="p-4 flex-1 flex flex-col">
                   <span className="text-[11px] font-bold text-[#c2aa84] uppercase tracking-[1px] mb-2">{pub.date}</span>
                   <h3 className="text-[13px] font-bold text-slate-800 leading-[1.4] mb-2">{pub.title}</h3>
@@ -286,15 +284,13 @@ export default function PublicationsPage() {
                 }`}
               >
                 {/* Preview Image */}
-                {pub.imageUrl && (
-                  <div className="relative w-full md:w-[180px] h-[140px] md:h-[130px] shrink-0 overflow-hidden bg-gray-100 group">
-                    <PublicationImage 
-                      src={pub.imageUrl} 
-                      alt={pub.title}
-                      className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                    />
-                  </div>
-                )}
+                <div className="relative w-full md:w-[240px] md:h-auto aspect-[4/3] md:aspect-[3/4] shrink-0 overflow-hidden bg-[#f0f0f0] border border-gray-200 group flex items-center justify-center">
+                  <PublicationImage 
+                    src={pub.imageUrl || "/images/publications/placeholder.png"} 
+                    alt={pub.title}
+                    className={`absolute inset-0 w-full h-full transition-transform duration-500 group-hover:scale-105 ${pub.imageUrl ? 'object-cover object-top' : 'object-contain p-8 opacity-30 grayscale'}`}
+                  />
+                </div>
                 
                 {/* Text Content */}
                 <div className="flex-1 min-w-0">
