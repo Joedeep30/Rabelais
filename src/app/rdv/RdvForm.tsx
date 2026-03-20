@@ -2,6 +2,18 @@
 
 import { useState, type FormEvent } from 'react';
 
+const MOIS_FR = [
+  'Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin',
+  'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre'
+];
+
+function formatDateFR(dateStr: string): string {
+  if (!dateStr) return '';
+  const [year, month, day] = dateStr.split('-');
+  const moisIndex = parseInt(month, 10) - 1;
+  return `${parseInt(day, 10)} ${MOIS_FR[moisIndex]} ${year}`;
+}
+
 export default function RdvForm() {
   const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
   const [errorMsg, setErrorMsg] = useState('');
@@ -16,13 +28,37 @@ export default function RdvForm() {
 
     // Collect checked examens into a string
     const examens = formData.getAll('examens').join(', ');
-    formData.delete('examens');
-    formData.append('Examens demandes', examens || 'Aucun');
+
+    // Format date in French
+    const rawDate = formData.get('date_naissance') as string;
+
+    // Build JSON payload with accented labels (UTF-8 safe via JSON)
+    const payload = {
+      access_key: '27fa05a8-0839-4cc1-a62c-d20c45745a67',
+      subject: 'Nouvelle demande de RDV - Centre Ophtalmologique Rabelais',
+      from_name: 'Centre Ophtalmologique Rabelais',
+      replyto: formData.get('Email') as string,
+      botcheck: '',
+      'Civilité': formData.get('Civilite') as string,
+      'Nom': formData.get('Nom') as string,
+      'Prénom': formData.get('Prenom') as string,
+      'Téléphone': formData.get('Telephone') as string,
+      'Email': formData.get('Email') as string,
+      'Date de naissance': formatDateFR(rawDate),
+      'Adresse': formData.get('Adresse') as string,
+      'Code postal': formData.get('Code postal') as string,
+      'Ville': formData.get('Ville') as string,
+      'Motif de consultation': formData.get('Motif') as string,
+      'Examens demandés': examens || 'Aucun',
+      'Message': formData.get('Message') as string,
+      'Médecin traitant': formData.get('Medecin traitant') as string,
+    };
 
     try {
       const res = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
-        body: formData,
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
       });
       const data = await res.json();
 
@@ -52,13 +88,6 @@ export default function RdvForm() {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-6">
-      {/* Web3Forms config */}
-      <input type="hidden" name="access_key" value="27fa05a8-0839-4cc1-a62c-d20c45745a67" />
-      <input type="hidden" name="subject" value="Nouvelle demande de RDV - Centre Ophtalmologique Rabelais" />
-      <input type="hidden" name="from_name" value="Centre Ophtalmologique Rabelais" />
-      <input type="hidden" name="replyto" value="contact@centrerabelaislyon.fr" />
-      {/* Honeypot anti-spam */}
-      <input type="checkbox" name="botcheck" className="hidden" style={{ display: 'none' }} />
 
       {/* Error message */}
       {status === 'error' && (
