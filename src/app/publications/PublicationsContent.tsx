@@ -77,6 +77,7 @@ const publications: Publication[] = [
     journal: "Rapport SFO",
     date: "2019",
     year: 2019,
+    imageUrl: "/images/publications/book-rapport-sfo-2019.jpg",
     type: "book",
     authorDetails: authorAdil
   },
@@ -107,6 +108,7 @@ const publications: Publication[] = [
     journal: "Ophthalmology",
     date: "2017",
     year: 2017,
+    imageUrl: "/images/publications/art-publications-generic.jpg",
     authorDetails: defaultAuthor
   },
   {
@@ -137,6 +139,7 @@ const publications: Publication[] = [
     date: "Mai 2016",
     year: 2016,
     pdfUrl: "/pdfs/oct-a-vs-fluorescein-2016.pdf",
+    imageUrl: "/images/publications/art-iovs-2014.png",
     authorDetails: defaultAuthor
   },
   {
@@ -156,6 +159,7 @@ const publications: Publication[] = [
     date: "2016",
     year: 2016,
     pdfUrl: "/pdfs/global-trends-retina-2016.pdf",
+    imageUrl: "/images/publications/art-retinal-times-2016.png",
     authorDetails: defaultAuthor
   },
   {
@@ -164,6 +168,7 @@ const publications: Publication[] = [
     journal: "Réalités Ophtalmologiques",
     date: "Janvier 2016",
     year: 2016,
+    imageUrl: "/images/publications/art-tubulations-2016.png",
     authorDetails: defaultAuthor
   },
   // ===== 2015 =====
@@ -194,6 +199,7 @@ const publications: Publication[] = [
     date: "2015",
     year: 2015,
     pdfUrl: "/pdfs/angio-oct-premier-retour-2015.pdf",
+    imageUrl: "/images/publications/art-publications-generic.jpg",
     authorDetails: defaultAuthor
   },
   {
@@ -203,6 +209,7 @@ const publications: Publication[] = [
     date: "2015",
     year: 2015,
     pdfUrl: "/pdfs/angio-oct-aspects-techniques-2015.pdf",
+    imageUrl: "/images/publications/art-angio-oct-aspects-2015.png",
     authorDetails: defaultAuthor
   },
   {
@@ -211,6 +218,7 @@ const publications: Publication[] = [
     journal: "Am J Ophthalmol",
     date: "2015",
     year: 2015,
+    imageUrl: "/images/publications/art-american-journal.jpg",
     authorDetails: defaultAuthor
   },
   {
@@ -220,6 +228,7 @@ const publications: Publication[] = [
     date: "2015",
     year: 2015,
     pdfUrl: "/pdfs/oct-nouveautes-2015.pdf",
+    imageUrl: "/images/publications/art-oct-nouveautes-2015.png",
     authorDetails: defaultAuthor
   },
   // ===== 2014 =====
@@ -239,6 +248,7 @@ const publications: Publication[] = [
     journal: "Elsevier",
     date: "2014",
     year: 2014,
+    imageUrl: "/images/publications/book-imagerie-ophtalmologie-2014.jpg",
     type: "book",
     authorDetails: defaultAuthor
   },
@@ -248,6 +258,7 @@ const publications: Publication[] = [
     journal: "Investigative Ophthalmology & Visual Science",
     date: "2014",
     year: 2014,
+    imageUrl: "/images/publications/art-iovs-2014.png",
     authorDetails: defaultAuthor
   },
   // ===== 2013 =====
@@ -257,6 +268,7 @@ const publications: Publication[] = [
     journal: "Clinical En Face OCT Atlas - Jaypee",
     date: "2013",
     year: 2013,
+    imageUrl: "/images/publications/book-clinical-en-face-oct-2013.png",
     type: "book",
     authorDetails: defaultAuthor
   },
@@ -266,6 +278,7 @@ const publications: Publication[] = [
     journal: "J Fr Ophtalmol",
     date: "2013",
     year: 2013,
+    imageUrl: "/images/publications/art-journal-fr-ophtal.jpg",
     authorDetails: defaultAuthor
   },
   // ===== 2012 =====
@@ -275,6 +288,7 @@ const publications: Publication[] = [
     journal: "Ed LAVOISIER",
     date: "2012",
     year: 2012,
+    imageUrl: "/images/publications/book-encyclopedie-retine-2012.jpg",
     type: "book",
     authorDetails: defaultAuthor
   },
@@ -285,6 +299,7 @@ const publications: Publication[] = [
     journal: "J Fr Ophtalmol",
     date: "2010",
     year: 2010,
+    imageUrl: "/images/publications/art-journal-fr-ophtal.jpg",
     authorDetails: defaultAuthor
   },
   // ===== 2009 =====
@@ -294,6 +309,7 @@ const publications: Publication[] = [
     journal: "Édition L / Groupe CIEL",
     date: "2009",
     year: 2009,
+    imageUrl: "/images/publications/book-nouvelle-imagerie-2009.jpg",
     type: "book",
     authorDetails: defaultAuthor
   },
@@ -304,6 +320,7 @@ const publications: Publication[] = [
     date: "2009",
     year: 2009,
     pdfUrl: "/pdfs/gonioscopy-oct-2009.pdf",
+    imageUrl: "/images/publications/art-journal-fr-ophtal.jpg",
     authorDetails: defaultAuthor
   },
   // ===== 2008 =====
@@ -314,6 +331,7 @@ const publications: Publication[] = [
     date: "2008",
     year: 2008,
     pdfUrl: "/pdfs/anterior-segment-oct-2008.pdf",
+    imageUrl: "/images/publications/art-journal-fr-ophtal.jpg",
     authorDetails: defaultAuthor
   },
   // ===== 2007 =====
@@ -323,6 +341,7 @@ const publications: Publication[] = [
     journal: "J Fr Ophtalmol",
     date: "2007",
     year: 2007,
+    imageUrl: "/images/publications/art-journal-fr-ophtal.jpg",
     authorDetails: defaultAuthor
   },
   {
@@ -331,6 +350,7 @@ const publications: Publication[] = [
     journal: "J Fr Ophtalmol",
     date: "2007",
     year: 2007,
+    imageUrl: "/images/publications/art-journal-fr-ophtal.jpg",
     authorDetails: defaultAuthor
   },
   {
@@ -339,6 +359,7 @@ const publications: Publication[] = [
     journal: "Elsevier / Masson - Rapport SFO",
     date: "2007",
     year: 2007,
+    imageUrl: "/images/publications/default-publication.png",
     type: "book",
     authorDetails: defaultAuthor
   },
@@ -348,6 +369,7 @@ const publications: Publication[] = [
     journal: "J Fr Ophtalmol",
     date: "2007",
     year: 2007,
+    imageUrl: "/images/publications/art-journal-fr-ophtal.jpg",
     authorDetails: defaultAuthor
   },
   // ===== 2006 =====
@@ -358,6 +380,7 @@ const publications: Publication[] = [
     date: "2006",
     year: 2006,
     pdfUrl: "/pdfs/oct-tamoxifen-retinopathy-2006.pdf",
+    imageUrl: "/images/publications/art-publications-generic.jpg",
     authorDetails: defaultAuthor
   },
   {
@@ -366,6 +389,7 @@ const publications: Publication[] = [
     journal: "Invest Ophthalmol Vis Sci",
     date: "2006",
     year: 2006,
+    imageUrl: "/images/publications/art-iovs-2014.png",
     authorDetails: defaultAuthor
   },
   {
@@ -374,6 +398,7 @@ const publications: Publication[] = [
     journal: "Eur J Ophthalmol",
     date: "2006",
     year: 2006,
+    imageUrl: "/images/publications/default-publication.png",
     authorDetails: defaultAuthor
   },
   // ===== 2004 =====
@@ -383,6 +408,7 @@ const publications: Publication[] = [
     journal: "J Fr Ophtalmol",
     date: "2004",
     year: 2004,
+    imageUrl: "/images/publications/art-journal-fr-ophtal.jpg",
     authorDetails: defaultAuthor
   },
   {
@@ -391,6 +417,7 @@ const publications: Publication[] = [
     journal: "J Fr Ophtalmol",
     date: "2004",
     year: 2004,
+    imageUrl: "/images/publications/art-journal-fr-ophtal.jpg",
     authorDetails: defaultAuthor
   },
   // ===== 2002 =====
@@ -400,6 +427,7 @@ const publications: Publication[] = [
     journal: "Am J Ophthalmol",
     date: "2002",
     year: 2002,
+    imageUrl: "/images/publications/art-american-journal.jpg",
     authorDetails: defaultAuthor
   },
   // ===== 2000 =====
@@ -409,6 +437,7 @@ const publications: Publication[] = [
     journal: "Graefes Arch Clin Exp Ophthalmol",
     date: "2000",
     year: 2000,
+    imageUrl: "/images/publications/default-publication.png",
     authorDetails: defaultAuthor
   },
   // ===== 1998 =====
@@ -418,6 +447,7 @@ const publications: Publication[] = [
     journal: "J Fr Ophtalmol",
     date: "1998",
     year: 1998,
+    imageUrl: "/images/publications/art-journal-fr-ophtal.jpg",
     authorDetails: defaultAuthor
   },
   // ===== 1997 =====
@@ -427,6 +457,7 @@ const publications: Publication[] = [
     journal: "Am J Ophthalmol",
     date: "1997",
     year: 1997,
+    imageUrl: "/images/publications/art-american-journal.jpg",
     authorDetails: defaultAuthor
   },
   // ===== 1996 =====
@@ -436,6 +467,7 @@ const publications: Publication[] = [
     journal: "Am J Ophthalmol",
     date: "1996",
     year: 1996,
+    imageUrl: "/images/publications/art-american-journal.jpg",
     authorDetails: defaultAuthor
   },
   // ===== 1995 =====
@@ -445,6 +477,7 @@ const publications: Publication[] = [
     journal: "British Journal of Ophthalmology",
     date: "1995",
     year: 1995,
+    imageUrl: "/images/publications/default-publication.png",
     authorDetails: defaultAuthor
   }
 ];

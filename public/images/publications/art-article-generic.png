@@ -1,0 +1,1053 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+
+<head>
+	<script type="text/javascript" id="rs-js-common"> rs = {"wordpress":{"version":"6.0.11","home_url":"https:\/\/centrerabelaislyon.fr\/","admin_url":"https:\/\/centrerabelaislyon.fr\/wp-admin\/","admin_ajax_url":"https:\/\/centrerabelaislyon.fr\/wp-admin\/admin-ajax.php","template_url":"https:\/\/centrerabelaislyon.fr\/wp-content\/themes\/Placeholder","is_admin":false,"is_home":true},"php":{"version":"7.3.33","session_id":"710c4c53696c5dee1572b76ba2233c06"},"controls":{"meta_prefix":"rs-"},"lib":{"url":"https:\/\/centrerabelaislyon.fr\/wp-content\/themes\/Placeholder\/rslib","path":"\/home\/centrerahu\/www\/wp-content\/themes\/Placeholder\/rslib","version":"2.1.7"}}</script>
+<meta name='robots' content='max-image-preview:large' />
+<link rel='dns-prefetch' href='//platform-api.sharethis.com' />
+<link rel='dns-prefetch' href='//maps.googleapis.com' />
+<link href='https://fonts.gstatic.com' crossorigin rel='preconnect' />
+<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 0.07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	<link rel='stylesheet' id='wp-block-library-css'  href='https://centrerabelaislyon.fr/wp-includes/css/dist/block-library/style.min.css?ver=6.0.11' type='text/css' media='all' />
+<style id='global-styles-inline-css' type='text/css'>
+body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--duotone--dark-grayscale: url('#wp-duotone-dark-grayscale');--wp--preset--duotone--grayscale: url('#wp-duotone-grayscale');--wp--preset--duotone--purple-yellow: url('#wp-duotone-purple-yellow');--wp--preset--duotone--blue-red: url('#wp-duotone-blue-red');--wp--preset--duotone--midnight: url('#wp-duotone-midnight');--wp--preset--duotone--magenta-yellow: url('#wp-duotone-magenta-yellow');--wp--preset--duotone--purple-green: url('#wp-duotone-purple-green');--wp--preset--duotone--blue-orange: url('#wp-duotone-blue-orange');--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+</style>
+<link rel='stylesheet' id='cptch_stylesheet-css'  href='https://centrerabelaislyon.fr/wp-content/plugins/captcha/css/front_end_style.css?ver=4.4.5' type='text/css' media='all' />
+<link rel='stylesheet' id='dashicons-css'  href='https://centrerabelaislyon.fr/wp-includes/css/dashicons.min.css?ver=6.0.11' type='text/css' media='all' />
+<link rel='stylesheet' id='cptch_desktop_style-css'  href='https://centrerabelaislyon.fr/wp-content/plugins/captcha/css/desktop_style.css?ver=4.4.5' type='text/css' media='all' />
+<link rel='stylesheet' id='contact-form-7-css'  href='https://centrerabelaislyon.fr/wp-content/plugins/contact-form-7/includes/css/styles.css?ver=5.5.6.1' type='text/css' media='all' />
+<link rel='stylesheet' id='cssmenumaker-base-styles-css'  href='https://centrerabelaislyon.fr/wp-content/plugins/cssmenumaker_pro/css/menu_styles.css?ver=6.0.11' type='text/css' media='all' />
+<link rel='stylesheet' id='foobox-free-min-css'  href='https://centrerabelaislyon.fr/wp-content/plugins/foobox-image-lightbox/free/css/foobox.free.min.css?ver=2.7.17' type='text/css' media='all' />
+<link rel='stylesheet' id='rebake_app-frontend-css'  href='https://centrerabelaislyon.fr/wp-content/plugins/rebake_wp/assets/css/frontend.css?ver=1.0.1' type='text/css' media='all' />
+<link rel='stylesheet' id='wp-pagenavi-css'  href='https://centrerabelaislyon.fr/wp-content/plugins/wp-pagenavi/pagenavi-css.css?ver=2.70' type='text/css' media='all' />
+<link rel='stylesheet' id='rs-page-style-css'  href='https://centrerabelaislyon.fr/wp-content/themes/Placeholder/rslib/minify/load.php?load=styles&#038;k=12faf03ec3d00784f7456beceb8238e7&#038;ver=6.0.11' type='text/css' media='all' />
+<link rel='stylesheet' id='fancybox-css'  href='https://centrerabelaislyon.fr/wp-content/plugins/easy-fancybox/css/jquery.fancybox.min.css?ver=1.3.24' type='text/css' media='screen' />
+<link rel='stylesheet' id='ubermenu-css'  href='https://centrerabelaislyon.fr/wp-content/plugins/ubermenu/pro/assets/css/ubermenu.min.css?ver=3.2.1.1' type='text/css' media='all' />
+<link rel='stylesheet' id='ubermenu-black-white-2-css'  href='https://centrerabelaislyon.fr/wp-content/plugins/ubermenu/assets/css/skins/blackwhite2.css?ver=6.0.11' type='text/css' media='all' />
+<link rel='stylesheet' id='ubermenu-font-awesome-css'  href='https://centrerabelaislyon.fr/wp-content/plugins/ubermenu/assets/css/fontawesome/css/font-awesome.min.css?ver=4.3' type='text/css' media='all' />
+<link rel='stylesheet' id='enlighterjs-css'  href='https://centrerabelaislyon.fr/wp-content/plugins/enlighter/cache/enlighterjs.min.css?ver=pAy0uJB2rEfqvNN' type='text/css' media='all' />
+<script type='text/javascript' src='https://centrerabelaislyon.fr/wp-includes/js/jquery/jquery.min.js?ver=3.6.0' id='jquery-core-js'></script>
+<script type='text/javascript' src='https://centrerabelaislyon.fr/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.3.2' id='jquery-migrate-js'></script>
+<script type='text/javascript' src='https://centrerabelaislyon.fr/wp-content/plugins/rebake_wp/assets/js/frontend.min.js?ver=1.0.1' id='rebake_app-frontend-js'></script>
+<script type='text/javascript' src='https://centrerabelaislyon.fr/wp-content/themes/Placeholder/rslib/scripts/modernizr.min.js?ver=6.0.11' id='modernizr-js'></script>
+<script type='text/javascript' src='https://centrerabelaislyon.fr/wp-content/themes/Placeholder/rslib/scripts/rs.common.min.js?ver=6.0.11' id='rs-common-js'></script>
+<script type='text/javascript' src='//platform-api.sharethis.com/js/sharethis.js#product=ga&#038;property=5954fa2d2fe7af0011f7bd77' id='googleanalytics-platform-sharethis-js'></script>
+<script type='text/javascript' id='foobox-free-min-js-before'>
+/* Run FooBox FREE (v2.7.17) */
+var FOOBOX = window.FOOBOX = {
+	ready: true,
+	disableOthers: false,
+	o: {wordpress: { enabled: true }, countMessage:'image %index of %total', excludes:'.fbx-link,.nofoobox,.nolightbox,a[href*="pinterest.com/pin/create/button/"]', affiliate : { enabled: false }},
+	selectors: [
+		".gallery", ".wp-block-gallery", ".wp-caption", ".wp-block-image", "a:has(img[class*=wp-image-])", ".post a:has(img[class*=wp-image-])", ".foobox"
+	],
+	pre: function( $ ){
+		// Custom JavaScript (Pre)
+		
+	},
+	post: function( $ ){
+		// Custom JavaScript (Post)
+		
+		// Custom Captions Code
+		
+	},
+	custom: function( $ ){
+		// Custom Extra JS
+		
+	}
+};
+</script>
+<script type='text/javascript' src='https://centrerabelaislyon.fr/wp-content/plugins/foobox-image-lightbox/free/js/foobox.free.min.js?ver=2.7.17' id='foobox-free-min-js'></script>
+<link rel="https://api.w.org/" href="https://centrerabelaislyon.fr/wp-json/" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://centrerabelaislyon.fr/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://centrerabelaislyon.fr/wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 6.0.11" />
+
+
+<script type="text/javascript">
+  // Function for set the cookie for days
+  function tekGdprSetCookie(cname, cvalue, exdays) { //create js cookie
+    var d = new Date();
+    d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+    var expires = "expires=" + d.toUTCString();
+    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+  }
+  function sendTheDatatandc()
+  {
+	var formId = document.getElementById('TandC_Data');
+	if(document.querySelector('#t-and-c--checkbox:checked')!==null) {
+    	var set = 2;
+    	var postData = $('#TandC_Data').serialize()+'&gdpraccepttandc=submit';
+    	var xhttp = new XMLHttpRequest();
+    	xhttp.onreadystatechange = function() {
+    	  if (this.readyState == 4 && this.status == 200) {
+    	    set = this.responseText;
+    	  }
+    	};
+    	xhttp.open("POST", "https://centrerabelaislyon.fr/wp-content/plugins/GRPDFixFrenchv3/update.php", true);
+    	xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    	xhttp.send(postData);
+		tekGdprSetCookie('WP-GDPR-Compliance-tandc','1.0',3650);
+
+		window.location='https://centrerabelaislyon.fr';	}
+	else {
+		alert("Please check the checkbox");
+	}
+  }
+  // Hit the file update.php to work it without refresh with XMLHttp
+  function gdrpSetCookie(name, cookieName) { //ajax and js cookie function call
+    var set = 2;
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+        set = this.responseText;
+      }
+    };
+
+    xhttp.open("POST", "https://centrerabelaislyon.fr/wp-content/plugins/GRPDFixFrenchv3/update.php", true);
+    xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xhttp.send(name);
+  }
+
+  // Function to check the cookie exist or not
+  function getGdprCookieCookie(name) {
+    var value = "; " + document.cookie;
+    var parts = value.split("; " + name + "=");
+    if (parts.length == 2) {
+      return parts.pop().split(";").shift();
+    } else {
+      return null;
+    }
+  }
+ // get cookie value
+  function getCookie(cname) {
+  let name = cname + "=";
+  let decodedCookie = decodeURIComponent(document.cookie);
+  let ca = decodedCookie.split(';');
+  for(let i = 0; i <ca.length; i++) {
+    let c = ca[i];
+    while (c.charAt(0) == ' ') {
+      c = c.substring(1);
+    }
+    if (c.indexOf(name) == 0) {
+      return c.substring(name.length, c.length);
+    }
+  }
+  return "";
+}
+
+</script>
+
+	<script type="text/javascript">
+  // Function for set the cookie for days
+  function tekGdprSetCookie(cname, cvalue, exdays) { //create js cookie
+    var d = new Date();
+    d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+    var expires = "expires=" + d.toUTCString();
+    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+  }
+  function sendTheDatapp()
+  {
+	var formId = document.getElementById('privacyPolicyData');
+	if(document.querySelector('#provicy-policy--checkbox:checked')!==null) {
+		var set = 2;
+		var postData = $('#privacyPolicyData').serialize()+'&gdpracceptpp=submit';
+		var xhttp = new XMLHttpRequest();
+		xhttp.onreadystatechange = function() {
+			if (this.readyState == 4 && this.status == 200) {
+				set = this.responseText;
+			}
+    	};
+    	xhttp.open("POST", "https://centrerabelaislyon.fr/wp-content/plugins/GRPDFixFrenchv3/update.php", true);
+    	xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    	xhttp.send(postData);
+		tekGdprSetCookie('WP-GDPR-Compliance-pp','1.0',3650);
+
+		window.location='https://centrerabelaislyon.fr';	}
+	else {
+		alert("Please check the checkbox");
+	}
+  }
+  // Hit the file update.php to work it without refresh with XMLHttp
+  function gdrpSetCookie(name, cookieName) { //ajax and js cookie function call
+    var set = 2;
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+        set = this.responseText;
+      }
+    };
+    // var postdata = 
+    xhttp.open("POST", "https://centrerabelaislyon.fr/wp-content/plugins/GRPDFixFrenchv3/update.php", true);
+    xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xhttp.send(name);
+  }
+
+  // Function to check the cookie exist or not
+  function getGdprCookieCookie(name) {
+    var value = "; " + document.cookie;
+    var parts = value.split("; " + name + "=");
+    if (parts.length == 2) {
+      return parts.pop().split(";").shift();
+    } else {
+      return null;
+    }
+  }
+ // get cookie value
+  function getCookie(cname) {
+  let name = cname + "=";
+  let decodedCookie = decodeURIComponent(document.cookie);
+  let ca = decodedCookie.split(';');
+  for(let i = 0; i <ca.length; i++) {
+    let c = ca[i];
+    while (c.charAt(0) == ' ') {
+      c = c.substring(1);
+    }
+    if (c.indexOf(name) == 0) {
+      return c.substring(name.length, c.length);
+    }
+  }
+  return "";
+}
+
+</script>
+<style>
+/* Customize the label (the containerr) */
+.containerr {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+
+  /* Hide the browser's default checkbox */
+  .containerr input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+  }
+
+  /* Create a custom checkbox */
+  .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: #eee;
+  }
+
+  /* On mouse-over, add a grey background color */
+  .containerr:hover input~.checkmark {
+    background-color: #ccc;
+  }
+
+  /* When the checkbox is checked, add a blue background */
+  .containerr input:checked~.checkmark {
+    background-color: #2196F3;
+  }
+
+  /* Create the checkmark/indicator (hidden when not checked) */
+  .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+
+  /* Show the checkmark when checked */
+  .containerr input:checked~.checkmark:after {
+    display: block;
+  }
+
+  /* Style the checkmark/indicator */
+  .containerr .checkmark:after {
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+  /*Row arrangement for status */
+  .checkbx {
+    width: 5%;
+    padding-left: 0;
+  }
+
+  .yesbadge {
+    padding: 10px;
+    border: 0px;
+    background-color: #38B677;
+    margin: 5px;
+    margin-top: 1px;
+    border-radius: 2px;
+  }
+
+  .yesicons {
+    font-size: 18px;
+    border-radius: 100%;
+    color: #fff;
+  }
+
+  .noicons {
+    font-size: 18px;
+    border-radius: 100%;
+    color: #fff;
+  }
+
+  .nobadge {
+    padding: 10px;
+    border: 0px;
+    background-color: #FE5253;
+    margin: 5px;
+    margin-top: 1px;
+    border-radius: 2px;
+  }
+
+  .statusnobadge {
+    padding: 10px;
+    border: 0px;
+    background-color: #e4dddd;
+    margin: 5px;
+    margin-top: 1px;
+    border-radius: 2px;
+  }
+
+  .statusyesbadge {
+    padding: 10px;
+    border: 0px;
+    background-color: #e4dddd;
+    margin: 5px;
+    margin-top: 1px;
+    border-radius: 2px;
+  }
+
+  .textblock {
+    padding: 10px;
+    padding-right: 0px;
+    background-color: #FBFBFB;
+    border: 1px solid #E6E6E6;
+  }
+
+  .statusnoicons {
+    font-size: 18px;
+    border-radius: 100%;
+    color: red;
+  }
+
+  .statusyesicons {
+    font-size: 18px;
+    border-radius: 100%;
+    color: #38B677;
+  }
+
+  .statusnotextblock {
+    padding: 10px;
+    padding-right: 0px;
+    color: red;
+    font-weight: 700;
+  }
+
+  .statusyestextblock {
+    padding: 10px;
+    padding-right: 0px;
+    color: #38B677;
+    font-weight: 700;
+  }
+/* CSS */
+.button-13 {
+  background-color: #fff;
+  border: 1px solid #d5d9d9;
+  border-radius: 8px;
+  box-shadow: rgba(213, 217, 217, .5) 0 2px 5px 0;
+  box-sizing: border-box;
+  color: #0f1111;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Amazon Ember",sans-serif;
+  font-size: 13px;
+  line-height: 29px;
+  padding: 0 10px 0 11px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: middle;
+  width: 100px;
+}
+
+.button-13:hover {
+  background-color: #f7fafa;
+}
+
+.button-13:focus {
+  border-color: #008296;
+  box-shadow: rgba(213, 217, 217, .5) 0 2px 5px 0;
+  outline: 0;
+}
+</style>
+<script type="text/javascript">
+	function gdprdrAction() {
+		var cnfmsgdrect = "Êtes-vous sûr de vouloir supprimer ce";
+		var conf = confirm(cnfmsgdrect);
+		if (conf == true) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+	$(document).ready(function() {
+		$('[data-toggle="tooltip"]').tooltip();
+	});
+</script>
+<!-- HFCM by 99 Robots - Snippet # 2: Side Button -->
+<div class="side-btn">
+	<a href="https://centrerabelaislyon.fr/rdv/"><i class="fa fa-calendar" aria-hidden="true"></i> Demande de rendez-vous</a>
+</div>
+<!-- /end HFCM by 99 Robots -->
+<style id="ubermenu-custom-generated-css">
+/* Status: Loaded from Transient */
+
+</style>
+	<style id="zeno-font-resizer" type="text/css">
+		p.zeno_font_resizer .screen-reader-text {
+			border: 0;
+			clip: rect(1px, 1px, 1px, 1px);
+			clip-path: inset(50%);
+			height: 1px;
+			margin: -1px;
+			overflow: hidden;
+			padding: 0;
+			position: absolute;
+			width: 1px;
+			word-wrap: normal !important;
+		}
+	</style>
+	<meta name="generator" content="Powered by Visual Composer - drag and drop page builder for WordPress."/>
+<!--[if lte IE 9]><link rel="stylesheet" type="text/css" href="https://centrerabelaislyon.fr/wp-content/plugins/js_composer-PURCHASHED/assets/css/vc_lte_ie9.min.css" media="screen"><![endif]-->		<style type="text/css" id="wp-custom-css">
+			/* Image with 'data' attribute is hidden */
+img[data-lazy-src] {
+/* we set the opacity to 0 */
+   opacity: 0;
+}
+/* Image without 'data' attribute is (or becomes) visible */
+img.lazyloaded {
+/* prepare the future animation */
+   -webkit-transition: opacity .5s linear 0.2s;
+       -moz-transition: opacity .5s linear 0.2s;
+                 transition: opacity .5s linear 0.2s;
+/* we set the opacity to 1 to do the magic */
+   opacity: 1;
+}
+.height-one.left-img-blog>span {
+    visibility: hidden;
+}
+
+
+
+.side-btn {
+    position: fixed;
+    right: 0px;
+    width: 94px;
+    text-align: center;
+    top: 50%;
+    z-index: 99999;
+}
+
+i.fa.fa-calendar {
+    margin-bottom: 12px;
+	font-size: 21px;
+}
+
+.side-btn a {
+    background: #2b3787;
+    color: #fff;
+    display: flex;
+   padding: 21px 5px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+	font-weight: 600;
+}
+
+.body-contact img {position: absolute;
+    left: 33%;}
+
+.rr select {color: red;}
+
+.rr input::placeholder {color: red;}
+
+.home-page-contact .body-contact .right {display: none}
+
+
+
+.home-page-contact .body-contact {height: 499px;
+    background-size: contain;
+    width: 100%;
+    background-position: center;}
+
+.home-page-contact .body-contact {
+	max-width:100% !important;
+    margin: 0 auto !important;
+    background-repeat: no-repeat !important;
+    margin-top: 10% !important;
+    position: absolute !important;
+}
+
+.box-footer.social-ft a:nth-child(2),.left-social-one ul li:first-child {display: block !important}
+
+.box-footer.social-ft>a,.left-social-one ul li{display: none !important}
+
+
+
+.home-page-contact {
+    clear: both !important;
+    background: url(images/new-img-background.png) no-repeat;
+    background-size: cover !important;
+    padding-top: 840px !important;
+    padding-bottom: 2px !important;
+}
+
+
+ .blog .top-footer {
+    padding: 840px 20px 20px !important;
+}
+.home-page-contact .top-contact {
+    margin-bottom: 0px !important;
+    padding-top: 0% !important;
+    position: absolute !important;
+    text-align: center !important;
+    object-position: center !important;
+    margin-left: 35%;
+	color:black !important;
+}
+.home-page-contact .top-contact .title-contact {
+    color: #000 !important;
+}
+.left-social-one {
+    height: auto !important;
+}
+
+.height-one.left-page {
+    height: 322px !important;
+}
+
+
+.home-page .home-page-footer .container {
+	    background: none !important;
+}
+
+.button-tt {position: fixed;
+    right: 0;
+    top: 30%;
+    z-index: 99999999;
+    text-align: center;
+}
+
+.grecaptcha-badge {display: none !important
+}
+
+.page-id-1983 .bg-repon {background-image: url(https://centrerabelaislyon.fr/wp-content/themes/Placeholder/images/banner1.jpg) !important;}
+
+.gform_button {background: #273585; border: 1px solid #273585; padding: 11px 20px;color: #fff}
+
+.button-tt i {font-size: 25px;margin-bottom: 15px;}
+
+.my-tt {display: block;
+    color: #fff;
+    font-size: 13px;
+    font-weight: 600;
+    background-color: #273585;
+    padding: 15px;
+    border: 1px solid #fff;
+    border-right: 0;
+    -webkit-transition: all .4s ease;
+    -moz-transition: all .4s ease;
+    -o-transition: all .4s ease;
+    transition: all .4s ease;
+    line-height: 20px;}
+
+
+
+
+
+@media screen and (max-width: 767px){
+	
+	.body-contact img {position: absolute;
+    left: 0%;}
+.home-page-contact {
+    padding-bottom: 30px !important;
+    background-size: contain !important;
+}
+	}
+@media screen and (max-width: 767px){
+.home-page-contact {
+    padding-top: 80% !important;
+    padding-bottom: 20% !important;
+}
+	}
+
+@media screen and (max-width: 767px){
+.home-page-contact .top-contact {
+    text-align: center !important;
+    object-position: center !important;
+    color: black !important;
+	position: static !important;
+	margin-left: 0% !important;
+    margin-top: -18% !important;
+    margin-bottom: -2% !important;
+}
+	}
+@media screen and (max-width: 767px){
+	
+	.button-tt {top: auto; bottom: 10%;}
+	
+.home-page-contact .body-contact {
+    max-width: 1280px !important;
+    position: absolute !important;
+    margin: 0 auto !important;
+    margin-right: 2% !important;
+}
+	}
+@media screen and (max-width: 767px){
+.box-image {
+	height: 350px !important;
+}
+	}
+.wrapper .home-2 img {
+    height: 100%;
+    width: 100%;
+    background-image: url(https://centrerabelaislyon.fr/wp-content/uploads/2017/10/homepage-img-331X312.png);
+    background-repeat: no-repeat;
+}
+.thumbnail>span {
+	visibility:hidden;
+}
+
+/*.left-content-page {
+    width: 35% !important;
+} */		</style>
+		<noscript><style type="text/css"> .wpb_animate_when_almost_visible { opacity: 1; }</style></noscript>	<title>Centre Ophtalmologique Rabelais | Ophtalmologiste Lyon Spécialisé dans le Traitement de la Rétine	</title>
+	<!--[if gte IE 9]
+	<style type="text/css">
+	.gradient {
+	filter: none;
+	}
+	</style>
+	<![endif]-->
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	 <link rel="icon" href="https://centrerabelaislyon.fr/wp-content/uploads/2015/09/ai.png">
+	<!-- SCRIPT -->
+	<script type="text/javascript" src="https://centrerabelaislyon.fr/wp-content/themes/Placeholder/js/jquery-1.11.2.js"></script>
+	<script type="text/javascript" src="https://centrerabelaislyon.fr/wp-content/themes/Placeholder/js/jquery.slimmenu.js"></script>
+	<script type="text/javascript" src="https://centrerabelaislyon.fr/wp-content/themes/Placeholder/js/custom-jquery.js"></script>
+	
+	<script src="https://centrerabelaislyon.fr/wp-content/themes/Placeholder/js/bxslider/jquery.bxslider.min.js"></script>
+	<link href="https://centrerabelaislyon.fr/wp-content/themes/Placeholder/js/bxslider/jquery.bxslider.css" rel="stylesheet" />
+	
+	<link rel="stylesheet" type="text/css" href="https://centrerabelaislyon.fr/wp-content/themes/Placeholder/css/rs.common.css" />
+	<!-- <link rel="stylesheet" type="text/css" href="fonts/font.css" /> -->
+	<link rel="stylesheet" type="text/css" href="https://centrerabelaislyon.fr/wp-content/themes/Placeholder/css/slimmenu.css" />
+	<link rel="stylesheet" href="https://centrerabelaislyon.fr/wp-content/themes/Placeholder/fonts/font-awesome-4.4.0/css/font-awesome.min.css">
+
+	<link rel="stylesheet" type="text/css" href="https://centrerabelaislyon.fr/wp-content/themes/Placeholder/fonts/font.css" />
+	<link rel="stylesheet" type="text/css" href="https://centrerabelaislyon.fr/wp-content/themes/Placeholder/style.css" />
+	<link rel="stylesheet" type="text/css" href="https://centrerabelaislyon.fr/wp-content/themes/Placeholder/css/responsive.css" />
+
+<style>
+
+.zeno_font_resizer_container {
+  position: absolute;
+}
+
+</style>
+
+</head>
+<body data-rsssl=1 class="blog wpb-js-composer js-comp-ver-5.2.1 vc_responsive">
+	<div class="wrapper">
+		<div class="home-page">
+			<div class="home-page-top">
+				<div class="container" style="position: relative;">
+					<div class="box-header">
+						<div class="menu-top">
+							<ul id="menu-menu-home-f" class="menu"><li id="menu-item-451" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-451"><a target="_blank" rel="noopener" href="https://centrerabelaislyon.fr/#home-page-contact" aria-current="page">où sommes nous ?</a></li>
+</ul>						</div>
+						<div class="menu-right">
+							<div class="toogle-menu toggle-menu-top">
+								MENU								<a href="#">
+									<span></span>
+									<span></span>
+									<span></span>
+								</a>
+							</div>
+							<div id="cssmenu-224" class="cssmenumaker-menu "><ul id="menu-main-menu" class=""><li id="menu-item-431" class="menu-item menu-item-type-post_type menu-item-object-page current_page_parent"><a href="https://centrerabelaislyon.fr/home/"><span>Home</span></a></li>
+<li id="menu-item-523" class="menu-item menu-item-type-custom menu-item-object-custom"><a href="https://centrerabelaislyon.fr/offre-de-soins/"><span>Offre de Soins</span></a></li>
+<li id="menu-item-433" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://centrerabelaislyon.fr/equipe-medicale/"><span>Équipe Médicale</span></a></li>
+<li id="menu-item-435" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://centrerabelaislyon.fr/plateau-technique/"><span>Plateau Technique</span></a></li>
+<li id="menu-item-1670" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://centrerabelaislyon.fr/pathologies-retiniennes/"><span>Pathologies Oculaires</span></a></li>
+<li id="menu-item-437" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://centrerabelaislyon.fr/etudes-cliniques/"><span>Etudes Cliniques</span></a></li>
+<li id="menu-item-438" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://centrerabelaislyon.fr/publications/"><span>Publications</span></a></li>
+<li id="menu-item-439" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://centrerabelaislyon.fr/dois-je-consulter/"><span>Dois-je consulter ?</span></a></li>
+<li id="menu-item-450" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://centrerabelaislyon.fr/mentions-legales/"><span>Mentions légales &#038; confidentialité</span></a></li>
+<li id="menu-item-442" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://centrerabelaislyon.fr/liens-utiles/"><span>Liens Utiles</span></a></li>
+<li id="menu-item-445" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://centrerabelaislyon.fr/plan-du-site/"><span>Plan du site</span></a></li>
+<li id="menu-item-1389" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://centrerabelaislyon.fr/directions/"><span>Comment se rendre au Centre ?</span></a></li>
+</ul></div>						</div>
+						<div class="lang">
+
+
+
+	<div class="zeno_font_resizer_container">
+		<p class="zeno_font_resizer" style="text-align: center; font-weight: bold;">
+			<span>
+				<a href="#" class="zeno_font_resizer_minus" title="Decrease font size" style="font-size: 0.7em;">A<span class="screen-reader-text"> Decrease font size.</span></a>
+				<a href="#" class="zeno_font_resizer_reset" title="Reset font size">A<span class="screen-reader-text"> Reset font size.</span></a>
+				<a href="#" class="zeno_font_resizer_add" title="Increase font size" style="font-size: 1.3em;">A<span class="screen-reader-text"> Increase font size.</span></a>
+			</span>
+			<input type="hidden" id="zeno_font_resizer_value" value="ownelement" />
+			<input type="hidden" id="zeno_font_resizer_ownid" value="" />
+			<input type="hidden" id="zeno_font_resizer_ownelement" value="p, span, h1,h2,h3,h4,h5,h6" />
+			<input type="hidden" id="zeno_font_resizer_resizeMax" value="24" />
+			<input type="hidden" id="zeno_font_resizer_resizeMin" value="10" />
+			<input type="hidden" id="zeno_font_resizer_resizeSteps" value="1.6" />
+			<input type="hidden" id="zeno_font_resizer_cookieTime" value="0" />
+		</p>
+	</div>
+								<ul>
+								<li class="lang-item lang-item-10 lang-item-fr current-lang"><a href="https://centrerabelaislyon.fr" hreflang="fr">fr</a></li>
+								<li class="lang-item lang-item-3 lang-item-en">en</li>
+								<li class="lang-item lang-item-6 lang-item-it">it</li>
+							</ul>
+						</div>
+						<div class="clear"></div>
+					</div>
+				</div>
+				<div class="slider">
+					<ul class="bxslider">
+												<li>
+							<div class="container" style="background-image: url(https://centrerabelaislyon.fr/wp-content/uploads/2015/09/slider1.jpg)">
+								<div class="inner-container-headers">
+									<div class="box-slider">
+										<a href="https://centrerabelaislyon.fr"><img src="https://centrerabelaislyon.fr/wp-content/uploads/2015/09/ai1.png" alt="" ></a>
+										<div class="box-content-slider">
+											<p class="title-slider">Bienvenue au <strong> Centre Rabelais<br>de Lyon</strong></p>
+											<div class="border-slider"><i></i><div class="line"></div></div>
+											<p>Le Centre Ophtalmologique Rabelais est un cabinet privé destiné au traitement médical des maladies de la rétine</p>
+											<a href="#home-page-content" class="link-contact">Offre de soins</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</li>
+												<li>
+							<div class="container" style="background-image: url(https://centrerabelaislyon.fr/wp-content/uploads/2015/09/slider1.jpg)">
+								<div class="inner-container-headers">
+									<div class="box-slider">
+										<a href="https://centrerabelaislyon.fr"><img src="https://centrerabelaislyon.fr/wp-content/uploads/2015/09/ai1.png" alt="" ></a>
+										<div class="box-content-slider">
+											<p class="title-slider">Bienvenue au <strong> Centre Rabelais<br>de Lyon</strong></p>
+											<div class="border-slider"><i></i><div class="line"></div></div>
+											<p>Le Centre Ophtalmologique Rabelais est un cabinet privé destiné au traitement médical des maladies de la rétine</p>
+											<a href="#home-page-content" class="link-contact">Offre de soins</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</li>
+											</ul>
+				</div><!-- end slider -->
+				<div class="next-content"><a href="#home-page-content"><i class="fa fa-angle-down"></i></a></div>
+		</div>
+
+
+<div class="home-page-content" id="home-page-content">
+	<div>
+		<div class="next-content-top"><a class="left" href="https://centrerabelaislyon.fr/offre-de-soins/"></a><a class="right" href="https://centrerabelaislyon.fr/offre-de-soins/"></a></div>
+		<ul class="home-2">
+			<li class="box-content one-li">
+				<div class="box-li">
+					<div class="post-img height-post-h">
+						<div style="background-image:url(https://centrerabelaislyon.fr/wp-content/uploads/2015/09/post1.png)" class="box-image"></div>
+						<div class="box-contact-social">
+							<div class="left-social-one" style="height: auto;">
+								<div class="height-one left-page top-social">
+									<div class="inner-left">
+										<h2>suivez-nous</h2>
+										<ul>
+											<li><a href="https://www.linkedin.com/in/maddalena-quaranta-60458658" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+											<li><a href="" target="_blank"><i class="fa fa-google-plus"></i></a></li>
+											<li><a href="" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+										</ul>
+									</div>
+								</div>
+								<div class="height-one left-page">
+									<div class="inner-left">
+										<img style="bottom: auto; height: auto; left: auto; margin: auto; position: inherit; right: auto; width: auto;" src="https://centrerabelaislyon.fr/wp-content/themes/Placeholder/images/Publication icon.jpg" alt="" />
+										<span><img style="bottom: auto; height: auto; left: auto; margin: auto; position: inherit; right: auto; width: auto;" src="https://centrerabelaislyon.fr/wp-content/themes/Placeholder/images/line2.png" /></span>
+										<h3><a style="color: #ffffff;
+    display: block;
+    text-align: center;
+    width: auto;" href="https://centrerabelaislyon.fr/publications/">Publications</a></h3>
+									</div> 
+								</div> 
+							</div>
+							<div class="left-social-one right-social-one" style="height: auto;">
+								<div class="inner-list-text">
+									<h2>associations</h2>
+																		<p>Membre du comité scientifique de l'association DMLA</p>
+																		<p>Membre de l'American Academy of Ophthalmology (AAO)</p>
+																		<p>Membre de l'Association for Research in Vision and Ophthalmology  (ARVO)</p>
+																		<p>Membre de la Société Française d'Ophtalmologie</p>
+																		<p>Expert Consultant pour différents Laboratoires pharmacologiques</p>
+																		<p>Membre de l'Association de Dégénérescence Maculaire Liée à l'Âge (DMLA)</p>
+																	</div>
+							</div>
+							<div class="clear"></div>
+						</div>
+					</div>
+					<div class="post-content height-post-h">
+						<div class="box-content">
+							<h2>Offre de Soins</h2>
+							<p>Le Centre Ophtalmologique Rabelais est une structure de soins spécialisée dans l&#8217;imagerie ophtalmologique et dans la prise en charge des maladies rétiniennes &nbsp; &nbsp;</p>
+							<a class="bottom-read-more" href="https://centrerabelaislyon.fr/offre-de-soins/">plus d’infos</a>
+						</div>
+					</div>
+				</div>
+			</li>
+			<li class="box-content one-li">
+				<div class="box-li">
+					<div class="post-img height-post-h">
+						<div style="background-image:url(https://centrerabelaislyon.fr/wp-content/uploads/2015/09/post2.png)" class="box-image"></div>
+						<div class="post-content height-one  height-post-h">
+							<div class="box-content page-one">
+								<h2>Plateau Technique</h2>
+								<p>Le Centre Rabelais met un point d’honneur à toujours équiper son plateau technique avec le matériel d’imagerie de toute dernière génération &nbsp;</p>
+								<a class="bottom-read-more" href="https://centrerabelaislyon.fr/plateau-technique/">plus d’infos</a>
+							</div>
+						</div>
+					</div>
+					<div class="bottom-blog">
+            <img src="https://centrerabelaislyon.fr/wp-content/uploads/2023/11/Image-37.png" alt="" />
+						<div class="height-one left-img-blog" style="display: none">
+						
+							
+			
+						</div>
+						<div class="height-one  left-img-blog right-text-blog" style="display: none">
+							<div class="inner-page-blog" style="display: none">
+								<a href="" class="title"></a>
+								<h1 style="display: block;font-size: 1.17em;-webkit-margin-before: 1em;-webkit-margin-after: 1em;-webkit-margin-start: 0px;-webkit-margin-end: 0px;font-weight: bold;color: #ad9c80;"></h1>
+								<p></p>
+																<a href="" class="bottom-read-more fancybox-iframe">plus d’infos</a>
+							</div>
+						</div>
+						<div class="clear"></div>
+					</div>
+				</div>
+			</li>
+			<li class="box-content">
+				<div class="box-li">
+					<div class="post-img height-post-h">
+						<img src="https://centrerabelaislyon.fr/wp-content/uploads/2015/09/post4.png" alt="" />
+					</div>
+					<div class="post-content height-post-h">
+						<div class="box-content">
+							<h2>Équipe Médicale</h2>
+							<p>Notre équipe médicale est constituée d&#8217;ophtalmologistes et d&#8217;orthoptistes spécialisés dans ce domaine ainsi que d&#8217;une infirmière diplômée d’État. Tous les médecins du centre sont conventionnés et exercent en secteur 2 (conventionnés à honoraires libres).</p>
+<div id="spoon-plugin-kncgbdglledmjmpnikebkagnchfdehbm-2" style="display: none;"></div>
+							<a class="bottom-read-more" href="https://centrerabelaislyon.fr/equipe-medicale/">plus d’infos</a>
+							<p style="margin-top: 15px;">
+							<p>WE SPEAK ENGLISH / SI PARLA ITALIANO</p>
+							
+							</p>
+						</div>
+					</div>
+				</div>
+			</li>
+		</ul>
+		<div class="next-content-bottom"><a class="left" href="https://centrerabelaislyon.fr/equipe-medicale/"></a><a class="right" href="https://centrerabelaislyon.fr/equipe-medicale/"></a></div>
+	</div>
+</div>
+<div class="home-page-contact" id="home-page-contact">
+	<div class="container">
+  
+		<div class="top-contact">
+			<p class="title-contact"><strong>Centre Ophtalmologique RABELAIS</strong><br>2, Rue Antoine de Saint-Exupéry<br>69002 Lyon</p>	
+       
+		</div>
+		<div class="body-contact" >
+       <img src="https://centrerabelaislyon.fr/wp-content/uploads/2015/09/map.png"/>
+			<div class="right">
+				<div class="box-contact-form">
+				   <div role="form" class="wpcf7" id="wpcf7-f4-o1" lang="en-US" dir="ltr">
+<div class="screen-reader-response"><p role="status" aria-live="polite" aria-atomic="true"></p> <ul></ul></div>
+<form action="/#wpcf7-f4-o1" method="post" class="wpcf7-form init wpcf7-acceptance-as-validation" novalidate="novalidate" data-status="init">
+<div style="display: none;">
+<input type="hidden" name="_wpcf7" value="4" />
+<input type="hidden" name="_wpcf7_version" value="5.5.6.1" />
+<input type="hidden" name="_wpcf7_locale" value="en_US" />
+<input type="hidden" name="_wpcf7_unit_tag" value="wpcf7-f4-o1" />
+<input type="hidden" name="_wpcf7_container_post" value="0" />
+<input type="hidden" name="_wpcf7_posted_data_hash" value="" />
+</div>
+<h3>formulaire de contact..</h3>
+<p><span class="wpcf7-form-control-wrap prnom"><input type="text" name="prnom" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false" placeholder="prénom" /></span><span class="wpcf7-form-control-wrap nomdefamille"><input type="text" name="nomdefamille" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false" placeholder="nom de famille" /></span><span class="wpcf7-form-control-wrap e-mail"><input type="email" name="e-mail" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-required wpcf7-validates-as-email" aria-required="true" aria-invalid="false" placeholder="e-mail" /></span><span class="wpcf7-form-control-wrap tlphone"><input type="tel" name="tlphone" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-tel wpcf7-validates-as-required wpcf7-validates-as-tel" aria-required="true" aria-invalid="false" placeholder="téléphone" /></span><span class="wpcf7-form-control-wrap message"><textarea name="message" cols="40" rows="10" class="wpcf7-form-control wpcf7-textarea" aria-invalid="false" placeholder="message"></textarea></span><span class="wpcf7-form-control-wrap your-consent"><span class="wpcf7-form-control wpcf7-acceptance"><span class="wpcf7-list-item"><label><input type="checkbox" name="your-consent" value="1" aria-invalid="false" /><span class="wpcf7-list-item-label">j'accepte que les informations saisies soient conservées sur ce site. Voir<a href="mentions-legales" target="_blank"> nos Mentions légales & vie privée</a></span></label></span></span></span><br />
+<p class="cptch_block"><span class="cptch_title">Simple Captcha<span class="required"> *</span></span><span
+				class="cptch_wrap cptch_ajax_wrap"
+				data-cptch-form="general"
+				data-cptch-input="cptch_number"
+				data-cptch-class="cptch_shortcode">
+					<noscript>Afin de pouvoir ignorer le CAPTCHA, merci d'autoriser le JavaScript</noscript>
+				</span></p><br />
+<input type="submit" value="envoyer" class="wpcf7-form-control has-spinner wpcf7-submit" /></p>
+<div class="wpcf7-response-output" aria-hidden="true"></div></form></div>				</div>
+			</div>
+			<div class="left">
+				<img src="https://centrerabelaislyon.fr/wp-content/uploads/2015/09/map.png" alt="" />
+			</div>
+			<div class="clear"></div>
+		</div>
+	</div>
+</div>
+			<div class="top-footer" id="top-footer">
+				<div class="container">
+					<div class="box-footer widget_nav_menu"><h2>Menu</h2><div class="menu-footer-menu-f-container"><ul id="menu-footer-menu-f" class="menu"><li id="menu-item-515" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-515"><a href="https://centrerabelaislyon.fr/offre-de-soins/">Offre de Soins</a></li>
+<li id="menu-item-290" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-290"><a href="https://centrerabelaislyon.fr/equipe-medicale/">Équipe Médicale</a></li>
+<li id="menu-item-286" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-286"><a href="https://centrerabelaislyon.fr/plateau-technique/">Plateau Technique</a></li>
+<li id="menu-item-289" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-289"><a href="https://centrerabelaislyon.fr/etudes-cliniques/">Etudes Cliniques</a></li>
+<li id="menu-item-288" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-288"><a href="https://centrerabelaislyon.fr/publications/">Publications</a></li>
+<li id="menu-item-292" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-292"><a href="https://centrerabelaislyon.fr/dois-je-consulter/">Dois-je consulter ?</a></li>
+</ul></div></div><div class="box-footer widget_nav_menu"><h2>Supplémentaire</h2><div class="menu-footer-menu-2-f-container"><ul id="menu-footer-menu-2-f" class="menu"><li id="menu-item-1392" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1392"><a href="https://centrerabelaislyon.fr/directions/">Comment se rendre au centre?</a></li>
+<li id="menu-item-521" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-521"><a href="https://centrerabelaislyon.fr/#home-page-contact" aria-current="page">demande de rendez-vous</a></li>
+<li id="menu-item-296" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-296"><a href="https://centrerabelaislyon.fr/mentions-legales/">Mentions légales &#038; confidentialité</a></li>
+<li id="menu-item-1512" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1512"><a href="https://centrerabelaislyon.fr/requete-rgpd/">Requête RGPD</a></li>
+<li id="menu-item-294" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-294"><a href="https://centrerabelaislyon.fr/liens-utiles/">Liens Utiles</a></li>
+<li id="menu-item-295" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-295"><a href="https://centrerabelaislyon.fr/plan-du-site/">Plan du site</a></li>
+</ul></div></div>					<div class="box-footer social-ft">
+						<h2>suivez-nous</h2>
+						<a href="https://www.linkedin.com/in/maddalena-quaranta-60458658" target="_blank"><i class="fa fa-linkedin"></i></a>
+						<a href="" target="_blank"><i class="fa fa-google-plus"></i></a>
+						<a style="margin-right: 0;" href="" target="_blank"><i class="fa fa-linkedin"></i></a>
+					</div>
+					<div class="clear"></div>
+				</div>
+			</div>
+			<div class="home-page-footer">
+				<div class="container">
+					<div class="left-bottom-footer">
+						<p>SELARL de Médecins inscrite Sous le N ° 69/12919 au tableau de l'ODM du Rhône Ce site respecte la charte du CNOM applicable aux sites professionnels de médecins.</p>
+					</div>
+					<div class="right-bottom-footer">
+						<p>Les directeurs de la publication sont Mr Adil EL Maftouhi et le Dr Maddalena QUARANTA-EL MAFTOUHI</p>
+					</div>
+					<div class="clear"></div>
+				</div>
+			</div>
+		</div><!-- home-page -->
+	</div>
+
+	<!-- HFCM by 99 Robots - Snippet # 1: tools -->
+<script>
+	document.addEventListener("DOMContentLoaded", function(){
+		let divc = document.querySelectorAll('div[style]');
+		for (let i = 0, len = divc.length; i < len; i++) {
+			let actdisplay = window.getComputedStyle(divc[i], null).display;
+			let actclear = window.getComputedStyle(divc[i], null).clear;
+
+			if(actdisplay == 'block' && actclear == 'both') {
+				divc[i].remove();
+	}
+		}
+			});
+</script>
+<!-- /end HFCM by 99 Robots -->
+<link rel='stylesheet' id='dynamic-css-224-css'  href='https://centrerabelaislyon.fr/wp-admin/admin-ajax.php?action=pro_dynamic_css&#038;selected=224&#038;ver=6.0.11' type='text/css' media='all' />
+<script type='text/javascript' src='https://centrerabelaislyon.fr/wp-includes/js/dist/vendor/regenerator-runtime.min.js?ver=0.13.9' id='regenerator-runtime-js'></script>
+<script type='text/javascript' src='https://centrerabelaislyon.fr/wp-includes/js/dist/vendor/wp-polyfill.min.js?ver=3.15.0' id='wp-polyfill-js'></script>
+<script type='text/javascript' id='contact-form-7-js-extra'>
+/* <![CDATA[ */
+var wpcf7 = {"api":{"root":"https:\/\/centrerabelaislyon.fr\/wp-json\/","namespace":"contact-form-7\/v1"},"cached":"1"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://centrerabelaislyon.fr/wp-content/plugins/contact-form-7/includes/js/index.js?ver=5.5.6.1' id='contact-form-7-js'></script>
+<script type='text/javascript' src='https://centrerabelaislyon.fr/wp-content/plugins/zeno-font-resizer/js/js.cookie.js?ver=1.7.9' id='zeno_font_resizer_cookie-js'></script>
+<script type='text/javascript' src='https://centrerabelaislyon.fr/wp-content/plugins/zeno-font-resizer/js/jquery.fontsize.js?ver=1.7.9' id='zeno_font_resizer_fontsize-js'></script>
+<script type='text/javascript' id='rocket-browser-checker-js-after'>
+"use strict";var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||!1,descriptor.configurable=!0,"value"in descriptor&&(descriptor.writable=!0),Object.defineProperty(target,descriptor.key,descriptor)}}return function(Constructor,protoProps,staticProps){return protoProps&&defineProperties(Constructor.prototype,protoProps),staticProps&&defineProperties(Constructor,staticProps),Constructor}}();function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor))throw new TypeError("Cannot call a class as a function")}var RocketBrowserCompatibilityChecker=function(){function RocketBrowserCompatibilityChecker(options){_classCallCheck(this,RocketBrowserCompatibilityChecker),this.passiveSupported=!1,this._checkPassiveOption(this),this.options=!!this.passiveSupported&&options}return _createClass(RocketBrowserCompatibilityChecker,[{key:"_checkPassiveOption",value:function(self){try{var options={get passive(){return!(self.passiveSupported=!0)}};window.addEventListener("test",null,options),window.removeEventListener("test",null,options)}catch(err){self.passiveSupported=!1}}},{key:"initRequestIdleCallback",value:function(){!1 in window&&(window.requestIdleCallback=function(cb){var start=Date.now();return setTimeout(function(){cb({didTimeout:!1,timeRemaining:function(){return Math.max(0,50-(Date.now()-start))}})},1)}),!1 in window&&(window.cancelIdleCallback=function(id){return clearTimeout(id)})}},{key:"isDataSaverModeOn",value:function(){return"connection"in navigator&&!0===navigator.connection.saveData}},{key:"supportsLinkPrefetch",value:function(){var elem=document.createElement("link");return elem.relList&&elem.relList.supports&&elem.relList.supports("prefetch")&&window.IntersectionObserver&&"isIntersecting"in IntersectionObserverEntry.prototype}},{key:"isSlowConnection",value:function(){return"connection"in navigator&&"effectiveType"in navigator.connection&&("2g"===navigator.connection.effectiveType||"slow-2g"===navigator.connection.effectiveType)}}]),RocketBrowserCompatibilityChecker}();
+</script>
+<script type='text/javascript' id='rocket-preload-links-js-extra'>
+/* <![CDATA[ */
+var RocketPreloadLinksConfig = {"excludeUris":"\/(?:.+\/)?feed(?:\/(?:.+\/?)?)?$|\/(?:.+\/)?embed\/|\/(index\\.php\/)?wp\\-json(\/.*|$)|\/wp-admin\/|\/logout\/|\/wp-login.php|\/refer\/|\/go\/|\/recommend\/|\/recommends\/","usesTrailingSlash":"1","imageExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|pdf|doc|docx|xls|xlsx|php","fileExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|pdf|doc|docx|xls|xlsx|php|html|htm","siteUrl":"https:\/\/centrerabelaislyon.fr","onHoverDelay":"100","rateThrottle":"3"};
+/* ]]> */
+</script>
+<script type='text/javascript' id='rocket-preload-links-js-after'>
+(function() {
+"use strict";var r="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},e=function(){function i(e,t){for(var n=0;n<t.length;n++){var i=t[n];i.enumerable=i.enumerable||!1,i.configurable=!0,"value"in i&&(i.writable=!0),Object.defineProperty(e,i.key,i)}}return function(e,t,n){return t&&i(e.prototype,t),n&&i(e,n),e}}();function i(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}var t=function(){function n(e,t){i(this,n),this.browser=e,this.config=t,this.options=this.browser.options,this.prefetched=new Set,this.eventTime=null,this.threshold=1111,this.numOnHover=0}return e(n,[{key:"init",value:function(){!this.browser.supportsLinkPrefetch()||this.browser.isDataSaverModeOn()||this.browser.isSlowConnection()||(this.regex={excludeUris:RegExp(this.config.excludeUris,"i"),images:RegExp(".("+this.config.imageExt+")$","i"),fileExt:RegExp(".("+this.config.fileExt+")$","i")},this._initListeners(this))}},{key:"_initListeners",value:function(e){-1<this.config.onHoverDelay&&document.addEventListener("mouseover",e.listener.bind(e),e.listenerOptions),document.addEventListener("mousedown",e.listener.bind(e),e.listenerOptions),document.addEventListener("touchstart",e.listener.bind(e),e.listenerOptions)}},{key:"listener",value:function(e){var t=e.target.closest("a"),n=this._prepareUrl(t);if(null!==n)switch(e.type){case"mousedown":case"touchstart":this._addPrefetchLink(n);break;case"mouseover":this._earlyPrefetch(t,n,"mouseout")}}},{key:"_earlyPrefetch",value:function(t,e,n){var i=this,r=setTimeout(function(){if(r=null,0===i.numOnHover)setTimeout(function(){return i.numOnHover=0},1e3);else if(i.numOnHover>i.config.rateThrottle)return;i.numOnHover++,i._addPrefetchLink(e)},this.config.onHoverDelay);t.addEventListener(n,function e(){t.removeEventListener(n,e,{passive:!0}),null!==r&&(clearTimeout(r),r=null)},{passive:!0})}},{key:"_addPrefetchLink",value:function(i){return this.prefetched.add(i.href),new Promise(function(e,t){var n=document.createElement("link");n.rel="prefetch",n.href=i.href,n.onload=e,n.onerror=t,document.head.appendChild(n)}).catch(function(){})}},{key:"_prepareUrl",value:function(e){if(null===e||"object"!==(void 0===e?"undefined":r(e))||!1 in e||-1===["http:","https:"].indexOf(e.protocol))return null;var t=e.href.substring(0,this.config.siteUrl.length),n=this._getPathname(e.href,t),i={original:e.href,protocol:e.protocol,origin:t,pathname:n,href:t+n};return this._isLinkOk(i)?i:null}},{key:"_getPathname",value:function(e,t){var n=t?e.substring(this.config.siteUrl.length):e;return n.startsWith("/")||(n="/"+n),this._shouldAddTrailingSlash(n)?n+"/":n}},{key:"_shouldAddTrailingSlash",value:function(e){return this.config.usesTrailingSlash&&!e.endsWith("/")&&!this.regex.fileExt.test(e)}},{key:"_isLinkOk",value:function(e){return null!==e&&"object"===(void 0===e?"undefined":r(e))&&(!this.prefetched.has(e.href)&&e.origin===this.config.siteUrl&&-1===e.href.indexOf("?")&&-1===e.href.indexOf("#")&&!this.regex.excludeUris.test(e.href)&&!this.regex.images.test(e.href))}}],[{key:"run",value:function(){"undefined"!=typeof RocketPreloadLinksConfig&&new n(new RocketBrowserCompatibilityChecker({capture:!0,passive:!0}),RocketPreloadLinksConfig).init()}}]),n}();t.run();
+}());
+</script>
+<script type='text/javascript' src='https://centrerabelaislyon.fr/wp-content/plugins/easy-fancybox/js/jquery.fancybox.min.js?ver=1.3.24' id='jquery-fancybox-js'></script>
+<script type='text/javascript' id='jquery-fancybox-js-after'>
+var fb_timeout, fb_opts={'overlayShow':true,'hideOnOverlayClick':true,'showCloseButton':true,'margin':20,'centerOnScroll':true,'enableEscapeButton':true,'autoScale':true };
+if(typeof easy_fancybox_handler==='undefined'){
+var easy_fancybox_handler=function(){
+jQuery('.nofancybox,a.wp-block-file__button,a.pin-it-button,a[href*="pinterest.com/pin/create"],a[href*="facebook.com/share"],a[href*="twitter.com/share"]').addClass('nolightbox');
+/* PDF */
+jQuery('a[href*=".pdf"],area[href*=".pdf"],a[href*=".PDF"],area[href*=".PDF"]').not('.nolightbox,li.nolightbox>a').addClass('fancybox-pdf');
+jQuery('a.fancybox-pdf,area.fancybox-pdf,li.fancybox-pdf a').each(function(){jQuery(this).fancybox(jQuery.extend({},fb_opts,{'type':'iframe','width':'90%','height':'90%','padding':10,'titleShow':false,'titlePosition':'float','titleFromAlt':true,'autoDimensions':false,'scrolling':'no'}))});};
+jQuery('a.fancybox-close').on('click',function(e){e.preventDefault();jQuery.fancybox.close()});
+};
+var easy_fancybox_auto=function(){setTimeout(function(){jQuery('#fancybox-auto').trigger('click')},1000);};
+jQuery(easy_fancybox_handler);jQuery(document).on('post-load',easy_fancybox_handler);
+jQuery(easy_fancybox_auto);
+</script>
+<script type='text/javascript' src='https://centrerabelaislyon.fr/wp-content/plugins/easy-fancybox/js/jquery.mousewheel.min.js?ver=3.1.13' id='jquery-mousewheel-js'></script>
+<script type='text/javascript' src='//maps.googleapis.com/maps/api/js?sensor=false&#038;ver=6.0.11' id='google-maps-js'></script>
+<script type='text/javascript' id='ubermenu-js-extra'>
+/* <![CDATA[ */
+var ubermenu_data = {"remove_conflicts":"on","reposition_on_load":"off","intent_delay":"300","intent_interval":"100","intent_threshold":"7","scrollto_offset":"50","scrollto_duration":"1000","responsive_breakpoint":"959","accessible":"on","retractor_display_strategy":"responsive","touch_off_close":"on","v":"3.2.1.1","configurations":["main"],"ajax_url":"https:\/\/centrerabelaislyon.fr\/wp-admin\/admin-ajax.php"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://centrerabelaislyon.fr/wp-content/plugins/ubermenu/assets/js/ubermenu.min.js?ver=3.2.1.1' id='ubermenu-js'></script>
+<script type='text/javascript' src='https://centrerabelaislyon.fr/wp-content/plugins/enlighter/cache/enlighterjs.min.js?ver=pAy0uJB2rEfqvNN' id='enlighterjs-js'></script>
+<script type='text/javascript' id='enlighterjs-js-after'>
+!function(e,n){if("undefined"!=typeof EnlighterJS){var o={"selectors":{"block":"pre.EnlighterJSRAW","inline":"code.EnlighterJSRAW"},"options":{"indent":4,"ampersandCleanup":true,"linehover":true,"rawcodeDbclick":false,"textOverflow":"break","linenumbers":true,"theme":"enlighter","language":"enlighter","retainCssClasses":false,"collapse":false,"toolbarOuter":"","toolbarTop":"{BTN_RAW}{BTN_COPY}{BTN_WINDOW}{BTN_WEBSITE}","toolbarBottom":""}};(e.EnlighterJSINIT=function(){EnlighterJS.init(o.selectors.block,o.selectors.inline,o.options)})()}else{(n&&(n.error||n.log)||function(){})("Error: EnlighterJS resources not loaded yet!")}}(window,console);
+</script>
+<script type='text/javascript' id='cptch_front_end_script-js-extra'>
+/* <![CDATA[ */
+var cptch_vars = {"nonce":"bdd5d397c2","ajaxurl":"https:\/\/centrerabelaislyon.fr\/wp-admin\/admin-ajax.php","enlarge":""};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://centrerabelaislyon.fr/wp-content/plugins/captcha/js/front_end_script.js?ver=6.0.11' id='cptch_front_end_script-js'></script>
+<script type='text/javascript'>
+(function() {
+				var expirationDate = new Date();
+				expirationDate.setTime( expirationDate.getTime() + 31536000 * 1000 );
+				document.cookie = "pll_language=fr; expires=" + expirationDate.toUTCString() + "; path=/; secure; SameSite=Lax";
+			}());
+</script>
+</body>
+</html>
