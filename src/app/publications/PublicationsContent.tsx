@@ -1,8 +1,6 @@
 'use client';
-
 import { useState } from 'react';
 import PublicationImage from '@/components/PublicationImage';
-
 type AuthorDetails = {
   name: string;
   role: string;
@@ -10,7 +8,6 @@ type AuthorDetails = {
   imageUrl?: string;
   linkedinUrl?: string;
 };
-
 type Publication = {
   title: string;
   authors: string;
@@ -22,21 +19,18 @@ type Publication = {
   type?: 'article' | 'book';
   authorDetails?: AuthorDetails;
 };
-
 const defaultAuthor: AuthorDetails = {
   name: "DR MADDALENA QUARANTA",
   role: "Ophtalmologiste Rétine médicale",
   description: "Fondatrice et Gérante du Centre Rabelais",
-  imageUrl: "/images/publications/art-cystic-2021.jpg",
+  imageUrl: "/images/team/maddalena-quaranta-thumb.jpg",
   linkedinUrl: "https://fr.linkedin.com/pub/maddalena-quaranta-el-maftouhi/58/586/604"
 };
-
 const authorAdil: AuthorDetails = {
   name: "DR ADIL EL MAFTOUHI",
   role: "Consultant Scientifique / Expert en Imagerie",
   description: "Centre Ophtalmologique Rabelais"
 };
-
 const publications: Publication[] = [
   // ===== 2021 =====
   {
@@ -46,7 +40,7 @@ const publications: Publication[] = [
     date: "Juin 2021",
     year: 2021,
     pdfUrl: "/pdfs/cystic-maculopathy-glaucoma-2021.pdf",
-    imageUrl: "/images/publications/art-cystic-2021.jpg",
+    imageUrl: "/images/team/maddalena-quaranta-thumb.jpg",
     authorDetails: defaultAuthor
   },
   // ===== 2020 =====
@@ -88,7 +82,7 @@ const publications: Publication[] = [
     date: "Mai 2019",
     year: 2019,
     pdfUrl: "/pdfs/degenerescence-kystique-glaucome-2019.pdf",
-    imageUrl: "/images/publications/art-glaucome-2019.jpg",
+    imageUrl: "/images/publications/thumb_degenerescence-kystique-glaucome-2019.png",
     authorDetails: defaultAuthor
   },
   {
@@ -128,7 +122,7 @@ const publications: Publication[] = [
     date: "Février 2017",
     year: 2017,
     pdfUrl: "/pdfs/optimiser-oct-angiographie-2017.pdf",
-    imageUrl: "/images/publications/Angio-OCT-sm.jpg",
+    imageUrl: "/images/publications/art-oct-angiographie-2017.jpg",
     authorDetails: authorAdil
   },
   // ===== 2016 =====
@@ -159,7 +153,7 @@ const publications: Publication[] = [
     date: "2016",
     year: 2016,
     pdfUrl: "/pdfs/global-trends-retina-2016.pdf",
-    imageUrl: "/images/publications/art-retinal-times-2016.png",
+    imageUrl: "/images/publications/thumb_global-trends-retina-2016.png",
     authorDetails: defaultAuthor
   },
   {
@@ -199,7 +193,7 @@ const publications: Publication[] = [
     date: "2015",
     year: 2015,
     pdfUrl: "/pdfs/angio-oct-premier-retour-2015.pdf",
-    imageUrl: "/images/publications/art-oct-nouveautes-2015.png",
+    imageUrl: "/images/publications/thumb_angio-oct-premier-retour-2015.png",
     authorDetails: defaultAuthor
   },
   {
@@ -209,7 +203,7 @@ const publications: Publication[] = [
     date: "2015",
     year: 2015,
     pdfUrl: "/pdfs/angio-oct-aspects-techniques-2015.pdf",
-    imageUrl: "/images/publications/art-angio-oct-aspects-2015.png",
+    imageUrl: "/images/publications/thumb_angio-oct-aspects-techniques-2015.png",
     authorDetails: defaultAuthor
   },
   {
@@ -218,7 +212,7 @@ const publications: Publication[] = [
     journal: "Am J Ophthalmol",
     date: "2015",
     year: 2015,
-    imageUrl: "/images/publications/art-iovs-2014.png",
+    imageUrl: "/images/publications/thumb_chronic-central-serous-chorior.png",
     authorDetails: defaultAuthor
   },
   {
@@ -228,7 +222,7 @@ const publications: Publication[] = [
     date: "2015",
     year: 2015,
     pdfUrl: "/pdfs/oct-nouveautes-2015.pdf",
-    imageUrl: "/images/publications/art-oct-nouveautes-2015.png",
+    imageUrl: "/images/publications/thumb_oct-nouveautes-2015.png",
     authorDetails: defaultAuthor
   },
   // ===== 2014 =====
@@ -278,7 +272,7 @@ const publications: Publication[] = [
     journal: "J Fr Ophtalmol",
     date: "2013",
     year: 2013,
-    imageUrl: "/images/publications/art-journal-fr-ophtal.jpg",
+    imageUrl: "/images/publications/thumb_molteno-implant-2013.png",
     authorDetails: defaultAuthor
   },
   // ===== 2012 =====
@@ -350,7 +344,7 @@ const publications: Publication[] = [
     journal: "J Fr Ophtalmol",
     date: "2007",
     year: 2007,
-    imageUrl: "/images/publications/art-journal-fr-ophtal.jpg",
+    imageUrl: "/images/publications/thumb_tear-meniscus-visante-oct-2007.png",
     authorDetails: defaultAuthor
   },
   {
@@ -359,7 +353,7 @@ const publications: Publication[] = [
     journal: "Elsevier / Masson - Rapport SFO",
     date: "2007",
     year: 2007,
-    imageUrl: "/images/publications/book-rapport-sfo-2019.jpg",
+    imageUrl: "/images/publications/thumb_co-auteur-du-rapport-sur-la-dm.png",
     type: "book",
     authorDetails: defaultAuthor
   },
@@ -380,7 +374,7 @@ const publications: Publication[] = [
     date: "2006",
     year: 2006,
     pdfUrl: "/pdfs/oct-tamoxifen-retinopathy-2006.pdf",
-    imageUrl: "/images/publications/thumb_oct-tamoxifen-retinopathy-2006.png",
+    imageUrl: "/images/publications/art-american-journal.jpg",
     authorDetails: defaultAuthor
   },
   {
@@ -389,7 +383,7 @@ const publications: Publication[] = [
     journal: "Invest Ophthalmol Vis Sci",
     date: "2006",
     year: 2006,
-    imageUrl: "/images/publications/art-iovs-2014.png",
+    imageUrl: "/images/publications/art-american-journal.jpg",
     authorDetails: defaultAuthor
   },
   {
@@ -398,7 +392,7 @@ const publications: Publication[] = [
     journal: "Eur J Ophthalmol",
     date: "2006",
     year: 2006,
-    imageUrl: "/images/publications/art-american-journal.jpg",
+    imageUrl: "/images/publications/thumb_exudative-idiopathic-polypoidal-2006.png",
     authorDetails: defaultAuthor
   },
   // ===== 2004 =====
@@ -481,26 +475,20 @@ const publications: Publication[] = [
     authorDetails: defaultAuthor
   }
 ];
-
 const ITEMS_PER_PAGE = 6;
-
 export default function PublicationsContent() {
   const [currentPage, setCurrentPage] = useState(1);
-
   const books = publications.filter(p => p.type === 'book');
   const articles = publications.filter(p => p.type !== 'book');
-  
   const totalPages = Math.ceil(articles.length / ITEMS_PER_PAGE);
   const startIdx = (currentPage - 1) * ITEMS_PER_PAGE;
   const paginatedArticles = articles.slice(startIdx, startIdx + ITEMS_PER_PAGE);
-
   const goToPage = (page: number) => {
     setCurrentPage(page);
     // Scroll to articles section
     const el = document.getElementById('articles-section');
     if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
   };
-
   return (
     <>
       {/* Hero Section */}
@@ -511,7 +499,6 @@ export default function PublicationsContent() {
         >
           <div className="absolute inset-0 bg-black/60"></div>
         </div>
-        
         <div className="relative z-10 flex flex-col items-center justify-center text-center px-4 mt-16">
           <h1 className="text-white text-[32px] md:text-[52px] font-light leading-[1.1] tracking-wide mb-[20px] uppercase">
             Nos <strong className="font-bold">Publications</strong>
@@ -523,17 +510,14 @@ export default function PublicationsContent() {
           </div>
         </div>
       </section>
-
       {/* Intro Section */}
       <section className="py-16 px-4 max-w-5xl mx-auto text-center">
         <p className="text-[#888888] text-[16px] md:text-[18px] font-light leading-[1.8] mb-4">
           Afin d&apos;apporter la meilleure prise en charge à ses patients, l&apos;équipe médicale du Centre Ophtalmologique Rabelais est impliquée dans une forte activité scientifique, faisant l&apos;objet de nombreuses publications dans des journaux ophtalmologiques nationaux et internationaux.
         </p>
       </section>
-
       {/* Publications Grid */}
       <section className="pb-24 px-4 max-w-6xl mx-auto w-full">
-        
         {/* Books Section */}
         <div className="mb-16">
           <h2 className="text-[#a68d71] text-[20px] md:text-[24px] font-[Gotham] font-light tracking-[2px] uppercase mb-10 pb-[15px] text-center relative">
@@ -563,7 +547,6 @@ export default function PublicationsContent() {
                 <div className="p-4 flex-1 flex flex-col bg-white">
                   <span className="text-[11px] font-bold text-[#003399] uppercase tracking-[1px] mb-2">{pub.date} {pub.journal && `- ${pub.journal}`}</span>
                   <h3 className="text-[13px] md:text-[14px] font-bold text-slate-800 leading-[1.3] mb-4">{pub.title}</h3>
-                  
                   {/* Author Details - Anchored to bottom */}
                   <div className="mt-auto pt-4 border-t border-gray-100 flex flex-col gap-3">
                     <h4 className="text-[#c2aa84] text-[12px] font-[Gotham] font-bold uppercase tracking-wider">Authors</h4>
@@ -592,19 +575,16 @@ export default function PublicationsContent() {
             ))}
           </div>
         </div>
-
         {/* Articles Section */}
         <div id="articles-section">
           <h2 className="text-[#a68d71] text-[20px] md:text-[24px] font-[Gotham] font-light tracking-[2px] uppercase mb-4 pb-[15px] text-center relative">
             Publications Scientifiques
             <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[30px] h-[1px] bg-[#a68d71]"></span>
           </h2>
-          
           {/* Page counter */}
           <p className="text-center text-[13px] text-[#aaa] mb-8">
             Page {currentPage} sur {totalPages} — {articles.length} publications
           </p>
-
           <div className="space-y-6">
             {paginatedArticles.map((pub, i) => {
               const globalIdx = startIdx + i;
@@ -636,7 +616,6 @@ export default function PublicationsContent() {
                       <span className="text-[10px] text-[#003399]/40 font-medium uppercase tracking-wider">Publication</span>
                     </div>
                   )}
-                  
                   {/* Text Content */}
                   <div className="flex-1 min-w-0 flex flex-col">
                     <div className="flex items-center gap-3 mb-2 flex-wrap">
@@ -663,7 +642,6 @@ export default function PublicationsContent() {
                         Voir la publication PDF
                       </a>
                     )}
-
                     {/* Author Details - Anchored to bottom */}
                     {pub.authorDetails && (
                       <div className="mt-auto pt-4 border-t border-gray-100 flex flex-col gap-3">
@@ -686,13 +664,11 @@ export default function PublicationsContent() {
                         </div>
                       </div>
                     )}
-
                   </div>
                 </div>
               );
             })}
           </div>
-
           {/* Pagination Controls */}
           {totalPages > 1 && (
             <nav className="mt-12 flex items-center justify-center gap-2" aria-label="Pagination">
@@ -705,7 +681,6 @@ export default function PublicationsContent() {
               >
                 ← Préc.
               </button>
-
               {/* Page numbers */}
               {Array.from({ length: totalPages }, (_, i) => i + 1).map(page => (
                 <button
@@ -722,7 +697,6 @@ export default function PublicationsContent() {
                   {page}
                 </button>
               ))}
-
               {/* Next button */}
               <button
                 onClick={() => goToPage(Math.min(totalPages, currentPage + 1))}
@@ -735,7 +709,6 @@ export default function PublicationsContent() {
             </nav>
           )}
         </div>
-
       </section>
     </>
   );
