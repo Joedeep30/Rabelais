@@ -27,7 +27,7 @@ const defaultAuthor: AuthorDetails = {
   name: "DR MADDALENA QUARANTA",
   role: "Ophtalmologiste Rétine médicale",
   description: "Fondatrice et Gérante du Centre Rabelais",
-  imageUrl: "/images/publications/thumb_cystic-maculopathy-glaucoma-2021.png",
+  imageUrl: "/images/team/maddalena-quaranta-thumb.jpg",
   linkedinUrl: "https://fr.linkedin.com/pub/maddalena-quaranta-el-maftouhi/58/586/604"
 };
 
@@ -57,7 +57,7 @@ const publications: Publication[] = [
     date: "Août 2020",
     year: 2020,
     pdfUrl: "/pdfs/anti-vegf-oct-angiography-2020.pdf",
-    imageUrl: "/images/publications/thumb_anti-vegf-oct-angiography-2020.png",
+    imageUrl: "/images/publications/art-vegf-2020.jpg",
     authorDetails: defaultAuthor
   },
   {
@@ -67,7 +67,7 @@ const publications: Publication[] = [
     date: "Janvier 2020",
     year: 2020,
     pdfUrl: "/pdfs/oct-chirurgie-refractive-2020.pdf",
-    imageUrl: "/images/publications/thumb_oct-chirurgie-refractive-2020.png",
+    imageUrl: "/images/publications/art-oct-refractif-2020.jpg",
     authorDetails: authorAdil
   },
   // ===== 2019 =====
@@ -98,7 +98,7 @@ const publications: Publication[] = [
     date: "Février 2019",
     year: 2019,
     pdfUrl: "/pdfs/oct-secheresse-oculaire-2019.pdf",
-    imageUrl: "/images/publications/thumb_oct-secheresse-oculaire-2019.png",
+    imageUrl: "/images/publications/art-secheresse-2019.jpg",
     authorDetails: authorAdil
   },
   // ===== 2017 =====
@@ -108,7 +108,7 @@ const publications: Publication[] = [
     journal: "Ophthalmology",
     date: "2017",
     year: 2017,
-    imageUrl: "/images/publications/art-publications-generic.jpg",
+    imageUrl: "/images/publications/thumb_dual-antagonism-of-pdgf-and-ve.png",
     authorDetails: defaultAuthor
   },
   {
@@ -128,7 +128,7 @@ const publications: Publication[] = [
     date: "Février 2017",
     year: 2017,
     pdfUrl: "/pdfs/optimiser-oct-angiographie-2017.pdf",
-    imageUrl: "/images/publications/thumb_optimiser-oct-angiographie-2017.png",
+    imageUrl: "/images/publications/art-oct-angiographie-2017.jpg",
     authorDetails: authorAdil
   },
   // ===== 2016 =====
@@ -139,7 +139,7 @@ const publications: Publication[] = [
     date: "Mai 2016",
     year: 2016,
     pdfUrl: "/pdfs/oct-a-vs-fluorescein-2016.pdf",
-    imageUrl: "/images/publications/thumb_oct-a-vs-fluorescein-2016.png",
+    imageUrl: "/images/publications/thumb_comparison-between-oct-a-and-f.png",
     authorDetails: defaultAuthor
   },
   {
@@ -218,7 +218,7 @@ const publications: Publication[] = [
     journal: "Am J Ophthalmol",
     date: "2015",
     year: 2015,
-    imageUrl: "/images/publications/art-american-journal.jpg",
+    imageUrl: "/images/publications/thumb_chronic-central-serous-chorior.png",
     authorDetails: defaultAuthor
   },
   {
@@ -258,7 +258,7 @@ const publications: Publication[] = [
     journal: "Investigative Ophthalmology & Visual Science",
     date: "2014",
     year: 2014,
-    imageUrl: "/images/publications/art-iovs-2014.png",
+    imageUrl: "/images/publications/thumb_switch-from-aflibercept-to-ran.png",
     authorDetails: defaultAuthor
   },
   // ===== 2013 =====
@@ -320,7 +320,7 @@ const publications: Publication[] = [
     date: "2009",
     year: 2009,
     pdfUrl: "/pdfs/gonioscopy-oct-2009.pdf",
-    imageUrl: "/images/publications/art-journal-fr-ophtal.jpg",
+    imageUrl: "/images/publications/thumb_new-diagnosis-approaches-irid.png",
     authorDetails: defaultAuthor
   },
   // ===== 2008 =====
@@ -359,7 +359,7 @@ const publications: Publication[] = [
     journal: "Elsevier / Masson - Rapport SFO",
     date: "2007",
     year: 2007,
-    imageUrl: "/images/publications/default-publication.png",
+    imageUrl: "/images/publications/thumb_co-auteur-du-rapport-sur-la-dm.png",
     type: "book",
     authorDetails: defaultAuthor
   },
