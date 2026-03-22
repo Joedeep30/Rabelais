@@ -27,14 +27,15 @@ const defaultAuthor: AuthorDetails = {
   name: "DR MADDALENA QUARANTA",
   role: "Ophtalmologiste Rétine médicale",
   description: "Fondatrice et Gérante du Centre Rabelais",
-  imageUrl: "/images/team/maddalena-quaranta-thumb.jpg",
+  imageUrl: "/images/publications/art-cystic-2021.jpg",
   linkedinUrl: "https://fr.linkedin.com/pub/maddalena-quaranta-el-maftouhi/58/586/604"
 };
 
 const authorAdil: AuthorDetails = {
   name: "DR ADIL EL MAFTOUHI",
   role: "Consultant Scientifique / Expert en Imagerie",
-  description: "Centre Ophtalmologique Rabelais"
+  description: "Centre Ophtalmologique Rabelais",
+  imageUrl: "/images/team/maddalena-quaranta-thumb.jpg"
 };
 
 const publications: Publication[] = [
@@ -88,7 +89,7 @@ const publications: Publication[] = [
     date: "Mai 2019",
     year: 2019,
     pdfUrl: "/pdfs/degenerescence-kystique-glaucome-2019.pdf",
-    imageUrl: "/images/publications/thumb_degenerescence-kystique-glaucome-2019.png",
+    imageUrl: "/images/publications/art-glaucome-2019.jpg",
     authorDetails: defaultAuthor
   },
   {
@@ -128,7 +129,7 @@ const publications: Publication[] = [
     date: "Février 2017",
     year: 2017,
     pdfUrl: "/pdfs/optimiser-oct-angiographie-2017.pdf",
-    imageUrl: "/images/publications/art-oct-angiographie-2017.jpg",
+    imageUrl: "/images/publications/Angio-OCT-sm.jpg",
     authorDetails: authorAdil
   },
   // ===== 2016 =====
@@ -159,7 +160,7 @@ const publications: Publication[] = [
     date: "2016",
     year: 2016,
     pdfUrl: "/pdfs/global-trends-retina-2016.pdf",
-    imageUrl: "/images/publications/thumb_global-trends-retina-2016.png",
+    imageUrl: "/images/publications/art-retinal-times-2016.png",
     authorDetails: defaultAuthor
   },
   {
@@ -199,7 +200,7 @@ const publications: Publication[] = [
     date: "2015",
     year: 2015,
     pdfUrl: "/pdfs/angio-oct-premier-retour-2015.pdf",
-    imageUrl: "/images/publications/thumb_angio-oct-premier-retour-2015.png",
+    imageUrl: "/images/publications/art-oct-nouveautes-2015.png",
     authorDetails: defaultAuthor
   },
   {
@@ -209,7 +210,7 @@ const publications: Publication[] = [
     date: "2015",
     year: 2015,
     pdfUrl: "/pdfs/angio-oct-aspects-techniques-2015.pdf",
-    imageUrl: "/images/publications/thumb_angio-oct-aspects-techniques-2015.png",
+    imageUrl: "/images/publications/art-angio-oct-aspects-2015.png",
     authorDetails: defaultAuthor
   },
   {
@@ -218,7 +219,7 @@ const publications: Publication[] = [
     journal: "Am J Ophthalmol",
     date: "2015",
     year: 2015,
-    imageUrl: "/images/publications/thumb_chronic-central-serous-chorior.png",
+    imageUrl: "/images/publications/art-iovs-2014.png",
     authorDetails: defaultAuthor
   },
   {
@@ -228,7 +229,7 @@ const publications: Publication[] = [
     date: "2015",
     year: 2015,
     pdfUrl: "/pdfs/oct-nouveautes-2015.pdf",
-    imageUrl: "/images/publications/thumb_oct-nouveautes-2015.png",
+    imageUrl: "/images/publications/art-oct-nouveautes-2015.png",
     authorDetails: defaultAuthor
   },
   // ===== 2014 =====
@@ -278,7 +279,7 @@ const publications: Publication[] = [
     journal: "J Fr Ophtalmol",
     date: "2013",
     year: 2013,
-    imageUrl: "/images/publications/thumb_molteno-implant-2013.png",
+    imageUrl: "/images/publications/art-journal-fr-ophtal.jpg",
     authorDetails: defaultAuthor
   },
   // ===== 2012 =====
@@ -350,7 +351,7 @@ const publications: Publication[] = [
     journal: "J Fr Ophtalmol",
     date: "2007",
     year: 2007,
-    imageUrl: "/images/publications/thumb_tear-meniscus-visante-oct-2007.png",
+    imageUrl: "/images/publications/art-journal-fr-ophtal.jpg",
     authorDetails: defaultAuthor
   },
   {
@@ -359,7 +360,7 @@ const publications: Publication[] = [
     journal: "Elsevier / Masson - Rapport SFO",
     date: "2007",
     year: 2007,
-    imageUrl: "/images/publications/thumb_co-auteur-du-rapport-sur-la-dm.png",
+    imageUrl: "/images/publications/book-rapport-sfo-2019.jpg",
     type: "book",
     authorDetails: defaultAuthor
   },
@@ -369,7 +370,7 @@ const publications: Publication[] = [
     journal: "J Fr Ophtalmol",
     date: "2007",
     year: 2007,
-    imageUrl: "/images/publications/thumb_nonpenetrating-deep-sclerectomy-2007.png",
+    imageUrl: "/images/publications/art-journal-fr-ophtal.jpg",
     authorDetails: defaultAuthor
   },
   // ===== 2006 =====
@@ -389,7 +390,7 @@ const publications: Publication[] = [
     journal: "Invest Ophthalmol Vis Sci",
     date: "2006",
     year: 2006,
-    imageUrl: "/images/publications/thumb_anomalous-vitreoretinal-adhesions-2006.png",
+    imageUrl: "/images/publications/art-iovs-2014.png",
     authorDetails: defaultAuthor
   },
   {
@@ -398,7 +399,7 @@ const publications: Publication[] = [
     journal: "Eur J Ophthalmol",
     date: "2006",
     year: 2006,
-    imageUrl: "/images/publications/thumb_exudative-idiopathic-polypoidal-2006.png",
+    imageUrl: "/images/publications/art-american-journal.jpg",
     authorDetails: defaultAuthor
   },
   // ===== 2004 =====
@@ -417,7 +418,7 @@ const publications: Publication[] = [
     journal: "J Fr Ophtalmol",
     date: "2004",
     year: 2004,
-    imageUrl: "/images/publications/thumb_oct3-exploration-anterior-2004.png",
+    imageUrl: "/images/publications/art-journal-fr-ophtal.jpg",
     authorDetails: defaultAuthor
   },
   // ===== 2002 =====
