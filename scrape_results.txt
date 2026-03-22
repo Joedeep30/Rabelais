@@ -1,0 +1,133 @@
+﻿Fetching page 1...
+Fetching page 2...
+Fetching page 3...
+Fetching page 4...
+Fetching page 5...
+Fetching page 6...
+Fetching page 7...
+Fetching page 8...
+
+Found 0 publications with images:
+
+No structured patterns found. Trying raw image extraction...
+  Page images: 8
+    https://centrerabelaislyon.fr/wp-content/uploads/2021/06/glaucoma.jpg
+    https://centrerabelaislyon.fr/wp-content/uploads/bfi_thumb/t2-34whis4judpupmxcjz4u0w.jpg
+    https://centrerabelaislyon.fr/wp-content/uploads/bfi_thumb/t2-34whis4judpupmxcjz4u0w.jpg
+    https://centrerabelaislyon.fr/wp-content/uploads/2020/01/PUBLICATION012020.png
+    https://centrerabelaislyon.fr/wp-content/uploads/2019/07/Publication-1.png
+    https://centrerabelaislyon.fr/wp-content/uploads/2019/05/EL-MAFTOUHI_RG-kystes.jpg
+    https://centrerabelaislyon.fr/wp-content/uploads/2019/02/Flag.jpg
+    https://centrerabelaislyon.fr/wp-content/uploads/2022/10/main-homepage.jpg
+  Page images: 12
+    https://centrerabelaislyon.fr/wp-content/uploads/2018/10/Front.jpg
+    https://centrerabelaislyon.fr/wp-content/uploads/bfi_thumb/t2-34whis4judpupmxcjz4u0w.jpg
+    https://centrerabelaislyon.fr/wp-content/uploads/2017/10/Angio-OCT-sm.jpg
+    https://centrerabelaislyon.fr/wp-content/uploads/bfi_thumb/t2-34whis4judpupmxcjz4u0w.jpg
+    https://centrerabelaislyon.fr/wp-content/uploads/bfi_thumb/t2-34whis4judpupmxcjz4u0w.jpg
+    https://centrerabelaislyon.fr/wp-content/uploads/bfi_thumb/t2-34whis4judpupmxcjz4u0w.jpg
+    https://centrerabelaislyon.fr/wp-content/uploads/2016/06/Practical-Handbook-of-OCT-Angiography.jpg
+    https://centrerabelaislyon.fr/wp-content/uploads/2015/11/e.png
+    https://centrerabelaislyon.fr/wp-content/uploads/bfi_thumb/t2-34whis4judpupmxcjz4u0w.jpg
+    https://centrerabelaislyon.fr/wp-content/uploads/2016/01/RETINAL-TIMES.png
+    https://centrerabelaislyon.fr/wp-content/uploads/bfi_thumb/t2-34whis4judpupmxcjz4u0w.jpg
+    https://centrerabelaislyon.fr/wp-content/uploads/2022/10/main-homepage.jpg
+  Page images: 16
+    https://centrerabelaislyon.fr/wp-content/uploads/2016/01/TUBULATIONS-e1452549210350.png
+    https://centrerabelaislyon.fr/wp-content/uploads/bfi_thumb/t2-34whis4judpupmxcjz4u0w.jpg
+    https://centrerabelaislyon.fr/wp-content/uploads/2015/11/manuale_corretto1.png
+    https://centrerabelaislyon.fr/wp-content/uploads/2015/11/i.png
+    https://centrerabelaislyon.fr/wp-content/uploads/bfi_thumb/t2-34whis4judpupmxcjz4u0w.jpg
+    https://centrerabelaislyon.fr/wp-content/uploads/2015/11/Angio-OCT-Pratique.png
+    https://centrerabelaislyon.fr/wp-content/uploads/2015/11/f.png
+    https://centrerabelaislyon.fr/wp-content/uploads/bfi_thumb/t2-34whis4judpupmxcjz4u0w.jpg
+    https://centrerabelaislyon.fr/wp-content/uploads/2015/11/f.png
+    https://centrerabelaislyon.fr/wp-content/uploads/bfi_thumb/t2-34whis4judpupmxcjz4u0w.jpg
+    https://centrerabelaislyon.fr/wp-content/uploads/2015/11/IMG-Angio-OCT-aspects-techniques.png
+    https://centrerabelaislyon.fr/wp-content/uploads/2015/11/f.png
+    https://centrerabelaislyon.fr/wp-content/uploads/2015/08/Publications1.jpg
+    https://centrerabelaislyon.fr/wp-content/uploads/2015/11/e.png
+    https://centrerabelaislyon.fr/wp-content/uploads/bfi_thumb/t2-34whis4judpupmxcjz4u0w.jpg
+    https://centrerabelaislyon.fr/wp-content/uploads/2022/10/main-homepage.jpg
+  Page images: 16
+    https://centrerabelaislyon.fr/wp-content/uploads/2015/11/AmericanJournal.jpg
+    https://centrerabelaislyon.fr/wp-content/uploads/2015/11/e.png
+    https://centrerabelaislyon.fr/wp-content/uploads/bfi_thumb/t2-34whis4judpupmxcjz4u0w.jpg
+    https://centrerabelaislyon.fr/wp-content/uploads/2015/11/IO3-EL-MAFTOUHI-2904.png
+    https://centrerabelaislyon.fr/wp-content/uploads/2015/11/f.png
+    https://centrerabelaislyon.fr/wp-content/uploads/2015/11/IMG-Clinical-Guide-to-Angio-OCT.png
+    https://centrerabelaislyon.fr/wp-content/uploads/2015/11/e.png
+    https://centrerabelaislyon.fr/wp-content/uploads/2015/11/IMG-Imagerie-en-ophtalmologie.jpg
+    https://centrerabelaislyon.fr/wp-content/uploads/2015/11/f.png
+    https://centrerabelaislyon.fr/wp-content/uploads/2015/11/IOVS-Current-and-Past-Issues-2015-11-18-20-11-25.png
+    https://centrerabelaislyon.fr/wp-content/uploads/2015/11/e.png
+    https://centrerabelaislyon.fr/wp-content/uploads/bfi_thumb/t2-34whis4judpupmxcjz4u0w.jpg
+    https://centrerabelaislyon.fr/wp-content/uploads/2015/11/IMG-Clinical-OCT-Angiography-Atlas.png
+    https://centrerabelaislyon.fr/wp-content/uploads/2015/11/e.png
+    https://centrerabelaislyon.fr/wp-content/uploads/bfi_thumb/t2-34whis4judpupmxcjz4u0w.jpg
+    https://centrerabelaislyon.fr/wp-content/uploads/2022/10/main-homepage.jpg
+  Page images: 15
+    https://centrerabelaislyon.fr/wp-content/uploads/2015/11/journal-francais-dophtalmologie.jpg
+    https://centrerabelaislyon.fr/wp-content/uploads/2015/11/f.png
+    https://centrerabelaislyon.fr/wp-content/uploads/2015/08/Publications1.jpg
+    https://centrerabelaislyon.fr/wp-content/uploads/2015/11/f.png
+    https://centrerabelaislyon.fr/wp-content/uploads/2015/11/encyclopedie.jpg
+    https://centrerabelaislyon.fr/wp-content/uploads/2015/11/f.png
+    https://centrerabelaislyon.fr/wp-content/uploads/bfi_thumb/t2-34whis4judpupmxcjz4u0w.jpg
+    https://centrerabelaislyon.fr/wp-content/uploads/2015/08/Publications1.jpg
+    https://centrerabelaislyon.fr/wp-content/uploads/2015/11/e.png
+    https://centrerabelaislyon.fr/wp-content/uploads/bfi_thumb/t2-34whis4judpupmxcjz4u0w.jpg
+    https://centrerabelaislyon.fr/wp-content/uploads/2015/11/IMG-Nouvelle-Imagerie-OCT.jpg
+    https://centrerabelaislyon.fr/wp-content/uploads/2015/11/f.png
+    https://centrerabelaislyon.fr/wp-content/uploads/2015/08/Publications1.jpg
+    https://centrerabelaislyon.fr/wp-content/uploads/2015/11/f.png
+    https://centrerabelaislyon.fr/wp-content/uploads/2022/10/main-homepage.jpg
+  Page images: 14
+    https://centrerabelaislyon.fr/wp-content/uploads/2015/08/Publications1.jpg
+    https://centrerabelaislyon.fr/wp-content/uploads/2015/11/f.png
+    https://centrerabelaislyon.fr/wp-content/uploads/2015/08/Publications1.jpg
+    https://centrerabelaislyon.fr/wp-content/uploads/2015/11/f.png
+    https://centrerabelaislyon.fr/wp-content/uploads/2015/08/Publications1.jpg
+    https://centrerabelaislyon.fr/wp-content/uploads/2015/11/f.png
+    https://centrerabelaislyon.fr/wp-content/uploads/2015/11/f.png
+    https://centrerabelaislyon.fr/wp-content/uploads/bfi_thumb/t2-34whis4judpupmxcjz4u0w.jpg
+    https://centrerabelaislyon.fr/wp-content/uploads/2015/08/Publications1.jpg
+    https://centrerabelaislyon.fr/wp-content/uploads/2015/11/f.png
+    https://centrerabelaislyon.fr/wp-content/uploads/2015/08/Publications1.jpg
+    https://centrerabelaislyon.fr/wp-content/uploads/2015/11/e.png
+    https://centrerabelaislyon.fr/wp-content/uploads/bfi_thumb/t2-34whis4judpupmxcjz4u0w.jpg
+    https://centrerabelaislyon.fr/wp-content/uploads/2022/10/main-homepage.jpg
+  Page images: 16
+    https://centrerabelaislyon.fr/wp-content/uploads/2015/08/Publications1.jpg
+    https://centrerabelaislyon.fr/wp-content/uploads/2015/11/f.png
+    https://centrerabelaislyon.fr/wp-content/uploads/2015/08/Publications1.jpg
+    https://centrerabelaislyon.fr/wp-content/uploads/2015/11/e.png
+    https://centrerabelaislyon.fr/wp-content/uploads/bfi_thumb/t2-34whis4judpupmxcjz4u0w.jpg
+    https://centrerabelaislyon.fr/wp-content/uploads/2015/08/Publications1.jpg
+    https://centrerabelaislyon.fr/wp-content/uploads/2015/11/e.png
+    https://centrerabelaislyon.fr/wp-content/uploads/bfi_thumb/t2-34whis4judpupmxcjz4u0w.jpg
+    https://centrerabelaislyon.fr/wp-content/uploads/2015/08/Publications1.jpg
+    https://centrerabelaislyon.fr/wp-content/uploads/2015/11/f.png
+    https://centrerabelaislyon.fr/wp-content/uploads/2015/08/Publications1.jpg
+    https://centrerabelaislyon.fr/wp-content/uploads/2015/11/f.png
+    https://centrerabelaislyon.fr/wp-content/uploads/2015/08/Publications1.jpg
+    https://centrerabelaislyon.fr/wp-content/uploads/2015/11/e.png
+    https://centrerabelaislyon.fr/wp-content/uploads/bfi_thumb/t2-34whis4judpupmxcjz4u0w.jpg
+    https://centrerabelaislyon.fr/wp-content/uploads/2022/10/main-homepage.jpg
+  Page images: 16
+    https://centrerabelaislyon.fr/wp-content/uploads/2015/08/Publications1.jpg
+    https://centrerabelaislyon.fr/wp-content/uploads/2015/11/e.png
+    https://centrerabelaislyon.fr/wp-content/uploads/bfi_thumb/t2-34whis4judpupmxcjz4u0w.jpg
+    https://centrerabelaislyon.fr/wp-content/uploads/2015/08/Publications1.jpg
+    https://centrerabelaislyon.fr/wp-content/uploads/2015/11/e.png
+    https://centrerabelaislyon.fr/wp-content/uploads/bfi_thumb/t2-34whis4judpupmxcjz4u0w.jpg
+    https://centrerabelaislyon.fr/wp-content/uploads/2015/08/Publications1.jpg
+    https://centrerabelaislyon.fr/wp-content/uploads/2015/11/e.png
+    https://centrerabelaislyon.fr/wp-content/uploads/bfi_thumb/t2-34whis4judpupmxcjz4u0w.jpg
+    https://centrerabelaislyon.fr/wp-content/uploads/2015/08/Publications1.jpg
+    https://centrerabelaislyon.fr/wp-content/uploads/2015/11/e.png
+    https://centrerabelaislyon.fr/wp-content/uploads/bfi_thumb/t2-34whis4judpupmxcjz4u0w.jpg
+    https://centrerabelaislyon.fr/wp-content/uploads/2015/08/Publications1.jpg
+    https://centrerabelaislyon.fr/wp-content/uploads/2015/11/e.png
+    https://centrerabelaislyon.fr/wp-content/uploads/bfi_thumb/t2-34whis4judpupmxcjz4u0w.jpg
+    https://centrerabelaislyon.fr/wp-content/uploads/2022/10/main-homepage.jpg
