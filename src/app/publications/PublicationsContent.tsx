@@ -34,8 +34,7 @@ const defaultAuthor: AuthorDetails = {
 const authorAdil: AuthorDetails = {
   name: "DR ADIL EL MAFTOUHI",
   role: "Consultant Scientifique / Expert en Imagerie",
-  description: "Centre Ophtalmologique Rabelais",
-  imageUrl: "/images/team/maddalena-quaranta-thumb.jpg"
+  description: "Centre Ophtalmologique Rabelais"
 };
 
 const publications: Publication[] = [
@@ -109,7 +108,7 @@ const publications: Publication[] = [
     journal: "Ophthalmology",
     date: "2017",
     year: 2017,
-    imageUrl: "/images/publications/thumb_dual-antagonism-of-pdgf-and-ve.png",
+    imageUrl: "/images/publications/art-american-journal.jpg",
     authorDetails: defaultAuthor
   },
   {
@@ -332,7 +331,7 @@ const publications: Publication[] = [
     date: "2008",
     year: 2008,
     pdfUrl: "/pdfs/anterior-segment-oct-2008.pdf",
-    imageUrl: "/images/publications/thumb_anterior-segment-oct-2008.png",
+    imageUrl: "/images/publications/art-publications-generic.jpg",
     authorDetails: defaultAuthor
   },
   // ===== 2007 =====
@@ -409,7 +408,7 @@ const publications: Publication[] = [
     journal: "J Fr Ophtalmol",
     date: "2004",
     year: 2004,
-    imageUrl: "/images/publications/thumb_failure-of-photocoagulation-2004.png",
+    imageUrl: "/images/publications/art-journal-fr-ophtal.jpg",
     authorDetails: defaultAuthor
   },
   {
@@ -438,7 +437,7 @@ const publications: Publication[] = [
     journal: "Graefes Arch Clin Exp Ophthalmol",
     date: "2000",
     year: 2000,
-    imageUrl: "/images/publications/thumb_multiple-choroidal-neovascularizations-2000.png",
+    imageUrl: "/images/publications/default-publication.png",
     authorDetails: defaultAuthor
   },
   // ===== 1998 =====
@@ -448,7 +447,7 @@ const publications: Publication[] = [
     journal: "J Fr Ophtalmol",
     date: "1998",
     year: 1998,
-    imageUrl: "/images/publications/thumb_indocyanine-green-basal-laminar-1998.png",
+    imageUrl: "/images/publications/art-journal-fr-ophtal.jpg",
     authorDetails: defaultAuthor
   },
   // ===== 1997 =====
@@ -458,7 +457,7 @@ const publications: Publication[] = [
     journal: "Am J Ophthalmol",
     date: "1997",
     year: 1997,
-    imageUrl: "/images/publications/thumb_indocyanine-green-drusen-1997.png",
+    imageUrl: "/images/publications/art-american-journal.jpg",
     authorDetails: defaultAuthor
   },
   // ===== 1996 =====
@@ -468,7 +467,7 @@ const publications: Publication[] = [
     journal: "Am J Ophthalmol",
     date: "1996",
     year: 1996,
-    imageUrl: "/images/publications/thumb_indocyanine-green-pathologic-myopia-1996.png",
+    imageUrl: "/images/publications/art-american-journal.jpg",
     authorDetails: defaultAuthor
   },
   // ===== 1995 =====
@@ -478,7 +477,7 @@ const publications: Publication[] = [
     journal: "British Journal of Ophthalmology",
     date: "1995",
     year: 1995,
-    imageUrl: "/images/publications/thumb_indocyanine-green-videoangiography-1995.png",
+    imageUrl: "/images/publications/default-publication.png",
     authorDetails: defaultAuthor
   }
 ];
