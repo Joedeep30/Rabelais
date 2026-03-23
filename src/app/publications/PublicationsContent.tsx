@@ -119,7 +119,7 @@ const publications: Publication[] = [
     authorDetails: defaultAuthor
   },
   {
-    title: "Optimiser son acquisition en OCT-angiographie",
+    title: "Optimiser son acquisition en OCT-angiographie 🇫🇷",
     description: "L'OCT-A (OCT-angiographie) représente une évolution de l'OCT dit «en face» constitué de nombreux B-scans avec des temps d'acquisition plus longs que le simple B-scan et donc plus propices aux artéfacts liés aux mouvements du patient, aux microsaccades de fixation ou...",
     authors: "Dr Maddalena Quaranta-El Maftouhi",
     journal: "Les Cahiers d'Ophtalmologie",
@@ -251,7 +251,7 @@ const publications: Publication[] = [
     authorDetails: defaultAuthor
   },
   {
-    title: "Switch from aflibercept to ranibizumab: Up to 2 years follow-up post View2 study",
+    title: "Switch from aflibercept to ranibizumab: Up to 2 years follow-up post View2 study 🇫🇷",
     description: "Purpose: Outcomes of patients treated solely with aflibercept A2 mg or ranibizumab R0.5 mg, after the end of the VIEW2 study, over a period of up to 2 years.",
     authors: "Dr Maddalena Quaranta-El Maftouhi",
     journal: "Investigative Ophthalmology & Visual Science",
@@ -272,13 +272,13 @@ const publications: Publication[] = [
     authorDetails: defaultAuthor
   },
   {
-    title: "Implant de Molteno suturé : intérêt de l'imagerie OCT Visante 🇫🇷",
+    title: "Molteno implant and the vicryl tie technique: role of Visante anterior segment OCT 🇫🇷",
     description: "L'implant de Molteno est un dispositif de drainage de l'humeur aqueuse qui n'est pas muni de système régulateur de flux. Pour limiter les risques d'hypotonie oculaire dans les semaines qui suivent la chirurgie, on peut placer une ou deux sutures...",
     authors: "Dr Maddalena Quaranta-El Maftouhi",
     journal: "J Fr Ophtalmol",
     date: "Mai 2013",
     year: 2013,
-    imageUrl: "/images/publications/molteno-implant-v2.png",
+    imageUrl: "/images/publications/art-journal-fr-ophtal.jpg",
     authorDetails: defaultAuthor
   },
   // ===== 2012 =====
@@ -299,7 +299,7 @@ const publications: Publication[] = [
     journal: "J Fr Ophtalmol",
     date: "2010",
     year: 2010,
-    imageUrl: "/images/publications/thumb_outer-retinal-cysts-2010.png",
+    imageUrl: "/images/publications/art-journal-fr-ophtal.jpg",
     authorDetails: defaultAuthor
   },
   // ===== 2009 =====
@@ -320,7 +320,7 @@ const publications: Publication[] = [
     date: "2009",
     year: 2009,
     pdfUrl: "/pdfs/gonioscopy-oct-2009.pdf",
-    imageUrl: "/images/publications/thumb_new-diagnosis-approaches-irid.png",
+    imageUrl: "/images/publications/art-journal-fr-ophtal.jpg",
     authorDetails: defaultAuthor
   },
   // ===== 2008 =====
@@ -341,7 +341,7 @@ const publications: Publication[] = [
     journal: "J Fr Ophtalmol",
     date: "2007",
     year: 2007,
-    imageUrl: "/images/publications/thumb_visante-oct-ahmed-valve-2007.png",
+    imageUrl: "/images/publications/art-journal-fr-ophtal.jpg",
     authorDetails: defaultAuthor
   },
   {
@@ -350,7 +350,7 @@ const publications: Publication[] = [
     journal: "J Fr Ophtalmol",
     date: "2007",
     year: 2007,
-    imageUrl: "/images/publications/thumb_tear-meniscus-visante-oct-2007.png",
+    imageUrl: "/images/publications/art-journal-fr-ophtal.jpg",
     authorDetails: defaultAuthor
   },
   {
