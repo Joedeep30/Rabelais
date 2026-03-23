@@ -268,7 +268,7 @@ const publications: Publication[] = [
     journal: "Clinical En Face OCT Atlas - Jaypee",
     date: "2013",
     year: 2013,
-    imageUrl: "/images/publications/thumb_book-clinical-en-face-oct-2013.png",
+    imageUrl: "/images/publications/book-clinical-en-face-oct-2013.png",
     type: "book",
     authorDetails: defaultAuthor
   },
@@ -360,7 +360,7 @@ const publications: Publication[] = [
     journal: "Elsevier / Masson - Rapport SFO",
     date: "2007",
     year: 2007,
-    imageUrl: "/images/publications/thumb_co-auteur-du-rapport-sur-la-dm.png",
+    imageUrl: "/images/publications/book-rapport-dmla-sfo-2007.png",
     type: "book",
     authorDetails: defaultAuthor
   },
