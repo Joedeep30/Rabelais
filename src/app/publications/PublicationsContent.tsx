@@ -216,7 +216,7 @@ const publications: Publication[] = [
     journal: "Am J Ophthalmol",
     date: "2015",
     year: 2015,
-    imageUrl: "/images/publications/thumb_chronic-central-serous-chorior.png",
+    imageUrl: "/images/publications/chronic-csc-oct-a.png",
     authorDetails: defaultAuthor
   },
   {
