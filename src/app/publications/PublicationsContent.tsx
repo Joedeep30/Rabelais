@@ -57,7 +57,7 @@ const publications: Publication[] = [
     authorDetails: defaultAuthor
   },
   {
-    title: "Place de l'OCT dans le bilan de chirurgie réfractive",
+    title: "Place de l'OCT dans le bilan de chirurgie réfractive 🇫🇷",
     description: "OCT dans le bilan de chirurgie réfractive",
     authors: "Dr Adil El Maftouhi",
     journal: "Réalités Ophtalmologiques",
@@ -69,7 +69,7 @@ const publications: Publication[] = [
   },
   // ===== 2019 =====
   {
-    title: "Le rapport de la société Française d'ophtalmologie sur le thème de l'imagerie par OCT",
+    title: "Le rapport de la société Française d'ophtalmologie sur le thème de l'imagerie par OCT 🇫🇷",
     authors: "Dr Adil El Maftouhi",
     journal: "Rapport SFO",
     date: "2019",
@@ -79,7 +79,7 @@ const publications: Publication[] = [
     authorDetails: authorAdil
   },
   {
-    title: "Dégénérescence kystique de la couche nucléaire interne chez les patients glaucomateux",
+    title: "Dégénérescence kystique de la couche nucléaire interne chez les patients glaucomateux 🇫🇷",
     authors: "Dr Maddalena Quaranta-El Maftouhi",
     journal: "Réalités Ophtalmologiques",
     date: "Mai 2019",
@@ -89,7 +89,7 @@ const publications: Publication[] = [
     authorDetails: defaultAuthor
   },
   {
-    title: "Intérêt de l'OCT dans la quantification de la sécheresse oculaire",
+    title: "Intérêt de l'OCT dans la quantification de la sécheresse oculaire 🇫🇷",
     authors: "Dr Adil El Maftouhi",
     journal: "Les Cahiers d'Ophtalmologie",
     date: "Février 2019",
@@ -161,7 +161,7 @@ const publications: Publication[] = [
     authorDetails: defaultAuthor
   },
   {
-    title: "L'imagerie multimodale dans la DMLA : ne pas se limiter à l'OCT",
+    title: "L'imagerie multimodale dans la DMLA : ne pas se limiter à l'OCT 🇫🇷",
     authors: "Dr Maddalena Quaranta-El Maftouhi",
     journal: "Réalités Ophtalmologiques",
     date: "Janvier 2016",
@@ -181,7 +181,7 @@ const publications: Publication[] = [
     authorDetails: defaultAuthor
   },
   {
-    title: "L'angio-OCT en pratique",
+    title: "L'angio-OCT en pratique 🇫🇷",
     authors: "Dr Maddalena Quaranta-El Maftouhi, Dr Adil El Maftouhi",
     journal: "Novartis Pharmaceuticals",
     date: "2015",
@@ -191,7 +191,7 @@ const publications: Publication[] = [
     authorDetails: defaultAuthor
   },
   {
-    title: "ANGIO-OCT : Premier retour d'expérience",
+    title: "ANGIO-OCT : Premier retour d'expérience 🇫🇷",
     authors: "Dr Maddalena Quaranta-El Maftouhi",
     journal: "Les Cahiers d'Ophtalmologie n°188",
     date: "2015",
@@ -201,7 +201,7 @@ const publications: Publication[] = [
     authorDetails: defaultAuthor
   },
   {
-    title: "ANGIO-OCT : aspects techniques et appareils disponibles en 2015",
+    title: "ANGIO-OCT : aspects techniques et appareils disponibles en 2015 🇫🇷",
     authors: "Dr Maddalena Quaranta-El Maftouhi",
     journal: "Réalités Ophtalmologiques #225",
     date: "2015",
@@ -220,7 +220,7 @@ const publications: Publication[] = [
     authorDetails: defaultAuthor
   },
   {
-    title: "OCT : Quelles Nouveautés en 2015",
+    title: "OCT : Quelles Nouveautés en 2015 🇫🇷",
     authors: "Dr Maddalena Quaranta-El Maftouhi",
     journal: "Congrès SFO",
     date: "2015",
@@ -241,7 +241,7 @@ const publications: Publication[] = [
     authorDetails: defaultAuthor
   },
   {
-    title: "Imagerie en ophtalmologie",
+    title: "Imagerie en ophtalmologie 🇫🇷",
     authors: "Dr Maddalena Quaranta-El Maftouhi",
     journal: "Elsevier",
     date: "2014",
@@ -272,7 +272,7 @@ const publications: Publication[] = [
     authorDetails: defaultAuthor
   },
   {
-    title: "Implant de Molteno suturé : intérêt de l'imagerie OCT Visante",
+    title: "Implant de Molteno suturé : intérêt de l'imagerie OCT Visante 🇫🇷",
     description: "L'implant de Molteno est un dispositif de drainage de l'humeur aqueuse qui n'est pas muni de système régulateur de flux. Pour limiter les risques d'hypotonie oculaire dans les semaines qui suivent la chirurgie, on peut placer une ou deux sutures...",
     authors: "Dr Maddalena Quaranta-El Maftouhi",
     journal: "J Fr Ophtalmol",
@@ -283,7 +283,7 @@ const publications: Publication[] = [
   },
   // ===== 2012 =====
   {
-    title: "Co Auteur de l'Encyclopédie RÉTINE",
+    title: "Co Auteur de l'Encyclopédie RÉTINE 🇫🇷",
     authors: "Dr Maddalena Quaranta-El Maftouhi",
     journal: "Ed LAVOISIER",
     date: "2012",
@@ -304,7 +304,7 @@ const publications: Publication[] = [
   },
   // ===== 2009 =====
   {
-    title: "La Nouvelle Imagerie du Segment Antérieur BSOF 2009",
+    title: "La Nouvelle Imagerie du Segment Antérieur BSOF 2009 🇫🇷",
     authors: "Dr Maddalena Quaranta-El Maftouhi",
     journal: "Édition L / Groupe CIEL",
     date: "2009",
@@ -354,7 +354,7 @@ const publications: Publication[] = [
     authorDetails: defaultAuthor
   },
   {
-    title: "Co Auteur du rapport sur la DMLA de la SFO",
+    title: "Co Auteur du rapport sur la DMLA de la SFO 🇫🇷",
     authors: "Dr Maddalena Quaranta-El Maftouhi",
     journal: "Elsevier / Masson - Rapport SFO",
     date: "2007",
