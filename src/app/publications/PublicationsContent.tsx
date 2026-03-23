@@ -53,7 +53,7 @@ const publications: Publication[] = [
     date: "Août 2020",
     year: 2020,
     pdfUrl: "/pdfs/anti-vegf-oct-angiography-2020.pdf",
-    imageUrl: "/images/publications/anti-vegf-placeholder.png",
+    imageUrl: "/thumbs/The-long-term-effects-of-anti-vascular-endothelial-growth-factor-therapy-on-the-optical-coherence-tomography-angiographic-appearance-of-neovascularization-in-age-related-macular-degeneration-pdf-1024x1024.jpg",
     authorDetails: defaultAuthor
   },
   {
