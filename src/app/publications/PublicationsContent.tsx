@@ -64,7 +64,7 @@ const publications: Publication[] = [
     date: "Janvier 2020",
     year: 2020,
     pdfUrl: "/pdfs/oct-chirurgie-refractive-2020.pdf",
-    imageUrl: "/thumbs/PUBLICATION012020.png",
+    imageUrl: "/images/publications/chirurgie-refractive-placeholder.png",
     authorDetails: authorAdil
   },
   // ===== 2019 =====
