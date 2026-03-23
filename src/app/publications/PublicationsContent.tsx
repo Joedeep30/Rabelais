@@ -120,13 +120,14 @@ const publications: Publication[] = [
   },
   {
     title: "Optimiser son acquisition en OCT-angiographie",
-    authors: "Dr Adil El Maftouhi",
+    description: "L'OCT-A (OCT-angiographie) représente une évolution de l'OCT dit «en face» constitué de nombreux B-scans avec des temps d'acquisition plus longs que le simple B-scan et donc plus propices aux artéfacts liés aux mouvements du patient, aux microsaccades de fixation ou...",
+    authors: "Dr Maddalena Quaranta-El Maftouhi",
     journal: "Les Cahiers d'Ophtalmologie",
     date: "Février 2017",
     year: 2017,
     pdfUrl: "/pdfs/optimiser-oct-angiographie-2017.pdf",
-    imageUrl: "/images/publications/art-oct-angiographie-2017.jpg",
-    authorDetails: authorAdil
+    imageUrl: "/images/publications/oct-angiographie-acquisition-placeholder.png",
+    authorDetails: defaultAuthor
   },
   // ===== 2016 =====
   {
