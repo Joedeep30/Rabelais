@@ -40,7 +40,7 @@ const publications: Publication[] = [
     date: "Juin 2021",
     year: 2021,
     pdfUrl: "/pdfs/cystic-maculopathy-glaucoma-2021.pdf",
-    imageUrl: "/images/team/maddalena-quaranta-thumb.jpg",
+    imageUrl: "/thumbs/glaucoma.webp",
     authorDetails: defaultAuthor
   },
   // ===== 2020 =====
@@ -51,7 +51,7 @@ const publications: Publication[] = [
     date: "Août 2020",
     year: 2020,
     pdfUrl: "/pdfs/anti-vegf-oct-angiography-2020.pdf",
-    imageUrl: "/images/publications/art-vegf-2020.jpg",
+    imageUrl: "/images/publications/placeholder-doc.jpg",
     authorDetails: defaultAuthor
   },
   {
@@ -61,7 +61,7 @@ const publications: Publication[] = [
     date: "Janvier 2020",
     year: 2020,
     pdfUrl: "/pdfs/oct-chirurgie-refractive-2020.pdf",
-    imageUrl: "/images/publications/art-oct-refractif-2020.jpg",
+    imageUrl: "/images/publications/PUBLICATION012020.png",
     authorDetails: authorAdil
   },
   // ===== 2019 =====
@@ -431,7 +431,7 @@ const publications: Publication[] = [
     journal: "Graefes Arch Clin Exp Ophthalmol",
     date: "2000",
     year: 2000,
-    imageUrl: "/images/publications/default-publication.png",
+    imageUrl: "/images/publications/placeholder-doc.jpg",
     authorDetails: defaultAuthor
   },
   // ===== 1998 =====
@@ -471,7 +471,7 @@ const publications: Publication[] = [
     journal: "British Journal of Ophthalmology",
     date: "1995",
     year: 1995,
-    imageUrl: "/images/publications/default-publication.png",
+    imageUrl: "/images/publications/placeholder-doc.jpg",
     authorDetails: defaultAuthor
   }
 ];
