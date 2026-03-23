@@ -257,7 +257,7 @@ const publications: Publication[] = [
     journal: "Investigative Ophthalmology & Visual Science",
     date: "2014",
     year: 2014,
-    imageUrl: "/images/publications/switch-aflibercept-v2.png",
+    imageUrl: "/images/publications/switch-aflibercept-v3.png",
     authorDetails: defaultAuthor
   },
   // ===== 2013 =====
