@@ -16,6 +16,7 @@ type Publication = {
   year: number;
   pdfUrl?: string;
   imageUrl?: string;
+  description?: string;
   type?: 'article' | 'book';
   authorDetails?: AuthorDetails;
 };
@@ -45,13 +46,14 @@ const publications: Publication[] = [
   },
   // ===== 2020 =====
   {
-    title: "The long-term effects of anti-VEGF therapy on the OCT angiographic appearance of neovascularization in AMD",
+    title: "The long-term effects of anti-vascular endothelial growth factor therapy on the optical coherence tomography angiographic appearance of neovascularization in age-related macular degeneration",
+    description: "Notre équipe a collaboré avec d'autres équipes américaines pour cette publication dans le journal International Journal of Retina and Vitreous sur le comportement des néovaisseaux observé en OCT-Angiographie durant le traitement par injections intravitréennes.",
     authors: "Dr Maddalena Quaranta-El Maftouhi",
     journal: "International Journal of Retina and Vitreous",
     date: "Août 2020",
     year: 2020,
     pdfUrl: "/pdfs/anti-vegf-oct-angiography-2020.pdf",
-    imageUrl: "/images/publications/placeholder-doc.jpg",
+    imageUrl: "/images/publications/anti-vegf-placeholder.png",
     authorDetails: defaultAuthor
   },
   {
@@ -625,6 +627,9 @@ export default function PublicationsContent() {
                       )}
                     </div>
                     <h3 className="text-[16px] md:text-[18px] font-bold text-slate-800 leading-[1.4] mb-2">{pub.title}</h3>
+                    {pub.description && (
+                      <p className="text-[13px] text-[#888] font-light leading-[1.6] mb-3">{pub.description}</p>
+                    )}
                     <p className="text-[13px] text-[#666] font-light mb-2">
                       <span className="text-[#003399] font-medium">{pub.authors}</span>
                     </p>
