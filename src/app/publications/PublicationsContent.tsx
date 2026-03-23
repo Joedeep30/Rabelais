@@ -137,7 +137,7 @@ const publications: Publication[] = [
     date: "Mai 2016",
     year: 2016,
     pdfUrl: "/pdfs/oct-a-vs-fluorescein-2016.pdf",
-    imageUrl: "/images/publications/oct-a-vs-fluorescein-placeholder.png",
+    imageUrl: "/images/publications/oct-a-vs-fluorescein-v2.png",
     authorDetails: defaultAuthor
   },
   {
