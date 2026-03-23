@@ -272,10 +272,11 @@ const publications: Publication[] = [
     authorDetails: defaultAuthor
   },
   {
-    title: "Molteno implant and the vicryl tie technique: role of Visante anterior segment OCT",
+    title: "Implant de Molteno suturé : intérêt de l'imagerie OCT Visante",
+    description: "L'implant de Molteno est un dispositif de drainage de l'humeur aqueuse qui n'est pas muni de système régulateur de flux. Pour limiter les risques d'hypotonie oculaire dans les semaines qui suivent la chirurgie, on peut placer une ou deux sutures...",
     authors: "Dr Maddalena Quaranta-El Maftouhi",
     journal: "J Fr Ophtalmol",
-    date: "2013",
+    date: "Mai 2013",
     year: 2013,
     imageUrl: "/images/publications/molteno-implant-v2.png",
     authorDetails: defaultAuthor
