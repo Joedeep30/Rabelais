@@ -277,7 +277,7 @@ const publications: Publication[] = [
     journal: "J Fr Ophtalmol",
     date: "2013",
     year: 2013,
-    imageUrl: "/images/publications/thumb_molteno-implant-2013.png",
+    imageUrl: "/images/publications/molteno-implant-v2.png",
     authorDetails: defaultAuthor
   },
   // ===== 2012 =====
