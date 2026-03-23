@@ -58,12 +58,13 @@ const publications: Publication[] = [
   },
   {
     title: "Place de l'OCT dans le bilan de chirurgie réfractive",
+    description: "OCT dans le bilan de chirurgie réfractive",
     authors: "Dr Adil El Maftouhi",
     journal: "Réalités Ophtalmologiques",
     date: "Janvier 2020",
     year: 2020,
     pdfUrl: "/pdfs/oct-chirurgie-refractive-2020.pdf",
-    imageUrl: "/images/publications/PUBLICATION012020.png",
+    imageUrl: "/thumbs/PUBLICATION012020.png",
     authorDetails: authorAdil
   },
   // ===== 2019 =====
