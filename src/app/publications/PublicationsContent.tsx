@@ -252,11 +252,12 @@ const publications: Publication[] = [
   },
   {
     title: "Switch from aflibercept to ranibizumab: Up to 2 years follow-up post View2 study",
+    description: "Purpose: Outcomes of patients treated solely with aflibercept A2 mg or ranibizumab R0.5 mg, after the end of the VIEW2 study, over a period of up to 2 years.",
     authors: "Dr Maddalena Quaranta-El Maftouhi",
     journal: "Investigative Ophthalmology & Visual Science",
     date: "2014",
     year: 2014,
-    imageUrl: "/images/publications/thumb_switch-from-aflibercept-to-ran.png",
+    imageUrl: "/images/publications/switch-aflibercept-placeholder.png",
     authorDetails: defaultAuthor
   },
   // ===== 2013 =====
