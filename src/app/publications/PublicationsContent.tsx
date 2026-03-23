@@ -604,7 +604,7 @@ export default function PublicationsContent() {
                       <PublicationImage 
                         src={pub.imageUrl} 
                         alt={pub.title}
-                        className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                        className="w-full h-full object-contain transition-transform duration-500 group-hover:scale-105"
                       />
                     </div>
                   ) : (
