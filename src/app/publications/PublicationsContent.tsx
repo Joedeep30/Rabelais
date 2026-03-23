@@ -263,16 +263,6 @@ const publications: Publication[] = [
   },
   // ===== 2013 =====
   {
-    title: "L'implication de l'OCT dans la prise en charge de la Dégénérescence Maculaire liée à l'âge 🇫🇷",
-    authors: "Dr Maddalena Quaranta-El Maftouhi",
-    journal: "SFO",
-    date: "2013",
-    year: 2013,
-    imageUrl: "/images/publications/art-journal-fr-ophtal.jpg",
-    type: "book",
-    authorDetails: defaultAuthor
-  },
-  {
     title: "Inner nuclear layer cystic degeneration, in macular area of glaucomatous patients, on 'en face' and B-scan OCT scanning",
     authors: "Dr Maddalena Quaranta-El Maftouhi",
     journal: "Clinical En Face OCT Atlas - Jaypee",
@@ -375,15 +365,6 @@ const publications: Publication[] = [
     authorDetails: defaultAuthor
   },
   {
-    title: "Place de l'OCT Visante dans le bilan préopératoire de la chirurgie du glaucome 🇫🇷",
-    authors: "Dr Maddalena Quaranta-El Maftouhi",
-    journal: "J Fr Ophtalmol",
-    date: "2007",
-    year: 2007,
-    imageUrl: "/images/publications/art-journal-fr-ophtal.jpg",
-    authorDetails: defaultAuthor
-  },
-  {
     title: "Nonpenetrating deep sclerectomy with Aquaflow drain 🇫🇷",
     authors: "Dr Maddalena Quaranta-El Maftouhi",
     journal: "J Fr Ophtalmol",
@@ -393,15 +374,6 @@ const publications: Publication[] = [
     authorDetails: defaultAuthor
   },
   // ===== 2006 =====
-  {
-    title: "Pachymetry of Corneal Flap by OCT 3 🇫🇷",
-    authors: "Dr Maddalena Quaranta-El Maftouhi",
-    journal: "J Fr Ophtalmol",
-    date: "2006",
-    year: 2006,
-    imageUrl: "/images/publications/art-journal-fr-ophtal.jpg",
-    authorDetails: defaultAuthor
-  },
   {
     title: "Optical coherence tomography in tamoxifen retinopathy",
     authors: "Dr Maddalena Quaranta-El Maftouhi",
@@ -428,16 +400,6 @@ const publications: Publication[] = [
     date: "2006",
     year: 2006,
     imageUrl: "/images/publications/thumb_exudative-idiopathic-polypoidal-2006.png",
-    authorDetails: defaultAuthor
-  },
-  // ===== 2005 =====
-  {
-    title: "Subfoveal choroidal neovascularization in high myopia",
-    authors: "Dr Maddalena Quaranta-El Maftouhi",
-    journal: "Am J Ophthalmol",
-    date: "2005",
-    year: 2005,
-    imageUrl: "/images/publications/art-american-journal.jpg",
     authorDetails: defaultAuthor
   },
   // ===== 2004 =====
