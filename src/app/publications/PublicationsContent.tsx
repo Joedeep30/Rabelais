@@ -412,7 +412,7 @@ const publications: Publication[] = [
     date: "2006",
     year: 2006,
     imageUrl: "/images/publications/vitreoretinal_adhesions.png",
-    externalLink: "https://centrerabelaislyon.fr/wp-content/uploads/2015/11/2009-Quaranta-Nanos-JFO-v-r-adhe%CC%81sions.pdf",
+    externalLink: "https://pubmed.ncbi.nlm.nih.gov/16496257/",
     authorDetails: defaultAuthor
   },
   {
