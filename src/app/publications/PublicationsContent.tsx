@@ -350,6 +350,7 @@ const publications: Publication[] = [
     year: 2008,
     pdfUrl: "/pdfs/anterior-segment-oct-2008.pdf",
     imageUrl: "/images/publications/anterior_segment_glaucoma.png",
+    externalLink: "https://pubmed.ncbi.nlm.nih.gov/18957906/",
     authorDetails: defaultAuthor
   },
   // ===== 2007 =====
