@@ -476,7 +476,7 @@ const publications: Publication[] = [
     date: "1998",
     year: 1998,
     imageUrl: "/images/publications/icg_basal_laminar_drusen.png",
-    externalLink: "https://centrerabelaislyon.fr/wp-content/uploads/2015/11/1995-Quaranta-AJO-ICG-drusen-1.pdf",
+    externalLink: "https://pubmed.ncbi.nlm.nih.gov/9759404/",
     authorDetails: defaultAuthor
   },
   // ===== 1997 =====
