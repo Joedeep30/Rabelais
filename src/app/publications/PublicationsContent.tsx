@@ -453,7 +453,7 @@ const publications: Publication[] = [
     journal: "Am J Ophthalmol",
     date: "2002",
     year: 2002,
-    imageUrl: "/images/publications/thumb_exudative-idiopathic-polypoidal-2006.png",
+    imageUrl: "/images/publications/polypoidal_choroidal_2002.png",
     externalLink: "https://www.sciencedirect.com/science/article/abs/pii/S0002939402015167",
     authorDetails: defaultAuthor
   },
@@ -465,7 +465,7 @@ const publications: Publication[] = [
     date: "2000",
     year: 2000,
     imageUrl: "/images/publications/multiple_cnv.png",
-    externalLink: "https://pubmed.ncbi.nlm.nih.gov/10959810/",
+    externalLink: "https://pubmed.ncbi.nlm.nih.gov/9759404/",
     authorDetails: defaultAuthor
   },
   // ===== 1998 =====
