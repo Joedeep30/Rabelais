@@ -401,7 +401,6 @@ const publications: Publication[] = [
     journal: "Breast Cancer Res Treat",
     date: "2006",
     year: 2006,
-    pdfUrl: "/pdfs/oct-tamoxifen-retinopathy-2006.pdf",
     imageUrl: "/images/publications/tamoxifen_retinopathy.png",
     externalLink: "https://pubmed.ncbi.nlm.nih.gov/16541311/",
     authorDetails: defaultAuthor
