@@ -337,8 +337,8 @@ const publications: Publication[] = [
     journal: "J Fr Ophtalmol",
     date: "2009",
     year: 2009,
-    pdfUrl: "/pdfs/gonioscopy-oct-2009.pdf",
     imageUrl: "/images/publications/iridocorneal_angle_oct.png",
+    externalLink: "https://pubmed.ncbi.nlm.nih.gov/19515327/",
     authorDetails: defaultAuthor
   },
   // ===== 2008 =====
@@ -348,7 +348,7 @@ const publications: Publication[] = [
     journal: "J Fr Ophtalmol",
     date: "2008",
     year: 2008,
-    pdfUrl: "/pdfs/anterior-segment-oct-2008.pdf",
+
     imageUrl: "/images/publications/anterior_segment_glaucoma.png",
     externalLink: "https://pubmed.ncbi.nlm.nih.gov/18957906/",
     authorDetails: defaultAuthor
