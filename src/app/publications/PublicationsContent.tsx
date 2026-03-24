@@ -360,7 +360,7 @@ const publications: Publication[] = [
     date: "2007",
     year: 2007,
     imageUrl: "/images/publications/visante_ahmed_valve.png",
-    externalLink: "https://centrerabelaislyon.fr/wp-content/uploads/2015/11/2013-Quaranta-JFO-Ahmed-valve-AS-OCT.pdf",
+    externalLink: "https://pubmed.ncbi.nlm.nih.gov/18268451/",
     authorDetails: defaultAuthor
   },
   {
