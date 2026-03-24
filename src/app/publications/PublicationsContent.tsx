@@ -421,8 +421,8 @@ const publications: Publication[] = [
     journal: "Eur J Ophthalmol",
     date: "2006",
     year: 2006,
-    imageUrl: "/images/publications/thumb_exudative-idiopathic-polypoidal-2006.png",
-    externalLink: "https://pubmed.ncbi.nlm.nih.gov/16496298/",
+    imageUrl: "/images/publications/verteporfin_pdt_2006.png",
+    externalLink: "https://pubmed.ncbi.nlm.nih.gov/12140043/",
     authorDetails: defaultAuthor
   },
   // ===== 2004 =====
