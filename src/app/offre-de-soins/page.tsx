@@ -10,8 +10,83 @@ export const metadata: Metadata = {
 };
 
 export default function OffreDeSoinsPage() {
+  const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Quels types de pathologies sont pris en charge au Centre Ophtalmologique Rabelais ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Le Centre Ophtalmologique Rabelais à Lyon est spécialisé en rétine médicale et prend en charge la DMLA (dégénérescence maculaire liée à l'âge) sèche et humide, la rétinopathie diabétique, les occlusions veineuses rétiniennes, la choriorétinopathie séreuse centrale (CSC), les maladies inflammatoires de la rétine, le glaucome, la cataracte secondaire, ainsi que les pathologies de la surface oculaire comme la sécheresse oculaire évaporative."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Qu'est-ce que la photobiomodulation (PBM) et pour qui est-elle indiquée ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "La photobiomodulation (PBM) est un traitement non invasif de la DMLA sèche débutante et intermédiaire utilisant le système VALEDA® de LumiThera, approuvé par la FDA. Il utilise des longueurs d'onde lumineuses spécifiques (jaune, rouge, proche infrarouge) pour stimuler la régénération des cellules de l'épithélium pigmentaire rétinien. Le protocole comprend 9 séances de 5 minutes sur 3 semaines. Le Centre Ophtalmologique Rabelais est l'un des rares centres en France à proposer cette thérapie innovante."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Comment se déroule une injection intravitréenne (IVT) au Centre Rabelais ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "L'injection intravitréenne est un geste médical réalisé dans notre salle blanche stérile dédiée, sous anesthésie locale par collyre. Le médecin injecte un médicament anti-VEGF (Lucentis, Eylea ou Vabysmo) ou un corticoïde directement dans le vitré de l'œil. L'ensemble de la procédure dure environ 15 minutes. L'avantage du Centre Rabelais est la possibilité de réaliser l'injection le jour même du diagnostic, évitant les délais d'attente hospitaliers. Le patient peut repartir immédiatement après."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Qu'est-ce qu'un OCT maculaire et pourquoi est-il important ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "L'OCT (Tomographie en Cohérence Optique) maculaire est un examen d'imagerie non invasif et indolore qui produit des coupes microscopiques de la rétine avec une résolution de l'ordre du micron. Il permet de visualiser et mesurer chaque couche rétinienne, de détecter précocement les drüsen, l'œdème maculaire, les néovaisseaux et l'atrophie. C'est l'examen de référence pour le diagnostic et le suivi de la DMLA, du diabète rétinien et du glaucome. Le Centre Rabelais dispose d'OCT Spectral-Domain de dernière génération et d'un OCT-Angiographie permettant une cartographie vasculaire sans injection de colorant."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Quelle est la différence entre l'angiographie et l'OCT-Angiographie ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "L'angiographie conventionnelle nécessite l'injection intraveineuse d'un colorant (fluorescéine ou vert d'indocyanine) pour visualiser les vaisseaux rétiniens et choroïdiens. L'OCT-Angiographie (OCT-A) est une technique plus récente qui cartographie la vascularisation rétinienne sans injection de colorant, en analysant le déplacement des globules rouges à partir de la technologie OCT. Le Centre Rabelais dispose des deux modalités et a participé activement au développement de l'OCT-A depuis son état prototype. L'OCT-A est privilégiée pour le suivi régulier, tandis que l'angiographie conventionnelle reste indiquée pour certains diagnostics complexes."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Qu'est-ce que la photothérapie dynamique (PDT) à la Visudyne ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "La PDT à la Visudyne (vertéporfine) est un traitement ophtalmologique combinant l'injection intraveineuse d'un photosensibilisant avec l'activation par laser diode à lumière froide (689 nm) au niveau de la rétine. Elle est indiquée principalement pour la choriorétinopathie séreuse centrale (CSC) chronique, certains néovaisseaux choroïdiens atypiques et la choroïdopathie polypoïdale. La PDT permet de détruire sélectivement les vaisseaux anormaux tout en préservant la rétine saine environnante."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Comment traite-t-on le glaucome au Centre Rabelais ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Le Centre Rabelais propose deux approches laser pour le glaucome. Le SLT (Selective Laser Trabeculoplasty) pour le glaucome à angle ouvert : un laser sélectif non invasif qui cible les cellules pigmentées du trabéculum pour améliorer l'écoulement de l'humeur aqueuse, réduisant la pression intraoculaire de 20 à 30%. L'iridotomie périphérique au laser YAG pour le glaucome par fermeture de l'angle : une micro-ouverture dans l'iris pour rétablir la circulation du liquide intraoculaire. Ces deux procédures sont réalisées en consultation, en 5 à 10 minutes, sans hospitalisation."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Quels sont les équipements d'imagerie disponibles au Centre Rabelais ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Le Centre Ophtalmologique Rabelais dispose d'un plateau technique complet comprenant : des OCT Spectral-Domain de dernière génération pour l'imagerie maculaire et du nerf optique, un OCT-Angiographie pour la cartographie vasculaire sans colorant, un rétinographe confocal 65° et un système Optos grand champ 200° pour la visualisation de la périphérie rétinienne, un angiographe numérisé (fluorescéine et ICG), des lasers spécialisés (SLT, YAG, photocoagulateur, laser micropulsé), un système de photobiomodulation VALEDA, un dispositif Eyelight pour la sécheresse oculaire, et une salle blanche dédiée aux injections intravitréennes."
+        }
+      }
+    ]
+  };
+
   return (
     <main className="flex flex-col flex-grow font-[Gotham] text-[#888888] bg-white">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
       
       {/* Hero Section */}
       <section className="relative h-[400px] md:h-[500px] w-full flex items-center justify-center overflow-hidden">
@@ -628,6 +703,101 @@ export default function OffreDeSoinsPage() {
               className="w-full max-w-[240px] h-auto object-contain rounded"
             />
             <p className="text-[#c2aa84] text-[11px] font-bold tracking-[1.5px] uppercase text-center mt-3">Epi-Mapping — Kératocône</p>
+          </div>
+        </div>
+      </section>
+      {/* ======= FAQ SECTION ======= */}
+      <section className="py-20 px-4 bg-[#f8f8f8]">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-[#003399] text-[28px] md:text-[36px] font-light uppercase tracking-wider text-center mb-4">
+            Questions <strong className="font-bold">Fréquentes</strong>
+          </h2>
+          <div className="flex items-center justify-center gap-0 w-full max-w-[300px] mx-auto mb-12">
+            <div className="h-[1px] w-full bg-[#c2aa84]/60"></div>
+            <i className="block w-[14px] h-[14px] bg-[#c2aa84] rounded-full mx-[-7px] z-10"></i>
+            <div className="h-[1px] w-full bg-[#c2aa84]/60"></div>
+          </div>
+
+          <div className="space-y-4">
+            <details className="group bg-white border border-gray-200 shadow-sm">
+              <summary className="flex items-center justify-between cursor-pointer p-6 text-[15px] font-bold text-slate-800 hover:text-[#003399] transition-colors">
+                <span>Quels types de pathologies sont pris en charge au Centre ?</span>
+                <span className="text-[#c2aa84] text-[20px] group-open:rotate-45 transition-transform">+</span>
+              </summary>
+              <div className="px-6 pb-6 text-[14px] text-[#888888] font-light leading-[1.8] border-t border-gray-100 pt-4">
+                Le Centre Ophtalmologique Rabelais à Lyon est spécialisé en rétine médicale et prend en charge la DMLA (dégénérescence maculaire liée à l&apos;âge) sèche et humide, la rétinopathie diabétique, les occlusions veineuses rétiniennes, la choriorétinopathie séreuse centrale (CSC), les maladies inflammatoires de la rétine, le glaucome, la cataracte secondaire, ainsi que les pathologies de la surface oculaire comme la sécheresse oculaire évaporative.
+              </div>
+            </details>
+
+            <details className="group bg-white border border-gray-200 shadow-sm">
+              <summary className="flex items-center justify-between cursor-pointer p-6 text-[15px] font-bold text-slate-800 hover:text-[#003399] transition-colors">
+                <span>Qu&apos;est-ce que la photobiomodulation (PBM) et pour qui est-elle indiquée ?</span>
+                <span className="text-[#c2aa84] text-[20px] group-open:rotate-45 transition-transform">+</span>
+              </summary>
+              <div className="px-6 pb-6 text-[14px] text-[#888888] font-light leading-[1.8] border-t border-gray-100 pt-4">
+                La photobiomodulation (PBM) est un traitement non invasif de la DMLA sèche débutante et intermédiaire utilisant le système VALEDA® de LumiThera, approuvé par la FDA. Il utilise des longueurs d&apos;onde lumineuses spécifiques (jaune, rouge, proche infrarouge) pour stimuler la régénération des cellules de l&apos;épithélium pigmentaire rétinien. Le protocole comprend 9 séances de 5 minutes sur 3 semaines. Le Centre est l&apos;un des rares en France à proposer cette thérapie innovante.
+              </div>
+            </details>
+
+            <details className="group bg-white border border-gray-200 shadow-sm">
+              <summary className="flex items-center justify-between cursor-pointer p-6 text-[15px] font-bold text-slate-800 hover:text-[#003399] transition-colors">
+                <span>Comment se déroule une injection intravitréenne (IVT) ?</span>
+                <span className="text-[#c2aa84] text-[20px] group-open:rotate-45 transition-transform">+</span>
+              </summary>
+              <div className="px-6 pb-6 text-[14px] text-[#888888] font-light leading-[1.8] border-t border-gray-100 pt-4">
+                L&apos;injection intravitréenne est réalisée dans notre salle blanche stérile dédiée, sous anesthésie locale par collyre. Le médecin injecte un anti-VEGF (Lucentis®, Eylea® ou Vabysmo®) ou un corticoïde directement dans le vitré. La procédure dure environ 15 minutes. L&apos;avantage du Centre Rabelais : la possibilité de réaliser l&apos;injection le jour même du diagnostic, sans délai d&apos;attente hospitalier.
+              </div>
+            </details>
+
+            <details className="group bg-white border border-gray-200 shadow-sm">
+              <summary className="flex items-center justify-between cursor-pointer p-6 text-[15px] font-bold text-slate-800 hover:text-[#003399] transition-colors">
+                <span>Qu&apos;est-ce qu&apos;un OCT maculaire et pourquoi est-il important ?</span>
+                <span className="text-[#c2aa84] text-[20px] group-open:rotate-45 transition-transform">+</span>
+              </summary>
+              <div className="px-6 pb-6 text-[14px] text-[#888888] font-light leading-[1.8] border-t border-gray-100 pt-4">
+                L&apos;OCT (Tomographie en Cohérence Optique) maculaire est un examen non invasif et indolore qui produit des coupes microscopiques de la rétine avec une résolution de l&apos;ordre du micron. Il permet de détecter précocement drüsen, œdème maculaire, néovaisseaux et atrophie. C&apos;est l&apos;examen de référence pour le diagnostic et le suivi de la DMLA, du diabète rétinien et du glaucome. Le Centre dispose d&apos;OCT Spectral-Domain de dernière génération et d&apos;un OCT-Angiographie.
+              </div>
+            </details>
+
+            <details className="group bg-white border border-gray-200 shadow-sm">
+              <summary className="flex items-center justify-between cursor-pointer p-6 text-[15px] font-bold text-slate-800 hover:text-[#003399] transition-colors">
+                <span>Quelle différence entre angiographie et OCT-Angiographie ?</span>
+                <span className="text-[#c2aa84] text-[20px] group-open:rotate-45 transition-transform">+</span>
+              </summary>
+              <div className="px-6 pb-6 text-[14px] text-[#888888] font-light leading-[1.8] border-t border-gray-100 pt-4">
+                L&apos;angiographie conventionnelle nécessite l&apos;injection intraveineuse d&apos;un colorant (fluorescéine ou vert d&apos;indocyanine). L&apos;OCT-Angiographie (OCT-A) cartographie la vascularisation rétinienne <strong className="font-bold">sans injection de colorant</strong>, en analysant le mouvement des globules rouges. Le Centre Rabelais dispose des deux modalités et a participé au développement de l&apos;OCT-A depuis son état prototype. L&apos;OCT-A est privilégiée pour le suivi régulier ; l&apos;angiographie reste indiquée pour certains diagnostics complexes.
+              </div>
+            </details>
+
+            <details className="group bg-white border border-gray-200 shadow-sm">
+              <summary className="flex items-center justify-between cursor-pointer p-6 text-[15px] font-bold text-slate-800 hover:text-[#003399] transition-colors">
+                <span>Qu&apos;est-ce que la photothérapie dynamique (PDT) à la Visudyne ?</span>
+                <span className="text-[#c2aa84] text-[20px] group-open:rotate-45 transition-transform">+</span>
+              </summary>
+              <div className="px-6 pb-6 text-[14px] text-[#888888] font-light leading-[1.8] border-t border-gray-100 pt-4">
+                La PDT à la Visudyne (vertéporfine) combine l&apos;injection intraveineuse d&apos;un photosensibilisant avec l&apos;activation par laser diode à lumière froide (689 nm). Elle est indiquée pour la choriorétinopathie séreuse centrale (CSC) chronique, certains néovaisseaux choroïdiens atypiques et la choroïdopathie polypoïdale. Elle détruit sélectivement les vaisseaux anormaux tout en préservant la rétine saine.
+              </div>
+            </details>
+
+            <details className="group bg-white border border-gray-200 shadow-sm">
+              <summary className="flex items-center justify-between cursor-pointer p-6 text-[15px] font-bold text-slate-800 hover:text-[#003399] transition-colors">
+                <span>Comment traite-t-on le glaucome au Centre Rabelais ?</span>
+                <span className="text-[#c2aa84] text-[20px] group-open:rotate-45 transition-transform">+</span>
+              </summary>
+              <div className="px-6 pb-6 text-[14px] text-[#888888] font-light leading-[1.8] border-t border-gray-100 pt-4">
+                Deux approches laser sont disponibles. Le <strong className="font-bold">SLT</strong> (Selective Laser Trabeculoplasty) pour le glaucome à angle ouvert : un laser sélectif non invasif réduisant la pression intraoculaire de 20 à 30 %. L&apos;<strong className="font-bold">iridotomie périphérique</strong> au laser YAG pour le glaucome par fermeture de l&apos;angle : une micro-ouverture dans l&apos;iris rétablissant la circulation du liquide intraoculaire. Les deux procédures durent 5 à 10 minutes, en consultation, sans hospitalisation.
+              </div>
+            </details>
+
+            <details className="group bg-white border border-gray-200 shadow-sm">
+              <summary className="flex items-center justify-between cursor-pointer p-6 text-[15px] font-bold text-slate-800 hover:text-[#003399] transition-colors">
+                <span>Quels équipements d&apos;imagerie sont disponibles au Centre ?</span>
+                <span className="text-[#c2aa84] text-[20px] group-open:rotate-45 transition-transform">+</span>
+              </summary>
+              <div className="px-6 pb-6 text-[14px] text-[#888888] font-light leading-[1.8] border-t border-gray-100 pt-4">
+                Le plateau technique comprend : OCT Spectral-Domain de dernière génération, OCT-Angiographie, rétinographe confocal 65° et système Optos grand champ 200°, angiographe numérisé (fluorescéine et ICG), lasers spécialisés (SLT, YAG, photocoagulateur, micropulsé), système de photobiomodulation VALEDA®, dispositif Eyelight pour la sécheresse oculaire, et salle blanche dédiée aux injections intravitréennes.
+              </div>
+            </details>
           </div>
         </div>
       </section>

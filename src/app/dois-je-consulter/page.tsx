@@ -10,8 +10,59 @@ export const metadata: Metadata = {
 };
 
 export default function DoisJeConsulterPage() {
+  const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Quels sont les premiers signes de la DMLA qui doivent m'alerter ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Les premiers signes de DMLA incluent une diminution de la perception des contrastes, un besoin de lumière plus important, des lignes droites qui apparaissent déformées ou ondulées (métamorphopsies), une baisse progressive de la vision de près lors de la lecture, et l'apparition d'une tache sombre ou floue au centre du champ visuel (scotome central). Un auto-dépistage avec la grille d'Amsler permet de détecter ces anomalies. Tout symptôme de déformation visuelle doit conduire à une consultation ophtalmologique urgente avec un OCT maculaire."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Quand consulter en urgence un ophtalmologiste ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Consultez en urgence si vous présentez : une apparition soudaine de corps flottants (points noirs, fils, mouches volantes) qui se multiplient, des flashs lumineux dans l'œil (phosphènes), une baisse brutale d'acuité visuelle, un rétrécissement du champ visuel (impression de rideau ou voile noir), ou une déformation soudaine des lignes droites. Ces symptômes peuvent évoquer un décollement de rétine (urgence absolue), une hémorragie rétinienne ou une poussée néovasculaire de DMLA humide. Le Centre Ophtalmologique Rabelais à Lyon dispose d'un plateau d'imagerie complet permettant un diagnostic immédiat."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Le décollement de rétine est-il douloureux ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Non, le décollement de rétine est une urgence ophtalmologique indolore, ce qui le rend d'autant plus traître. Les signes d'alerte sont uniquement visuels : apparition brutale de nombreux corps flottants, flashs lumineux, voile noir progressif ou rétrécissement du champ de vision. L'absence de douleur peut amener les patients à tarder avant de consulter, ce qui compromet le pronostic visuel. Toute apparition soudaine de ces symptômes doit conduire à une consultation ophtalmologique le jour même."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Qu'est-ce que la grille d'Amsler et comment l'utiliser ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "La grille d'Amsler est un test simple d'auto-dépistage des anomalies de la vision centrale. C'est un quadrillage de lignes droites avec un point central. Pour l'utiliser : gardez vos lunettes de lecture, placez la grille à 30 cm, cachez un œil, fixez le point central et observez si les lignes paraissent ondulées, déformées ou manquantes, puis recommencez avec l'autre œil. Toute déformation ou zone manquante peut signaler une atteinte maculaire (DMLA, œdème, membrane épirétinienne) et nécessite une consultation rapide avec un OCT maculaire."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "À partir de quel âge faut-il se faire dépister pour la DMLA ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Le dépistage de la DMLA est recommandé à partir de 50 ans lors de l'examen ophtalmologique annuel. Un dépistage plus précoce est conseillé en cas de facteurs de risque : antécédents familiaux de DMLA, tabagisme actif ou ancien, surcharge pondérale, ou exposition solaire intense. Le dépistage repose sur un examen du fond d'œil complété si nécessaire par un OCT maculaire. Au Centre Ophtalmologique Rabelais, ces examens sont réalisés le jour même de la consultation par nos orthoptistes spécialisés en imagerie rétinienne."
+        }
+      }
+    ]
+  };
+
   return (
     <main className="flex flex-col flex-grow font-[Gotham] text-[#888888] bg-white">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
       
       {/* Hero Section */}
       <section className="relative h-[400px] md:h-[500px] w-full flex items-center justify-center overflow-hidden">
@@ -134,6 +185,72 @@ export default function DoisJeConsulterPage() {
                 <li>Rétrécissement du champ visuel (effet de rideau).</li>
                 <li>Sensation de voile noir ou de taches.</li>
             </ul>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="py-20 px-4 bg-[#f8f8f8]">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-[#003399] text-[28px] md:text-[36px] font-light uppercase tracking-wider text-center mb-4">
+            Questions <strong className="font-bold">Fréquentes</strong>
+          </h2>
+          <div className="flex items-center justify-center gap-0 w-full max-w-[300px] mx-auto mb-12">
+            <div className="h-[1px] w-full bg-[#c2aa84]/60"></div>
+            <i className="block w-[14px] h-[14px] bg-[#c2aa84] rounded-full mx-[-7px] z-10"></i>
+            <div className="h-[1px] w-full bg-[#c2aa84]/60"></div>
+          </div>
+
+          <div className="space-y-4">
+            <details className="group bg-white border border-gray-200 shadow-sm">
+              <summary className="flex items-center justify-between cursor-pointer p-6 text-[15px] font-bold text-slate-800 hover:text-[#003399] transition-colors">
+                <span>Quels sont les premiers signes de DMLA qui doivent m&apos;alerter ?</span>
+                <span className="text-[#c2aa84] text-[20px] group-open:rotate-45 transition-transform">+</span>
+              </summary>
+              <div className="px-6 pb-6 text-[14px] text-[#888888] font-light leading-[1.8] border-t border-gray-100 pt-4">
+                Les premiers signes incluent une diminution de la perception des contrastes, un besoin de lumière plus important, des lignes droites déformées ou ondulées (métamorphopsies), une baisse progressive de la vision de lecture, et l&apos;apparition d&apos;une tache sombre au centre du champ visuel (scotome central). Un auto-dépistage avec la grille d&apos;Amsler permet de détecter ces anomalies. Toute déformation visuelle nécessite une consultation urgente avec un OCT maculaire.
+              </div>
+            </details>
+
+            <details className="group bg-white border border-gray-200 shadow-sm">
+              <summary className="flex items-center justify-between cursor-pointer p-6 text-[15px] font-bold text-slate-800 hover:text-[#003399] transition-colors">
+                <span>Quand faut-il consulter en urgence un ophtalmologiste ?</span>
+                <span className="text-[#c2aa84] text-[20px] group-open:rotate-45 transition-transform">+</span>
+              </summary>
+              <div className="px-6 pb-6 text-[14px] text-[#888888] font-light leading-[1.8] border-t border-gray-100 pt-4">
+                Consultez en urgence si vous présentez : une apparition soudaine de corps flottants qui se multiplient, des flashs lumineux dans l&apos;œil (phosphènes), une baisse brutale d&apos;acuité visuelle, un rétrécissement du champ visuel (impression de rideau ou voile noir), ou une déformation soudaine des lignes droites. Ces symptômes peuvent évoquer un décollement de rétine, une hémorragie rétinienne ou une poussée néovasculaire de DMLA humide.
+              </div>
+            </details>
+
+            <details className="group bg-white border border-gray-200 shadow-sm">
+              <summary className="flex items-center justify-between cursor-pointer p-6 text-[15px] font-bold text-slate-800 hover:text-[#003399] transition-colors">
+                <span>Le décollement de rétine est-il douloureux ?</span>
+                <span className="text-[#c2aa84] text-[20px] group-open:rotate-45 transition-transform">+</span>
+              </summary>
+              <div className="px-6 pb-6 text-[14px] text-[#888888] font-light leading-[1.8] border-t border-gray-100 pt-4">
+                Non. Le décollement de rétine est une urgence ophtalmologique <strong className="font-bold">totalement indolore</strong>, ce qui le rend d&apos;autant plus traître. Les signes d&apos;alerte sont uniquement visuels : corps flottants brutaux, flashs lumineux, voile noir progressif. L&apos;absence de douleur peut retarder la consultation, ce qui compromet le pronostic visuel. Toute apparition soudaine de ces symptômes doit conduire à une consultation le jour même.
+              </div>
+            </details>
+
+            <details className="group bg-white border border-gray-200 shadow-sm">
+              <summary className="flex items-center justify-between cursor-pointer p-6 text-[15px] font-bold text-slate-800 hover:text-[#003399] transition-colors">
+                <span>Comment utiliser la grille d&apos;Amsler pour l&apos;auto-dépistage ?</span>
+                <span className="text-[#c2aa84] text-[20px] group-open:rotate-45 transition-transform">+</span>
+              </summary>
+              <div className="px-6 pb-6 text-[14px] text-[#888888] font-light leading-[1.8] border-t border-gray-100 pt-4">
+                Gardez vos lunettes de lecture, tenez la grille à 30 cm, cachez un œil, fixez le point central et observez si les lignes paraissent ondulées, déformées ou manquantes. Recommencez avec l&apos;autre œil. Toute déformation ou zone manquante peut signaler une atteinte maculaire (DMLA, œdème, membrane épirétinienne) et nécessite une consultation rapide avec un OCT maculaire.
+              </div>
+            </details>
+
+            <details className="group bg-white border border-gray-200 shadow-sm">
+              <summary className="flex items-center justify-between cursor-pointer p-6 text-[15px] font-bold text-slate-800 hover:text-[#003399] transition-colors">
+                <span>À partir de quel âge se faire dépister pour la DMLA ?</span>
+                <span className="text-[#c2aa84] text-[20px] group-open:rotate-45 transition-transform">+</span>
+              </summary>
+              <div className="px-6 pb-6 text-[14px] text-[#888888] font-light leading-[1.8] border-t border-gray-100 pt-4">
+                Le dépistage est recommandé à partir de <strong className="font-bold">50 ans</strong> lors de l&apos;examen ophtalmologique annuel. Un dépistage plus précoce est conseillé en cas de facteurs de risque : antécédents familiaux de DMLA, tabagisme, surcharge pondérale, ou exposition solaire intense. Au Centre Rabelais, le fond d&apos;œil et l&apos;OCT maculaire sont réalisés le jour même de la consultation.
+              </div>
+            </details>
+          </div>
         </div>
       </section>
 
