@@ -422,7 +422,7 @@ const publications: Publication[] = [
     date: "2006",
     year: 2006,
     imageUrl: "/images/publications/thumb_exudative-idiopathic-polypoidal-2006.png",
-    externalLink: "https://pubmed.ncbi.nlm.nih.gov/12140043/",
+    externalLink: "https://pubmed.ncbi.nlm.nih.gov/16496298/",
     authorDetails: defaultAuthor
   },
   // ===== 2004 =====
@@ -454,7 +454,7 @@ const publications: Publication[] = [
     date: "2002",
     year: 2002,
     imageUrl: "/images/publications/thumb_exudative-idiopathic-polypoidal-2006.png",
-    externalLink: "https://scholar.google.com/scholar?q=Exudative%20idiopathic%20polypoidal%20choroidal%20vasculopathy%20and%20photodynamic%20therapy%20with%20verteporfin",
+    externalLink: "https://www.sciencedirect.com/science/article/abs/pii/S0002939402015167",
     authorDetails: defaultAuthor
   },
   // ===== 2000 =====
@@ -487,7 +487,7 @@ const publications: Publication[] = [
     date: "1997",
     year: 1997,
     imageUrl: "/images/publications/icg_drusen.png",
-    externalLink: "https://centrerabelaislyon.fr/wp-content/uploads/2015/11/1995-Quaranta-AJO-ICG-drusen.pdf",
+    externalLink: "https://www.sciencedirect.com/science/article/abs/pii/S0002939414708268",
     authorDetails: defaultAuthor
   },
   // ===== 1996 =====
