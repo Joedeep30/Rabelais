@@ -77,6 +77,7 @@ const publications: Publication[] = [
     year: 2019,
     imageUrl: "/images/publications/book-rapport-sfo-2019.jpg",
     type: "book",
+    externalLink: "https://scholar.google.com/scholar?q=Le%20rapport%20de%20la%20soci%C3%A9t%C3%A9%20Fran%C3%A7aise%20d'ophtalmologie%20sur%20le%20th%C3%A8me%20de%20l'imagerie%20par%20OCT",
     authorDetails: authorAdil
   },
   {
@@ -107,6 +108,7 @@ const publications: Publication[] = [
     date: "2017",
     year: 2017,
     imageUrl: "/images/publications/art-american-journal.jpg",
+    externalLink: "https://scholar.google.com/scholar?q=Dual%20Antagonism%20of%20PDGF%20and%20VEGF%20in%20Neovascular%20Age-Related%20Macular%20Degeneration",
     authorDetails: defaultAuthor
   },
   {
@@ -117,6 +119,7 @@ const publications: Publication[] = [
     year: 2017,
     imageUrl: "/images/publications/Angio-OCT-sm.jpg",
     type: "book",
+    externalLink: "https://scholar.google.com/scholar?q=Angio-OCT%20In%20Everyday%20Ophthalmic%20Practice",
     authorDetails: defaultAuthor
   },
   {
@@ -149,6 +152,7 @@ const publications: Publication[] = [
     year: 2016,
     imageUrl: "/images/publications/Practical-Handbook-of-OCT-Angiography.jpg",
     type: "book",
+    externalLink: "https://scholar.google.com/scholar?q=Practical%20Handbook%20of%20OCT%20Angiography",
     authorDetails: defaultAuthor
   },
   {
@@ -168,6 +172,7 @@ const publications: Publication[] = [
     date: "Janvier 2016",
     year: 2016,
     imageUrl: "/images/publications/art-tubulations-2016.png",
+    externalLink: "https://scholar.google.com/scholar?q=L'imagerie%20multimodale%20dans%20la%20DMLA%20%3A%20ne%20pas%20se%20limiter%20%C3%A0%20l'OCT",
     authorDetails: defaultAuthor
   },
   // ===== 2015 =====
@@ -179,6 +184,7 @@ const publications: Publication[] = [
     year: 2015,
     imageUrl: "/images/publications/manuale_corretto1.png",
     type: "book",
+    externalLink: "https://scholar.google.com/scholar?q=Manuale%20pratico%20di%20Angiografia%20OCT%20-%20Angiografia%20OCT%20non%20invasiva%2C%20senza%20coloranti",
     authorDetails: defaultAuthor
   },
   {
@@ -189,6 +195,7 @@ const publications: Publication[] = [
     year: 2015,
     imageUrl: "/images/publications/Angio-OCT-Pratique.png",
     type: "book",
+    externalLink: "https://scholar.google.com/scholar?q=L'angio-OCT%20en%20pratique",
     authorDetails: defaultAuthor
   },
   {
@@ -219,6 +226,7 @@ const publications: Publication[] = [
     date: "2015",
     year: 2015,
     imageUrl: "/images/publications/chronic-csc-oct-a.png",
+    externalLink: "https://pubmed.ncbi.nlm.nih.gov/26135408/",
     authorDetails: defaultAuthor
   },
   {
@@ -240,6 +248,7 @@ const publications: Publication[] = [
     year: 2014,
     imageUrl: "/images/publications/IMG-Clinical-Guide-to-Angio-OCT.png",
     type: "book",
+    externalLink: "https://scholar.google.com/scholar?q=Clinical%20Guide%20to%20Angio-OCT%3A%20Non%20Invasive%2C%20Dyeless%20OCT%20Angiography",
     authorDetails: defaultAuthor
   },
   {
@@ -250,6 +259,7 @@ const publications: Publication[] = [
     year: 2014,
     imageUrl: "/images/publications/book-imagerie-ophtalmologie-2014.jpg",
     type: "book",
+    externalLink: "https://scholar.google.com/scholar?q=Imagerie%20en%20ophtalmologie",
     authorDetails: defaultAuthor
   },
   {
@@ -260,6 +270,7 @@ const publications: Publication[] = [
     date: "2014",
     year: 2014,
     imageUrl: "/images/publications/switch-aflibercept-v3.png",
+    externalLink: "https://scholar.google.com/scholar?q=Switch%20from%20aflibercept%20to%20ranibizumab%3A%20Up%20to%202%20years%20follow-up%20post%20View2%20study",
     authorDetails: defaultAuthor
   },
   // ===== 2013 =====
@@ -271,6 +282,7 @@ const publications: Publication[] = [
     year: 2013,
     imageUrl: "/images/publications/book-clinical-en-face-oct-2013.png",
     type: "book",
+    externalLink: "https://scholar.google.com/scholar?q=Inner%20nuclear%20layer%20cystic%20degeneration%2C%20in%20macular%20area%20of%20glaucomatous%20patients%2C%20on%20'en%20face'%20and%20B-scan%20OCT%20scanning",
     authorDetails: defaultAuthor
   },
   {
@@ -281,6 +293,7 @@ const publications: Publication[] = [
     date: "Mai 2013",
     year: 2013,
     imageUrl: "/images/publications/art-journal-fr-ophtal.jpg",
+    externalLink: "https://scholar.google.com/scholar?q=Molteno%20implant%20and%20the%20vicryl%20tie%20technique%3A%20role%20of%20Visante%20anterior%20segment%20OCT",
     authorDetails: defaultAuthor
   },
   // ===== 2012 =====
@@ -292,6 +305,7 @@ const publications: Publication[] = [
     year: 2012,
     imageUrl: "/images/publications/book-encyclopedie-retine-2012.jpg",
     type: "book",
+    externalLink: "https://scholar.google.com/scholar?q=Co%20Auteur%20de%20l'Encyclop%C3%A9die%20R%C3%89TINE",
     authorDetails: defaultAuthor
   },
   // ===== 2010 =====
@@ -302,6 +316,7 @@ const publications: Publication[] = [
     date: "2010",
     year: 2010,
     imageUrl: "/images/publications/outer_retinal_cysts.png",
+    externalLink: "https://scholar.google.com/scholar?q=Outer%20retinal%20cysts%20in%20exudative%20age-related%20macular%20degeneration%3A%20a%20spectral%20domain%20OCT%20study",
     authorDetails: defaultAuthor
   },
   // ===== 2009 =====
@@ -313,6 +328,7 @@ const publications: Publication[] = [
     year: 2009,
     imageUrl: "/images/publications/book-nouvelle-imagerie-2009.jpg",
     type: "book",
+    externalLink: "https://scholar.google.com/scholar?q=La%20Nouvelle%20Imagerie%20du%20Segment%20Ant%C3%A9rieur%20BSOF%202009",
     authorDetails: defaultAuthor
   },
   {
@@ -365,6 +381,7 @@ const publications: Publication[] = [
     year: 2007,
     imageUrl: "/images/publications/book-rapport-dmla-sfo-2007.png",
     type: "book",
+    externalLink: "https://scholar.google.com/scholar?q=Co%20Auteur%20du%20rapport%20sur%20la%20DMLA%20de%20la%20SFO",
     authorDetails: defaultAuthor
   },
   {
@@ -405,6 +422,7 @@ const publications: Publication[] = [
     date: "2006",
     year: 2006,
     imageUrl: "/images/publications/thumb_exudative-idiopathic-polypoidal-2006.png",
+    externalLink: "https://scholar.google.com/scholar?q=Exudative%20idiopathic%20polypoidal%20choroidal%20vasculopathy%20and%20photodynamic%20therapy%20with%20verteporfin",
     authorDetails: defaultAuthor
   },
   // ===== 2004 =====
@@ -436,6 +454,7 @@ const publications: Publication[] = [
     date: "2002",
     year: 2002,
     imageUrl: "/images/publications/thumb_exudative-idiopathic-polypoidal-2006.png",
+    externalLink: "https://scholar.google.com/scholar?q=Exudative%20idiopathic%20polypoidal%20choroidal%20vasculopathy%20and%20photodynamic%20therapy%20with%20verteporfin",
     authorDetails: defaultAuthor
   },
   // ===== 2000 =====
@@ -457,6 +476,7 @@ const publications: Publication[] = [
     date: "1998",
     year: 1998,
     imageUrl: "/images/publications/icg_basal_laminar_drusen.png",
+    externalLink: "https://scholar.google.com/scholar?q=Indocyanine%20green%20angiography%20of%20basal%20laminar%20drusen%20associated%20with%20vitelliform%20macular%20degeneration",
     authorDetails: defaultAuthor
   },
   // ===== 1997 =====
@@ -467,6 +487,7 @@ const publications: Publication[] = [
     date: "1997",
     year: 1997,
     imageUrl: "/images/publications/icg_drusen.png",
+    externalLink: "https://scholar.google.com/scholar?q=Indocyanine%20green%20angiography%20of%20drusen",
     authorDetails: defaultAuthor
   },
   // ===== 1996 =====
@@ -477,6 +498,7 @@ const publications: Publication[] = [
     date: "1996",
     year: 1996,
     imageUrl: "/images/publications/icg_pathologic_myopia.png",
+    externalLink: "https://scholar.google.com/scholar?q=Indocyanine%20green%20angiographic%20features%20of%20pathologic%20myopia",
     authorDetails: defaultAuthor
   },
   // ===== 1995 =====
@@ -487,6 +509,7 @@ const publications: Publication[] = [
     date: "1995",
     year: 1995,
     imageUrl: "/images/publications/icg_angioid_streaks.png",
+    externalLink: "https://scholar.google.com/scholar?q=Indocyanine%20green%20videoangiography%20of%20angioid%20streaks",
     authorDetails: defaultAuthor
   }
 ];
