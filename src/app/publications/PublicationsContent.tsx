@@ -370,7 +370,7 @@ const publications: Publication[] = [
     date: "2007",
     year: 2007,
     imageUrl: "/images/publications/tear_meniscus_oct.png",
-    externalLink: "https://centrerabelaislyon.fr/wp-content/uploads/2015/11/2013-Quaranta-JFO-OCT-tear-meniscus.pdf",
+    externalLink: "https://pubmed.ncbi.nlm.nih.gov/17568352/",
     authorDetails: defaultAuthor
   },
   {
