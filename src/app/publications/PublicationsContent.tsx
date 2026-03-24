@@ -107,8 +107,8 @@ const publications: Publication[] = [
     journal: "Ophthalmology",
     date: "2017",
     year: 2017,
-    imageUrl: "/images/publications/art-american-journal.jpg",
-    externalLink: "https://centrerabelaislyon.fr/wp-content/uploads/2017/07/PDGF-VEGF-AMD.pdf",
+    imageUrl: "/images/publications/pdgf_vegf_dual_antagonism.png",
+    externalLink: "https://centrerabelaislyon.fr/wp-content/uploads/2018/10/PIIS0161642016316360.pdf",
     authorDetails: defaultAuthor
   },
   {
