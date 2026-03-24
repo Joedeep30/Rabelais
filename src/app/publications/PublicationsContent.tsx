@@ -300,7 +300,7 @@ const publications: Publication[] = [
     journal: "J Fr Ophtalmol",
     date: "2010",
     year: 2010,
-    imageUrl: "/images/publications/art-journal-fr-ophtal.jpg",
+    imageUrl: "/images/publications/outer_retinal_cysts.png",
     authorDetails: defaultAuthor
   },
   // ===== 2009 =====
@@ -321,7 +321,7 @@ const publications: Publication[] = [
     date: "2009",
     year: 2009,
     pdfUrl: "/pdfs/gonioscopy-oct-2009.pdf",
-    imageUrl: "/images/publications/art-journal-fr-ophtal.jpg",
+    imageUrl: "/images/publications/iridocorneal_angle_oct.png",
     authorDetails: defaultAuthor
   },
   // ===== 2008 =====
@@ -332,7 +332,7 @@ const publications: Publication[] = [
     date: "2008",
     year: 2008,
     pdfUrl: "/pdfs/anterior-segment-oct-2008.pdf",
-    imageUrl: "/images/publications/art-publications-generic.jpg",
+    imageUrl: "/images/publications/anterior_segment_glaucoma.png",
     authorDetails: defaultAuthor
   },
   // ===== 2007 =====
@@ -342,7 +342,7 @@ const publications: Publication[] = [
     journal: "J Fr Ophtalmol",
     date: "2007",
     year: 2007,
-    imageUrl: "/images/publications/art-journal-fr-ophtal.jpg",
+    imageUrl: "/images/publications/visante_ahmed_valve.png",
     authorDetails: defaultAuthor
   },
   {
@@ -351,7 +351,7 @@ const publications: Publication[] = [
     journal: "J Fr Ophtalmol",
     date: "2007",
     year: 2007,
-    imageUrl: "/images/publications/art-journal-fr-ophtal.jpg",
+    imageUrl: "/images/publications/tear_meniscus_oct.png",
     authorDetails: defaultAuthor
   },
   {
@@ -370,7 +370,7 @@ const publications: Publication[] = [
     journal: "J Fr Ophtalmol",
     date: "2007",
     year: 2007,
-    imageUrl: "/images/publications/art-journal-fr-ophtal.jpg",
+    imageUrl: "/images/publications/deep_sclerectomy.png",
     authorDetails: defaultAuthor
   },
   // ===== 2006 =====
@@ -381,7 +381,7 @@ const publications: Publication[] = [
     date: "2006",
     year: 2006,
     pdfUrl: "/pdfs/oct-tamoxifen-retinopathy-2006.pdf",
-    imageUrl: "/images/publications/art-american-journal.jpg",
+    imageUrl: "/images/publications/tamoxifen_retinopathy.png",
     authorDetails: defaultAuthor
   },
   {
@@ -390,7 +390,7 @@ const publications: Publication[] = [
     journal: "Invest Ophthalmol Vis Sci",
     date: "2006",
     year: 2006,
-    imageUrl: "/images/publications/art-american-journal.jpg",
+    imageUrl: "/images/publications/vitreoretinal_adhesions.png",
     authorDetails: defaultAuthor
   },
   {
@@ -409,7 +409,7 @@ const publications: Publication[] = [
     journal: "J Fr Ophtalmol",
     date: "2004",
     year: 2004,
-    imageUrl: "/images/publications/art-journal-fr-ophtal.jpg",
+    imageUrl: "/images/publications/photocoagulation_failure.png",
     authorDetails: defaultAuthor
   },
   {
@@ -418,7 +418,7 @@ const publications: Publication[] = [
     journal: "J Fr Ophtalmol",
     date: "2004",
     year: 2004,
-    imageUrl: "/images/publications/art-journal-fr-ophtal.jpg",
+    imageUrl: "/images/publications/anterior_segment_oct3.png",
     authorDetails: defaultAuthor
   },
   // ===== 2002 =====
@@ -438,7 +438,7 @@ const publications: Publication[] = [
     journal: "Graefes Arch Clin Exp Ophthalmol",
     date: "2000",
     year: 2000,
-    imageUrl: "/images/publications/placeholder-doc.jpg",
+    imageUrl: "/images/publications/multiple_cnv.png",
     authorDetails: defaultAuthor
   },
   // ===== 1998 =====
@@ -448,7 +448,7 @@ const publications: Publication[] = [
     journal: "J Fr Ophtalmol",
     date: "1998",
     year: 1998,
-    imageUrl: "/images/publications/art-journal-fr-ophtal.jpg",
+    imageUrl: "/images/publications/icg_basal_laminar_drusen.png",
     authorDetails: defaultAuthor
   },
   // ===== 1997 =====
@@ -458,7 +458,7 @@ const publications: Publication[] = [
     journal: "Am J Ophthalmol",
     date: "1997",
     year: 1997,
-    imageUrl: "/images/publications/art-american-journal.jpg",
+    imageUrl: "/images/publications/icg_drusen.png",
     authorDetails: defaultAuthor
   },
   // ===== 1996 =====
@@ -468,7 +468,7 @@ const publications: Publication[] = [
     journal: "Am J Ophthalmol",
     date: "1996",
     year: 1996,
-    imageUrl: "/images/publications/art-american-journal.jpg",
+    imageUrl: "/images/publications/icg_pathologic_myopia.png",
     authorDetails: defaultAuthor
   },
   // ===== 1995 =====
@@ -478,7 +478,7 @@ const publications: Publication[] = [
     journal: "British Journal of Ophthalmology",
     date: "1995",
     year: 1995,
-    imageUrl: "/images/publications/placeholder-doc.jpg",
+    imageUrl: "/images/publications/icg_angioid_streaks.png",
     authorDetails: defaultAuthor
   }
 ];
