@@ -465,7 +465,7 @@ const publications: Publication[] = [
     date: "2000",
     year: 2000,
     imageUrl: "/images/publications/multiple_cnv.png",
-    externalLink: "https://pubmed.ncbi.nlm.nih.gov/9759404/",
+    externalLink: "https://pubmed.ncbi.nlm.nih.gov/10664062/",
     authorDetails: defaultAuthor
   },
   // ===== 1998 =====
