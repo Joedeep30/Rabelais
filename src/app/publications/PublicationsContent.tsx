@@ -228,7 +228,8 @@ const publications: Publication[] = [
     date: "2015",
     year: 2015,
     imageUrl: "/images/publications/chronic-csc-oct-a.png",
-    externalLink: "https://centrerabelaislyon.fr/wp-content/uploads/2020/08/Chronic-Central-Serous-Chorioretinopathy-Imaged-by-Optical-Coherence-Tomographic-Angiography.pdf",
+    pdfUrl: "https://centrerabelaislyon.fr/wp-content/uploads/2015/11/Am-J-Ophthalmol.-2015-Sep-Chronic-Central-Serous-Chorioretinopathy-Imaged-by-Optical-Coherence-Tomographic-Angiography.pdf",
+    externalLink: "https://centrerabelaislyon.fr/wp-content/uploads/2015/11/Am-J-Ophthalmol.-2015-Sep-Chronic-Central-Serous-Chorioretinopathy-Imaged-by-Optical-Coherence-Tomographic-Angiography.pdf",
     authorDetails: defaultAuthor
   },
   {
