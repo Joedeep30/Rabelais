@@ -15,6 +15,7 @@ type Publication = {
   date: string;
   year: number;
   pdfUrl?: string;
+  externalLink?: string;
   imageUrl?: string;
   description?: string;
   type?: 'article' | 'book';
@@ -343,6 +344,7 @@ const publications: Publication[] = [
     date: "2007",
     year: 2007,
     imageUrl: "/images/publications/visante_ahmed_valve.png",
+    externalLink: "https://scholar.google.com/scholar?q=Visante+OCT+and+the+Ahmed+valve",
     authorDetails: defaultAuthor
   },
   {
@@ -352,6 +354,7 @@ const publications: Publication[] = [
     date: "2007",
     year: 2007,
     imageUrl: "/images/publications/tear_meniscus_oct.png",
+    externalLink: "https://scholar.google.com/scholar?q=Tear+meniscus+in+Visante+OCT",
     authorDetails: defaultAuthor
   },
   {
@@ -371,6 +374,7 @@ const publications: Publication[] = [
     date: "2007",
     year: 2007,
     imageUrl: "/images/publications/deep_sclerectomy.png",
+    externalLink: "https://scholar.google.com/scholar?q=Nonpenetrating+deep+sclerectomy+with+Aquaflow+drain",
     authorDetails: defaultAuthor
   },
   // ===== 2006 =====
@@ -391,6 +395,7 @@ const publications: Publication[] = [
     date: "2006",
     year: 2006,
     imageUrl: "/images/publications/vitreoretinal_adhesions.png",
+    externalLink: "http://www.ncbi.nlm.nih.gov/pubmed/16496257",
     authorDetails: defaultAuthor
   },
   {
@@ -410,6 +415,7 @@ const publications: Publication[] = [
     date: "2004",
     year: 2004,
     imageUrl: "/images/publications/photocoagulation_failure.png",
+    externalLink: "http://www.ncbi.nlm.nih.gov/pubmed/15343118",
     authorDetails: defaultAuthor
   },
   {
@@ -419,6 +425,7 @@ const publications: Publication[] = [
     date: "2004",
     year: 2004,
     imageUrl: "/images/publications/anterior_segment_oct3.png",
+    externalLink: "http://www.ncbi.nlm.nih.gov/pubmed/15179301",
     authorDetails: defaultAuthor
   },
   // ===== 2002 =====
@@ -439,6 +446,7 @@ const publications: Publication[] = [
     date: "2000",
     year: 2000,
     imageUrl: "/images/publications/multiple_cnv.png",
+    externalLink: "http://www.ncbi.nlm.nih.gov/pubmed/9759404",
     authorDetails: defaultAuthor
   },
   // ===== 1998 =====
@@ -602,7 +610,9 @@ export default function PublicationsContent() {
                     globalIdx % 2 === 0 ? 'bg-[#f8f8f8] border-l-4 border-[#003399]' : 'bg-white border border-gray-100 border-l-4 border-[#c2aa84]'
                   }`}
                 >
-                  {/* Preview Image or Icon Placeholder */}
+                  {/* Left Column (Image & Button) */}
+                  <div className="flex flex-col w-full md:w-[240px] shrink-0">
+                    {/* Preview Image or Icon Placeholder */}
                   {pub.imageUrl ? (
                     <div className="relative w-full md:w-[240px] h-[200px] md:h-auto md:aspect-[3/4] shrink-0 overflow-hidden bg-[#ffffff] border border-gray-200 group flex items-center justify-center p-2">
                       <PublicationImage 
@@ -623,7 +633,20 @@ export default function PublicationsContent() {
                       <span className="text-[10px] text-[#003399]/40 font-medium uppercase tracking-wider">Publication</span>
                     </div>
                   )}
-                  {/* Text Content */}
+
+                  {/* Plus d'infos Button */}
+                  {(pub.externalLink || pub.pdfUrl) && (
+                    <a 
+                      href={pub.externalLink || pub.pdfUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-full mt-4 bg-[#0033a0] text-white text-[11px] font-bold uppercase tracking-[1px] py-2.5 px-4 rounded-full hover:bg-[#002277] transition-colors text-center inline-block"
+                    >
+                      Plus d'infos
+                    </a>
+                  )}
+                </div>
+                {/* Text Content */}
                   <div className="flex-1 min-w-0 flex flex-col">
                     <div className="flex items-center gap-3 mb-2 flex-wrap">
                       <span className="text-[12px] font-bold text-[#c2aa84] uppercase tracking-[2px]">{pub.date}</span>
