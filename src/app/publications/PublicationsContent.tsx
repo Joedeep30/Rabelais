@@ -173,6 +173,7 @@ const publications: Publication[] = [
     date: "Janvier 2016",
     year: 2016,
     imageUrl: "/images/publications/art-tubulations-2016.png",
+    pdfUrl: "https://centrerabelaislyon.fr/wp-content/uploads/2016/03/imagerie-multimodale-DMLA-2016.pdf",
     externalLink: "https://centrerabelaislyon.fr/wp-content/uploads/2016/03/imagerie-multimodale-DMLA-2016.pdf",
     authorDetails: defaultAuthor
   },
