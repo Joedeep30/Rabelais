@@ -391,7 +391,7 @@ const publications: Publication[] = [
     date: "2007",
     year: 2007,
     imageUrl: "/images/publications/deep_sclerectomy.png",
-    externalLink: "https://centrerabelaislyon.fr/wp-content/uploads/2015/11/2011-Quaranta-Nanos-Aquaflow-JFO.pdf",
+    externalLink: "https://pubmed.ncbi.nlm.nih.gov/17318110/",
     authorDetails: defaultAuthor
   },
   // ===== 2006 =====
