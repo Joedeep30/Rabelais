@@ -88,6 +88,10 @@ export default function RootLayout({
           "longitude": 4.831900
         },
         "medicalSpecialty": ["Ophthalmologic", "Retina Specialist", "Macular Degeneration", "Photobiomodulation"],
+        "sameAs": [
+          "https://www.linkedin.com/in/maddalena-quaranta-60458658/",
+          "https://www.linkedin.com/company/centre-ophtalmologique-rabelais"
+        ],
         "availableService": [
           {
             "@type": "MedicalTherapy",
