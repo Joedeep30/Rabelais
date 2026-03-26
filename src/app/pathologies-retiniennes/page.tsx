@@ -691,7 +691,22 @@ Et Le Vendredi de 9h à 17h00 </p></p>
 
       <div className="bg-white">
         <div 
-          className="py-16 px-4 md:px-16 lg:px-24 mx-auto w-full max-w-[1280px] prose prose-lg prose-blue max-w-none text-[#888888] leading-relaxed [&>div>h1]:text-[#003399] [&>div>h3]:text-[#003399] [&_img]:rounded-lg [&_img]:shadow-sm"
+          className="py-16 px-4 md:px-8 lg:px-12 mx-auto w-full max-w-[1400px] prose prose-lg prose-blue max-w-none text-[#888888] leading-relaxed 
+          
+          [&_.content-page>.container]:flex [&_.content-page>.container]:flex-col [&_.content-page>.container]:md:flex-row-reverse [&_.content-page>.container]:gap-12 [&_.content-page>.container]:items-start
+          
+          [&_.left-content-page]:md:w-[75%] [&_.left-content-page]:w-full
+          [&_.right-content-page]:md:w-[25%] [&_.right-content-page]:w-full [&_.right-content-page]:sticky [&_.right-content-page]:top-32
+          
+          [&_.sidebar-blog]:bg-gray-50 [&_.sidebar-blog]:p-6 [&_.sidebar-blog]:rounded-xl [&_.sidebar-blog]:shadow-sm [&_.sidebar-blog]:mb-8
+          [&_.menu-sidebars_h2]:text-[#003399] [&_.menu-sidebars_h2]:text-2xl [&_.menu-sidebars_h2]:mt-0 [&_.menu-sidebars_h2]:mb-6
+          [&_.menu-sidebars_ul]:list-none [&_.menu-sidebars_ul]:pl-0 [&_.menu-sidebars_ul]:m-0
+          [&_.menu-sidebars_li]:mb-4 [&_.menu-sidebars_li]:leading-tight
+          [&_.menu-sidebars_a]:text-gray-600 [&_.menu-sidebars_a]:no-underline [&_.menu-sidebars_a]:text-[15px] hover:[&_.menu-sidebars_a]:text-[#003399] transition-colors
+          
+          [&_.publicationsside]:hidden [&_.adresse]:hidden [&_.social-blog]:hidden
+          
+          [&>div>h1]:text-[#003399] [&>div>h3]:text-[#003399] [&_img]:rounded-lg [&_img]:shadow-sm"
           dangerouslySetInnerHTML={{ __html: customHtml }}
         />
       </div>
