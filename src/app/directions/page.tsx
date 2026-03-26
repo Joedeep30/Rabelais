@@ -16,7 +16,7 @@ export default function DirectionsPage() {
       <section className="relative h-[300px] md:h-[400px] w-full flex items-center justify-center overflow-hidden">
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat z-0"
-          style={{ backgroundImage: "url('https://centrerabelaislyon.fr/wp-content/uploads/2015/09/slider1.jpg')" }}
+          style={{ backgroundImage: "url('/images/hero/cabinet-ophtalmologie-lyon-centre.webp')" }}
         >
           <div className="absolute inset-0 bg-black/40"></div>
         </div>

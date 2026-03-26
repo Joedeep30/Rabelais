@@ -38,7 +38,7 @@ export default function EquipeMedicalePage() {
       <section className="relative h-[400px] md:h-[500px] w-full flex items-center justify-center overflow-hidden">
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat z-0"
-          style={{ backgroundImage: "url('https://centrerabelaislyon.fr/wp-content/uploads/2015/09/slider4.jpg')" }}
+          style={{ backgroundImage: "url('/images/hero/equipe-medicale-ophtalmologiste-lyon.webp')" }}
         >
           <div className="absolute inset-0 bg-black/40"></div>
         </div>

@@ -92,7 +92,7 @@ export default function OffreDeSoinsPage() {
       <section className="relative h-[400px] md:h-[500px] w-full flex items-center justify-center overflow-hidden mt-0">
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat z-0"
-          style={{ backgroundImage: "url('https://centrerabelaislyon.fr/wp-content/uploads/2015/10/banner9.jpg')" }}
+          style={{ backgroundImage: "url('/images/hero/traitements-maladies-retine-lyon.webp')" }}
         >
           <div className="absolute inset-0 bg-black/40"></div>
         </div>
