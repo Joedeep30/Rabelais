@@ -14,7 +14,7 @@ export default function PathologiesOculairesPage() {
 			<div class="inner-page-defaut">
 								<div id="menupage0" class="box-offresoi">
 															<p><h1><span >L’ŒIL NORMAL :</span></h1>
-<p><img class="wp-image-866 size-full aligncenter" src="/images/pathologies/COUPE-DE-L-OEIL-AEM-e1452168784959_0.webp" alt="COUPE DE L OEIL AEM" width="400" height="302" /></p>
+<p><img class="aligncenter size-full rounded shadow-sm" src="/images/pathologies/illustration-de-loeil-normal.webp" alt="Illustration anatomique globale de l'oeil" /></p>
 <div id="spoon-plugin-kncgbdglledmjmpnikebkagnchfdehbm-2" > </div></p>
 				</div>
 								<div id="menupage1" class="box-offresoi">
