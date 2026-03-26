@@ -678,50 +678,6 @@ export default function PathologiesOculairesPage() {
 																	
 									</ul>
 			</div>
-					<div class="sidebar-blog publicationsside">
-				<a href="https://centrerabelaislyon.fr/publications/" ><h2>Publications</h2></a>
-								<div class="box-pub">
-					<div class="left-pub">
-						<img src="" alt="" />
-					</div>
-					<div class="right-pub">
-												<a href="https://centrerabelaislyon.fr/medicale/maddalena-quaranta/">Dr Maddalena Quaranta</a>
-												<span>Cystic maculopathy  in the internal nuclear layer in glaucoma patients</span>
-					</div>
-											<a href="https://centrerabelaislyon.fr/wp-content/uploads/2021/06/1-s2.0-S0181551221001789-main.pdf" class="bottom-read-more">plus d’infos</a>
-										<div class="clear"></div>
-				</div>
-								<div class="box-pub">
-					<div class="left-pub">
-						<img src="" alt="" />
-					</div>
-					<div class="right-pub">
-												<a href="https://centrerabelaislyon.fr/medicale/maddalena-quaranta/">Dr Maddalena Quaranta</a>
-												<span>The long-term efects of anti-vascular endothelial growth factor therapy on the optical coherence tomography angiographic appearance of neovascularization in age-related macular degeneration</span>
-					</div>
-											<a href="https://centrerabelaislyon.fr/wp-content/uploads/2020/08/The-long-term-effects-of-anti-vascular-endothelial-growth-factor-therapy-on-the-optical-coherence-tomography-angiographic-appearance-of-neovascularization-in-age-related-macular-degeneration.pdf" class="bottom-read-more">plus d’infos</a>
-										<div class="clear"></div>
-				</div>
-							</div>
-			
-					<div  class="sidebar-blog">
-				<h2>ActualitéS</h2>
-								<div  class="sidebar-blogs">
-					<div class="thumbnail">
-						 <a href="https://centrerabelaislyon.fr/ador-basse-vision/">
-							 <img src="/images/pathologies/main-homepage_33.webp" alt="" width=100% />						 </a>
-						 <span>Oct 2022</span>
-					</div>
-					<div class="text">
-						<h3><a href="https://centrerabelaislyon.fr/actualites/">[OCT 2022]  ADOR &#8211; Basse Vision</a></h3>
-						<div class="description">
-							Samedi 8 octobre 2022 s’est tenu la réunion de l’association des Ophtalmologistes auvergnat pour laquelle Mr Adil EL MAFTOUHI a été l’invité d’honneur sur les équipements optiques en Basse vision...						</div>
-						<a href="https://centrerabelaislyon.fr/actualites/" class="bottom-read-more">plus d’infos</a>
-					</div>
-				</div>
-								<span id="ajax-load-mores">en savoir plus <i class="fa fa-plus"></i></span>
-			</div>
-			
 			
 			
 					<div class="sidebar-blog adresse">

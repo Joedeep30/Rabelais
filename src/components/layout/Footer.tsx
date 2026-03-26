@@ -19,7 +19,6 @@ export default function Footer() {
             <li><Link prefetch={true} href="/equipe-medicale" className="hover:text-[#a68d71] transition-colors">Équipe Médicale</Link></li>
             <li><Link prefetch={true} href="/plateau-technique" className="hover:text-[#a68d71] transition-colors">Plateau Technique</Link></li>
             <li><Link prefetch={true} href="/etudes-cliniques" className="hover:text-[#a68d71] transition-colors">Etudes Cliniques</Link></li>
-            <li><Link prefetch={true} href="/publications" className="hover:text-[#a68d71] transition-colors">Publications</Link></li>
             <li><Link prefetch={true} href="/dois-je-consulter" className="hover:text-[#a68d71] transition-colors">Dois-Je Consulter ?</Link></li>
           </ul>
         </div>
