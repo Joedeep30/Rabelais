@@ -89,23 +89,21 @@ export default function OffreDeSoinsPage() {
       />
       
       {/* Hero Section */}
-      <section className="relative h-[400px] md:h-[500px] w-full flex items-center justify-center overflow-hidden mt-0">
+      <section className="relative h-[400px] md:h-[500px] w-full flex items-center justify-start overflow-hidden mt-0">
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat z-0"
-          style={{ backgroundImage: "url('/images/hero/traitements-maladies-retine-lyon.webp')" }}
+          style={{ backgroundImage: "url('/images/hero/offre-de-soins-ophtalmologie.webp')" }}
         >
           <div className="absolute inset-0 bg-black/40"></div>
         </div>
         
-        <div className="relative z-10 flex flex-col items-center justify-center text-center px-4 mt-16">
-          <h1 className="text-white text-[32px] md:text-[52px] font-light leading-[1.1] tracking-wide mb-[20px] uppercase">
-            Notre <strong className="font-bold">Offre de Soins</strong>
+        <div className="relative z-10 flex flex-col items-start justify-center h-full px-4 md:px-16 lg:px-24">
+          <h1 className="text-white text-[42px] md:text-[56px] font-[Gotham] font-light leading-tight mb-4">
+            Offre De Soins
           </h1>
-          <div className="flex items-center justify-center gap-0 w-full max-w-[300px]">
-            <div className="h-[1px] w-full bg-[#c2aa84]/60"></div>
-            <i className="block w-[14px] h-[14px] bg-[#c2aa84] rounded-full mx-[-7px] z-10"></i>
-            <div className="h-[1px] w-full bg-[#c2aa84]/60"></div>
-          </div>
+          <p className="text-white/90 text-[18px] md:text-[22px] font-light max-w-2xl leading-relaxed">
+            Structure de soins spécialisée dans l'imagerie Ophtalmologique et dans la prise en charge des maladies rétiniennes
+          </p>
         </div>
       </section>
 
