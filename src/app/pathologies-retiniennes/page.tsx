@@ -684,7 +684,7 @@ Et Le Vendredi de 9h à 17h00 </p></p>
   
   return (
     <main className="flex flex-col flex-grow font-[Gotham] text-[#888888] bg-white">
-      <section className="relative h-[400px] md:h-[500px] w-full flex items-center justify-start overflow-hidden mt-0">
+      <section className="relative h-[400px] md:h-[500px] w-full flex items-center justify-center overflow-hidden mt-0">
         <div className="absolute inset-0 bg-cover bg-center bg-no-repeat z-0" style={{ backgroundImage: "url('/images/hero/pathologies-oculaires.webp')" }}>
           <div className="absolute inset-0 bg-black/40"></div>
         </div>

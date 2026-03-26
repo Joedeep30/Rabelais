@@ -89,7 +89,7 @@ export default function OffreDeSoinsPage() {
       />
       
       {/* Hero Section */}
-      <section className="relative h-[400px] md:h-[500px] w-full flex items-center justify-start overflow-hidden mt-0">
+      <section className="relative h-[400px] md:h-[500px] w-full flex items-center justify-center overflow-hidden mt-0">
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat z-0"
           style={{ backgroundImage: "url('/images/hero/offre-de-soins-ophtalmologie.webp')" }}
