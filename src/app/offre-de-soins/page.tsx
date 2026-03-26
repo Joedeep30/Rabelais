@@ -106,6 +106,9 @@ export default function OffreDeSoinsPage() {
             <i className="block w-[14px] h-[14px] bg-[#c2aa84] rounded-full mx-[-7px] z-10"></i>
             <div className="h-[1px] w-full bg-[#c2aa84]/60"></div>
           </div>
+          <p className="text-white/90 text-[16px] md:text-[18px] font-light max-w-2xl leading-relaxed mt-6">
+            Structure de soins spécialisée dans l'imagerie Ophtalmologique et dans la prise en charge des maladies rétiniennes
+          </p>
         </div>
       </section>
 

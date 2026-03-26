@@ -52,7 +52,10 @@ export default function EquipeMedicalePage() {
             <i className="block w-[14px] h-[14px] bg-[#c2aa84] rounded-full mx-[-7px] z-10"></i>
             <div className="h-[1px] w-full bg-[#c2aa84]/60"></div>
           </div>
-          <p className="text-white/90 text-[14px] md:text-[16px] font-bold tracking-[2px] uppercase">
+          <p className="text-white/90 text-[16px] md:text-[18px] font-light max-w-2xl leading-relaxed mb-4">
+            Le Centre Ophtalmologique Rabelais offre une prise en charge complète des pathologies vitréo-rétiniennes et du glaucome
+          </p>
+          <p className="text-[#c2aa84] text-[13px] md:text-[14px] font-bold tracking-[2px] uppercase bg-black/30 px-4 py-2 rounded-full">
             WE SPEAK ENGLISH / SI PARLA ITALIANO
           </p>
         </div>
