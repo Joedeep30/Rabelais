@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 
 export default function EtudesCliniquesPage() {
   return (
-    <main className="flex flex-col flex-grow font-[Gotham] text-[#888888] bg-[#fdfdfd]">
+    <main className="flex flex-col flex-grow font-[Gotham] text-[#888888] bg-white">
       
       {/* Hero Section */}
       <section className="relative h-[400px] md:h-[500px] w-full flex items-center justify-center overflow-hidden">
@@ -33,161 +33,122 @@ export default function EtudesCliniquesPage() {
         </div>
       </section>
 
-      {/* Main Content & Sidebar */}
-      <section className="py-16 px-4 max-w-6xl mx-auto w-full">
-        <div className="flex flex-col md:flex-row gap-16">
-          
-          {/* Main Left Content */}
-          <div className="flex-1">
+      {/* Intro Section */}
+      <section className="py-20 px-4 max-w-5xl mx-auto">
+        <div className="bg-[#f8f8f8] p-8 md:p-12 border-l-4 border-[#c2aa84] shadow-sm mb-12">
+            <h2 className="text-[#c2aa84] text-[24px] font-bold tracking-[1px] mb-[15px] uppercase">Les études cliniques</h2>
+            <p className="text-[#888888] text-[16px] font-light leading-[1.8] mb-[15px]">
+              Le traitement des pathologies rétiniennes fait l’objet d’une intense activité de recherche clinique pour pouvoir valider la sécurité et l’efficacité de molécules de plus en plus performantes en termes de résultats visuels ou de durée d’action.
+            </p>
+            <p className="text-[#888888] text-[16px] font-light leading-[1.8]">
+              Le Centre Ophtalmologique Rabelais participe à un grand nombre d’études cliniques de phase 1, 2 et 3 dans le domaine de la DMLA et de la rétinopathie diabétique et fait bénéficier ses patients de procédures entièrement gratuites.
+            </p>
+        </div>
+
+        <div className="grid md:grid-cols-2 gap-12 mb-20">
+            <div>
+                <h3 className="text-[#003399] text-[22px] font-bold mb-[20px] pb-2 border-b border-gray-100 uppercase tracking-wide">
+                  Les phases de la recherche clinique
+                </h3>
+                <ul className="space-y-5 text-[#888888] text-[15px] font-light leading-[1.8]">
+                    <li>
+                      <strong className="text-slate-800 font-bold">Phase 1.</strong> Une molécule est expérimentée sur un petit groupe de patients pour en tester l’innocuité et les dosages. Aucune molécule n’ayant passé tous les tests de laboratoire avec succès n’arrive à l’expérimentation sur l’être humain.
+                    </li>
+                    <li>
+                      <strong className="text-slate-800 font-bold">Phase 2.</strong> Etude des dosages donnant les meilleurs résultats sur l’acuité visuelle et les autres paramètres cliniques.
+                    </li>
+                    <li>
+                      <strong className="text-slate-800 font-bold">Phase 3.</strong> Etude de validation de l’efficacité d’une molécule sur un grand nombre de patients.
+                    </li>
+                </ul>
+                <div className="mt-6 pt-4 border-t border-gray-100">
+                  <p className="text-[14px] italic text-[#888888] leading-relaxed">
+                      Toutes les phases de la recherche clinique sont soumises à des contrôles stricts de sécurité. Aucun nouveau médicament n'arrive en phase 3 sans avoir passé les phases 1 et 2 avec des résultats significatifs.
+                  </p>
+                </div>
+            </div>
             
-            {/* Intro Section */}
-            <div className="mb-12">
-              <h3 className="text-[#c2aa84] text-[24px] font-bold mb-4 flex items-center">
-                <span className="w-2.5 h-2.5 rounded-full bg-[#c2aa84] mr-3"></span>
-                <u className="underline-offset-4 font-bold decoration-[1.5px]">Les études cliniques</u>
-              </h3>
-              <div className="space-y-4 text-[#888888] text-[16px] font-light leading-[1.8] text-justify pl-5">
-                <p>
-                  Le traitement des pathologies rétiniennes fait l’objet d’une intense activité de recherche clinique pour pouvoir valider la sécurité et l’efficacité de molécules de plus en plus performantes en termes de résultats visuels ou de durée d’action.
-                </p>
-                <p>
-                  Le Centre Rabelais participe à un grand nombre d’études cliniques de phase 1, 2 et 3 dans le domaine de la DMLA et de la rétinopathie diabétique et fait bénéficier ses patients de procédures entièrement gratuites.
-                </p>
-              </div>
-            </div>
-
-            {/* Phases Section */}
-            <div className="mb-12">
-              <h3 className="text-[#c2aa84] text-[24px] font-bold mb-4 flex items-center">
-                <span className="w-2.5 h-2.5 rounded-full bg-[#c2aa84] mr-3"></span>
-                <u className="underline-offset-4 font-bold decoration-[1.5px]">Les phases de la recherche clinique</u>
-              </h3>
-              <div className="space-y-4 text-[#888888] text-[16px] font-light leading-[1.8] pl-5">
-                <p><strong className="font-bold text-[#888888]">Phase 1.</strong> Une molécule est expérimentée sur un petit groupe de patients pour en tester l’innocuité et les dosages. Aucune molécule n’ayant passé tous les tests de laboratoire avec succès n’arrive à l’expérimentation sur l’être humain.</p>
-                <p><strong className="font-bold text-[#888888]">Phase 2.</strong> Etude des dosages donnant les meilleurs résultats sur l’acuité visuelle et les autres paramètres cliniques.</p>
-                <p><strong className="font-bold text-[#888888]">Phase 3.</strong> Etude de validation de l’efficacité d’une molécule sur un grand nombre de patients.</p>
-                <p className="text-justify pt-2">
-                  Toutes les phases de la recherche clinique sont soumises à des contrôles stricts de sécurité. Aucun nouveau médicament n'arrive en phase 3 sans avoir passé les phases 1 et 2 avec des résultats significatifs.
-                </p>
-              </div>
-            </div>
-
-            {/* Comment fonctionne Section */}
-            <div className="mb-12">
-              <h3 className="text-[#c2aa84] text-[24px] font-bold mb-4 flex items-center">
-                <span className="w-2.5 h-2.5 rounded-full bg-[#c2aa84] mr-3"></span>
-                <u className="underline-offset-4 font-bold decoration-[1.5px]">Comment fonctionne un protocole de recherche clinique</u>
-              </h3>
-              <div className="space-y-4 text-[#888888] text-[16px] font-light leading-[1.8] pl-5">
-                <p className="text-justify">
+            <div>
+                <h3 className="text-[#003399] text-[22px] font-bold mb-[20px] pb-2 border-b border-gray-100 uppercase tracking-wide">
+                  Comment fonctionne un protocole
+                </h3>
+                <p className="text-[#888888] text-[15px] font-light leading-[1.8] mb-4 text-justify">
                   Les patients présentant les caractéristiques requises par le protocole sont sélectionnés par les médecins du Centre (phase de screening) et leur dossier complet est envoyé pour validation à un centre de lecture international ou national pour l’admission à l’étude (phase d’inclusion).
                 </p>
-                <p>Le patient est ensuite randomisé dans un des bras de traitement.</p>
-                <p>La plupart des études concernant la DMLA, par exemple, prévoient 2 bras de traitement :</p>
-                
-                <p className="font-normal text-[#888888] pt-2">
-                  1. Le bras de contrôle dans lequel le patient est soumis à la procédure standard validée par des grandes études cliniques (molécules et rythme de traitement déjà validés pour leur efficacité).
+                <p className="text-[#888888] text-[15px] font-light leading-[1.8] mb-5">
+                  Le patient est ensuite randomisé dans un des bras de traitement :
                 </p>
-                <p className="font-normal text-[#888888]">
-                  2. Le bras d’étude où le patient est traité avec une nouvelle molécule utilisée seule ou en association avec les traitements validés.
-                </p>
-              </div>
-            </div>
-
-            {/* Etudes au centre Section */}
-            <div className="mb-12">
-              <h3 className="text-[#c2aa84] text-[24px] font-bold mb-4 flex items-center">
-                <span className="w-2.5 h-2.5 rounded-full bg-[#c2aa84] mr-3"></span>
-                <u className="underline-offset-4 font-bold decoration-[1.5px]">Les études cliniques au Centre Rabelais</u>
-              </h3>
-              <div className="space-y-10 pl-5">
-                <p className="text-[#888888] text-[16px] font-light">Pour la DMLA Humide :</p>
                 
-                {/* 1 */}
-                <div>
-                  <h4 className="text-[#c2aa84] text-[18px] font-bold mb-3">
-                    <u className="underline-offset-4 decoration-[1px]">1. Etude OPH 1003 (Phase 3). Promoteur OPHTHOTECH</u>
-                  </h4>
-                  <div className="text-[#888888] text-[16px] font-light leading-[1.8] space-y-3">
-                    <p>Patients atteints d’une DMLA humide vierge de tout traitement préalable (patients naïfs).</p>
-                    <p>Etude d’association thérapeutique ranibizumab/Fovista.</p>
-                    <p className="text-justify">L’association de ces deux molécules a démontré l’innocuité du Fovista et une tendance à des meilleurs résultats fonctionnels de l’association Fovista+ranibizumab comparée au ranibizumab seul, au cours des phases 1 et 2.</p>
-                  </div>
+                <div className="space-y-4 bg-gray-50/50 p-6 rounded-sm border border-gray-100">
+                  <p className="text-[#888888] text-[15px] font-light leading-[1.8]">
+                    <strong className="font-bold text-slate-800 tracking-wide">1. Le bras de contrôle</strong> dans lequel le patient est soumis à la procédure standard validée par des grandes études cliniques (molécules et rythme de traitement déjà validés pour leur efficacité).
+                  </p>
+                  <p className="text-[#888888] text-[15px] font-light leading-[1.8]">
+                    <strong className="font-bold text-slate-800 tracking-wide">2. Le bras d'étude</strong> où le patient est traité avec une nouvelle molécule utilisée seule ou en association avec les traitements validés.
+                  </p>
                 </div>
-
-                {/* 2 */}
-                <div>
-                  <h4 className="text-[#c2aa84] text-[18px] font-bold mb-3">
-                    <u className="underline-offset-4 decoration-[1px]">2. Etude OPH 1008 (Phase 2-3). Promoteur OPHTHOTECH</u>
-                  </h4>
-                  <div className="text-[#888888] text-[16px] font-light leading-[1.8] space-y-3">
-                    <p>Patients naïfs.</p>
-                    <p>Association thérapeutique aflibercept (Eylea) ou bevacizumab (Avastin)/Fovista.</p>
-                  </div>
-                </div>
-
-                {/* 3 */}
-                <div>
-                  <h4 className="text-[#c2aa84] text-[18px] font-bold mb-3">
-                    <u className="underline-offset-4 decoration-[1px]">3. Etude OPH 2008. Promoteur OPHTHOTECH</u>
-                  </h4>
-                  <div className="text-[#888888] text-[16px] font-light leading-[1.8] space-y-3">
-                    <p>Patients naïfs et patients ayant reçu 2 injections au préalable sans succès.</p>
-                    <p>Etude d’association thérapeutique ranibizumab/Fovista selon deux protocoles d’administration différents.</p>
-                  </div>
-                </div>
-
-                {/* 4 */}
-                <div>
-                  <h4 className="text-[#c2aa84] text-[18px] font-bold mb-3">
-                    <u className="underline-offset-4 decoration-[1px]">4. Etude ESBA</u>
-                  </h4>
-                </div>
-
-              </div>
             </div>
-
-          </div>
-
-          {/* Right Sidebar (Adresse) */}
-          <div className="w-full md:w-[350px]">
-            <h3 className="text-[#c2aa84] text-[22px] font-light tracking-[2px] uppercase mb-6">Adresse</h3>
-            
-            <div className="bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] pb-[30px] border border-gray-50/50">
-              <div className="p-8">
-                <p className="text-[#888888] font-bold text-[15px] mb-1">Centre Ophtalmologique Rabelais</p>
-                <p className="text-[#888888] text-[15px] font-light">2, Rue Antoine de Saint-Exupéry</p>
-                <p className="text-[#888888] text-[15px] font-light">69002 Lyon</p>
-                <p className="text-[#888888] font-bold text-[15px] mt-1 mb-8">04 78 95 09 08</p>
-
-                <p className="text-[#888888] font-bold text-[14px]">Accès: Proche Bus/Métro</p>
-                <p className="text-[#888888] text-[14px] font-light">Lignes de métro : A et D</p>
-                <p className="text-[#888888] text-[14px] font-light mb-6">Bus : C20, C9, C10 Et 40 / 15 / 35</p>
-
-                <p className="text-[#888888] font-bold text-[14px]">Prendre Rendez-vous:</p>
-                <p className="text-[#888888] text-[14px] font-light">Du Lundi au Jeudi de 9h à 18h</p>
-                <p className="text-[#888888] text-[14px] font-light">Et Le Vendredi de 9h à 17h00</p>
-              </div>
-
-              {/* Map Button (Matching design) */}
-              <div className="relative h-[60px] w-full flex items-center justify-center cursor-pointer overflow-hidden group">
-                 <img 
-                    src="https://centrerabelaislyon.fr/wp-content/themes/Placeholder/images/mapbg.jpg" 
-                    alt="Map Background" 
-                    className="absolute inset-0 w-full h-full object-cover z-0 opacity-80 group-hover:opacity-100 transition-opacity" 
-                 />
-                 <div className="absolute inset-0 bg-[#c2aa84]/40 group-hover:bg-[#c2aa84]/50 transition-colors z-[1]"></div>
-                 <a href="/directions" className="relative z-10 flex items-center gap-2 text-white font-bold text-[12px] tracking-[2px] uppercase">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4">
-                      <path fillRule="evenodd" d="M11.54 22.351l.07.04.028.016a.76.76 0 00.723 0l.028-.015.071-.041a16.975 16.975 0 001.144-.742 19.58 19.58 0 002.683-2.282c1.944-1.99 3.963-4.98 3.963-8.827a8.25 8.25 0 00-16.5 0c0 3.846 2.02 6.837 3.963 8.827a19.58 19.58 0 002.682 2.282 16.975 16.975 0 001.145.742zM12 13.5a3 3 0 100-6 3 3 0 000 6z" clipRule="evenodd" />
-                    </svg>
-                    Montrer la carte
-                 </a>
-              </div>
-            </div>
-          </div>
-
         </div>
+
+        {/* Études Au Centre Ophtalmologique Rabelais */}
+        <div className="text-center mb-10">
+          <h2 className="text-[#c2aa84] text-[28px] font-light tracking-[2px] uppercase mb-2">
+            Les études cliniques Au Centre Rabelais
+          </h2>
+          <p className="text-[#888888] font-bold tracking-widest uppercase text-[14px]">Pour la DMLA Humide :</p>
+        </div>
+
+        <div className="grid md:grid-cols-2 gap-8 mb-16">
+            <div className="bg-white border-t-2 border-[#003399] p-8 shadow-sm hover:shadow-md transition-shadow">
+                <h4 className="font-bold text-[18px] text-[#003399] mb-4">
+                  1. Etude OPH 1003 (Phase 3). Promoteur OPHTHOTECH
+                </h4>
+                <p className="text-[14px] text-[#888888] mb-3 leading-relaxed">
+                  <strong className="text-slate-800">Cible :</strong> Patients atteints d’une DMLA humide vierge de tout traitement préalable (patients naïfs).
+                </p>
+                <div className="text-[14px] text-[#888888] leading-relaxed space-y-2">
+                  <p>Etude d’association thérapeutique ranibizumab/Fovista.</p>
+                  <p className="italic bg-gray-50 p-3 rounded-sm">L’association de ces deux molécules a démontré l’innocuité du Fovista et une tendance à des meilleurs résultats fonctionnels de l’association Fovista+ranibizumab comparée au ranibizumab seul, au cours des phases 1 et 2.</p>
+                </div>
+            </div>
+
+            <div className="bg-white border-t-2 border-[#c2aa84] p-8 shadow-sm hover:shadow-md transition-shadow">
+                <h4 className="font-bold text-[18px] text-[#c2aa84] mb-4">
+                  2. Etude OPH 1008 (Phase 2-3). Promoteur OPHTHOTECH
+                </h4>
+                <p className="text-[14px] text-[#888888] mb-3 leading-relaxed">
+                  <strong className="text-slate-800">Cible :</strong> Patients naïfs.
+                </p>
+                <div className="text-[14px] text-[#888888] leading-relaxed space-y-2">
+                  <p>Association thérapeutique aflibercept (Eylea) ou bevacizumab (Avastin)/Fovista.</p>
+                </div>
+            </div>
+
+            <div className="bg-white border-t-2 border-[#c2aa84] p-8 shadow-sm hover:shadow-md transition-shadow">
+                <h4 className="font-bold text-[18px] text-[#c2aa84] mb-4">
+                  3. Etude OPH 2008. Promoteur OPHTHOTECH
+                </h4>
+                <p className="text-[14px] text-[#888888] mb-3 leading-relaxed">
+                  <strong className="text-slate-800">Cible :</strong> Patients naïfs et patients ayant reçu 2 injections au préalable sans succès.
+                </p>
+                <div className="text-[14px] text-[#888888] leading-relaxed space-y-2">
+                  <p>Etude d’association thérapeutique ranibizumab/Fovista selon deux protocoles d’administration différents.</p>
+                </div>
+            </div>
+
+            <div className="bg-white border-t-2 border-[#003399] p-8 shadow-sm hover:shadow-md transition-shadow flex flex-col justify-center">
+                <h4 className="font-bold text-[18px] text-[#003399] mb-4">
+                  4. Etude ESBA
+                </h4>
+                <p className="text-[14px] text-[#888888] mb-3 leading-relaxed">
+                  <strong className="text-slate-800">Cible :</strong> Molécule brolucizumab.
+                </p>
+                <div className="text-[14px] text-[#888888] leading-relaxed">
+                  <p>Recherche clinique pour une nouvelle génération d'Anti-VEGF à longue durée d'action.</p>
+                </div>
+            </div>
+        </div>
+
       </section>
 
     </main>
