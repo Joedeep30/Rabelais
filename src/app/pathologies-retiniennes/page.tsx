@@ -688,9 +688,15 @@ Et Le Vendredi de 9h à 17h00 </p></p>
         <div className="absolute inset-0 bg-cover bg-center bg-no-repeat z-0" style={{ backgroundImage: "url('/images/hero/pathologies-oculaires.webp')" }}>
           <div className="absolute inset-0 bg-black/40"></div>
         </div>
-        <div className="relative z-10 flex flex-col items-start justify-center h-full px-4 md:px-16 lg:px-24">
-          <h1 className="text-white text-[42px] md:text-[56px] font-[Gotham] font-light leading-tight mb-4">Pathologies Oculaires</h1>
-          <p className="text-white/90 text-[18px] md:text-[22px] font-light max-w-2xl leading-relaxed">Le centre Ophtalmologique Rabelais prend en charge les différentes pathologies de la rétine dont le diagnostic fait appel à de nombreux examens spécifiques permettant d'orienter le traitement.</p>
+        <div className="relative z-10 flex flex-col items-center justify-center text-center px-4 mt-16 h-full">
+          <h1 className="text-white text-[32px] md:text-[52px] font-[Gotham] font-light leading-[1.1] tracking-[2px] mb-[20px] uppercase">
+            <strong className="font-bold">Pathologies Oculaires</strong>
+          </h1>
+          <div className="flex items-center justify-center gap-0 w-full max-w-[300px]">
+            <div className="h-[1px] w-full bg-[#c2aa84]/60"></div>
+            <i className="block w-[14px] h-[14px] bg-[#c2aa84] rounded-full mx-[-7px] z-10"></i>
+            <div className="h-[1px] w-full bg-[#c2aa84]/60"></div>
+          </div>
         </div>
       </section>
 
@@ -706,7 +712,7 @@ Et Le Vendredi de 9h à 17h00 </p></p>
           [&_.sidebar-blog]:bg-gray-50 [&_.sidebar-blog]:p-6 [&_.sidebar-blog]:rounded-xl [&_.sidebar-blog]:shadow-sm [&_.sidebar-blog]:mb-8 [&_.sidebar-blog]:max-h-[calc(100vh-10rem)] [&_.sidebar-blog]:overflow-y-auto [&_.sidebar-blog]:scrollbar-thin [&_.sidebar-blog]:scrollbar-thumb-gray-300 [&_.sidebar-blog]:scrollbar-track-transparent
           [&_.menu-sidebars_h2]:text-[#003399] [&_.menu-sidebars_h2]:font-bold [&_.menu-sidebars_h2]:text-[22px] [&_.menu-sidebars_h2]:mt-0 [&_.menu-sidebars_h2]:mb-6
           [&_.menu-sidebars_ul]:list-none [&_.menu-sidebars_ul]:pl-0 [&_.menu-sidebars_ul]:m-0
-          [&_.menu-sidebars_a]:text-slate-700 [&_.menu-sidebars_a]:font-[Gotham] [&_.menu-sidebars_a]:font-medium [&_.menu-sidebars_a]:no-underline [&_.menu-sidebars_a]:text-[16px] hover:[&_.menu-sidebars_a]:text-[#003399] transition-colors
+          [&_.menu-sidebars_a]:text-[#444] [&_.menu-sidebars_a]:font-[Gotham] [&_.menu-sidebars_a]:font-bold [&_.menu-sidebars_a]:uppercase [&_.menu-sidebars_a]:tracking-[1.5px] [&_.menu-sidebars_a]:text-[11px] [&_.menu-sidebars_a]:no-underline hover:[&_.menu-sidebars_a]:text-[#003399] transition-colors
           
           [&_.publicationsside]:hidden [&_.adresse]:hidden [&_.social-blog]:hidden
           

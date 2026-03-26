@@ -21,13 +21,15 @@ export default function EtudesCliniquesPage() {
           <div className="absolute inset-0 bg-black/40"></div>
         </div>
         
-        <div className="relative z-10 flex flex-col items-start justify-center h-full px-4 md:px-16 lg:px-24">
-          <h1 className="text-white text-[42px] md:text-[56px] font-[Gotham] font-light leading-tight mb-4">
-            Etudes Cliniques
+        <div className="relative z-10 flex flex-col items-center justify-center text-center px-4 mt-16 h-full">
+          <h1 className="text-white text-[32px] md:text-[52px] font-[Gotham] font-light leading-[1.1] tracking-[2px] mb-[20px] uppercase">
+            Nos <strong className="font-bold">Etudes Cliniques</strong>
           </h1>
-          <p className="text-white/90 text-[18px] md:text-[22px] font-light max-w-2xl leading-relaxed">
-            Le Centre Rabelais est impliqué dans la recherche clinique pharmacologique
-          </p>
+          <div className="flex items-center justify-center gap-0 w-full max-w-[300px]">
+            <div className="h-[1px] w-full bg-[#c2aa84]/60"></div>
+            <i className="block w-[14px] h-[14px] bg-[#c2aa84] rounded-full mx-[-7px] z-10"></i>
+            <div className="h-[1px] w-full bg-[#c2aa84]/60"></div>
+          </div>
         </div>
       </section>
 
