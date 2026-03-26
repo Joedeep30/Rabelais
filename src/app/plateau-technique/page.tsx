@@ -10,6 +10,37 @@ export const metadata: Metadata = {
 };
 
 export default function PlateauTechniquePage() {
+  const GALLERY = [
+    {
+      title: "3 Angiographes HRA Heidelberg",
+      src: "https://centrerabelaislyon.fr/wp-content/uploads/2015/10/pla2.jpg"
+    },
+    {
+      title: "Rétinographe Canon numérisé",
+      src: "https://centrerabelaislyon.fr/wp-content/uploads/2015/11/Rétinographe.png"
+    },
+    {
+      title: "3 OCT Spectralis, Heidelberg",
+      src: "https://centrerabelaislyon.fr/wp-content/uploads/2015/10/pla1.jpg"
+    },
+    {
+      title: "Champ Visuel Humphrey, Zeiss",
+      src: "https://centrerabelaislyon.fr/wp-content/uploads/2015/10/pla3.jpg"
+    },
+    {
+      title: "Rétinographe Eidon de Centervue",
+      src: "https://centrerabelaislyon.fr/wp-content/uploads/2025/12/iCare_EIDON.png"
+    },
+    {
+      title: "Rétinographe grand champ Eidon AD UWF",
+      src: "https://centrerabelaislyon.fr/wp-content/uploads/2015/10/pla6.jpg"
+    },
+    {
+      title: "Solix Expert",
+      src: "https://centrerabelaislyon.fr/wp-content/uploads/2025/12/VX65-Product-page-picture-900x900-px-4.webp"
+    }
+  ];
+
   return (
     <main className="flex flex-col flex-grow font-[Gotham] text-[#888888] bg-white">
       
@@ -37,102 +68,122 @@ export default function PlateauTechniquePage() {
         </div>
       </section>
 
-      <section className="py-20 px-4 max-w-5xl mx-auto">
+      <section className="py-20 px-4 max-w-4xl mx-auto w-full">
         <div className="mb-[60px] text-center">
-          <p className="text-[#888888] text-[18px] md:text-[22px] font-light leading-[1.8] max-w-3xl mx-auto">
-            Le Centre Ophtalmologique Rabelais dispose d’appareillages de pointe dans le domaine de l’exploration et de l'imagerie oculaire pour garantir une précision diagnostique absolue.
+          <p className="text-[#888888] text-[18px] md:text-[22px] font-light leading-[1.8]">
+            Le Centre Ophtalmologique Rabelais dispose d’appareillages de pointe dans le domaine de l’exploration oculaire pour garantir une précision diagnostique absolue.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-12">
-          {/* Imagerie List */}
-          <div className="bg-[#f8f8f8] p-10 rounded-sm shadow-sm border-t-4 border-[#003399]">
-            <h3 className="text-[#003399] text-[22px] font-bold uppercase tracking-wider mb-8">
-              Imagerie & Exploration
-            </h3>
-            
-            <div className="space-y-6">
-              <div className="mb-10">
-                <h4 className="font-bold text-[#888888] text-[16px] mb-4 uppercase tracking-wide">Rétinographie Couleur</h4>
-                <div className="grid grid-cols-2 gap-4 mb-6">
-                  <img src="https://centrerabelaislyon.fr/wp-content/uploads/2015/11/Rétinographe.png" alt="Rétinographe Canon" className="rounded-xl shadow-md w-full h-auto object-contain bg-white" loading="lazy" />
-                  <img src="https://centrerabelaislyon.fr/wp-content/uploads/2025/12/iCare_EIDON.png" alt="Rétinographe EIDON" className="rounded-xl shadow-md w-full h-auto object-contain bg-white" loading="lazy" />
-                </div>
-                <img src="https://centrerabelaislyon.fr/wp-content/uploads/2015/10/pla6.jpg" alt="Optos California" className="rounded-xl shadow-sm w-full h-auto mb-6" loading="lazy" />
-                <ul className="list-disc list-inside text-[#888888] text-[14px] font-light leading-relaxed mt-4 space-y-1">
-                  <li>Rétinographe Canon numérisé</li>
-                  <li>Rétinographe Confocal SLO EIDON</li>
-                  <li>Optos California (Rétinographie & Angiographie Champ Large 200°)</li>
-                </ul>
+        {/* --- Image Gallery (Matching exactly the screenshots) --- */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+          {GALLERY.map((item, index) => (
+            <div key={index} className="flex flex-col shadow-sm bg-gray-50/50">
+              <div className="h-[280px] w-full bg-white flex items-center justify-center p-6 border border-gray-100">
+                <img src={item.src} alt={item.title} className="max-w-full max-h-full object-contain mix-blend-multiply" loading="lazy" />
               </div>
-
-              <div className="mb-10">
-                <h4 className="font-bold text-[#888888] text-[16px] mb-4 uppercase tracking-wide">Angiographie Numérisée</h4>
-                <img src="https://centrerabelaislyon.fr/wp-content/uploads/2015/11/Rétinographe.png" alt="Salle Imagerie Angiographie Canon" className="rounded-xl shadow-sm w-full h-auto mb-6" loading="lazy" />
-                <ul className="list-disc list-inside text-[#888888] text-[14px] font-light leading-relaxed space-y-1">
-                  <li>3 Angiographes Confocals HRA, Heidelberg</li>
-                  <li>Angiographie à la fluorescéine et au vert d’indocyanine (ICG)</li>
-                </ul>
-              </div>
-
-              <div className="mb-10">
-                <h4 className="font-bold text-[#888888] text-[16px] mb-4 uppercase tracking-wide">OCT (Tomographie)</h4>
-                <div className="grid grid-cols-2 gap-4 mb-6">
-                  <img src="https://centrerabelaislyon.fr/wp-content/uploads/2015/10/pla1.jpg" alt="OCT Spectralis Heidelberg" className="rounded-xl shadow-md w-full h-auto object-cover" loading="lazy" />
-                  <img src="https://centrerabelaislyon.fr/wp-content/uploads/2025/12/VX65-Product-page-picture-900x900-px-4.webp" alt="OCT Avanti" className="rounded-xl shadow-md w-full h-auto object-contain bg-white" loading="lazy" />
-                </div>
-                <ul className="list-disc list-inside text-[#888888] text-[14px] font-light leading-relaxed mt-2 space-y-1">
-                  <li>3 OCT Spectralis, Heidelberg</li>
-                  <li>XR AVANTI, OPTOVUE avec Module ANGIO-OCT</li>
-                  <li>Cirrus HD 5000, ZEISS</li>
-                  <li>Solix Expert</li>
-                </ul>
+              <div className="bg-[#003399] text-white py-2.5 px-4 text-center">
+                <span className="text-[15px] font-medium tracking-wide">{item.title}</span>
               </div>
             </div>
+          ))}
+        </div>
+
+        {/* --- Text List Layout (Matching exactly the grey block screenshots) --- */}
+        <div className="space-y-4">
+          <div className="bg-[#fcfcfc] border border-gray-100 p-6">
+            <h4 className="text-[#888888] font-bold text-[15px] uppercase tracking-wider mb-2">
+              • RÉTINOGRAPHIE COULEUR :
+            </h4>
+            <p className="text-[#a0a0a0] text-[15px] font-light leading-[1.8]">
+              - Rétinographe Canon numérisé<br />
+              - Rétinographe Confocal SLO EIDON avec montage composite.
+            </p>
           </div>
 
-          {/* Autres équipements List */}
-          <div className="bg-[#f8f8f8] p-10 rounded-sm shadow-sm border-t-4 border-[#c2aa84]">
-            <h3 className="text-[#c2aa84] text-[22px] font-bold uppercase tracking-wider mb-8">
-              Traitements & Bilans
-            </h3>
-            
-            <div className="space-y-6">
-              <div className="mb-10">
-                <h4 className="font-bold text-[#888888] text-[16px] mb-4 uppercase tracking-wide">Traitements Spécifiques</h4>
-                <ul className="list-disc list-inside text-[#888888] text-[14px] font-light leading-relaxed mt-2 space-y-1">
-                  <li>Bloc dédié aux Injections Intra-Vitréennes (IVT)</li>
-                  <li>Salles de Lasers (PPR, SLT, YAG)</li>
-                  <li>Système Valeda (Photobiomodulation)</li>
-                </ul>
-              </div>
+          <div className="bg-[#fcfcfc] border border-gray-100 p-6">
+            <h4 className="text-[#888888] font-bold text-[15px] uppercase tracking-wider mb-2">
+              • ANGIOGRAPHIE NUMÉRISÉE CONFOCALE HRA, HEIDELBERG :
+            </h4>
+            <p className="text-[#a0a0a0] text-[15px] font-light leading-[1.8]">
+              - Angiographie à la fluorescéine<br />
+              - Angiographie au vert d’indocyanine (ICG)
+            </p>
+          </div>
 
-              <div className="mb-10">
-                <h4 className="font-bold text-[#888888] text-[16px] mb-4 uppercase tracking-wide">Échographie & Vision</h4>
-                <img src="https://centrerabelaislyon.fr/wp-content/uploads/2015/10/pla3.jpg" alt="Echographie et Salles de Bilans" className="rounded-xl shadow-md w-full h-auto mb-6" loading="lazy" />
-                <ul className="list-disc list-inside text-[#888888] text-[14px] font-light leading-relaxed space-y-1">
-                  <li>Échographe AVISO, QUANTEL MEDICAL (Mode B 10/20 Mhz)</li>
-                  <li>UBM (Échographie du Segment Antérieur)</li>
-                  <li>Champ Visuel Humphrey, Zeiss</li>
-                  <li>Sensibilité aux contrastes informatisée</li>
-                  <li>Bilan Basse Vision (Conseil et adaptation optique)</li>
-                </ul>
-              </div>
-            </div>
+          <div className="bg-[#fcfcfc] border border-gray-100 p-6">
+            <h4 className="text-[#888888] font-bold text-[15px] uppercase tracking-wider mb-2">
+              • OCT MACULAIRE et OCT DU GLAUCOME :
+            </h4>
+            <p className="text-[#a0a0a0] text-[15px] font-light leading-[1.8]">
+              Spectralis, Heidelberg<br />
+              XR AVANTI, OPTOVUE avec Module ANGIO-OCT<br />
+              Cirrus HD 5000, ZEISS<br />
+              Solix Expert
+            </p>
+          </div>
 
-            <div className="mt-12 text-center">
-              <Link prefetch={true} 
-                href="/#home-page-contact" 
-                className="inline-block bg-[#003399] hover:bg-blue-800 text-white text-[11px] font-bold tracking-[2px] uppercase py-[15px] px-[35px] rounded-[50px] transition-colors"
-              >
-                Prendre rendez-vous
-              </Link>
-            </div>
+          <div className="bg-[#fcfcfc] border border-gray-100 p-6">
+            <h4 className="text-[#888888] font-bold text-[15px] uppercase tracking-wider mb-2">
+              • OCT DE CORNEE et PACHYMETRIE :
+            </h4>
+            <p className="text-[#a0a0a0] text-[15px] font-light leading-[1.8]">
+              XR AVANTI, OPTOVUE (Pachymétrie Cornéenne totale et de l’épithélium)
+            </p>
+          </div>
 
+          <div className="bg-[#fcfcfc] border border-gray-100 p-6">
+            <h4 className="text-[#888888] font-bold text-[15px] uppercase tracking-wider mb-2">
+              • ÉCHOGRAPHIE OCULAIRE :
+            </h4>
+            <p className="text-[#a0a0a0] text-[15px] font-light leading-[1.8]">
+              AVISO, QUANTEL MEDICAL :<br />
+              - Échographie en Mode B (Sonde de 10Mhz et 20 Mhz)<br />
+              - Échographie du Segment Antérieur : UBM
+            </p>
+          </div>
+
+          <div className="bg-[#fcfcfc] border border-gray-100 p-6">
+            <h4 className="text-[#888888] font-bold text-[15px] uppercase tracking-wider mb-2">
+              • BLOC IVT (injection intra-vitréenne) 
+            </h4>
+          </div>
+
+          <div className="bg-[#fcfcfc] border border-gray-100 p-6">
+            <h4 className="text-[#888888] font-bold text-[15px] uppercase tracking-wider mb-2">
+              • SENSIBILITÉ AUX CONTRASTES INFORMATISÉS :
+            </h4>
+          </div>
+
+          <div className="bg-[#fcfcfc] border border-gray-100 p-6">
+            <h4 className="text-[#888888] font-bold text-[15px] uppercase tracking-wider mb-2">
+              • BILAN BASSE VISION :
+            </h4>
+            <p className="text-[#a0a0a0] text-[15px] font-light leading-[1.8]">
+              Conseil et adaptation optique spécifique à l’atteinte rétinienne
+            </p>
+          </div>
+
+          <div className="bg-[#fcfcfc] border border-gray-100 p-6">
+            <h4 className="text-[#888888] font-bold text-[15px] uppercase tracking-wider mb-2">
+              • RETINOGRAPHIE ET ANGIOGRAPHIE CHAMP LARGE 200° :
+            </h4>
+            <p className="text-[#a0a0a0] text-[15px] font-light leading-[1.8]">
+              Appareil California, Optos : Rétinographie, Angiographie à la Fluorescéine et ICG à Champ large
+            </p>
           </div>
         </div>
-      </section>
 
+        <div className="mt-16 text-center">
+          <Link prefetch={true} 
+            href="/#home-page-contact" 
+            className="inline-block bg-[#003399] hover:bg-blue-800 text-white text-[12px] font-bold tracking-[2px] uppercase py-[18px] px-[40px] rounded-[50px] transition-colors"
+          >
+            Prendre rendez-vous
+          </Link>
+        </div>
+
+      </section>
     </main>
   );
 }
