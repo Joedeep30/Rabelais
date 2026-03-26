@@ -52,36 +52,36 @@ export default function PlateauTechniquePage() {
             </h3>
             
             <div className="space-y-6">
-              <div>
-                <h4 className="font-bold text-[#888888] text-[15px] mb-2 uppercase">Rétinographie Couleur</h4>
-                <div className="grid grid-cols-2 gap-4 mb-4">
-                  <img src="https://centrerabelaislyon.fr/wp-content/uploads/2015/11/Rétinographe.png" alt="Rétinographe Canon" className="rounded-lg shadow-md w-full h-32 object-contain bg-white p-2" loading="lazy" />
-                  <img src="https://centrerabelaislyon.fr/wp-content/uploads/2025/12/iCare_EIDON.png" alt="Rétinographe EIDON" className="rounded-lg shadow-md w-full h-32 object-contain bg-white p-2" loading="lazy" />
+              <div className="mb-10">
+                <h4 className="font-bold text-[#888888] text-[16px] mb-4 uppercase tracking-wide">Rétinographie Couleur</h4>
+                <div className="grid grid-cols-2 gap-4 mb-6">
+                  <img src="https://centrerabelaislyon.fr/wp-content/uploads/2015/11/Rétinographe.png" alt="Rétinographe Canon" className="rounded-xl shadow-md w-full h-auto object-contain bg-white" loading="lazy" />
+                  <img src="https://centrerabelaislyon.fr/wp-content/uploads/2025/12/iCare_EIDON.png" alt="Rétinographe EIDON" className="rounded-xl shadow-md w-full h-auto object-contain bg-white" loading="lazy" />
                 </div>
-                <img src="https://centrerabelaislyon.fr/wp-content/uploads/2015/10/pla6.jpg" alt="Optos California" className="rounded-lg shadow-sm w-full h-48 object-cover mb-4" loading="lazy" />
-                <ul className="list-disc list-inside text-[#888888] text-[14px] font-light leading-relaxed">
+                <img src="https://centrerabelaislyon.fr/wp-content/uploads/2015/10/pla6.jpg" alt="Optos California" className="rounded-xl shadow-sm w-full h-auto mb-6" loading="lazy" />
+                <ul className="list-disc list-inside text-[#888888] text-[14px] font-light leading-relaxed mt-4 space-y-1">
                   <li>Rétinographe Canon numérisé</li>
                   <li>Rétinographe Confocal SLO EIDON</li>
                   <li>Optos California (Rétinographie & Angiographie Champ Large 200°)</li>
                 </ul>
               </div>
 
-              <div>
-                <h4 className="font-bold text-[#888888] text-[15px] mb-2 uppercase">Angiographie Numérisée</h4>
-                <img src="https://centrerabelaislyon.fr/wp-content/uploads/2015/10/pla2.jpg" alt="Salle Imagerie Angiographie" className="rounded-lg shadow-sm w-full h-48 object-cover mb-4" loading="lazy" />
-                <ul className="list-disc list-inside text-[#888888] text-[14px] font-light leading-relaxed">
+              <div className="mb-10">
+                <h4 className="font-bold text-[#888888] text-[16px] mb-4 uppercase tracking-wide">Angiographie Numérisée</h4>
+                <img src="https://centrerabelaislyon.fr/wp-content/uploads/2015/11/Rétinographe.png" alt="Salle Imagerie Angiographie Canon" className="rounded-xl shadow-sm w-full h-auto mb-6" loading="lazy" />
+                <ul className="list-disc list-inside text-[#888888] text-[14px] font-light leading-relaxed space-y-1">
                   <li>3 Angiographes Confocals HRA, Heidelberg</li>
                   <li>Angiographie à la fluorescéine et au vert d’indocyanine (ICG)</li>
                 </ul>
               </div>
 
-              <div>
-                <h4 className="font-bold text-[#888888] text-[15px] mb-2 uppercase">OCT (Tomographie)</h4>
-                <div className="grid grid-cols-2 gap-4 mb-4">
-                  <img src="https://centrerabelaislyon.fr/wp-content/uploads/2015/10/pla1.jpg" alt="OCT Spectralis Heidelberg" className="rounded-lg shadow-sm w-full h-32 object-cover" loading="lazy" />
-                  <img src="https://centrerabelaislyon.fr/wp-content/uploads/2025/12/VX65-Product-page-picture-900x900-px-4.webp" alt="OCT Avanti" className="rounded-lg shadow-md w-full h-32 object-contain bg-white p-2" loading="lazy" />
+              <div className="mb-10">
+                <h4 className="font-bold text-[#888888] text-[16px] mb-4 uppercase tracking-wide">OCT (Tomographie)</h4>
+                <div className="grid grid-cols-2 gap-4 mb-6">
+                  <img src="https://centrerabelaislyon.fr/wp-content/uploads/2015/10/pla1.jpg" alt="OCT Spectralis Heidelberg" className="rounded-xl shadow-md w-full h-auto object-cover" loading="lazy" />
+                  <img src="https://centrerabelaislyon.fr/wp-content/uploads/2025/12/VX65-Product-page-picture-900x900-px-4.webp" alt="OCT Avanti" className="rounded-xl shadow-md w-full h-auto object-contain bg-white" loading="lazy" />
                 </div>
-                <ul className="list-disc list-inside text-[#888888] text-[14px] font-light leading-relaxed">
+                <ul className="list-disc list-inside text-[#888888] text-[14px] font-light leading-relaxed mt-2 space-y-1">
                   <li>3 OCT Spectralis, Heidelberg</li>
                   <li>XR AVANTI, OPTOVUE avec Module ANGIO-OCT</li>
                   <li>Cirrus HD 5000, ZEISS</li>
@@ -98,19 +98,19 @@ export default function PlateauTechniquePage() {
             </h3>
             
             <div className="space-y-6">
-              <div>
-                <h4 className="font-bold text-[#888888] text-[15px] mb-2 uppercase">Traitements Spécifiques</h4>
-                <ul className="list-disc list-inside text-[#888888] text-[14px] font-light leading-relaxed">
+              <div className="mb-10">
+                <h4 className="font-bold text-[#888888] text-[16px] mb-4 uppercase tracking-wide">Traitements Spécifiques</h4>
+                <ul className="list-disc list-inside text-[#888888] text-[14px] font-light leading-relaxed mt-2 space-y-1">
                   <li>Bloc dédié aux Injections Intra-Vitréennes (IVT)</li>
                   <li>Salles de Lasers (PPR, SLT, YAG)</li>
                   <li>Système Valeda (Photobiomodulation)</li>
                 </ul>
               </div>
 
-              <div>
-                <h4 className="font-bold text-[#888888] text-[15px] mb-2 uppercase">Échographie & Vision</h4>
-                <img src="https://centrerabelaislyon.fr/wp-content/uploads/2015/10/pla3.jpg" alt="Echographie et Salles de Bilans" className="rounded-lg shadow-sm w-full h-48 object-cover mb-4" loading="lazy" />
-                <ul className="list-disc list-inside text-[#888888] text-[14px] font-light leading-relaxed">
+              <div className="mb-10">
+                <h4 className="font-bold text-[#888888] text-[16px] mb-4 uppercase tracking-wide">Échographie & Vision</h4>
+                <img src="https://centrerabelaislyon.fr/wp-content/uploads/2015/10/pla3.jpg" alt="Echographie et Salles de Bilans" className="rounded-xl shadow-md w-full h-auto mb-6" loading="lazy" />
+                <ul className="list-disc list-inside text-[#888888] text-[14px] font-light leading-relaxed space-y-1">
                   <li>Échographe AVISO, QUANTEL MEDICAL (Mode B 10/20 Mhz)</li>
                   <li>UBM (Échographie du Segment Antérieur)</li>
                   <li>Champ Visuel Humphrey, Zeiss</li>
