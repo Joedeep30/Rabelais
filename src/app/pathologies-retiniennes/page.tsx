@@ -19,6 +19,7 @@ export default function PathologiesOculairesPage() {
 				</div>
 								<div id="menupage1" class="box-offresoi">
 										<b><h3><span class="cicle"></span><u>1. La Cornée</u></h3></b>
+															<p><img class="aligncenter size-full rounded shadow-sm" src="/images/pathologies/illustration-cornee-anatomie.webp" alt="Illustration anatomique détaillee de la cornee de l'oeil" /></p>
 															<p><p><strong>•</strong> La cornée est un tissu transparent ,avasculaire , constituant la première vitre de l'oeil c'est à dire la partie la plus antérieure du globe oculaire .</p>
 <p><strong>•</strong> La cornée est une lame à face parallèle avec des rayons de courbures  qui sont propres à chaque individu .</p>
 <p><span ><strong>• La cornée est constituée de 6 couches :</strong></span></p>
@@ -33,12 +34,14 @@ export default function PathologiesOculairesPage() {
 				</div>
 								<div id="menupage2" class="box-offresoi">
 										<b><h3><span class="cicle"></span><u>2.L’iris</u></h3></b>
+															<p><img class="aligncenter size-full rounded shadow-sm" src="/images/pathologies/illustration-iris-anatomie.webp" alt="Illustration détaillée de l'anatomie de l'iris de l'oeil" /></p>
 															<p><p><strong>• L'iris</strong> est une membrane circulaire constituant <strong>la partie colorée visible de l'oeil</strong> .</p>
 <p><strong>•</strong> L'iris joue un rôle de diaphragme , réflexe physiologique  modifiant son diamètre afin de réguler l'entrée de la lumière dans l'oeil . On parle alors de <strong>myosis</strong> quand le sphincter irien se rétracte et de <strong>mydriase</strong> lorsque la pupille est dilatée .</p>
 <div id="spoon-plugin-kncgbdglledmjmpnikebkagnchfdehbm-2" > </div></p>
 				</div>
 								<div id="menupage3" class="box-offresoi">
 										<b><h3><span class="cicle"></span><u>3.Cristallin</u></h3></b>
+															<p><img class="aligncenter size-full rounded shadow-sm" src="/images/pathologies/illustration-cristallin-anatomie.webp" alt="Illustration détaillée de l'anatomie du cristallin de l'oeil" /></p>
 															<p><p><strong>•</strong> Le cristallin est une lentille naturelle transparente ,biconvexe, ayant la capacité de se déformer pour permettre un mécanisme fondamental de la vision qu'est l'accommodation .</p>
 <p><strong>•</strong> Il est situé en arrière de l'iris et est maintenu en place par des ligaments appelés zonule reliée au muscle ciliaire.</p>
 <p><strong>•</strong> Cette déformation du cristallin est rendue possible grâce au muscle ciliaire qui, lorsqu'il se contracte, va agir par l'intermédiaire de la zonule sur le cristallin.Cette modification morphologique va induire un changement de focale permettant de passer de la vision de loin à la vision de près avec une sorte de focus de l'image .</p>
@@ -48,6 +51,7 @@ export default function PathologiesOculairesPage() {
 				</div>
 								<div id="menupage4" class="box-offresoi">
 										<b><h3><span class="cicle"></span><u>4.Le vitré</u></h3></b>
+															<p><img class="aligncenter size-full rounded shadow-sm" src="/images/pathologies/illustration-corps-vitre-anatomie.webp" alt="Illustration détaillée de l'anatomie du corps vitré de l'oeil" /></p>
 															<p><p><strong>•</strong>Le vitré est une substance de consistance gélatineuse remplissant une partie de la cavité oculaire entre la face postérieure du cristallin et  la rétine ,  garantissant le volume de l'oeil  .</p>
 <p><strong>•</strong>Le vitré est d'aspect transparent et complètement avasculaire .</p>
 <p>&nbsp;</p>
@@ -56,6 +60,7 @@ export default function PathologiesOculairesPage() {
 				</div>
 								<div id="menupage5" class="box-offresoi">
 										<b><h3><span class="cicle"></span><u>5. La rétine</u></h3></b>
+															<p><img class="aligncenter size-full rounded shadow-sm" src="/images/pathologies/illustration-retine-anatomie.webp" alt="Illustration détaillée de l'anatomie de la rétine de l'oeil" /></p>
 															<p><p><strong>•</strong>La rétine est une fine membrane constituant la face interne de l’oeil . Les différentes cellules visuelles contenues dans la rétine vont réceptionner l’information visuelle et la transformer en influx nerveux .Ce message visuel est ensuite véhiculé par le nerf optique vers le cerveau pour en interpréter les images.</p>
 <p><strong>•</strong>La rétine est en contact par sa face postérieure, avec un réseau très vascularisé appelé la choroïde. L’interface entre la rétine et la choroïde est représentée par la couche la plus profonde de la rétine qu’on appelle l’épithélium pigmentaire.</p>
 <p>&nbsp;</p>
@@ -706,7 +711,7 @@ Et Le Vendredi de 9h à 17h00 </p></p>
           
           [&_.publicationsside]:hidden [&_.adresse]:hidden [&_.social-blog]:hidden
           
-          [&>div>h1]:text-[#003399] [&>div>h3]:text-[#003399] [&_img]:rounded-lg [&_img]:shadow-sm"
+          [&>div>h1]:text-[#003399] [&>div>h3]:text-[#003399] [&_img]:rounded-lg [&_img]:shadow-sm [&_img]:mx-auto [&_img]:w-auto [&_img]:max-w-full"
           dangerouslySetInnerHTML={{ __html: customHtml }}
         />
       </div>
