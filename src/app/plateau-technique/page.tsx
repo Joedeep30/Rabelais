@@ -75,18 +75,118 @@ export default function PlateauTechniquePage() {
           </p>
         </div>
 
-        {/* --- Image Gallery (Matching exactly the screenshots) --- */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
-          {GALLERY.map((item, index) => (
-            <div key={index} className="flex flex-col shadow-sm bg-gray-50/50">
-              <div className="h-[280px] w-full bg-white flex items-center justify-center p-6 border border-gray-100">
-                <img src={item.src} alt={item.title} className="max-w-full max-h-full object-contain mix-blend-multiply" loading="lazy" />
+        {/* --- Exact Image Gallery Replication --- */}
+        <div className="mb-16">
+          {/* Top block: Left tall image, Right two stacked images */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+            
+            {/* Left Box (Tall) */}
+            <div className="flex flex-col border border-[#e5e5e5] bg-white shadow-sm">
+              <div className="flex-grow flex items-center justify-center p-2 h-full">
+                <img 
+                  src="https://centrerabelaislyon.fr/wp-content/uploads/2015/10/pla1.jpg" 
+                  alt="3 Angiographes HRA Heidelberg" 
+                  className="w-full h-full object-cover" 
+                  loading="lazy" 
+                />
               </div>
-              <div className="bg-[#003399] text-white py-2.5 px-4 text-center">
-                <span className="text-[15px] font-medium tracking-wide">{item.title}</span>
+              <div className="bg-[#003399] text-white py-2 px-3 text-center">
+                <span className="text-[16px] font-medium tracking-wide">3 Angiographes HRA Heidelberg</span>
               </div>
             </div>
-          ))}
+
+            {/* Right Box (Stacked) */}
+            <div className="flex flex-col gap-6">
+              <div className="flex flex-col border border-[#e5e5e5] bg-white shadow-sm flex-1">
+                <div className="flex-grow flex items-center justify-center p-2 h-full">
+                  <img 
+                    src="https://centrerabelaislyon.fr/wp-content/uploads/2015/10/pla2.jpg" 
+                    alt="Rétinographe Canon numérisé" 
+                    className="w-full h-full object-contain mix-blend-multiply" 
+                    loading="lazy" 
+                  />
+                </div>
+                <div className="bg-[#003399] text-white py-2 px-3 text-center">
+                  <span className="text-[16px] font-medium tracking-wide">Rétinographe Canon numérisé</span>
+                </div>
+              </div>
+              <div className="flex flex-col border border-[#e5e5e5] bg-white shadow-sm flex-1">
+                <div className="flex-grow flex items-center justify-center p-2 h-full">
+                  <img 
+                    src="https://centrerabelaislyon.fr/wp-content/uploads/2015/10/pla3.jpg" 
+                    alt="3 OCT Spectralis, Heidelberg" 
+                    className="w-full h-full object-cover mix-blend-multiply bg-[#f5f5f5]" 
+                    loading="lazy" 
+                  />
+                </div>
+                <div className="bg-[#003399] text-white py-2 px-3 text-center">
+                  <span className="text-[16px] font-medium tracking-wide">3 OCT Spectralis, Heidelberg</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          {/* Bottom Grid: 2 columns matching the remaining elements */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            
+            <div className="flex flex-col border border-[#e5e5e5] bg-[#f8f8f8] shadow-sm">
+              <div className="h-[280px] w-full bg-white flex items-center justify-center p-4">
+                <img 
+                  src="https://centrerabelaislyon.fr/wp-content/uploads/2015/10/pla6.jpg" 
+                  alt="Champ Visuel Humphrey, Zeiss" 
+                  className="max-w-full max-h-full object-contain mix-blend-multiply" 
+                  loading="lazy" 
+                />
+              </div>
+              <div className="bg-[#003399] text-white py-2 px-3 text-center">
+                <span className="text-[16px] font-medium tracking-wide">Champ Visuel Humphrey, Zeiss</span>
+              </div>
+            </div>
+
+            <div className="flex flex-col border border-[#e5e5e5] bg-[#f8f8f8] shadow-sm">
+              <div className="h-[280px] w-full bg-[#f6f6f6] flex items-center justify-center p-4">
+                <img 
+                  src="https://centrerabelaislyon.fr/wp-content/uploads/2015/11/Rétinographe.png" 
+                  alt="Rétinographe Eidon de Centervue" 
+                  className="max-w-full max-h-full object-contain mix-blend-multiply" 
+                  loading="lazy" 
+                />
+              </div>
+              <div className="bg-[#003399] text-white py-2 px-3 text-center">
+                <span className="text-[16px] font-medium tracking-wide">Rétinographe Eidon de Centervue</span>
+              </div>
+            </div>
+
+            <div className="flex flex-col border border-[#e5e5e5] bg-[#f8f8f8] shadow-sm">
+              <div className="h-[280px] w-full bg-[#f6f6f6] flex items-center justify-center p-4">
+                <img 
+                  src="https://centrerabelaislyon.fr/wp-content/uploads/2025/12/iCare_EIDON.png" 
+                  alt="Rétinographe grand champ Eidon AD UWF" 
+                  className="max-w-full max-h-full object-contain mix-blend-multiply" 
+                  loading="lazy" 
+                />
+              </div>
+              <div className="bg-[#003399] text-white py-2 px-3 text-center">
+                <span className="text-[16px] font-medium tracking-wide">Rétinographe grand champ Eidon AD UWF</span>
+              </div>
+            </div>
+
+            <div className="flex flex-col border border-[#e5e5e5] bg-[#f8f8f8] shadow-sm">
+              <div className="h-[280px] w-full bg-[#f6f6f6] flex items-center justify-center p-4">
+                <img 
+                  src="https://centrerabelaislyon.fr/wp-content/uploads/2025/12/VX65-Product-page-picture-900x900-px-4.webp" 
+                  alt="Solix Expert" 
+                  className="max-w-full max-h-full object-contain mix-blend-multiply" 
+                  loading="lazy" 
+                />
+              </div>
+              <div className="bg-[#003399] text-white py-2 px-3 text-center">
+                <span className="text-[16px] font-medium tracking-wide">Solix Expert</span>
+              </div>
+            </div>
+
+          </div>
         </div>
 
         {/* --- Text List Layout (Matching exactly the grey block screenshots) --- */}
