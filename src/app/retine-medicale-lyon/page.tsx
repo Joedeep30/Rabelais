@@ -93,7 +93,7 @@ export default function RetineMedicaleLyonPage() {
             className="w-full h-full object-cover"
             fetchPriority="high"
           />
-          <div className="absolute inset-0 bg-black/50 mix-blend-multiply"></div>
+          <div className="absolute inset-0 bg-black/40"></div>
         </div>
         
         <div className="relative z-10 flex flex-col items-center justify-center text-center px-4 mt-16 max-w-4xl">

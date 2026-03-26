@@ -43,7 +43,7 @@ export default function OphtalmologueVenissieuxPage() {
           className="absolute inset-0 bg-cover bg-center bg-no-repeat z-0"
           style={{ backgroundImage: "url('https://centrerabelaislyon.fr/wp-content/uploads/2015/09/post2.png')" }}
         >
-          <div className="absolute inset-0 bg-[#1a1a1a]/80 mix-blend-multiply"></div>
+          <div className="absolute inset-0 bg-black/40"></div>
         </div>
         <div className="relative z-10 flex flex-col items-center justify-center text-center px-4 mt-16 max-w-4xl">
           <h1 className="text-white text-[32px] md:text-[46px] font-light leading-[1.2] tracking-wide mb-[20px] uppercase">

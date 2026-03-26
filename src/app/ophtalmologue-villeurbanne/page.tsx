@@ -43,7 +43,7 @@ export default function OphtalmologueVilleurbannePage() {
           className="absolute inset-0 bg-cover bg-center bg-no-repeat z-0"
           style={{ backgroundImage: "url('https://centrerabelaislyon.fr/wp-content/uploads/2015/09/post1.png')" }}
         >
-          <div className="absolute inset-0 bg-[#003399]/85 mix-blend-multiply"></div>
+          <div className="absolute inset-0 bg-black/40"></div>
         </div>
         
         <div className="relative z-10 flex flex-col items-center justify-center text-center px-4 mt-16 max-w-4xl">
