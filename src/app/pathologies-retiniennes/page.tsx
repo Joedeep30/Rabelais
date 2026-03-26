@@ -690,7 +690,7 @@ Et Le Vendredi de 9h à 17h00 </p></p>
         </div>
         <div className="relative z-10 flex flex-col items-start justify-center h-full px-4 md:px-16 lg:px-24">
           <h1 className="text-white text-[42px] md:text-[56px] font-[Gotham] font-light leading-tight mb-4">Pathologies Oculaires</h1>
-          <p className="text-white/90 text-[18px] md:text-[22px] font-light max-w-2xl leading-relaxed">Le centre Ophtalmologique Rabelais prend en charge les différentes pathologies de la rétine dont le diagnostic fait appel à de nombreux examens spécifiques permettant d\'orienter le traitement.</p>
+          <p className="text-white/90 text-[18px] md:text-[22px] font-light max-w-2xl leading-relaxed">Le centre Ophtalmologique Rabelais prend en charge les différentes pathologies de la rétine dont le diagnostic fait appel à de nombreux examens spécifiques permettant d'orienter le traitement.</p>
         </div>
       </section>
 
@@ -703,11 +703,11 @@ Et Le Vendredi de 9h à 17h00 </p></p>
           [&_.left-content-page]:md:w-[75%] [&_.left-content-page]:w-full
           [&_.right-content-page]:md:w-[25%] [&_.right-content-page]:w-full [&_.right-content-page]:sticky [&_.right-content-page]:top-32
           
-          [&_.sidebar-blog]:bg-gray-50 [&_.sidebar-blog]:p-6 [&_.sidebar-blog]:rounded-xl [&_.sidebar-blog]:shadow-sm [&_.sidebar-blog]:mb-8
-          [&_.menu-sidebars_h2]:text-[#003399] [&_.menu-sidebars_h2]:text-2xl [&_.menu-sidebars_h2]:mt-0 [&_.menu-sidebars_h2]:mb-6
+          [&_.sidebar-blog]:bg-gray-50 [&_.sidebar-blog]:p-6 [&_.sidebar-blog]:rounded-xl [&_.sidebar-blog]:shadow-sm [&_.sidebar-blog]:mb-8 [&_.sidebar-blog]:max-h-[calc(100vh-10rem)] [&_.sidebar-blog]:overflow-y-auto [&_.sidebar-blog]:scrollbar-thin [&_.sidebar-blog]:scrollbar-thumb-gray-300 [&_.sidebar-blog]:scrollbar-track-transparent
+          [&_.menu-sidebars_h2]:text-[#003399] [&_.menu-sidebars_h2]:font-bold [&_.menu-sidebars_h2]:text-[22px] [&_.menu-sidebars_h2]:mt-0 [&_.menu-sidebars_h2]:mb-6
           [&_.menu-sidebars_ul]:list-none [&_.menu-sidebars_ul]:pl-0 [&_.menu-sidebars_ul]:m-0
           [&_.menu-sidebars_li]:mb-4 [&_.menu-sidebars_li]:leading-tight
-          [&_.menu-sidebars_a]:text-gray-600 [&_.menu-sidebars_a]:no-underline [&_.menu-sidebars_a]:text-[15px] hover:[&_.menu-sidebars_a]:text-[#003399] transition-colors
+          [&_.menu-sidebars_a]:text-slate-700 [&_.menu-sidebars_a]:font-medium [&_.menu-sidebars_a]:no-underline [&_.menu-sidebars_a]:text-[16px] hover:[&_.menu-sidebars_a]:text-[#003399] transition-colors
           
           [&_.publicationsside]:hidden [&_.adresse]:hidden [&_.social-blog]:hidden
           
