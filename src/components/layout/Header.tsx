@@ -113,7 +113,7 @@ export default function Header() {
             <li className="border-b border-white/20 py-4"><Link prefetch={true} href="/offre-de-soins" onClick={() => setIsMenuOpen(false)} className="hover:opacity-80 block">Offre de Soins</Link></li>
             <li className="border-b border-white/20 py-4"><Link prefetch={true} href="/equipe-medicale" onClick={() => setIsMenuOpen(false)} className="hover:opacity-80 block">Équipe Médicale</Link></li>
             <li className="border-b border-white/20 py-4"><Link prefetch={true} href="/plateau-technique" onClick={() => setIsMenuOpen(false)} className="hover:opacity-80 block">Plateau Technique</Link></li>
-            <li className="border-b border-white/20 py-4"><Link prefetch={true} href="/offre-de-soins" onClick={() => setIsMenuOpen(false)} className="hover:opacity-80 block">Pathologies Oculaires</Link></li>
+            <li className="border-b border-white/20 py-4"><Link prefetch={true} href="/pathologies-retiniennes" onClick={() => setIsMenuOpen(false)} className="hover:opacity-80 block">Pathologies Oculaires</Link></li>
             <li className="border-b border-white/20 py-4"><Link prefetch={true} href="/etudes-cliniques" onClick={() => setIsMenuOpen(false)} className="hover:opacity-80 block">Etudes Cliniques</Link></li>
             <li className="border-b border-white/20 py-4"><Link prefetch={true} href="/publications" onClick={() => setIsMenuOpen(false)} className="hover:opacity-80 block">Publications</Link></li>
             <li className="border-b border-white/20 py-4"><Link prefetch={true} href="/dois-je-consulter" onClick={() => setIsMenuOpen(false)} className="hover:opacity-80 block">Dois-je Consulter ?</Link></li>
