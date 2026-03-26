@@ -1,0 +1,2 @@
+83bcfc2 feat(ui): replicate pathologies page with WebP images and layout match
+6efc8cd Full site rebuild: 30+ pages, FAQ Schema, Geo-SEO, NAP consistency

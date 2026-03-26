@@ -54,7 +54,7 @@ export default function Header() {
             <div className="flex flex-col items-end gap-[15px]">
               {/* MENU text */}
               <span 
-                className="text-white text-[14px] font-[Gotham] font-bold tracking-[1px] uppercase cursor-pointer"
+                className="text-white text-[16px] font-[Gotham] font-medium tracking-wide cursor-pointer"
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
               >
                 Menu
@@ -93,10 +93,10 @@ export default function Header() {
               </div>
 
               {/* Languages */}
-              <ul className="flex flex-col gap-[4px] text-white text-[11px] uppercase font-[Gotham] font-bold items-center mt-2">
-                <li className="cursor-pointer">fr</li>
-                <li className="cursor-pointer text-white/60 hover:text-white transition-colors">en</li>
-                <li className="cursor-pointer text-white/60 hover:text-white transition-colors">it</li>
+              <ul className="flex flex-col gap-[4px] text-white text-[14px] font-[Gotham] font-medium items-center mt-2">
+                <li className="cursor-pointer uppercase">fr</li>
+                <li className="cursor-pointer text-white/60 hover:text-white uppercase transition-colors">en</li>
+                <li className="cursor-pointer text-white/60 hover:text-white uppercase transition-colors">it</li>
               </ul>
             </div>
           </div>
@@ -108,7 +108,7 @@ export default function Header() {
         className={`fixed top-0 right-0 h-full w-[350px] bg-[#a68d71] z-40 transform transition-transform duration-500 ease-in-out ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}
       >
         <div className="h-full pt-[140px] px-8 overflow-y-auto">
-          <ul className="flex flex-col text-white font-[Gotham] text-[12px] font-medium tracking-[1px] uppercase">
+          <ul className="flex flex-col text-white font-[Gotham] text-[16px] font-medium tracking-wide">
             <li className="border-b border-white/20 py-4"><Link prefetch={true} href="/" onClick={() => setIsMenuOpen(false)} className="hover:opacity-80 block">Home</Link></li>
             <li className="border-b border-white/20 py-4"><Link prefetch={true} href="/offre-de-soins" onClick={() => setIsMenuOpen(false)} className="hover:opacity-80 block">Offre de Soins</Link></li>
             <li className="border-b border-white/20 py-4"><Link prefetch={true} href="/equipe-medicale" onClick={() => setIsMenuOpen(false)} className="hover:opacity-80 block">Équipe Médicale</Link></li>

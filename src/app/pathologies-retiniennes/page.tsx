@@ -706,7 +706,7 @@ Et Le Vendredi de 9h à 17h00 </p></p>
           [&_.sidebar-blog]:bg-gray-50 [&_.sidebar-blog]:p-6 [&_.sidebar-blog]:rounded-xl [&_.sidebar-blog]:shadow-sm [&_.sidebar-blog]:mb-8 [&_.sidebar-blog]:max-h-[calc(100vh-10rem)] [&_.sidebar-blog]:overflow-y-auto [&_.sidebar-blog]:scrollbar-thin [&_.sidebar-blog]:scrollbar-thumb-gray-300 [&_.sidebar-blog]:scrollbar-track-transparent
           [&_.menu-sidebars_h2]:text-[#003399] [&_.menu-sidebars_h2]:font-bold [&_.menu-sidebars_h2]:text-[22px] [&_.menu-sidebars_h2]:mt-0 [&_.menu-sidebars_h2]:mb-6
           [&_.menu-sidebars_ul]:list-none [&_.menu-sidebars_ul]:pl-0 [&_.menu-sidebars_ul]:m-0
-          [&_.menu-sidebars_a]:text-[#003399] [&_.menu-sidebars_a]:font-medium [&_.menu-sidebars_a]:no-underline [&_.menu-sidebars_a]:text-[16px] hover:[&_.menu-sidebars_a]:opacity-80 transition-colors
+          [&_.menu-sidebars_a]:text-slate-700 [&_.menu-sidebars_a]:font-[Gotham] [&_.menu-sidebars_a]:font-medium [&_.menu-sidebars_a]:no-underline [&_.menu-sidebars_a]:text-[16px] hover:[&_.menu-sidebars_a]:text-[#003399] transition-colors
           
           [&_.publicationsside]:hidden [&_.adresse]:hidden [&_.social-blog]:hidden
           
