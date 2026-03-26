@@ -13,8 +13,15 @@ export default function DirectionsPage() {
     <main className="flex flex-col flex-grow font-[Gotham] text-[#888888] bg-white">
       
       {/* Hero Section */}
-      <section className="relative h-[300px] md:h-[400px] w-full flex items-center justify-center overflow-hidden bg-slate-900">
-        <div className="relative z-10 flex flex-col items-center justify-center text-center px-4 mt-16">
+      <section className="relative h-[300px] md:h-[400px] w-full flex items-center justify-center overflow-hidden">
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat z-0"
+          style={{ backgroundImage: "url('https://centrerabelaislyon.fr/wp-content/uploads/2015/09/slider1.jpg')" }}
+        >
+          <div className="absolute inset-0 bg-black/40"></div>
+        </div>
+        
+        <div className="relative z-10 flex flex-col items-center justify-center text-center px-4 mt-16 max-w-4xl">
           <h1 className="text-white text-[32px] md:text-[42px] font-light leading-[1.1] tracking-wide mb-[20px] uppercase">
             Comment se rendre <strong className="font-bold">au Centre ?</strong>
           </h1>

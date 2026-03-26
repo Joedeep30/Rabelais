@@ -89,15 +89,11 @@ export default function OffreDeSoinsPage() {
       />
       
       {/* Hero Section */}
-      <section className="relative h-[400px] md:h-[500px] w-full flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 z-0">
-          <img 
-            src="https://centrerabelaislyon.fr/wp-content/uploads/2015/10/banner8.jpg"
-            alt="Traitements de la macula et urgences ophtalmologiques Au Centre Ophtalmologique Rabelais de Lyon"
-            title="Offre de Soins - Centre Ophtalmologique Rabelais"
-            className="w-full h-full object-cover"
-            fetchPriority="high"
-          />
+      <section className="relative h-[400px] md:h-[500px] w-full flex items-center justify-center overflow-hidden mt-0">
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat z-0"
+          style={{ backgroundImage: "url('https://centrerabelaislyon.fr/wp-content/uploads/2015/10/banner9.jpg')" }}
+        >
           <div className="absolute inset-0 bg-black/40"></div>
         </div>
         

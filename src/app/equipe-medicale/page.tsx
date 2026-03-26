@@ -36,14 +36,10 @@ export default function EquipeMedicalePage() {
       
       {/* Hero Section */}
       <section className="relative h-[400px] md:h-[500px] w-full flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 z-0">
-          <img 
-            src="https://centrerabelaislyon.fr/wp-content/uploads/2015/10/banner9.jpg"
-            alt="L'Équipe Médicale du Centre Ophtalmologique Rabelais à Lyon"
-            title="Équipe Médicale - Centre Ophtalmologique Rabelais"
-            className="w-full h-full object-cover"
-            fetchPriority="high"
-          />
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat z-0"
+          style={{ backgroundImage: "url('https://centrerabelaislyon.fr/wp-content/uploads/2015/09/slider4.jpg')" }}
+        >
           <div className="absolute inset-0 bg-black/40"></div>
         </div>
         
