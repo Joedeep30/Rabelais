@@ -156,6 +156,12 @@ export default function PathologiesOculairesPage() {
 				</div>
 								<div id="menupage15" class="box-offresoi">
 										<b><h3><span class="cicle"></span><u>Rétinopathie Diabétique</u></h3></b>
+<div className="w-full sm:w-1/2 md:w-1/3 xl:w-1/4 float-right ml-0 md:ml-8 mb-6 mt-4 rounded-xl overflow-hidden shadow-lg border border-gray-100 bg-white p-2">
+  <div className="relative aspect-square w-full rounded-lg overflow-hidden bg-[#f8f9fa] flex items-center justify-center">
+    <img src="/images/pathologies/diabetique.webp" alt="Rétinopathie Diabétique" className="w-full h-full object-cover transition-transform duration-700 hover:scale-105" />
+  </div>
+</div>
+
 															<p><h1><span > </span></h1>
 <p><strong> •<span >Prévalence du diabète en France et en Outre Mer en 2009.</span></strong></p>
 <p><strong>•</strong>2,7 millions de personnes sont <u>traitées pour leur diabète (</u>6% de la population)</p>
@@ -203,10 +209,22 @@ export default function PathologiesOculairesPage() {
 				</div>
 								<div id="menupage16" class="box-offresoi">
 										<b><h3><span class="cicle"></span><u>Occlusion Vasculaire</u></h3></b>
+<div className="w-full sm:w-1/2 md:w-1/3 xl:w-1/4 float-right ml-0 md:ml-8 mb-6 mt-4 rounded-xl overflow-hidden shadow-lg border border-gray-100 bg-white p-2">
+  <div className="relative aspect-square w-full rounded-lg overflow-hidden bg-[#f8f9fa] flex items-center justify-center">
+    <img src="/images/pathologies/vasculaire.webp" alt="Occlusion Vasculaire" className="w-full h-full object-cover transition-transform duration-700 hover:scale-105" />
+  </div>
+</div>
+
 															<p><p>En Cours de redaction..</p></p>
 				</div>
 								<div id="menupage17" class="box-offresoi">
 										<b><h3><span class="cicle"></span><u>Maladie de Coats</u></h3></b>
+<div className="w-full sm:w-1/2 md:w-1/3 xl:w-1/4 float-right ml-0 md:ml-8 mb-6 mt-4 rounded-xl overflow-hidden shadow-lg border border-gray-100 bg-white p-2">
+  <div className="relative aspect-square w-full rounded-lg overflow-hidden bg-[#f8f9fa] flex items-center justify-center">
+    <img src="/images/pathologies/coats.webp" alt="Maladie de Coats" className="w-full h-full object-cover transition-transform duration-700 hover:scale-105" />
+  </div>
+</div>
+
 															<p><p><strong> </strong></p>
 <p><strong><span >•Epidémiologie</span> </strong></p>
 <p>L'incidence annuelle est &lt; 1/1 000 000 au Royaume-Uni. Environ 80% des cas surviennent chez les garçons.</p>
@@ -238,6 +256,12 @@ export default function PathologiesOculairesPage() {
 				</div>
 								<div id="menupage18" class="box-offresoi">
 										<b><h3><span class="cicle"></span><u>CRSC (Chorio-Rétinopathie -Séreuse-Centrale)</u></h3></b>
+<div className="w-full sm:w-1/2 md:w-1/3 xl:w-1/4 float-right ml-0 md:ml-8 mb-6 mt-4 rounded-xl overflow-hidden shadow-lg border border-gray-100 bg-white p-2">
+  <div className="relative aspect-square w-full rounded-lg overflow-hidden bg-[#f8f9fa] flex items-center justify-center">
+    <img src="/images/pathologies/crsc.webp" alt="CRSC (Chorio-Rétinopathie -Séreuse-Centrale)" className="w-full h-full object-cover transition-transform duration-700 hover:scale-105" />
+  </div>
+</div>
+
 															<p><p >La CRSC est une affection chorio-rétinienne caractérisée par des soulèvements exsudatifs de la rétine.</p>
 <p><img class="alignnone size-full wp-image-1545" src="/images/pathologies/crsc-dsr_15.webp" alt="" width="1131" height="935" /></p>
 <p ><em><strong>Différentes incidences de coupe 2D par imagerie OCT de la région maculaire d'un patient présentant une bulle de DSR</strong></em><em><strong>(Décollement séreux rétinien)</strong></em></p>
@@ -292,6 +316,12 @@ export default function PathologiesOculairesPage() {
 				</div>
 								<div id="menupage19" class="box-offresoi">
 										<b><h3><span class="cicle"></span><u>Maladie de Best</u></h3></b>
+<div className="w-full sm:w-1/2 md:w-1/3 xl:w-1/4 float-right ml-0 md:ml-8 mb-6 mt-4 rounded-xl overflow-hidden shadow-lg border border-gray-100 bg-white p-2">
+  <div className="relative aspect-square w-full rounded-lg overflow-hidden bg-[#f8f9fa] flex items-center justify-center">
+    <img src="/images/pathologies/best.webp" alt="Maladie de Best" className="w-full h-full object-cover transition-transform duration-700 hover:scale-105" />
+  </div>
+</div>
+
 															<p><p><strong>•</strong>La maladie de <strong>Best</strong> est une <strong>dystrophie maculaire génétique bilatérale,</strong> encore appelée <strong>dystrophie vitelliforme juvénile</strong>, qui entraîne une baisse tardive de la vision.</p>
 <p>&nbsp;</p>
 <p>Cette maladie est <strong>autosomique dominante</strong> de <strong>pénétrance variable</strong>. On note une grande <strong>variabilité phénotypique</strong>.</p>
@@ -319,10 +349,22 @@ export default function PathologiesOculairesPage() {
 				</div>
 								<div id="menupage20" class="box-offresoi">
 										<b><h3><span class="cicle"></span><u>Rétinite Pigmentaire</u></h3></b>
+<div className="w-full sm:w-1/2 md:w-1/3 xl:w-1/4 float-right ml-0 md:ml-8 mb-6 mt-4 rounded-xl overflow-hidden shadow-lg border border-gray-100 bg-white p-2">
+  <div className="relative aspect-square w-full rounded-lg overflow-hidden bg-[#f8f9fa] flex items-center justify-center">
+    <img src="/images/pathologies/retinite.webp" alt="Rétinite Pigmentaire" className="w-full h-full object-cover transition-transform duration-700 hover:scale-105" />
+  </div>
+</div>
+
 															<p><p>En Cours de redaction..</p></p>
 				</div>
 								<div id="menupage21" class="box-offresoi">
 										<b><h3><span class="cicle"></span><u>Décollement Postérieur du Vitré</u></h3></b>
+<div className="w-full sm:w-1/2 md:w-1/3 xl:w-1/4 float-right ml-0 md:ml-8 mb-6 mt-4 rounded-xl overflow-hidden shadow-lg border border-gray-100 bg-white p-2">
+  <div className="relative aspect-square w-full rounded-lg overflow-hidden bg-[#f8f9fa] flex items-center justify-center">
+    <img src="/images/pathologies/dpv.webp" alt="Décollement Postérieur du Vitré" className="w-full h-full object-cover transition-transform duration-700 hover:scale-105" />
+  </div>
+</div>
+
 															<p><p><strong>•</strong>Au cours du vieillissement , souvent après 60 ans , le vitré va se liquéfier et l'on va observer un phénomène tout à fait physiologique qu'on appelle un décollement postérieur du vitré . Le vitré va se détacher progressivement de la paroi rétinienne avec un aspect de rétraction de l'enveloppe vitréenne .</p>
 <p><strong>•</strong>Des symptômes tels que des éclairs intermittents ou une sensation de toiles d'araignée peuvent être en rapport avec l'existence d'un début de décollement postérieur du vitré .</p>
 <p><strong>•</strong>En règle général , un contrôle du fond d'oeil permet de s'assurer de l'absence d'adhérence pathologique telle qu'une traction du vitré sur la rétine pouvant présenter un risque de décollement de rétine et du déroulement normal de ce  processus physiologique .</p>
@@ -332,6 +374,12 @@ export default function PathologiesOculairesPage() {
 				</div>
 								<div id="menupage22" class="box-offresoi">
 										<b><h3><span class="cicle"></span><u>Traction Vitréo-Maculaire</u></h3></b>
+<div className="w-full sm:w-1/2 md:w-1/3 xl:w-1/4 float-right ml-0 md:ml-8 mb-6 mt-4 rounded-xl overflow-hidden shadow-lg border border-gray-100 bg-white p-2">
+  <div className="relative aspect-square w-full rounded-lg overflow-hidden bg-[#f8f9fa] flex items-center justify-center">
+    <img src="/images/pathologies/traction.webp" alt="Traction Vitréo-Maculaire" className="w-full h-full object-cover transition-transform duration-700 hover:scale-105" />
+  </div>
+</div>
+
 															<p><p><strong>•</strong>Le syndrome de traction vitréo-maculaire idiopathique est un processus anormal de décollement du vitré. Il peut être suspecté à l'examen biomicroscopique dans les cas typiques assez évolués mais l'OCT permet de détecter des cas débutants non détectables à la lampe à fente.</p>
 <p><strong>•</strong>Sur les coupes OCT la membrane postérieure du vitré apparaît anormalement épaisse, et adhérente à la papille et à la macula. Elle est souvent connectée à une membrane épirétinienne qui adhère à la surface maculaire et consolide l'adhérence anormale du vitré à la rétine</p>
 <p><strong>•</strong>La traction peut entrainer un épaississement de la rétine ou un décollement des photorécepteurs</p>
@@ -339,6 +387,12 @@ export default function PathologiesOculairesPage() {
 				</div>
 								<div id="menupage23" class="box-offresoi">
 										<b><h3><span class="cicle"></span><u>Déchirure Rétinienne à Clapet</u></h3></b>
+<div className="w-full sm:w-1/2 md:w-1/3 xl:w-1/4 float-right ml-0 md:ml-8 mb-6 mt-4 rounded-xl overflow-hidden shadow-lg border border-gray-100 bg-white p-2">
+  <div className="relative aspect-square w-full rounded-lg overflow-hidden bg-[#f8f9fa] flex items-center justify-center">
+    <img src="/images/pathologies/dechirure.webp" alt="Déchirure Rétinienne à Clapet" className="w-full h-full object-cover transition-transform duration-700 hover:scale-105" />
+  </div>
+</div>
+
 															<p><p>Echographie en mode B avec mise en évidence d'une déchirure rétinienne</p>
 <p ><iframe src="https://www.youtube.com/embed/3AS3n-4HsdA" width="420" height="315" frameborder="0" allowfullscreen="allowfullscreen"></iframe></p>
 <p><strong> <img class="aligncenter wp-image-1052 size-full" title="Déchirure à Clapet" src="/images/pathologies/DECHIRURE_20.webp" alt="" width="561" height="374" />• </strong>En cas d'hémorragie dans la cavité vitréenne , la visualisation du fond d'oeil est perturbée voire impossible et nécessite le recours à l'échographie qui nous aidera à mettre en évidence la cause de l'hémorragie tel que dans ce cas vidéo où le siège de l'hémorragie était une déchirure rétinienne dit à clapet.</p>
@@ -346,6 +400,12 @@ export default function PathologiesOculairesPage() {
 				</div>
 								<div id="menupage24" class="box-offresoi">
 										<b><h3><span class="cicle"></span><u>Décollement de Rétine</u></h3></b>
+<div className="w-full sm:w-1/2 md:w-1/3 xl:w-1/4 float-right ml-0 md:ml-8 mb-6 mt-4 rounded-xl overflow-hidden shadow-lg border border-gray-100 bg-white p-2">
+  <div className="relative aspect-square w-full rounded-lg overflow-hidden bg-[#f8f9fa] flex items-center justify-center">
+    <img src="/images/pathologies/decollement.webp" alt="Décollement de Rétine" className="w-full h-full object-cover transition-transform duration-700 hover:scale-105" />
+  </div>
+</div>
+
 															<p><p><strong>•</strong> Le décollement de Rétine est une urgence ophtalmologique indolore qui doit faire consulter rapidement un ophtalmologiste .</p>
 <p><strong>•</strong>Symptômes pouvant être évocateur d'un décollement de Rétine :</p>
 <ul>
@@ -361,6 +421,12 @@ export default function PathologiesOculairesPage() {
 				</div>
 								<div id="menupage25" class="box-offresoi">
 										<b><h3><span class="cicle"></span><u>Trou Maculaire</u></h3></b>
+<div className="w-full sm:w-1/2 md:w-1/3 xl:w-1/4 float-right ml-0 md:ml-8 mb-6 mt-4 rounded-xl overflow-hidden shadow-lg border border-gray-100 bg-white p-2">
+  <div className="relative aspect-square w-full rounded-lg overflow-hidden bg-[#f8f9fa] flex items-center justify-center">
+    <img src="/images/pathologies/trou.webp" alt="Trou Maculaire" className="w-full h-full object-cover transition-transform duration-700 hover:scale-105" />
+  </div>
+</div>
+
 															<p><p>&nbsp;</p>
 <p><strong>•</strong>Les trous maculaires idiopathiques sont la conséquence d'un processus anormal de décollement du vitré qui reste exagérément adhérent au centre de la macula</p>
 <p><strong>•</strong>Avant même qu’une gène oculaire apparaisse, l'examen OCT peut montrer des minimes anomalies telle qu’une <span ><strong>menace de trou maculaire </strong>(<strong>stade 1</strong>)</span>. Une cavité kystique se forme dans la partie la plus interne (superficielle) de la macula (figure 1a). A un stade plus avancé , le kyste maculaire, se prolonge en arrière par une rupture dans la couche des photorécepteurs (cellules visuelles) (figure1b) et latéralement en clivant rétine interne et rétine externe. La membrane postérieure du vitré reste attachée au sommet du kyste.</p>
@@ -380,6 +446,12 @@ export default function PathologiesOculairesPage() {
 				</div>
 								<div id="menupage26" class="box-offresoi">
 										<b><h3><span class="cicle"></span><u>Membrane Epirétinienne (M.E.R)</u></h3></b>
+<div className="w-full sm:w-1/2 md:w-1/3 xl:w-1/4 float-right ml-0 md:ml-8 mb-6 mt-4 rounded-xl overflow-hidden shadow-lg border border-gray-100 bg-white p-2">
+  <div className="relative aspect-square w-full rounded-lg overflow-hidden bg-[#f8f9fa] flex items-center justify-center">
+    <img src="/images/pathologies/mer.webp" alt="Membrane Epirétinienne (M.E.R)" className="w-full h-full object-cover transition-transform duration-700 hover:scale-105" />
+  </div>
+</div>
+
 															<p><p><strong>•</strong>L'examen OCT permet de confirmer la présence d'une membrane épirétinienne suspectée à l’examen du fond d’œil. Il permet également de quantifier l'épaississement de la rétine centrale (secondaire à cette membrane) s’il y en a un. Depuis l'avènement de l'OCT, l'épaisseur de la macula fait partie des critères de décision pré-opératoire même si la relation entre l'acuité visuelle et l'épaississement maculaire est faible.</p>
 <p><img class="alignnone size-full wp-image-920" src="/images/pathologies/eolution-mer_24.webp" alt="eolution mer" width="831" height="684" /></p>
 <p><strong>•</strong>Il faut rappeler que beaucoup de membranes n'entrainent pas d’épaississement maculaire significatif et qu’une membrane épirétinienne qui n'a pas entraîné une augmentation significative de l'épaisseur maculaire centrale n’est probablement pas responsable d'une baisse d’acuité visuelle (figure).</p>
@@ -393,6 +465,12 @@ export default function PathologiesOculairesPage() {
 				</div>
 								<div id="menupage27" class="box-offresoi">
 										<b><h3><span class="cicle"></span><u>Sècheresse oculaire</u></h3></b>
+<div className="w-full sm:w-1/2 md:w-1/3 xl:w-1/4 float-right ml-0 md:ml-8 mb-6 mt-4 rounded-xl overflow-hidden shadow-lg border border-gray-100 bg-white p-2">
+  <div className="relative aspect-square w-full rounded-lg overflow-hidden bg-[#f8f9fa] flex items-center justify-center">
+    <img src="/images/pathologies/secheresse.webp" alt="Sècheresse oculaire" className="w-full h-full object-cover transition-transform duration-700 hover:scale-105" />
+  </div>
+</div>
+
 															<p><p ><u> </u></p>
 <p><strong><u>•Symptômes </u></strong></p>
 <p><strong>•</strong>La sècheresse oculaire provient d’une mauvaise qualité ou d’une diminution de la production de larmes et qui peut conduire à tout un faisceau de symptômes produisant un inconfort visuel tel que :</p>
@@ -470,6 +548,12 @@ export default function PathologiesOculairesPage() {
 				</div>
 								<div id="menupage28" class="box-offresoi">
 										<b><h3><span class="cicle"></span><u>Glaucome </u></h3></b>
+<div className="w-full sm:w-1/2 md:w-1/3 xl:w-1/4 float-right ml-0 md:ml-8 mb-6 mt-4 rounded-xl overflow-hidden shadow-lg border border-gray-100 bg-white p-2">
+  <div className="relative aspect-square w-full rounded-lg overflow-hidden bg-[#f8f9fa] flex items-center justify-center">
+    <img src="/images/pathologies/glaucome.webp" alt="Glaucome" className="w-full h-full object-cover transition-transform duration-700 hover:scale-105" />
+  </div>
+</div>
+
 															<p><p><strong>•</strong>Le glaucome est une maladie oculaire associé à une destruction progressive du nerf optique sous l’influence de plusieurs facteurs . L’un des facteurs les plus fréquent est l’hypertonie oculaire ou plus communément appelé l’hypertension intraoculaire, c’est à dire une pression trop importante à l’intérieur de l’œil induisant une compression mécanique de la tête du nerf optique à l’origine de la perte de fibres nerveuses.</p>
 <p>&nbsp;</p>
 <p>L’atteinte fonctionnelle commence tout d’abord par la périphérie et compte tenu de son caractère asymptomatique, insidieux, le patient ne ressent une gêne que lorsque la vision centrale est atteinte. A ce stade très évolué, l’atteinte fonctionnelle est irréversible.</p>
@@ -516,6 +600,12 @@ export default function PathologiesOculairesPage() {
 				</div>
 								<div id="menupage29" class="box-offresoi">
 										<b><h3><span class="cicle"></span><u>Kératocône</u></h3></b>
+<div className="w-full sm:w-1/2 md:w-1/3 xl:w-1/4 float-right ml-0 md:ml-8 mb-6 mt-4 rounded-xl overflow-hidden shadow-lg border border-gray-100 bg-white p-2">
+  <div className="relative aspect-square w-full rounded-lg overflow-hidden bg-[#f8f9fa] flex items-center justify-center">
+    <img src="/images/pathologies/keratocone.webp" alt="Kératocône" className="w-full h-full object-cover transition-transform duration-700 hover:scale-105" />
+  </div>
+</div>
+
 															<p><p class="normaltext" align="justify">Le kératocône correspond à une déformation de la cornée (le revêtement transparent de l’iris et de la pupille de l’oeil) qui s’amincit progressivement, perd sa forme sphérique normale et prend une forme de cône irrégulier. En effet, le mot kératocône, d’origine grecque, signifie «cornée conique». Cette déformation, survenant souvent vers la fin de l’adolescence, engendre des troubles de la vision (vue brouillée et déformée et mauvaise vision de loin) qui nécessitent le port de lentilles spécialisées. Le kératocône atteint généralement les deux yeux, mais pas avec la même sévérité. Le kératocône qui n'est pas contagieux est une pathologie oculaire non inflammatoire.</p>
 <p align="justify"><strong>De nouvelles théories remettent en cause l'origine du Kératocône dont l'hyptohèse serait celle d'un syndrome d’origine mécanique primitivement causé par le frottement des yeux</strong>.</p>
 <p align="justify">De nombreux patients atteints de kératocône présentent des signes d'allergies oculaires qui sont générateurs de nombreuses démangeaisons pouvant faire intervenir de nombreux frottement oculaires proportionnels à ces démangeaisons .</p>
