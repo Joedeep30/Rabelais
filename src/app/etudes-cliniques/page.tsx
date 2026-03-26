@@ -21,7 +21,7 @@ export default function EtudesCliniquesPage() {
           <div className="absolute inset-0 bg-black/40"></div>
         </div>
         
-        <div className="relative z-10 flex flex-col items-center justify-center text-center px-4 mt-16 h-full">
+        <div className="relative z-10 flex flex-col items-center justify-center text-center px-4 mt-32 h-full">
           <h1 className="text-white text-[32px] md:text-[52px] font-[Gotham] font-light leading-[1.1] tracking-[2px] mb-[20px] uppercase">
             Nos <strong className="font-bold">Etudes Cliniques</strong>
           </h1>
