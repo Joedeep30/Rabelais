@@ -38,6 +38,7 @@ export default function RdvForm() {
       subject: 'Nouvelle demande de RDV - Centre Ophtalmologique Rabelais',
       from_name: 'Centre Ophtalmologique Rabelais',
       replyto: formData.get('Email') as string,
+      bccemail: 'contact@centrerabelaislyon.fr',
       botcheck: '',
       'Civilité': formData.get('Civilite') as string,
       'Nom': formData.get('Nom') as string,
