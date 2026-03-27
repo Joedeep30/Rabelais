@@ -712,21 +712,7 @@ Et Le Vendredi de 9h à 17h00 </p></p>
 </div>
 
 </div>
-			<div class="top-footer" id="top-footer">
-				<div class="container">
-					<div class="box-footer widget_nav_menu"><h2>Menu</h2><div class="menu-footer-menu-f-container"><ul id="menu-footer-menu-f" class="menu"><li id="menu-item-515" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-515"><a href="https://centrerabelaislyon.fr/offre-de-soins/">Offre de Soins</a></li>
-<li id="menu-item-290" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-290"><a href="https://centrerabelaislyon.fr/equipe-medicale/">Équipe Médicale</a></li>
-<li id="menu-item-286" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-286"><a href="https://centrerabelaislyon.fr/plateau-technique/">Plateau Technique</a></li>
-<li id="menu-item-289" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-289"><a href="https://centrerabelaislyon.fr/etudes-cliniques/">Etudes Cliniques</a></li>
-<li id="menu-item-288" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-288"><a href="https://centrerabelaislyon.fr/publications/">Publications</a></li>
-<li id="menu-item-292" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-292"><a href="https://centrerabelaislyon.fr/dois-je-consulter/">Dois-je consulter ?</a></li>
-</ul></div></div><div class="box-footer widget_nav_menu"><h2>Supplémentaire</h2><div class="menu-footer-menu-2-f-container"><ul id="menu-footer-menu-2-f" class="menu"><li id="menu-item-1392" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1392"><a href="https://centrerabelaislyon.fr/directions/">Comment se rendre au centre?</a></li>
-<li id="menu-item-521" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-521"><a href="https://centrerabelaislyon.fr/#home-page-contact">demande de rendez-vous</a></li>
-<li id="menu-item-296" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-296"><a href="https://centrerabelaislyon.fr/mentions-legales/">Mentions légales &#038; confidentialité</a></li>
-<li id="menu-item-1512" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1512"><a href="https://centrerabelaislyon.fr/requete-rgpd/">Requête RGPD</a></li>
-<li id="menu-item-294" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-294"><a href="https://centrerabelaislyon.fr/liens-utiles/">Liens Utiles</a></li>
-<li id="menu-item-295" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-295"><a href="https://centrerabelaislyon.fr/plan-du-site/">Plan du site</a></li>
-</ul></div></div>					`;
+			`;
   
   return (
     <main className="flex flex-col flex-grow font-[Gotham] text-[#888888] bg-white">
