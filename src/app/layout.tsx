@@ -7,10 +7,10 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: {
-    default: "Centre Ophtalmologique Rabelais | Spécialiste Rétine & DMLA Lyon",
+    default: "Ophtalmologue Lyon | Centre Ophtalmologique Rabelais (Spécialiste Rétine)",
     template: "%s | Centre Ophtalmologique Rabelais Lyon",
   },
-  description: "Centre Ophtalmologique Rabelais à Lyon. Spécialistes en rétine médicale, DMLA, photobiomodulation, angiographie, et OCT. Prenez rendez-vous en ligne.",
+  description: "Ophtalmologue à Lyon (Secteur 2). Le Centre Ophtalmologique Rabelais est spécialisé en rétine médicale, DMLA, photobiomodulation Valeda, angiographie, et OCT.",
   keywords: [
     "ophtalmologue rétine Lyon",
     "spécialiste rétine Lyon",

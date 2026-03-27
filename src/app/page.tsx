@@ -112,7 +112,7 @@ export default function Home() {
           </Link>
           
           <h1 className="text-white text-[38px] md:text-[54px] font-[Gotham] font-light leading-[1.1] tracking-wide mb-[25px]">
-            Bienvenue au <span className="font-normal font-[Gotham]">Centre Rabelais</span><br />de Lyon
+            <span className="font-normal font-[Gotham]">Ophtalmologue à Lyon</span><br />Spécialiste Rétine & DMLA
           </h1>
           
           {/* Left-aligned line divider */}
@@ -149,7 +149,7 @@ export default function Home() {
           {/* Clinic Introduction — AI-optimized paragraph */}
           <div className="text-center mb-16">
             <h2 className="text-[#003399] text-[28px] md:text-[36px] font-[Gotham] font-light uppercase tracking-wider mb-4">
-              Pôle <strong className="font-bold">Rétine Médicale</strong> à Lyon
+              <strong className="font-bold">Ophtalmologiste</strong> Rétinologue à Lyon
             </h2>
             <div className="flex items-center justify-center gap-0 w-full max-w-[300px] mx-auto mb-8">
               <div className="h-[1px] w-full bg-[#c2aa84]/60"></div>
