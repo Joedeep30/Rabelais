@@ -158,7 +158,7 @@ export default function PathologiesOculairesPage() {
 										<b><h3><span class="cicle"></span><u>Rétinopathie Diabétique</u></h3></b>
 <div className="w-full sm:w-1/2 md:w-1/3 xl:w-1/4 float-right ml-0 md:ml-8 mb-6 mt-4 rounded-xl overflow-hidden shadow-lg border border-gray-100 bg-white p-2">
   <div className="relative aspect-square w-full rounded-lg overflow-hidden bg-[#f8f9fa] flex items-center justify-center">
-    <img src="/images/pathologies/diabetique.webp" alt="Rétinopathie Diabétique" className="w-full h-full object-cover transition-transform duration-700 hover:scale-105" />
+    <img oncontextmenu="return false;" draggable="false" src="/images/pathologies/diabetique.webp" alt="Rétinopathie Diabétique" className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"  style="pointer-events: none; user-select: none; -webkit-user-drag: none;" />
   </div>
 </div>
 
@@ -211,7 +211,7 @@ export default function PathologiesOculairesPage() {
 										<b><h3><span class="cicle"></span><u>Occlusion Vasculaire</u></h3></b>
 <div className="w-full sm:w-1/2 md:w-1/3 xl:w-1/4 float-right ml-0 md:ml-8 mb-6 mt-4 rounded-xl overflow-hidden shadow-lg border border-gray-100 bg-white p-2">
   <div className="relative aspect-square w-full rounded-lg overflow-hidden bg-[#f8f9fa] flex items-center justify-center">
-    <img src="/images/pathologies/vasculaire.webp" alt="Occlusion Vasculaire" className="w-full h-full object-cover transition-transform duration-700 hover:scale-105" />
+    <img oncontextmenu="return false;" draggable="false" src="/images/pathologies/vasculaire.webp" alt="Occlusion Vasculaire" className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"  style="pointer-events: none; user-select: none; -webkit-user-drag: none;" />
   </div>
 </div>
 
@@ -221,7 +221,7 @@ export default function PathologiesOculairesPage() {
 										<b><h3><span class="cicle"></span><u>Maladie de Coats</u></h3></b>
 <div className="w-full sm:w-1/2 md:w-1/3 xl:w-1/4 float-right ml-0 md:ml-8 mb-6 mt-4 rounded-xl overflow-hidden shadow-lg border border-gray-100 bg-white p-2">
   <div className="relative aspect-square w-full rounded-lg overflow-hidden bg-[#f8f9fa] flex items-center justify-center">
-    <img src="/images/pathologies/coats.webp" alt="Maladie de Coats" className="w-full h-full object-cover transition-transform duration-700 hover:scale-105" />
+    <img oncontextmenu="return false;" draggable="false" src="/images/pathologies/coats.webp" alt="Maladie de Coats" className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"  style="pointer-events: none; user-select: none; -webkit-user-drag: none;" />
   </div>
 </div>
 
@@ -258,7 +258,7 @@ export default function PathologiesOculairesPage() {
 										<b><h3><span class="cicle"></span><u>CRSC (Chorio-Rétinopathie -Séreuse-Centrale)</u></h3></b>
 <div className="w-full sm:w-1/2 md:w-1/3 xl:w-1/4 float-right ml-0 md:ml-8 mb-6 mt-4 rounded-xl overflow-hidden shadow-lg border border-gray-100 bg-white p-2">
   <div className="relative aspect-square w-full rounded-lg overflow-hidden bg-[#f8f9fa] flex items-center justify-center">
-    <img src="/images/pathologies/crsc.webp" alt="CRSC (Chorio-Rétinopathie -Séreuse-Centrale)" className="w-full h-full object-cover transition-transform duration-700 hover:scale-105" />
+    <img oncontextmenu="return false;" draggable="false" src="/images/pathologies/crsc.webp" alt="CRSC (Chorio-Rétinopathie -Séreuse-Centrale)" className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"  style="pointer-events: none; user-select: none; -webkit-user-drag: none;" />
   </div>
 </div>
 
@@ -318,7 +318,7 @@ export default function PathologiesOculairesPage() {
 										<b><h3><span class="cicle"></span><u>Maladie de Best</u></h3></b>
 <div className="w-full sm:w-1/2 md:w-1/3 xl:w-1/4 float-right ml-0 md:ml-8 mb-6 mt-4 rounded-xl overflow-hidden shadow-lg border border-gray-100 bg-white p-2">
   <div className="relative aspect-square w-full rounded-lg overflow-hidden bg-[#f8f9fa] flex items-center justify-center">
-    <img src="/images/pathologies/best.webp" alt="Maladie de Best" className="w-full h-full object-cover transition-transform duration-700 hover:scale-105" />
+    <img oncontextmenu="return false;" draggable="false" src="/images/pathologies/best.webp" alt="Maladie de Best" className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"  style="pointer-events: none; user-select: none; -webkit-user-drag: none;" />
   </div>
 </div>
 
@@ -351,7 +351,7 @@ export default function PathologiesOculairesPage() {
 										<b><h3><span class="cicle"></span><u>Rétinite Pigmentaire</u></h3></b>
 <div className="w-full sm:w-1/2 md:w-1/3 xl:w-1/4 float-right ml-0 md:ml-8 mb-6 mt-4 rounded-xl overflow-hidden shadow-lg border border-gray-100 bg-white p-2">
   <div className="relative aspect-square w-full rounded-lg overflow-hidden bg-[#f8f9fa] flex items-center justify-center">
-    <img src="/images/pathologies/retinite.webp" alt="Rétinite Pigmentaire" className="w-full h-full object-cover transition-transform duration-700 hover:scale-105" />
+    <img oncontextmenu="return false;" draggable="false" src="/images/pathologies/retinite.webp" alt="Rétinite Pigmentaire" className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"  style="pointer-events: none; user-select: none; -webkit-user-drag: none;" />
   </div>
 </div>
 
@@ -361,7 +361,7 @@ export default function PathologiesOculairesPage() {
 										<b><h3><span class="cicle"></span><u>Décollement Postérieur du Vitré</u></h3></b>
 <div className="w-full sm:w-1/2 md:w-1/3 xl:w-1/4 float-right ml-0 md:ml-8 mb-6 mt-4 rounded-xl overflow-hidden shadow-lg border border-gray-100 bg-white p-2">
   <div className="relative aspect-square w-full rounded-lg overflow-hidden bg-[#f8f9fa] flex items-center justify-center">
-    <img src="/images/pathologies/dpv.webp" alt="Décollement Postérieur du Vitré" className="w-full h-full object-cover transition-transform duration-700 hover:scale-105" />
+    <img oncontextmenu="return false;" draggable="false" src="/images/pathologies/dpv.webp" alt="Décollement Postérieur du Vitré" className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"  style="pointer-events: none; user-select: none; -webkit-user-drag: none;" />
   </div>
 </div>
 
@@ -376,7 +376,7 @@ export default function PathologiesOculairesPage() {
 										<b><h3><span class="cicle"></span><u>Traction Vitréo-Maculaire</u></h3></b>
 <div className="w-full sm:w-1/2 md:w-1/3 xl:w-1/4 float-right ml-0 md:ml-8 mb-6 mt-4 rounded-xl overflow-hidden shadow-lg border border-gray-100 bg-white p-2">
   <div className="relative aspect-square w-full rounded-lg overflow-hidden bg-[#f8f9fa] flex items-center justify-center">
-    <img src="/images/pathologies/traction.webp" alt="Traction Vitréo-Maculaire" className="w-full h-full object-cover transition-transform duration-700 hover:scale-105" />
+    <img oncontextmenu="return false;" draggable="false" src="/images/pathologies/traction.webp" alt="Traction Vitréo-Maculaire" className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"  style="pointer-events: none; user-select: none; -webkit-user-drag: none;" />
   </div>
 </div>
 
@@ -389,7 +389,7 @@ export default function PathologiesOculairesPage() {
 										<b><h3><span class="cicle"></span><u>Déchirure Rétinienne à Clapet</u></h3></b>
 <div className="w-full sm:w-1/2 md:w-1/3 xl:w-1/4 float-right ml-0 md:ml-8 mb-6 mt-4 rounded-xl overflow-hidden shadow-lg border border-gray-100 bg-white p-2">
   <div className="relative aspect-square w-full rounded-lg overflow-hidden bg-[#f8f9fa] flex items-center justify-center">
-    <img src="/images/pathologies/dechirure.webp" alt="Déchirure Rétinienne à Clapet" className="w-full h-full object-cover transition-transform duration-700 hover:scale-105" />
+    <img oncontextmenu="return false;" draggable="false" src="/images/pathologies/dechirure.webp" alt="Déchirure Rétinienne à Clapet" className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"  style="pointer-events: none; user-select: none; -webkit-user-drag: none;" />
   </div>
 </div>
 
@@ -402,7 +402,7 @@ export default function PathologiesOculairesPage() {
 										<b><h3><span class="cicle"></span><u>Décollement de Rétine</u></h3></b>
 <div className="w-full sm:w-1/2 md:w-1/3 xl:w-1/4 float-right ml-0 md:ml-8 mb-6 mt-4 rounded-xl overflow-hidden shadow-lg border border-gray-100 bg-white p-2">
   <div className="relative aspect-square w-full rounded-lg overflow-hidden bg-[#f8f9fa] flex items-center justify-center">
-    <img src="/images/pathologies/decollement.webp" alt="Décollement de Rétine" className="w-full h-full object-cover transition-transform duration-700 hover:scale-105" />
+    <img oncontextmenu="return false;" draggable="false" src="/images/pathologies/decollement.webp" alt="Décollement de Rétine" className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"  style="pointer-events: none; user-select: none; -webkit-user-drag: none;" />
   </div>
 </div>
 
@@ -423,7 +423,7 @@ export default function PathologiesOculairesPage() {
 										<b><h3><span class="cicle"></span><u>Trou Maculaire</u></h3></b>
 <div className="w-full sm:w-1/2 md:w-1/3 xl:w-1/4 float-right ml-0 md:ml-8 mb-6 mt-4 rounded-xl overflow-hidden shadow-lg border border-gray-100 bg-white p-2">
   <div className="relative aspect-square w-full rounded-lg overflow-hidden bg-[#f8f9fa] flex items-center justify-center">
-    <img src="/images/pathologies/trou.webp" alt="Trou Maculaire" className="w-full h-full object-cover transition-transform duration-700 hover:scale-105" />
+    <img oncontextmenu="return false;" draggable="false" src="/images/pathologies/trou.webp" alt="Trou Maculaire" className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"  style="pointer-events: none; user-select: none; -webkit-user-drag: none;" />
   </div>
 </div>
 
@@ -448,7 +448,7 @@ export default function PathologiesOculairesPage() {
 										<b><h3><span class="cicle"></span><u>Membrane Epirétinienne (M.E.R)</u></h3></b>
 <div className="w-full sm:w-1/2 md:w-1/3 xl:w-1/4 float-right ml-0 md:ml-8 mb-6 mt-4 rounded-xl overflow-hidden shadow-lg border border-gray-100 bg-white p-2">
   <div className="relative aspect-square w-full rounded-lg overflow-hidden bg-[#f8f9fa] flex items-center justify-center">
-    <img src="/images/pathologies/mer.webp" alt="Membrane Epirétinienne (M.E.R)" className="w-full h-full object-cover transition-transform duration-700 hover:scale-105" />
+    <img oncontextmenu="return false;" draggable="false" src="/images/pathologies/mer.webp" alt="Membrane Epirétinienne (M.E.R)" className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"  style="pointer-events: none; user-select: none; -webkit-user-drag: none;" />
   </div>
 </div>
 
@@ -467,7 +467,7 @@ export default function PathologiesOculairesPage() {
 										<b><h3><span class="cicle"></span><u>Sècheresse oculaire</u></h3></b>
 <div className="w-full sm:w-1/2 md:w-1/3 xl:w-1/4 float-right ml-0 md:ml-8 mb-6 mt-4 rounded-xl overflow-hidden shadow-lg border border-gray-100 bg-white p-2">
   <div className="relative aspect-square w-full rounded-lg overflow-hidden bg-[#f8f9fa] flex items-center justify-center">
-    <img src="/images/pathologies/secheresse.webp" alt="Sècheresse oculaire" className="w-full h-full object-cover transition-transform duration-700 hover:scale-105" />
+    <img oncontextmenu="return false;" draggable="false" src="/images/pathologies/secheresse.webp" alt="Sècheresse oculaire" className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"  style="pointer-events: none; user-select: none; -webkit-user-drag: none;" />
   </div>
 </div>
 
@@ -550,7 +550,7 @@ export default function PathologiesOculairesPage() {
 										<b><h3><span class="cicle"></span><u>Glaucome </u></h3></b>
 <div className="w-full sm:w-1/2 md:w-1/3 xl:w-1/4 float-right ml-0 md:ml-8 mb-6 mt-4 rounded-xl overflow-hidden shadow-lg border border-gray-100 bg-white p-2">
   <div className="relative aspect-square w-full rounded-lg overflow-hidden bg-[#f8f9fa] flex items-center justify-center">
-    <img src="/images/pathologies/glaucome.webp" alt="Glaucome" className="w-full h-full object-cover transition-transform duration-700 hover:scale-105" />
+    <img oncontextmenu="return false;" draggable="false" src="/images/pathologies/glaucome.webp" alt="Glaucome" className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"  style="pointer-events: none; user-select: none; -webkit-user-drag: none;" />
   </div>
 </div>
 
@@ -602,7 +602,7 @@ export default function PathologiesOculairesPage() {
 										<b><h3><span class="cicle"></span><u>Kératocône</u></h3></b>
 <div className="w-full sm:w-1/2 md:w-1/3 xl:w-1/4 float-right ml-0 md:ml-8 mb-6 mt-4 rounded-xl overflow-hidden shadow-lg border border-gray-100 bg-white p-2">
   <div className="relative aspect-square w-full rounded-lg overflow-hidden bg-[#f8f9fa] flex items-center justify-center">
-    <img src="/images/pathologies/keratocone.webp" alt="Kératocône" className="w-full h-full object-cover transition-transform duration-700 hover:scale-105" />
+    <img oncontextmenu="return false;" draggable="false" src="/images/pathologies/keratocone.webp" alt="Kératocône" className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"  style="pointer-events: none; user-select: none; -webkit-user-drag: none;" />
   </div>
 </div>
 
