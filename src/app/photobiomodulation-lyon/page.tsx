@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
-
+import YoutubeVideo from '@/components/ui/YoutubeVideo';
 export const metadata: Metadata = {
   title: 'Photobiomodulation Lyon (Système Valeda) - Traitement DMLA | Centre Ophtalmologique Rabelais',
   description: 'Découvrez la Photobiomodulation (PBM) avec le système Valeda Au Centre Ophtalmologique Rabelais à Lyon. Un traitement innovant et indolore pour la DMLA débutante et intermédiaire.',
@@ -144,6 +144,14 @@ export default function PhotobiomodulationLyonPage() {
       {/* Main SEO Content Body */}
       <section className="py-20 px-4 max-w-4xl mx-auto">
         
+        <YoutubeVideo 
+          videoId="yC2asJZ8pU0" 
+          title="Photobiomodulation à Lyon : Le Nouveau Traitement Révolutionnaire de la DMLA (Système Valeda)" 
+          description="Découvrez la Photobiomodulation (système Valeda), la première technologie au monde approuvée pour traiter la DMLA sèche, désormais disponible au Centre Ophtalmologique Rabelais à Lyon." 
+          thumbnailUrl="https://img.youtube.com/vi/yC2asJZ8pU0/maxresdefault.jpg" 
+          uploadDate="2026-03-27" 
+        />
+
         <div className="prose prose-lg max-w-none text-[#888888] font-light leading-relaxed">
           <h2 className="text-[#003399] text-[28px] font-bold uppercase tracking-wider mb-6">Qu'est-ce que la Photobiomodulation (PBM) ?</h2>
           <p>

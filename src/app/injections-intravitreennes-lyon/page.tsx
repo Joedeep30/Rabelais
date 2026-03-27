@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
-
+import YoutubeVideo from '@/components/ui/YoutubeVideo';
 export const metadata: Metadata = {
   title: 'Injections Intravitréennes Lyon (IVT) | DMLA | Centre Ophtalmologique Rabelais',
   description: 'Le Centre Ophtalmologique Rabelais à Lyon vous propose un circuit court et sécurisé pour l\'administration de vos Injections Intravitréennes (IVT Anti-VEGF).',
@@ -131,6 +131,15 @@ export default function InjectionsIntravitreennesLyonPage() {
 
       {/* Main SEO Content Body */}
       <section className="py-20 px-4 max-w-5xl mx-auto">
+        <div className="w-full mb-12">
+          <YoutubeVideo 
+            videoId="XuAwkSbQSXE" 
+            title="Injections IVT pour la DMLA : La Vérité Rassurante (Prise en charge Urgente J+0 à Lyon)" 
+            description="Découvrez pourquoi l'injection intra-vitréenne (IVT) pour la DMLA humide est aujourd'hui totalement indolore au Centre Ophtalmologique Rabelais." 
+            thumbnailUrl="https://img.youtube.com/vi/XuAwkSbQSXE/maxresdefault.jpg" 
+            uploadDate="2026-03-27" 
+          />
+        </div>
         <div className="grid md:grid-cols-3 gap-12">
             
             <div className="md:col-span-2 prose prose-lg max-w-none text-[#888888] font-light leading-relaxed">

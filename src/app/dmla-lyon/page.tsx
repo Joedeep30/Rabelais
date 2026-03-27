@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
-
+import YoutubeVideo from '@/components/ui/YoutubeVideo';
 export const metadata: Metadata = {
   title: 'DMLA Lyon | Diagnostic et Suivi Au Centre Ophtalmologique Rabelais',
   description: 'Dépistage, imagerie OCT et traitement de la Dégénérescence Maculaire Liée à l\'Âge (DMLA) à Lyon par les médecins spécialistes du Centre Ophtalmologique Rabelais.',
@@ -133,6 +133,15 @@ export default function DmlaLyonPage() {
 
       {/* Main SEO Content Body */}
       <section className="py-20 px-4 max-w-5xl mx-auto">
+        <div className="w-full mb-12">
+          <YoutubeVideo 
+            videoId="Ge07zr0YhDM" 
+            title="Traitement DMLA Sèche : L'Espoir Enfin Réel avec la Photobiomodulation (Lyon)" 
+            description="Forme atrophique de la maladie, la DMLA sèche a longtemps été considérée comme une fatalité sans traitement. La Photobiomodulation offre aujourd'hui un véritable espoir clinique à Lyon." 
+            thumbnailUrl="https://img.youtube.com/vi/Ge07zr0YhDM/maxresdefault.jpg" 
+            uploadDate="2026-03-27" 
+          />
+        </div>
         <div className="grid md:grid-cols-3 gap-12">
             
             <div className="md:col-span-2 prose prose-lg max-w-none text-[#888888] font-light leading-relaxed">
