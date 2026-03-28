@@ -186,15 +186,27 @@ export default function LyonGeoGrid() {
     const initMap = async () => {
       const L = (await import('leaflet')).default;
 
-      // Inject Leaflet CSS
+      // Inject Leaflet CSS and wait for it to load
       if (!document.querySelector('link[href*="leaflet"]')) {
         const link = document.createElement('link');
         link.rel = 'stylesheet';
         link.href = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.css';
+        link.crossOrigin = '';
         document.head.appendChild(link);
+        // Wait for CSS to actually load before initializing the map
+        await new Promise<void>((resolve) => {
+          link.onload = () => resolve();
+          link.onerror = () => resolve(); // proceed anyway
+          setTimeout(resolve, 2000); // fallback timeout
+        });
       }
 
-      const map = L.map(mapRef.current!, {
+      // Extra safety: wait a tick for CSS to apply
+      await new Promise(r => setTimeout(r, 100));
+
+      if (!mapRef.current) return;
+
+      const map = L.map(mapRef.current, {
         center: [CENTER_LAT, CENTER_LNG],
         zoom: 13,
         zoomControl: true,
@@ -213,7 +225,12 @@ export default function LyonGeoGrid() {
         .addTo(map);
 
       leafletMapRef.current = map;
-      setMapLoaded(true);
+
+      // Force resize after a short delay to fix container sizing issues
+      setTimeout(() => {
+        map.invalidateSize();
+        setMapLoaded(true);
+      }, 300);
     };
 
     initMap();
@@ -376,11 +393,21 @@ export default function LyonGeoGrid() {
         </div>
 
         {/* Leaflet Map */}
-        <div
-          ref={mapRef}
-          className="w-full rounded-xl overflow-hidden"
-          style={{ height: '520px' }}
-        />
+        <div className="relative">
+          <div
+            ref={mapRef}
+            className="w-full rounded-xl overflow-hidden"
+            style={{ height: '520px', minHeight: '520px', position: 'relative', zIndex: 1 }}
+          />
+          {!mapLoaded && (
+            <div className="absolute inset-0 flex items-center justify-center bg-white/5 rounded-xl" style={{ zIndex: 2 }}>
+              <div className="text-center">
+                <div className="w-8 h-8 border-2 border-[#c2aa84] border-t-transparent rounded-full animate-spin mx-auto mb-2" />
+                <p className="text-white/40 text-xs">Chargement de la carte...</p>
+              </div>
+            </div>
+          )}
+        </div>
 
         <p className="text-white/20 text-[10px] mt-3 text-center px-2">
           📍 Grille 7×7 centrée sur le Centre Rabelais (Lyon 2). Chaque cercle = position Google Maps depuis ce point. Survolez pour voir le nom du quartier. Molette pour zoomer.
