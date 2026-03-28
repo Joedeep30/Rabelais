@@ -10,8 +10,7 @@ const MOIS_FR = [
 function formatDateFR(dateStr: string): string {
   if (!dateStr) return '';
   const [year, month, day] = dateStr.split('-');
-  const moisIndex = parseInt(month, 10) - 1;
-  return `${parseInt(day, 10)} ${MOIS_FR[moisIndex]} ${year}`;
+  return `${month}/${day}/${year}`;
 }
 
 export default function RdvForm() {
@@ -32,27 +31,28 @@ export default function RdvForm() {
     // Format date in French
     const rawDate = formData.get('date_naissance') as string;
 
-    // Build JSON payload with accented labels (UTF-8 safe via JSON)
+    // Build JSON payload matching original centrerabelaislyon.fr email format exactly
     const payload = {
       access_key: '27fa05a8-0839-4cc1-a62c-d20c45745a67',
-      subject: 'Nouvelle demande de RDV - Centre Ophtalmologique Rabelais',
+      subject: 'Formulaire de demande de RDV',
       from_name: 'Centre Ophtalmologique Rabelais',
       replyto: formData.get('Email') as string,
-      bccemail: 'contact@centrerabelaislyon.fr',
+      // Send TO contact@centrerabelais.fr, BCC jeffos101@gmail.com
+      to: 'contact@centrerabelais.fr',
+      bccemail: 'jeffos101@gmail.com',
       botcheck: '',
+      // Field labels matching original email format exactly
       'Civilité': formData.get('Civilite') as string,
-      'Nom': formData.get('Nom') as string,
-      'Prénom': formData.get('Prenom') as string,
-      'Téléphone': formData.get('Telephone') as string,
-      'Email': formData.get('Email') as string,
+      'Saisir votre nom...': formData.get('Nom') as string,
+      'Saisir votre prénom...': formData.get('Prenom') as string,
+      'Votre téléphone': formData.get('Telephone') as string,
+      'Votre adresse email': formData.get('Email') as string,
       'Date de naissance': formatDateFR(rawDate),
-      'Adresse': formData.get('Adresse') as string,
+      'N° de voie et rue': formData.get('Adresse') as string,
       'Code postal': formData.get('Code postal') as string,
       'Ville': formData.get('Ville') as string,
-      'Motif de consultation': formData.get('Motif') as string,
-      'Examens demandés': examens || 'Aucun',
-      'Message': formData.get('Message') as string,
-      'Médecin traitant': formData.get('Medecin traitant') as string,
+      'Sélectionner un examen': examens || (formData.get('Motif') as string),
+      'Votre message': formData.get('Message') as string,
     };
 
     try {
