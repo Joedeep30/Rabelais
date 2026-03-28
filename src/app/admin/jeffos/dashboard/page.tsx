@@ -2,9 +2,98 @@
 
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
-import { TARGET_KEYWORDS, GBP_POST_TEMPLATES, COMPETITORS } from '@/lib/keywords';
+import { TARGET_KEYWORDS, GBP_POST_TEMPLATES, COMPETITORS, GEOGRID_DATA } from '@/lib/keywords';
 
-type Tab = 'overview' | 'keywords' | 'gbp-poster' | 'reports';
+type Tab = 'overview' | 'keywords' | 'geogrid' | 'gbp-poster' | 'reports';
+
+function GeoGridView() {
+  const [selectedKeyword, setSelectedKeyword] = useState(0);
+  const grid = GEOGRID_DATA[selectedKeyword];
+
+  const getCellColor = (val: number | null) => {
+    if (val === null) return 'bg-white/[0.03] text-white/10';
+    if (val <= 3) return 'bg-green-500/20 text-green-400 border-green-500/30';
+    if (val <= 5) return 'bg-[#c2aa84]/20 text-[#c2aa84] border-[#c2aa84]/30';
+    if (val <= 10) return 'bg-yellow-500/15 text-yellow-400 border-yellow-500/20';
+    return 'bg-red-500/10 text-red-400 border-red-500/20';
+  };
+
+  return (
+    <div className="space-y-6">
+      {/* Keyword selector */}
+      <div className="flex gap-2 flex-wrap">
+        {GEOGRID_DATA.map((g, i) => (
+          <button
+            key={i}
+            onClick={() => setSelectedKeyword(i)}
+            className={`px-4 py-2 rounded-xl text-xs uppercase tracking-wider font-bold transition-all ${
+              selectedKeyword === i
+                ? 'bg-[#003399]/30 text-[#6699ff] border border-[#003399]/40'
+                : 'bg-white/5 text-white/30 hover:text-white/60 border border-white/5'
+            }`}
+          >
+            {g.keyword}
+          </button>
+        ))}
+      </div>
+
+      {/* Grid */}
+      <div className="bg-white/5 backdrop-blur border border-white/5 rounded-2xl p-6">
+        <div className="flex items-center gap-3 mb-6">
+          <h3 className="text-xs uppercase tracking-widest text-[#c2aa84] font-bold">🗺️ GeoGrid — &quot;{grid.keyword}&quot;</h3>
+          <div className="flex gap-3 ml-auto">
+            <span className="flex items-center gap-1 text-[9px] uppercase tracking-wider"><span className="w-3 h-3 rounded bg-green-500/20 border border-green-500/30" /> Top 3</span>
+            <span className="flex items-center gap-1 text-[9px] uppercase tracking-wider text-white/40"><span className="w-3 h-3 rounded bg-[#c2aa84]/20 border border-[#c2aa84]/30" /> 4-5</span>
+            <span className="flex items-center gap-1 text-[9px] uppercase tracking-wider text-white/40"><span className="w-3 h-3 rounded bg-yellow-500/15 border border-yellow-500/20" /> 6-10</span>
+            <span className="flex items-center gap-1 text-[9px] uppercase tracking-wider text-white/40"><span className="w-3 h-3 rounded bg-red-500/10 border border-red-500/20" /> 11+</span>
+            <span className="flex items-center gap-1 text-[9px] uppercase tracking-wider text-white/40"><span className="w-3 h-3 rounded bg-white/[0.03]" /> N/A</span>
+          </div>
+        </div>
+
+        <div className="grid grid-cols-[120px_1fr] gap-2">
+          {/* Empty corner */}
+          <div />
+          {/* Column headers */}
+          <div className="grid grid-cols-5 gap-2">
+            {grid.labels.col.map((label, i) => (
+              <div key={i} className="text-center text-[9px] uppercase tracking-wider text-white/30 py-1">{label}</div>
+            ))}
+          </div>
+
+          {/* Rows */}
+          {grid.grid.map((row, rowIdx) => (
+            <>
+              {/* Row label */}
+              <div key={`label-${rowIdx}`} className="flex items-center text-[9px] uppercase tracking-wider text-white/30 pr-2 text-right justify-end">
+                {grid.labels.row[rowIdx]}
+              </div>
+              {/* Row cells */}
+              <div key={`row-${rowIdx}`} className="grid grid-cols-5 gap-2">
+                {row.map((cell, colIdx) => (
+                  <div
+                    key={colIdx}
+                    className={`aspect-square rounded-xl flex items-center justify-center font-bold text-lg border transition-all hover:scale-105 ${getCellColor(cell)} ${
+                      rowIdx === 2 && colIdx === 2 ? 'ring-2 ring-[#c2aa84]/50 ring-offset-2 ring-offset-[#0a0f1c]' : ''
+                    }`}
+                  >
+                    {cell !== null ? `#${cell}` : '—'}
+                    {rowIdx === 2 && colIdx === 2 && (
+                      <span className="absolute text-[7px] -bottom-4 text-[#c2aa84]">📍 Centre</span>
+                    )}
+                  </div>
+                ))}
+              </div>
+            </>
+          ))}
+        </div>
+
+        <p className="text-white/20 text-[10px] mt-4 text-center">
+          📍 La case dorée au centre = position du Centre Rabelais (Lyon 2). Chaque case = position GMAP depuis ce point géographique.
+        </p>
+      </div>
+    </div>
+  );
+}
 
 export default function AdminDashboard() {
   const [activeTab, setActiveTab] = useState<Tab>('overview');
@@ -43,6 +132,7 @@ export default function AdminDashboard() {
   const tabs: { id: Tab; label: string; icon: string }[] = [
     { id: 'overview', label: 'Vue d\'ensemble', icon: '📊' },
     { id: 'keywords', label: 'Mots-clés', icon: '🎯' },
+    { id: 'geogrid', label: 'GeoGrid', icon: '🗺️' },
     { id: 'gbp-poster', label: 'GBP Poster', icon: '📮' },
     { id: 'reports', label: 'Rapports', icon: '📧' },
   ];
@@ -78,12 +168,12 @@ export default function AdminDashboard() {
         </div>
 
         {/* Tab navigation */}
-        <div className="max-w-7xl mx-auto px-6 flex gap-1">
+        <div className="max-w-7xl mx-auto px-6 flex gap-1 overflow-x-auto">
           {tabs.map(tab => (
             <button
               key={tab.id}
               onClick={() => setActiveTab(tab.id)}
-              className={`px-5 py-3 text-xs uppercase tracking-widest font-medium rounded-t-lg transition-all ${
+              className={`px-5 py-3 text-xs uppercase tracking-widest font-medium rounded-t-lg transition-all whitespace-nowrap ${
                 activeTab === tab.id
                   ? 'bg-white/5 text-[#c2aa84] border-b-2 border-[#c2aa84]'
                   : 'text-white/30 hover:text-white/60 hover:bg-white/[0.02]'
@@ -100,16 +190,16 @@ export default function AdminDashboard() {
 
         {/* OVERVIEW TAB */}
         {activeTab === 'overview' && (
-          <div className="space-y-8 animate-in fade-in">
+          <div className="space-y-8">
             {/* KPI Cards */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
               {[
-                { label: 'Top 3 Organique', value: top3Count, total: totalKeywords, color: '#c2aa84' },
+                { label: 'Top 3 Organique', value: top3Count, total: totalKeywords, color: '#22c55e' },
                 { label: 'Top 10 Organique', value: top10Count, total: totalKeywords, color: '#003399' },
-                { label: 'Top 3 Google Maps', value: gmapTop3, total: totalKeywords, color: '#22c55e' },
+                { label: 'Top 3 Google Maps', value: gmapTop3, total: totalKeywords, color: '#c2aa84' },
                 { label: 'Amélioration Moy.', value: `+${avgImprovement.toFixed(1)}`, total: 'positions', color: '#8b5cf6' },
               ].map((kpi, i) => (
-                <div key={i} className="bg-white/5 backdrop-blur border border-white/5 rounded-2xl p-6 hover:border-white/10 transition-all group">
+                <div key={i} className="bg-white/5 backdrop-blur border border-white/5 rounded-2xl p-6 hover:border-white/10 transition-all">
                   <p className="text-white/30 text-[10px] uppercase tracking-widest mb-3">{kpi.label}</p>
                   <div className="flex items-baseline gap-2">
                     <span className="text-3xl font-bold" style={{ color: kpi.color }}>{kpi.value}</span>
@@ -169,20 +259,26 @@ export default function AdminDashboard() {
             {/* Competitors */}
             <div className="bg-white/5 backdrop-blur border border-white/5 rounded-2xl p-6">
               <h3 className="text-xs uppercase tracking-widest text-[#c2aa84] font-bold mb-6">⚔️ Surveillance Concurrents</h3>
-              <div className="grid md:grid-cols-2 gap-4">
+              <div className="space-y-3">
                 {COMPETITORS.map((comp, i) => (
                   <div key={i} className="flex items-center justify-between bg-white/[0.02] rounded-xl px-5 py-4">
                     <div>
                       <p className="text-white/70 text-sm font-medium">{comp.name}</p>
                       <p className="text-white/20 text-[10px]">{comp.url}</p>
                     </div>
-                    <span className={`text-[10px] uppercase tracking-wider font-bold px-3 py-1 rounded-full ${
-                      comp.threat === 'high' ? 'bg-red-500/10 text-red-400' :
-                      comp.threat === 'medium' ? 'bg-yellow-500/10 text-yellow-400' :
-                      'bg-green-500/10 text-green-400'
-                    }`}>
-                      {comp.threat === 'high' ? '🔴 Élevée' : comp.threat === 'medium' ? '🟡 Modérée' : '🟢 Faible'}
-                    </span>
+                    <div className="flex items-center gap-4">
+                      <div className="text-right">
+                        <p className="text-white/50 text-sm">{comp.reviews} avis</p>
+                        <p className="text-yellow-400 text-xs">★ {comp.rating}</p>
+                      </div>
+                      <span className={`text-[10px] uppercase tracking-wider font-bold px-3 py-1 rounded-full ${
+                        comp.threat === 'high' ? 'bg-red-500/10 text-red-400' :
+                        comp.threat === 'medium' ? 'bg-yellow-500/10 text-yellow-400' :
+                        'bg-green-500/10 text-green-400'
+                      }`}>
+                        {comp.threat === 'high' ? '🔴 Élevée' : comp.threat === 'medium' ? '🟡 Modérée' : '🟢 Faible'}
+                      </span>
+                    </div>
                   </div>
                 ))}
               </div>
@@ -192,7 +288,7 @@ export default function AdminDashboard() {
 
         {/* KEYWORDS TAB */}
         {activeTab === 'keywords' && (
-          <div className="animate-in fade-in">
+          <div>
             <div className="bg-white/5 backdrop-blur border border-white/5 rounded-2xl overflow-hidden">
               <div className="p-6 border-b border-white/5">
                 <h3 className="text-xs uppercase tracking-widest text-[#c2aa84] font-bold">Suivi des {totalKeywords} Mots-Clés Cibles</h3>
@@ -261,9 +357,12 @@ export default function AdminDashboard() {
           </div>
         )}
 
+        {/* GEOGRID TAB */}
+        {activeTab === 'geogrid' && <GeoGridView />}
+
         {/* GBP POSTER TAB */}
         {activeTab === 'gbp-poster' && (
-          <div className="space-y-6 animate-in fade-in">
+          <div className="space-y-6">
             {/* Auto mode toggle */}
             <div className="bg-white/5 backdrop-blur border border-white/5 rounded-2xl p-6 flex items-center justify-between">
               <div>
@@ -287,8 +386,7 @@ export default function AdminDashboard() {
             {/* Post queue */}
             <div className="grid md:grid-cols-2 gap-6">
               {GBP_POST_TEMPLATES.slice(0, 6).map((post, i) => (
-                <div key={i} className="bg-white/5 backdrop-blur border border-white/5 rounded-2xl overflow-hidden hover:border-white/10 transition-all group">
-                  {/* Post preview */}
+                <div key={i} className="bg-white/5 backdrop-blur border border-white/5 rounded-2xl overflow-hidden hover:border-white/10 transition-all">
                   <div className="h-40 bg-gradient-to-br from-[#003399]/20 to-[#c2aa84]/10 flex items-center justify-center">
                     <span className="text-4xl opacity-50">📸</span>
                   </div>
@@ -300,13 +398,13 @@ export default function AdminDashboard() {
                     </div>
                     <p className="text-white/60 text-sm leading-relaxed mb-4 line-clamp-3">{post.textTemplate}</p>
                     <div className="flex items-center justify-between">
-                      <a href={post.targetPage} target="_blank" className="text-[#c2aa84] text-[10px] uppercase tracking-wider hover:underline">
+                      <span className="text-[#c2aa84] text-[10px] uppercase tracking-wider">
                         {post.callToAction} →
-                      </a>
+                      </span>
                       <div className="flex gap-2">
                         {!autoMode && (
                           <button className="bg-green-500/10 text-green-400 hover:bg-green-500/20 text-[10px] uppercase tracking-wider font-bold px-4 py-2 rounded-lg transition-all">
-                            ✓ Valider
+                            ✓ Publier
                           </button>
                         )}
                         <button className="bg-white/5 text-white/40 hover:bg-white/10 text-[10px] uppercase tracking-wider font-bold px-4 py-2 rounded-lg transition-all">
@@ -319,7 +417,7 @@ export default function AdminDashboard() {
               ))}
             </div>
 
-            {/* Schedule info */}
+            {/* Schedule */}
             <div className="bg-white/5 backdrop-blur border border-white/5 rounded-2xl p-6">
               <h3 className="text-xs uppercase tracking-widest text-[#c2aa84] font-bold mb-4">📅 Calendrier de Publication</h3>
               <div className="grid grid-cols-7 gap-2">
@@ -340,7 +438,7 @@ export default function AdminDashboard() {
 
         {/* REPORTS TAB */}
         {activeTab === 'reports' && (
-          <div className="space-y-6 animate-in fade-in">
+          <div className="space-y-6">
             <div className="bg-white/5 backdrop-blur border border-white/5 rounded-2xl p-8">
               <div className="flex items-start justify-between mb-8">
                 <div>
@@ -375,7 +473,6 @@ export default function AdminDashboard() {
                   <p className="text-[10px] uppercase tracking-widest text-white/30 font-bold">Aperçu du Rapport</p>
                 </div>
                 <div className="p-6 space-y-6">
-                  {/* Summary box */}
                   <div className="grid grid-cols-3 gap-4">
                     <div className="text-center p-4 bg-green-500/5 rounded-xl border border-green-500/10">
                       <p className="text-green-400 text-2xl font-bold">{top3Count}</p>
@@ -391,42 +488,27 @@ export default function AdminDashboard() {
                     </div>
                   </div>
 
-                  {/* Top keywords in report */}
                   <div>
-                    <p className="text-white/30 text-[10px] uppercase tracking-widest mb-3">Top Mots-Clés</p>
-                    {TARGET_KEYWORDS.filter(k => k.currentPosition && k.currentPosition <= 3).map((kw, i) => (
-                      <div key={i} className="flex items-center justify-between py-2 border-b border-white/[0.03]">
-                        <span className="text-white/60 text-sm">{kw.keyword}</span>
-                        <div className="flex items-center gap-3">
-                          <span className="text-green-400 font-bold">#{kw.currentPosition}</span>
-                          <span className="text-green-400/50 text-xs">GMAP #{kw.gmapPosition}</span>
+                    <p className="text-white/30 text-[10px] uppercase tracking-widest mb-3">Progressions notables</p>
+                    {TARGET_KEYWORDS
+                      .filter(k => k.previousPosition && k.currentPosition)
+                      .sort((a, b) => ((b.previousPosition! - b.currentPosition!) - (a.previousPosition! - a.currentPosition!)))
+                      .slice(0, 5)
+                      .map((kw, i) => (
+                        <div key={i} className="flex items-center justify-between py-2 border-b border-white/[0.03]">
+                          <span className="text-white/60 text-sm">{kw.keyword}</span>
+                          <div className="flex items-center gap-3">
+                            <span className="text-white/30 text-xs">#{kw.previousPosition}</span>
+                            <span className="text-white/30">→</span>
+                            <span className={`font-bold ${kw.currentPosition! <= 3 ? 'text-green-400' : kw.currentPosition! <= 10 ? 'text-[#c2aa84]' : 'text-white/60'}`}>
+                              #{kw.currentPosition}
+                            </span>
+                            <span className="text-green-400 text-xs">↑{kw.previousPosition! - kw.currentPosition!}</span>
+                          </div>
                         </div>
-                      </div>
-                    ))}
+                      ))}
                   </div>
                 </div>
-              </div>
-            </div>
-
-            {/* Report history */}
-            <div className="bg-white/5 backdrop-blur border border-white/5 rounded-2xl p-6">
-              <h3 className="text-xs uppercase tracking-widest text-[#c2aa84] font-bold mb-4">📋 Historique des Rapports</h3>
-              <div className="space-y-3">
-                {[
-                  { date: '24 Mars 2026', status: 'Envoyé', recipients: 2 },
-                  { date: '17 Mars 2026', status: 'Envoyé', recipients: 2 },
-                  { date: '10 Mars 2026', status: 'Envoyé', recipients: 2 },
-                ].map((report, i) => (
-                  <div key={i} className="flex items-center justify-between bg-white/[0.02] px-5 py-3 rounded-xl">
-                    <div className="flex items-center gap-4">
-                      <span className="text-white/60 text-sm">{report.date}</span>
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <span className="text-green-400 text-[10px] uppercase tracking-wider">✓ {report.status}</span>
-                      <span className="text-white/20 text-[10px]">{report.recipients} dest.</span>
-                    </div>
-                  </div>
-                ))}
               </div>
             </div>
           </div>

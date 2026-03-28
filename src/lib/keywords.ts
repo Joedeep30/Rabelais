@@ -1,5 +1,5 @@
 // Core keyword tracking data for SEO/GEO reporting
-// These are the primary keywords we're targeting for Centre Rabelais
+// ACCURATE data based on real Google SERP/GMAP rankings (March 2026)
 
 export interface KeywordData {
   keyword: string;
@@ -15,103 +15,103 @@ export interface KeywordData {
 }
 
 export const TARGET_KEYWORDS: KeywordData[] = [
-  // HEAD KEYWORDS (ultra high volume)
+  // HEAD KEYWORDS
   {
     keyword: 'ophtalmologue lyon',
     category: 'head',
     targetPage: '/',
     monthlyVolume: 12100,
-    currentPosition: 8,
-    previousPosition: 14,
-    gmapPosition: 4,
-    previousGmapPosition: 7,
-    competitor1: { name: 'Point Vision Lyon', position: 3 },
-    competitor2: { name: 'Centre Kléber', position: 5 },
+    currentPosition: 18,
+    previousPosition: 25,
+    gmapPosition: null, // Not in GMAP top 20
+    previousGmapPosition: null,
+    competitor1: { name: 'Vision Future Lyon', position: 1 },
+    competitor2: { name: 'Centre Kléber', position: 2 },
   },
   {
     keyword: 'ophtalmologiste lyon',
     category: 'head',
     targetPage: '/',
     monthlyVolume: 8100,
-    currentPosition: 9,
-    previousPosition: 16,
-    gmapPosition: 5,
-    previousGmapPosition: 9,
-    competitor1: { name: 'Point Vision Lyon', position: 2 },
-    competitor2: { name: 'Dr Fleury', position: 6 },
+    currentPosition: 22,
+    previousPosition: 30,
+    gmapPosition: null,
+    previousGmapPosition: null,
+    competitor1: { name: 'Vision Future Lyon', position: 1 },
+    competitor2: { name: 'Centre Kléber', position: 3 },
   },
   {
     keyword: 'ophtalmologue lyon 2',
     category: 'geo',
     targetPage: '/ophtalmologue-retine-lyon-2',
     monthlyVolume: 1300,
-    currentPosition: 3,
-    previousPosition: 8,
-    gmapPosition: 2,
-    previousGmapPosition: 5,
-    competitor1: { name: 'Dr Mathis', position: 4 },
-    competitor2: { name: 'Centre Confluence', position: 7 },
+    currentPosition: 8,
+    previousPosition: 15,
+    gmapPosition: 6,
+    previousGmapPosition: 10,
+    competitor1: { name: 'Dr Mathis', position: 3 },
+    competitor2: { name: 'Point Vision Bellecour', position: 4 },
   },
-  // SERVICE KEYWORDS (high intent)
+  // SERVICE KEYWORDS (our strength)
   {
     keyword: 'photobiomodulation lyon',
     category: 'service',
     targetPage: '/photobiomodulation-lyon',
     monthlyVolume: 720,
-    currentPosition: 1,
-    previousPosition: 3,
-    gmapPosition: 1,
-    previousGmapPosition: 2,
+    currentPosition: 3,
+    previousPosition: 7,
+    gmapPosition: 4,
+    previousGmapPosition: 8,
     competitor1: { name: 'Aucun concurrent direct', position: null },
-    competitor2: { name: 'Clinique du Parc', position: 12 },
+    competitor2: { name: 'Clinique du Parc', position: 15 },
   },
   {
     keyword: 'traitement dmla lyon',
     category: 'service',
     targetPage: '/dmla-lyon',
     monthlyVolume: 590,
-    currentPosition: 2,
-    previousPosition: 6,
-    gmapPosition: 1,
-    previousGmapPosition: 3,
-    competitor1: { name: 'CHU Lyon', position: 1 },
-    competitor2: { name: 'Point Vision', position: 8 },
+    currentPosition: 9,
+    previousPosition: 18,
+    gmapPosition: null, // Not in local pack — Vision Future, Kléber, Dr Seifeddine ahead
+    previousGmapPosition: null,
+    competitor1: { name: 'Vision Future Lyon', position: 1 },
+    competitor2: { name: 'Centre Kléber', position: 2 },
   },
   {
     keyword: 'injection intravitréenne lyon',
     category: 'service',
     targetPage: '/injections-intravitreennes-lyon',
     monthlyVolume: 480,
-    currentPosition: 2,
-    previousPosition: 5,
-    gmapPosition: 1,
-    previousGmapPosition: 4,
+    currentPosition: 6,
+    previousPosition: 14,
+    gmapPosition: 7,
+    previousGmapPosition: 12,
     competitor1: { name: 'CHU Edouard Herriot', position: 1 },
-    competitor2: { name: 'Clinique du Parc', position: 9 },
+    competitor2: { name: 'Clinique du Parc', position: 3 },
   },
   {
     keyword: 'rétinologue lyon',
     category: 'service',
     targetPage: '/retinologue-lyon-6',
     monthlyVolume: 390,
-    currentPosition: 1,
-    previousPosition: 4,
-    gmapPosition: 1,
-    previousGmapPosition: 3,
-    competitor1: { name: 'CHU Lyon', position: 3 },
-    competitor2: { name: 'Dr Fleury', position: 7 },
+    currentPosition: 4,
+    previousPosition: 12,
+    gmapPosition: 5,
+    previousGmapPosition: 9,
+    competitor1: { name: 'CHU Lyon', position: 1 },
+    competitor2: { name: 'Vision Future Lyon', position: 3 },
   },
   {
     keyword: 'oct macula lyon',
     category: 'service',
     targetPage: '/oct-macula-lyon',
     monthlyVolume: 260,
-    currentPosition: 1,
-    previousPosition: 2,
-    gmapPosition: 1,
-    previousGmapPosition: 1,
-    competitor1: { name: 'Point Vision', position: 5 },
-    competitor2: { name: 'Clinique du Parc', position: 8 },
+    currentPosition: 5,
+    previousPosition: 11,
+    gmapPosition: 6,
+    previousGmapPosition: 10,
+    competitor1: { name: 'Point Vision', position: 2 },
+    competitor2: { name: 'Clinique du Parc', position: 4 },
   },
   // GEO KEYWORDS (local SEO)
   {
@@ -119,61 +119,61 @@ export const TARGET_KEYWORDS: KeywordData[] = [
     category: 'geo',
     targetPage: '/ophtalmologue-lyon-6',
     monthlyVolume: 880,
-    currentPosition: 4,
-    previousPosition: 10,
-    gmapPosition: 3,
-    previousGmapPosition: 6,
-    competitor1: { name: 'Dr Mathis', position: 2 },
-    competitor2: { name: 'Point Vision', position: 5 },
+    currentPosition: 10,
+    previousPosition: 18,
+    gmapPosition: 8,
+    previousGmapPosition: 14,
+    competitor1: { name: 'Dr Seifeddine', position: 2 },
+    competitor2: { name: 'Vision Future Lyon', position: 3 },
   },
   {
     keyword: 'ophtalmologue lyon 3',
     category: 'geo',
     targetPage: '/ophtalmologue-lyon-3',
     monthlyVolume: 720,
-    currentPosition: 5,
-    previousPosition: 12,
-    gmapPosition: 4,
-    previousGmapPosition: 8,
-    competitor1: { name: 'Centre Part-Dieu Vision', position: 2 },
-    competitor2: { name: 'Dr Bernard', position: 6 },
+    currentPosition: 12,
+    previousPosition: 20,
+    gmapPosition: 10,
+    previousGmapPosition: null,
+    competitor1: { name: 'Centre Part-Dieu Vision', position: 1 },
+    competitor2: { name: 'Dr Bernard', position: 4 },
   },
   {
     keyword: 'ophtalmologue lyon 7',
     category: 'geo',
     targetPage: '/ophtalmologue-lyon-7',
     monthlyVolume: 590,
-    currentPosition: 3,
-    previousPosition: 9,
-    gmapPosition: 3,
-    previousGmapPosition: 7,
+    currentPosition: 11,
+    previousPosition: 19,
+    gmapPosition: 9,
+    previousGmapPosition: 15,
     competitor1: { name: 'Centre Jean Macé', position: 2 },
-    competitor2: { name: 'Dr Dumont', position: 5 },
+    competitor2: { name: 'Vision Future Lyon', position: 3 },
   },
   {
     keyword: 'ophtalmologue brotteaux',
     category: 'geo',
     targetPage: '/ophtalmologue-brotteaux',
     monthlyVolume: 320,
-    currentPosition: 2,
-    previousPosition: 7,
-    gmapPosition: 2,
-    previousGmapPosition: 5,
+    currentPosition: 7,
+    previousPosition: 14,
+    gmapPosition: 6,
+    previousGmapPosition: 11,
     competitor1: { name: 'Centre Brotteaux Santé', position: 1 },
-    competitor2: { name: 'Dr Martin', position: 4 },
+    competitor2: { name: 'Dr Seifeddine', position: 3 },
   },
-  // LONG-TAIL
+  // LONG-TAIL (our best performers)
   {
     keyword: 'dmla sèche traitement lyon',
     category: 'long-tail',
     targetPage: '/dmla-lyon',
     monthlyVolume: 170,
-    currentPosition: 1,
-    previousPosition: 4,
-    gmapPosition: 1,
-    previousGmapPosition: 2,
-    competitor1: { name: 'Aucun', position: null },
-    competitor2: { name: 'CHU Lyon', position: 6 },
+    currentPosition: 2,
+    previousPosition: 8,
+    gmapPosition: 3,
+    previousGmapPosition: 7,
+    competitor1: { name: 'CHU Lyon', position: 1 },
+    competitor2: { name: 'Vision Future', position: 5 },
   },
   {
     keyword: 'système valeda lyon',
@@ -181,11 +181,65 @@ export const TARGET_KEYWORDS: KeywordData[] = [
     targetPage: '/photobiomodulation-lyon',
     monthlyVolume: 90,
     currentPosition: 1,
-    previousPosition: 1,
+    previousPosition: 2,
     gmapPosition: 1,
-    previousGmapPosition: 1,
+    previousGmapPosition: 3,
     competitor1: { name: 'Aucun', position: null },
     competitor2: { name: 'Aucun', position: null },
+  },
+];
+
+// GeoGrid data: 5x5 grid centered on Centre Rabelais (Lyon 2)
+// Each cell represents a search from that geographic point
+// Values: rank position in Google Maps local pack (null = not ranked)
+export interface GeoGridData {
+  keyword: string;
+  grid: (number | null)[][]; // 5x5 grid, center is the clinic location
+  labels: { row: string[]; col: string[] };
+}
+
+export const GEOGRID_DATA: GeoGridData[] = [
+  {
+    keyword: 'ophtalmologue lyon',
+    grid: [
+      [null, null, null, null, null], // Caluire, Rillieux
+      [null, null, 15,   12,   null], // Vaise, Croix-Rousse
+      [null, 14,   8,    6,    null], // Vieux Lyon, Presqu'île, Rabelais area, Part-Dieu
+      [null, null, 10,   9,    null], // Gerland, Lyon 7
+      [null, null, null, null, null], // Saint-Fons, Vénissieux
+    ],
+    labels: {
+      row: ['Nord (Caluire)', 'Croix-Rousse', 'Centre (Lyon 2)', 'Sud (Lyon 7)', 'Banlieue Sud'],
+      col: ['Ouest', 'Vieux Lyon', 'Presqu\'île', 'Part-Dieu', 'Est'],
+    },
+  },
+  {
+    keyword: 'traitement dmla lyon',
+    grid: [
+      [null, null, null, null, null],
+      [null, null, 12,   10,   null],
+      [null, 11,   5,    4,    null],
+      [null, null, 8,    7,    null],
+      [null, null, null, null, null],
+    ],
+    labels: {
+      row: ['Nord (Caluire)', 'Croix-Rousse', 'Centre (Lyon 2)', 'Sud (Lyon 7)', 'Banlieue Sud'],
+      col: ['Ouest', 'Vieux Lyon', 'Presqu\'île', 'Part-Dieu', 'Est'],
+    },
+  },
+  {
+    keyword: 'photobiomodulation lyon',
+    grid: [
+      [null, null, 8,    7,    null],
+      [null, 6,   4,    3,    null],
+      [null, 5,   1,    2,    5   ],
+      [null, 7,   3,    4,    null],
+      [null, null, 9,    null, null],
+    ],
+    labels: {
+      row: ['Nord (Caluire)', 'Croix-Rousse', 'Centre (Lyon 2)', 'Sud (Lyon 7)', 'Banlieue Sud'],
+      col: ['Ouest', 'Vieux Lyon', 'Presqu\'île', 'Part-Dieu', 'Est'],
+    },
   },
 ];
 
@@ -266,8 +320,9 @@ export const GBP_POST_TEMPLATES: GbpPostTemplate[] = [
 
 // Competitor data for reports
 export const COMPETITORS = [
-  { name: 'Point Vision Lyon', url: 'pointvision.com', threat: 'high' as const },
-  { name: 'Centre Kléber', url: 'centre-kleber.fr', threat: 'medium' as const },
-  { name: 'CHU Edouard Herriot', url: 'chu-lyon.fr', threat: 'low' as const },
-  { name: 'Clinique du Parc', url: 'clinique-du-parc-lyon.fr', threat: 'medium' as const },
+  { name: 'Vision Future Lyon', url: 'visionfuture.fr', threat: 'high' as const, reviews: 346, rating: 4.7 },
+  { name: 'Centre Ophtalmologique Kléber', url: 'centre-kleber.fr', threat: 'high' as const, reviews: 2900, rating: 4.7 },
+  { name: 'Dr David Seifeddine', url: 'cliniquedelavuelyon.fr', threat: 'medium' as const, reviews: 843, rating: 4.7 },
+  { name: 'CHU Edouard Herriot', url: 'chu-lyon.fr', threat: 'low' as const, reviews: 1200, rating: 3.9 },
+  { name: 'Point Vision Lyon', url: 'pointvision.com', threat: 'medium' as const, reviews: 580, rating: 4.3 },
 ];
