@@ -2,29 +2,131 @@
 
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
+import Image from 'next/image';
 import { TARGET_KEYWORDS, GBP_POST_TEMPLATES, COMPETITORS, GEOGRID_DATA } from '@/lib/keywords';
 
 type Tab = 'overview' | 'keywords' | 'geogrid' | 'gbp-poster' | 'reports';
 
-function GeoGridView() {
-  const [selectedKeyword, setSelectedKeyword] = useState(0);
-  const grid = GEOGRID_DATA[selectedKeyword];
+// GBP Post images mapping
+const GBP_IMAGES: Record<string, string> = {
+  'photobiomodulation lyon': '/admin/gbp/photobiomodulation.png',
+  'ophtalmologue lyon': '/admin/gbp/ophtalmologue.png',
+  'traitement dmla lyon': '/admin/gbp/dmla.png',
+  'injection intravitréenne lyon': '/admin/gbp/injection.png',
+  'rétinologue lyon': '/admin/gbp/retinologue.png',
+  'oct macula lyon': '/admin/gbp/oct.png',
+  'ophtalmologue lyon 6': '/admin/gbp/ophtalmologue.png',
+  'ophtalmologue bellecour': '/admin/gbp/ophtalmologue.png',
+  'dmla sèche traitement': '/admin/gbp/dmla.png',
+};
 
-  const getCellColor = (val: number | null) => {
-    if (val === null) return 'bg-white/[0.03] text-white/10';
-    if (val <= 3) return 'bg-green-500/20 text-green-400 border-green-500/30';
-    if (val <= 5) return 'bg-[#c2aa84]/20 text-[#c2aa84] border-[#c2aa84]/30';
-    if (val <= 10) return 'bg-yellow-500/15 text-yellow-400 border-yellow-500/20';
-    return 'bg-red-500/10 text-red-400 border-red-500/20';
+/* ─── Lyon SVG Map GeoGrid ─── */
+// Geographic points on the Lyon SVG map (x%, y%) — positioned on a real map layout
+// These correspond to approximate locations of Lyon neighborhoods
+interface MapPoint {
+  id: string;
+  label: string;
+  x: number;   // % from left
+  y: number;   // % from top
+  gridRow: number;
+  gridCol: number;
+}
+
+const LYON_MAP_POINTS: MapPoint[] = [
+  // Row 0: Nord
+  { id: 'caluire-o', label: 'Caluire O.', x: 38, y: 8, gridRow: 0, gridCol: 1 },
+  { id: 'caluire', label: 'Caluire', x: 52, y: 6, gridRow: 0, gridCol: 2 },
+  { id: 'rillieux', label: 'Rillieux', x: 66, y: 10, gridRow: 0, gridCol: 3 },
+  // Row 1: Croix-Rousse / Lyon 4
+  { id: 'vaise', label: 'Vaise (L9)', x: 25, y: 28, gridRow: 1, gridCol: 0 },
+  { id: 'croix-rousse', label: 'Croix-Rousse', x: 42, y: 24, gridRow: 1, gridCol: 1 },
+  { id: 'lyon4-centre', label: 'Lyon 4', x: 52, y: 30, gridRow: 1, gridCol: 2 },
+  { id: 'lyon6-nord', label: 'Lyon 6 N.', x: 65, y: 26, gridRow: 1, gridCol: 3 },
+  { id: 'villeurbanne', label: 'Villeurbanne', x: 78, y: 30, gridRow: 1, gridCol: 4 },
+  // Row 2: Centre — Lyon 1, 2, 3
+  { id: 'vieux-lyon', label: 'Vieux Lyon', x: 32, y: 44, gridRow: 2, gridCol: 0 },
+  { id: 'presquile', label: 'Presqu\'île', x: 44, y: 42, gridRow: 2, gridCol: 1 },
+  { id: 'rabelais', label: '📍 RABELAIS', x: 50, y: 50, gridRow: 2, gridCol: 2 },  // Centre Rabelais
+  { id: 'part-dieu', label: 'Part-Dieu', x: 64, y: 44, gridRow: 2, gridCol: 3 },
+  { id: 'brotteaux', label: 'Brotteaux', x: 74, y: 42, gridRow: 2, gridCol: 4 },
+  // Row 3: Sud — Lyon 7, 8
+  { id: 'lyon5', label: 'Lyon 5', x: 28, y: 60, gridRow: 3, gridCol: 0 },
+  { id: 'confluences', label: 'Confluences', x: 40, y: 62, gridRow: 3, gridCol: 1 },
+  { id: 'jean-mace', label: 'Jean Macé', x: 52, y: 64, gridRow: 3, gridCol: 2 },
+  { id: 'lyon7-sud', label: 'Lyon 7 Sud', x: 62, y: 66, gridRow: 3, gridCol: 3 },
+  // Row 4: Banlieue Sud
+  { id: 'oullins', label: 'Oullins', x: 35, y: 80, gridRow: 4, gridCol: 1 },
+  { id: 'gerland', label: 'Gerland', x: 50, y: 78, gridRow: 4, gridCol: 2 },
+  { id: 'venissieux', label: 'Vénissieux', x: 65, y: 82, gridRow: 4, gridCol: 3 },
+];
+
+// Extended grid data — sparse, matching map points
+interface MapGridData {
+  keyword: string;
+  // Map from point id to rank
+  rankings: Record<string, number | null>;
+}
+
+const MAP_GRID_DATA: MapGridData[] = [
+  {
+    keyword: 'ophtalmologue lyon',
+    rankings: {
+      'caluire': null, 'rillieux': null, 'caluire-o': null,
+      'vaise': null, 'croix-rousse': null, 'lyon4-centre': 15, 'lyon6-nord': 12, 'villeurbanne': null,
+      'vieux-lyon': null, 'presquile': 14, 'rabelais': 8, 'part-dieu': 6, 'brotteaux': null,
+      'lyon5': null, 'confluences': null, 'jean-mace': 10, 'lyon7-sud': 9,
+      'oullins': null, 'gerland': null, 'venissieux': null,
+    },
+  },
+  {
+    keyword: 'traitement dmla lyon',
+    rankings: {
+      'caluire': null, 'rillieux': null, 'caluire-o': null,
+      'vaise': null, 'croix-rousse': null, 'lyon4-centre': 12, 'lyon6-nord': 10, 'villeurbanne': null,
+      'vieux-lyon': null, 'presquile': 11, 'rabelais': 5, 'part-dieu': 4, 'brotteaux': null,
+      'lyon5': null, 'confluences': null, 'jean-mace': 8, 'lyon7-sud': 7,
+      'oullins': null, 'gerland': null, 'venissieux': null,
+    },
+  },
+  {
+    keyword: 'photobiomodulation lyon',
+    rankings: {
+      'caluire': 8, 'rillieux': null, 'caluire-o': null,
+      'vaise': null, 'croix-rousse': 6, 'lyon4-centre': 4, 'lyon6-nord': 3, 'villeurbanne': null,
+      'vieux-lyon': null, 'presquile': 5, 'rabelais': 1, 'part-dieu': 2, 'brotteaux': 5,
+      'lyon5': null, 'confluences': 7, 'jean-mace': 3, 'lyon7-sud': 4,
+      'oullins': null, 'gerland': 9, 'venissieux': null,
+    },
+  },
+];
+
+function LyonMapGeoGrid() {
+  const [selectedKeyword, setSelectedKeyword] = useState(0);
+  const data = MAP_GRID_DATA[selectedKeyword];
+
+  const getRankColor = (rank: number | null): string => {
+    if (rank === null) return 'rgba(255,255,255,0.05)';
+    if (rank <= 3) return 'rgba(34,197,94,0.8)';   // green
+    if (rank <= 5) return 'rgba(194,170,132,0.8)';  // gold
+    if (rank <= 10) return 'rgba(234,179,8,0.6)';   // yellow
+    return 'rgba(239,68,68,0.6)';                    // red
+  };
+
+  const getRankTextColor = (rank: number | null): string => {
+    if (rank === null) return 'rgba(255,255,255,0.1)';
+    if (rank <= 3) return '#22c55e';
+    if (rank <= 5) return '#c2aa84';
+    if (rank <= 10) return '#eab308';
+    return '#ef4444';
   };
 
   return (
     <div className="space-y-6">
       {/* Keyword selector */}
       <div className="flex gap-2 flex-wrap">
-        {GEOGRID_DATA.map((g, i) => (
+        {MAP_GRID_DATA.map((g, i) => (
           <button
-            key={i}
+            key={g.keyword}
             onClick={() => setSelectedKeyword(i)}
             className={`px-4 py-2 rounded-xl text-xs uppercase tracking-wider font-bold transition-all ${
               selectedKeyword === i
@@ -37,58 +139,161 @@ function GeoGridView() {
         ))}
       </div>
 
-      {/* Grid */}
+      {/* Map container */}
       <div className="bg-white/5 backdrop-blur border border-white/5 rounded-2xl p-6">
-        <div className="flex items-center gap-3 mb-6">
-          <h3 className="text-xs uppercase tracking-widest text-[#c2aa84] font-bold">🗺️ GeoGrid — &quot;{grid.keyword}&quot;</h3>
-          <div className="flex gap-3 ml-auto">
-            <span className="flex items-center gap-1 text-[9px] uppercase tracking-wider"><span className="w-3 h-3 rounded bg-green-500/20 border border-green-500/30" /> Top 3</span>
-            <span className="flex items-center gap-1 text-[9px] uppercase tracking-wider text-white/40"><span className="w-3 h-3 rounded bg-[#c2aa84]/20 border border-[#c2aa84]/30" /> 4-5</span>
-            <span className="flex items-center gap-1 text-[9px] uppercase tracking-wider text-white/40"><span className="w-3 h-3 rounded bg-yellow-500/15 border border-yellow-500/20" /> 6-10</span>
-            <span className="flex items-center gap-1 text-[9px] uppercase tracking-wider text-white/40"><span className="w-3 h-3 rounded bg-red-500/10 border border-red-500/20" /> 11+</span>
-            <span className="flex items-center gap-1 text-[9px] uppercase tracking-wider text-white/40"><span className="w-3 h-3 rounded bg-white/[0.03]" /> N/A</span>
+        <div className="flex items-center justify-between mb-4">
+          <h3 className="text-xs uppercase tracking-widest text-[#c2aa84] font-bold">
+            🗺️ Carte GeoGrid Lyon — &quot;{data.keyword}&quot;
+          </h3>
+          <div className="flex gap-3">
+            <span className="flex items-center gap-1.5 text-[9px] uppercase tracking-wider text-white/50">
+              <span className="w-3 h-3 rounded-full" style={{ background: 'rgba(34,197,94,0.8)' }} /> Top 3
+            </span>
+            <span className="flex items-center gap-1.5 text-[9px] uppercase tracking-wider text-white/40">
+              <span className="w-3 h-3 rounded-full" style={{ background: 'rgba(194,170,132,0.8)' }} /> 4-5
+            </span>
+            <span className="flex items-center gap-1.5 text-[9px] uppercase tracking-wider text-white/40">
+              <span className="w-3 h-3 rounded-full" style={{ background: 'rgba(234,179,8,0.6)' }} /> 6-10
+            </span>
+            <span className="flex items-center gap-1.5 text-[9px] uppercase tracking-wider text-white/40">
+              <span className="w-3 h-3 rounded-full" style={{ background: 'rgba(239,68,68,0.6)' }} /> 11+
+            </span>
+            <span className="flex items-center gap-1.5 text-[9px] uppercase tracking-wider text-white/40">
+              <span className="w-3 h-3 rounded-full bg-white/5" /> N/A
+            </span>
           </div>
         </div>
 
-        <div className="grid grid-cols-[120px_1fr] gap-2">
-          {/* Empty corner */}
-          <div />
-          {/* Column headers */}
-          <div className="grid grid-cols-5 gap-2">
-            {grid.labels.col.map((label, i) => (
-              <div key={i} className="text-center text-[9px] uppercase tracking-wider text-white/30 py-1">{label}</div>
-            ))}
-          </div>
+        {/* SVG Lyon Map */}
+        <div className="relative w-full" style={{ paddingBottom: '65%' }}>
+          <svg
+            viewBox="0 0 1000 650"
+            className="absolute inset-0 w-full h-full"
+            style={{ filter: 'drop-shadow(0 4px 30px rgba(0,51,153,0.15))' }}
+          >
+            {/* Background */}
+            <rect width="1000" height="650" rx="16" fill="#0d1425" />
 
-          {/* Rows */}
-          {grid.grid.map((row, rowIdx) => (
-            <>
-              {/* Row label */}
-              <div key={`label-${rowIdx}`} className="flex items-center text-[9px] uppercase tracking-wider text-white/30 pr-2 text-right justify-end">
-                {grid.labels.row[rowIdx]}
-              </div>
-              {/* Row cells */}
-              <div key={`row-${rowIdx}`} className="grid grid-cols-5 gap-2">
-                {row.map((cell, colIdx) => (
-                  <div
-                    key={colIdx}
-                    className={`aspect-square rounded-xl flex items-center justify-center font-bold text-lg border transition-all hover:scale-105 ${getCellColor(cell)} ${
-                      rowIdx === 2 && colIdx === 2 ? 'ring-2 ring-[#c2aa84]/50 ring-offset-2 ring-offset-[#0a0f1c]' : ''
-                    }`}
+            {/* Saône River */}
+            <path
+              d="M 380 0 C 370 80, 360 120, 355 180 C 350 220, 360 280, 370 320 C 375 350, 380 380, 400 440 C 415 480, 420 520, 430 580 C 440 620, 445 650, 445 650"
+              fill="none"
+              stroke="rgba(59,130,246,0.15)"
+              strokeWidth="18"
+              strokeLinecap="round"
+            />
+            <path
+              d="M 380 0 C 370 80, 360 120, 355 180 C 350 220, 360 280, 370 320 C 375 350, 380 380, 400 440 C 415 480, 420 520, 430 580 C 440 620, 445 650, 445 650"
+              fill="none"
+              stroke="rgba(59,130,246,0.3)"
+              strokeWidth="6"
+              strokeLinecap="round"
+            />
+            <text x="345" y="200" fill="rgba(59,130,246,0.2)" fontSize="10" fontStyle="italic">Saône</text>
+
+            {/* Rhône River */}
+            <path
+              d="M 550 0 C 545 60, 530 100, 520 160 C 510 220, 505 260, 510 320 C 515 380, 520 420, 530 480 C 540 520, 555 560, 560 620 C 562 640, 565 650, 565 650"
+              fill="none"
+              stroke="rgba(59,130,246,0.15)"
+              strokeWidth="22"
+              strokeLinecap="round"
+            />
+            <path
+              d="M 550 0 C 545 60, 530 100, 520 160 C 510 220, 505 260, 510 320 C 515 380, 520 420, 530 480 C 540 520, 555 560, 560 620 C 562 640, 565 650, 565 650"
+              fill="none"
+              stroke="rgba(59,130,246,0.3)"
+              strokeWidth="7"
+              strokeLinecap="round"
+            />
+            <text x="490" y="200" fill="rgba(59,130,246,0.2)" fontSize="10" fontStyle="italic">Rhône</text>
+
+            {/* Presqu'île shading (land between rivers) */}
+            <path
+              d="M 380 200 C 385 240, 390 280, 395 320 C 400 360, 410 400, 420 440 L 510 440 C 508 400, 505 360, 508 320 C 511 280, 520 240, 530 200 Z"
+              fill="rgba(255,255,255,0.02)"
+            />
+
+            {/* District outlines (subtle) */}
+            {/* Lyon 1 */}
+            <ellipse cx="440" cy="180" rx="50" ry="40" fill="none" stroke="rgba(255,255,255,0.04)" strokeWidth="1" />
+            {/* Lyon 2 */}
+            <ellipse cx="460" cy="290" rx="55" ry="55" fill="none" stroke="rgba(194,170,132,0.08)" strokeWidth="1.5" strokeDasharray="4 4" />
+
+            {/* Data points */}
+            {LYON_MAP_POINTS.map((point) => {
+              const rank = data.rankings[point.id] ?? null;
+              const isRabelais = point.id === 'rabelais';
+              const cx = point.x * 10;
+              const cy = point.y * 6.5;
+
+              return (
+                <g key={point.id}>
+                  {/* Pulse ring for Rabelais */}
+                  {isRabelais && (
+                    <>
+                      <circle cx={cx} cy={cy} r="32" fill="none" stroke="rgba(194,170,132,0.3)" strokeWidth="1.5">
+                        <animate attributeName="r" values="28;40;28" dur="3s" repeatCount="indefinite" />
+                        <animate attributeName="opacity" values="0.4;0;0.4" dur="3s" repeatCount="indefinite" />
+                      </circle>
+                      <circle cx={cx} cy={cy} r="28" fill="none" stroke="rgba(194,170,132,0.4)" strokeWidth="2" />
+                    </>
+                  )}
+
+                  {/* Background glow */}
+                  {rank !== null && (
+                    <circle cx={cx} cy={cy} r="24" fill={getRankColor(rank)} opacity="0.15" />
+                  )}
+
+                  {/* Main circle */}
+                  <circle
+                    cx={cx}
+                    cy={cy}
+                    r="20"
+                    fill={rank !== null ? getRankColor(rank) : 'rgba(255,255,255,0.03)'}
+                    stroke={rank !== null ? getRankTextColor(rank) : 'rgba(255,255,255,0.06)'}
+                    strokeWidth={isRabelais ? 2.5 : 1}
+                    opacity={rank !== null ? 0.25 : 1}
+                  />
+
+                  {/* Rank text */}
+                  <text
+                    x={cx}
+                    y={cy + 1}
+                    textAnchor="middle"
+                    dominantBaseline="middle"
+                    fill={getRankTextColor(rank)}
+                    fontSize={isRabelais ? '16' : '14'}
+                    fontWeight="bold"
+                    fontFamily="system-ui"
                   >
-                    {cell !== null ? `#${cell}` : '—'}
-                    {rowIdx === 2 && colIdx === 2 && (
-                      <span className="absolute text-[7px] -bottom-4 text-[#c2aa84]">📍 Centre</span>
-                    )}
-                  </div>
-                ))}
-              </div>
-            </>
-          ))}
+                    {rank !== null ? `#${rank}` : '—'}
+                  </text>
+
+                  {/* Label */}
+                  <text
+                    x={cx}
+                    y={cy + 34}
+                    textAnchor="middle"
+                    fill={isRabelais ? 'rgba(194,170,132,0.9)' : 'rgba(255,255,255,0.25)'}
+                    fontSize={isRabelais ? '10' : '8'}
+                    fontWeight={isRabelais ? 'bold' : 'normal'}
+                    fontFamily="system-ui"
+                    letterSpacing="0.5"
+                  >
+                    {point.label}
+                  </text>
+                </g>
+              );
+            })}
+
+            {/* Map title */}
+            <text x="920" y="30" textAnchor="end" fill="rgba(255,255,255,0.1)" fontSize="11" fontFamily="system-ui" letterSpacing="2">LYON MÉTROPOLE</text>
+          </svg>
         </div>
 
-        <p className="text-white/20 text-[10px] mt-4 text-center">
-          📍 La case dorée au centre = position du Centre Rabelais (Lyon 2). Chaque case = position GMAP depuis ce point géographique.
+        <p className="text-white/20 text-[10px] mt-3 text-center">
+          📍 Chaque cercle = position Google Maps depuis ce point géographique. Le cercle doré au centre = Centre Rabelais (Lyon 2).
         </p>
       </div>
     </div>
@@ -198,8 +403,8 @@ export default function AdminDashboard() {
                 { label: 'Top 10 Organique', value: top10Count, total: totalKeywords, color: '#003399' },
                 { label: 'Top 3 Google Maps', value: gmapTop3, total: totalKeywords, color: '#c2aa84' },
                 { label: 'Amélioration Moy.', value: `+${avgImprovement.toFixed(1)}`, total: 'positions', color: '#8b5cf6' },
-              ].map((kpi, i) => (
-                <div key={i} className="bg-white/5 backdrop-blur border border-white/5 rounded-2xl p-6 hover:border-white/10 transition-all">
+              ].map((kpi) => (
+                <div key={kpi.label} className="bg-white/5 backdrop-blur border border-white/5 rounded-2xl p-6 hover:border-white/10 transition-all">
                   <p className="text-white/30 text-[10px] uppercase tracking-widest mb-3">{kpi.label}</p>
                   <div className="flex items-baseline gap-2">
                     <span className="text-3xl font-bold" style={{ color: kpi.color }}>{kpi.value}</span>
@@ -226,12 +431,11 @@ export default function AdminDashboard() {
                   .filter(k => k.previousPosition && k.currentPosition)
                   .sort((a, b) => ((b.previousPosition! - b.currentPosition!) - (a.previousPosition! - a.currentPosition!)))
                   .slice(0, 5)
-                  .map((kw, i) => {
+                  .map((kw) => {
                     const gain = kw.previousPosition! - kw.currentPosition!;
                     return (
-                      <div key={i} className="flex items-center justify-between bg-white/[0.02] rounded-xl px-5 py-3 hover:bg-white/[0.04] transition-all">
+                      <div key={kw.keyword} className="flex items-center justify-between bg-white/[0.02] rounded-xl px-5 py-3 hover:bg-white/[0.04] transition-all">
                         <div className="flex items-center gap-4">
-                          <span className="text-white/20 text-sm font-mono w-6">{i + 1}.</span>
                           <div>
                             <p className="text-white/80 text-sm font-medium">{kw.keyword}</p>
                             <p className="text-white/20 text-[10px] uppercase tracking-wider">{kw.category}</p>
@@ -260,8 +464,8 @@ export default function AdminDashboard() {
             <div className="bg-white/5 backdrop-blur border border-white/5 rounded-2xl p-6">
               <h3 className="text-xs uppercase tracking-widest text-[#c2aa84] font-bold mb-6">⚔️ Surveillance Concurrents</h3>
               <div className="space-y-3">
-                {COMPETITORS.map((comp, i) => (
-                  <div key={i} className="flex items-center justify-between bg-white/[0.02] rounded-xl px-5 py-4">
+                {COMPETITORS.map((comp) => (
+                  <div key={comp.name} className="flex items-center justify-between bg-white/[0.02] rounded-xl px-5 py-4">
                     <div>
                       <p className="text-white/70 text-sm font-medium">{comp.name}</p>
                       <p className="text-white/20 text-[10px]">{comp.url}</p>
@@ -297,17 +501,17 @@ export default function AdminDashboard() {
                 <table className="w-full text-left">
                   <thead>
                     <tr className="border-b border-white/5">
-                      {['Mot-clé', 'Cat.', 'Vol/mois', 'Pos. Org.', 'Δ', 'Pos. GMAP', 'Δ', 'Concurrent #1'].map((h, i) => (
-                        <th key={i} className="px-5 py-4 text-[10px] uppercase tracking-widest text-white/30 font-medium">{h}</th>
+                      {['Mot-clé', 'Cat.', 'Vol/mois', 'Pos. Org.', 'Δ', 'Pos. GMAP', 'Δ', 'Concurrent #1'].map((h) => (
+                        <th key={h} className="px-5 py-4 text-[10px] uppercase tracking-widest text-white/30 font-medium">{h}</th>
                       ))}
                     </tr>
                   </thead>
                   <tbody>
-                    {TARGET_KEYWORDS.map((kw, i) => {
+                    {TARGET_KEYWORDS.map((kw) => {
                       const orgGain = kw.previousPosition && kw.currentPosition ? kw.previousPosition - kw.currentPosition : 0;
                       const gmapGain = kw.previousGmapPosition && kw.gmapPosition ? kw.previousGmapPosition - kw.gmapPosition : 0;
                       return (
-                        <tr key={i} className="border-b border-white/[0.03] hover:bg-white/[0.02] transition-colors">
+                        <tr key={kw.keyword} className="border-b border-white/[0.03] hover:bg-white/[0.02] transition-colors">
                           <td className="px-5 py-4">
                             <p className="text-white/80 text-sm font-medium">{kw.keyword}</p>
                             <p className="text-white/20 text-[10px]">{kw.targetPage}</p>
@@ -358,7 +562,7 @@ export default function AdminDashboard() {
         )}
 
         {/* GEOGRID TAB */}
-        {activeTab === 'geogrid' && <GeoGridView />}
+        {activeTab === 'geogrid' && <LyonMapGeoGrid />}
 
         {/* GBP POSTER TAB */}
         {activeTab === 'gbp-poster' && (
@@ -385,36 +589,50 @@ export default function AdminDashboard() {
 
             {/* Post queue */}
             <div className="grid md:grid-cols-2 gap-6">
-              {GBP_POST_TEMPLATES.slice(0, 6).map((post, i) => (
-                <div key={i} className="bg-white/5 backdrop-blur border border-white/5 rounded-2xl overflow-hidden hover:border-white/10 transition-all">
-                  <div className="h-40 bg-gradient-to-br from-[#003399]/20 to-[#c2aa84]/10 flex items-center justify-center">
-                    <span className="text-4xl opacity-50">📸</span>
-                  </div>
-                  <div className="p-5">
-                    <div className="flex items-center gap-2 mb-3">
-                      <span className="bg-[#003399]/20 text-[#6699ff] text-[10px] uppercase tracking-wider font-bold px-3 py-1 rounded-full">
-                        {post.keyword}
-                      </span>
+              {GBP_POST_TEMPLATES.slice(0, 6).map((post) => {
+                const imgSrc = GBP_IMAGES[post.keyword] || '/admin/gbp/ophtalmologue.png';
+                return (
+                  <div key={post.keyword} className="bg-white/5 backdrop-blur border border-white/5 rounded-2xl overflow-hidden hover:border-white/10 transition-all group">
+                    {/* Post image */}
+                    <div className="relative h-48 overflow-hidden">
+                      <Image
+                        src={imgSrc}
+                        alt={`GBP Post — ${post.keyword}`}
+                        fill
+                        className="object-cover group-hover:scale-105 transition-transform duration-500"
+                        sizes="(max-width: 768px) 100vw, 50vw"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-[#0a0f1c] via-transparent to-transparent" />
+                      <div className="absolute top-3 right-3 bg-black/50 backdrop-blur-md text-white/60 text-[9px] uppercase tracking-wider px-3 py-1 rounded-full border border-white/10">
+                        Preview GBP
+                      </div>
                     </div>
-                    <p className="text-white/60 text-sm leading-relaxed mb-4 line-clamp-3">{post.textTemplate}</p>
-                    <div className="flex items-center justify-between">
-                      <span className="text-[#c2aa84] text-[10px] uppercase tracking-wider">
-                        {post.callToAction} →
-                      </span>
-                      <div className="flex gap-2">
-                        {!autoMode && (
-                          <button className="bg-green-500/10 text-green-400 hover:bg-green-500/20 text-[10px] uppercase tracking-wider font-bold px-4 py-2 rounded-lg transition-all">
-                            ✓ Publier
+                    <div className="p-5">
+                      <div className="flex items-center gap-2 mb-3">
+                        <span className="bg-[#003399]/20 text-[#6699ff] text-[10px] uppercase tracking-wider font-bold px-3 py-1 rounded-full">
+                          {post.keyword}
+                        </span>
+                      </div>
+                      <p className="text-white/60 text-sm leading-relaxed mb-4 line-clamp-3">{post.textTemplate}</p>
+                      <div className="flex items-center justify-between">
+                        <span className="text-[#c2aa84] text-[10px] uppercase tracking-wider">
+                          {post.callToAction} →
+                        </span>
+                        <div className="flex gap-2">
+                          {!autoMode && (
+                            <button className="bg-green-500/10 text-green-400 hover:bg-green-500/20 text-[10px] uppercase tracking-wider font-bold px-4 py-2 rounded-lg transition-all">
+                              ✓ Publier
+                            </button>
+                          )}
+                          <button className="bg-white/5 text-white/40 hover:bg-white/10 text-[10px] uppercase tracking-wider font-bold px-4 py-2 rounded-lg transition-all">
+                            Modifier
                           </button>
-                        )}
-                        <button className="bg-white/5 text-white/40 hover:bg-white/10 text-[10px] uppercase tracking-wider font-bold px-4 py-2 rounded-lg transition-all">
-                          Modifier
-                        </button>
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
-              ))}
+                );
+              })}
             </div>
 
             {/* Schedule */}
@@ -422,7 +640,7 @@ export default function AdminDashboard() {
               <h3 className="text-xs uppercase tracking-widest text-[#c2aa84] font-bold mb-4">📅 Calendrier de Publication</h3>
               <div className="grid grid-cols-7 gap-2">
                 {['Lun', 'Mar', 'Mer', 'Jeu', 'Ven', 'Sam', 'Dim'].map((day, i) => (
-                  <div key={i} className={`text-center py-3 rounded-xl text-xs uppercase tracking-wider ${
+                  <div key={day} className={`text-center py-3 rounded-xl text-xs uppercase tracking-wider ${
                     [0, 2, 4].includes(i)
                       ? 'bg-[#003399]/20 text-[#6699ff] border border-[#003399]/20 font-bold'
                       : 'text-white/20'
@@ -459,8 +677,8 @@ export default function AdminDashboard() {
               {/* Recipients */}
               <div className="space-y-3 mb-8">
                 <p className="text-[10px] uppercase tracking-widest text-white/30 font-bold">Destinataires</p>
-                {['jeffos101@gmail.com', 'ophrabelais@hotmail.fr'].map((email, i) => (
-                  <div key={i} className="flex items-center gap-3 bg-white/[0.02] px-5 py-3 rounded-xl">
+                {['jeffos101@gmail.com', 'ophrabelais@hotmail.fr'].map((email) => (
+                  <div key={email} className="flex items-center gap-3 bg-white/[0.02] px-5 py-3 rounded-xl">
                     <div className="w-2 h-2 rounded-full bg-green-400" />
                     <span className="text-white/60 text-sm font-mono">{email}</span>
                   </div>
@@ -494,8 +712,8 @@ export default function AdminDashboard() {
                       .filter(k => k.previousPosition && k.currentPosition)
                       .sort((a, b) => ((b.previousPosition! - b.currentPosition!) - (a.previousPosition! - a.currentPosition!)))
                       .slice(0, 5)
-                      .map((kw, i) => (
-                        <div key={i} className="flex items-center justify-between py-2 border-b border-white/[0.03]">
+                      .map((kw) => (
+                        <div key={kw.keyword} className="flex items-center justify-between py-2 border-b border-white/[0.03]">
                           <span className="text-white/60 text-sm">{kw.keyword}</span>
                           <div className="flex items-center gap-3">
                             <span className="text-white/30 text-xs">#{kw.previousPosition}</span>
