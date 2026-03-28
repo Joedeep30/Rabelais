@@ -2,7 +2,10 @@ import { NextResponse } from 'next/server';
 import { Resend } from 'resend';
 import { TARGET_KEYWORDS, COMPETITORS } from '@/lib/keywords';
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+// Lazy-init: don't instantiate at module scope (crashes build without API key)
+function getResend() {
+  return new Resend(process.env.RESEND_API_KEY);
+}
 
 function generateReportHTML(): string {
   const now = new Date();
@@ -159,7 +162,7 @@ export async function POST() {
       });
     }
 
-    await resend.emails.send({
+    await getResend().emails.send({
       from: 'Centre Rabelais <reports@centrerabelaislyon.fr>',
       to: ['jeffos101@gmail.com', 'ophrabelais@hotmail.fr'],
       subject,

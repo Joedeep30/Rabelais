@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import Image from 'next/image';
-import { TARGET_KEYWORDS, GBP_POST_TEMPLATES, COMPETITORS, GEOGRID_DATA } from '@/lib/keywords';
+import { TARGET_KEYWORDS, GBP_POST_TEMPLATES, COMPETITORS } from '@/lib/keywords';
 
 type Tab = 'overview' | 'keywords' | 'geogrid' | 'gbp-poster' | 'reports';
 
@@ -20,285 +20,14 @@ const GBP_IMAGES: Record<string, string> = {
   'dmla sèche traitement': '/admin/gbp/dmla.png',
 };
 
-/* ─── Lyon SVG Map GeoGrid ─── */
-// Geographic points on the Lyon SVG map (x%, y%) — positioned on a real map layout
-// These correspond to approximate locations of Lyon neighborhoods
-interface MapPoint {
-  id: string;
-  label: string;
-  x: number;   // % from left
-  y: number;   // % from top
-  gridRow: number;
-  gridCol: number;
-}
+/* ─── Lyon Leaflet GeoGrid (dynamic import to avoid SSR issues) ─── */
+import dynamic from 'next/dynamic';
+const LyonGeoGrid = dynamic(() => import('@/components/LyonGeoGrid'), { ssr: false, loading: () => (
+  <div className="flex items-center justify-center h-96 bg-white/5 rounded-2xl">
+    <div className="text-white/30 text-sm animate-pulse">Chargement de la carte...</div>
+  </div>
+)});
 
-const LYON_MAP_POINTS: MapPoint[] = [
-  // Row 0: Nord
-  { id: 'caluire-o', label: 'Caluire O.', x: 38, y: 8, gridRow: 0, gridCol: 1 },
-  { id: 'caluire', label: 'Caluire', x: 52, y: 6, gridRow: 0, gridCol: 2 },
-  { id: 'rillieux', label: 'Rillieux', x: 66, y: 10, gridRow: 0, gridCol: 3 },
-  // Row 1: Croix-Rousse / Lyon 4
-  { id: 'vaise', label: 'Vaise (L9)', x: 25, y: 28, gridRow: 1, gridCol: 0 },
-  { id: 'croix-rousse', label: 'Croix-Rousse', x: 42, y: 24, gridRow: 1, gridCol: 1 },
-  { id: 'lyon4-centre', label: 'Lyon 4', x: 52, y: 30, gridRow: 1, gridCol: 2 },
-  { id: 'lyon6-nord', label: 'Lyon 6 N.', x: 65, y: 26, gridRow: 1, gridCol: 3 },
-  { id: 'villeurbanne', label: 'Villeurbanne', x: 78, y: 30, gridRow: 1, gridCol: 4 },
-  // Row 2: Centre — Lyon 1, 2, 3
-  { id: 'vieux-lyon', label: 'Vieux Lyon', x: 32, y: 44, gridRow: 2, gridCol: 0 },
-  { id: 'presquile', label: 'Presqu\'île', x: 44, y: 42, gridRow: 2, gridCol: 1 },
-  { id: 'rabelais', label: '📍 RABELAIS', x: 50, y: 50, gridRow: 2, gridCol: 2 },  // Centre Rabelais
-  { id: 'part-dieu', label: 'Part-Dieu', x: 64, y: 44, gridRow: 2, gridCol: 3 },
-  { id: 'brotteaux', label: 'Brotteaux', x: 74, y: 42, gridRow: 2, gridCol: 4 },
-  // Row 3: Sud — Lyon 7, 8
-  { id: 'lyon5', label: 'Lyon 5', x: 28, y: 60, gridRow: 3, gridCol: 0 },
-  { id: 'confluences', label: 'Confluences', x: 40, y: 62, gridRow: 3, gridCol: 1 },
-  { id: 'jean-mace', label: 'Jean Macé', x: 52, y: 64, gridRow: 3, gridCol: 2 },
-  { id: 'lyon7-sud', label: 'Lyon 7 Sud', x: 62, y: 66, gridRow: 3, gridCol: 3 },
-  // Row 4: Banlieue Sud
-  { id: 'oullins', label: 'Oullins', x: 35, y: 80, gridRow: 4, gridCol: 1 },
-  { id: 'gerland', label: 'Gerland', x: 50, y: 78, gridRow: 4, gridCol: 2 },
-  { id: 'venissieux', label: 'Vénissieux', x: 65, y: 82, gridRow: 4, gridCol: 3 },
-];
-
-// Extended grid data — sparse, matching map points
-interface MapGridData {
-  keyword: string;
-  // Map from point id to rank
-  rankings: Record<string, number | null>;
-}
-
-const MAP_GRID_DATA: MapGridData[] = [
-  {
-    keyword: 'ophtalmologue lyon',
-    rankings: {
-      'caluire': null, 'rillieux': null, 'caluire-o': null,
-      'vaise': null, 'croix-rousse': null, 'lyon4-centre': 15, 'lyon6-nord': 12, 'villeurbanne': null,
-      'vieux-lyon': null, 'presquile': 14, 'rabelais': 8, 'part-dieu': 6, 'brotteaux': null,
-      'lyon5': null, 'confluences': null, 'jean-mace': 10, 'lyon7-sud': 9,
-      'oullins': null, 'gerland': null, 'venissieux': null,
-    },
-  },
-  {
-    keyword: 'traitement dmla lyon',
-    rankings: {
-      'caluire': null, 'rillieux': null, 'caluire-o': null,
-      'vaise': null, 'croix-rousse': null, 'lyon4-centre': 12, 'lyon6-nord': 10, 'villeurbanne': null,
-      'vieux-lyon': null, 'presquile': 11, 'rabelais': 5, 'part-dieu': 4, 'brotteaux': null,
-      'lyon5': null, 'confluences': null, 'jean-mace': 8, 'lyon7-sud': 7,
-      'oullins': null, 'gerland': null, 'venissieux': null,
-    },
-  },
-  {
-    keyword: 'photobiomodulation lyon',
-    rankings: {
-      'caluire': 8, 'rillieux': null, 'caluire-o': null,
-      'vaise': null, 'croix-rousse': 6, 'lyon4-centre': 4, 'lyon6-nord': 3, 'villeurbanne': null,
-      'vieux-lyon': null, 'presquile': 5, 'rabelais': 1, 'part-dieu': 2, 'brotteaux': 5,
-      'lyon5': null, 'confluences': 7, 'jean-mace': 3, 'lyon7-sud': 4,
-      'oullins': null, 'gerland': 9, 'venissieux': null,
-    },
-  },
-];
-
-function LyonMapGeoGrid() {
-  const [selectedKeyword, setSelectedKeyword] = useState(0);
-  const data = MAP_GRID_DATA[selectedKeyword];
-
-  const getRankColor = (rank: number | null): string => {
-    if (rank === null) return 'rgba(255,255,255,0.05)';
-    if (rank <= 3) return 'rgba(34,197,94,0.8)';   // green
-    if (rank <= 5) return 'rgba(194,170,132,0.8)';  // gold
-    if (rank <= 10) return 'rgba(234,179,8,0.6)';   // yellow
-    return 'rgba(239,68,68,0.6)';                    // red
-  };
-
-  const getRankTextColor = (rank: number | null): string => {
-    if (rank === null) return 'rgba(255,255,255,0.1)';
-    if (rank <= 3) return '#22c55e';
-    if (rank <= 5) return '#c2aa84';
-    if (rank <= 10) return '#eab308';
-    return '#ef4444';
-  };
-
-  return (
-    <div className="space-y-6">
-      {/* Keyword selector */}
-      <div className="flex gap-2 flex-wrap">
-        {MAP_GRID_DATA.map((g, i) => (
-          <button
-            key={g.keyword}
-            onClick={() => setSelectedKeyword(i)}
-            className={`px-4 py-2 rounded-xl text-xs uppercase tracking-wider font-bold transition-all ${
-              selectedKeyword === i
-                ? 'bg-[#003399]/30 text-[#6699ff] border border-[#003399]/40'
-                : 'bg-white/5 text-white/30 hover:text-white/60 border border-white/5'
-            }`}
-          >
-            {g.keyword}
-          </button>
-        ))}
-      </div>
-
-      {/* Map container */}
-      <div className="bg-white/5 backdrop-blur border border-white/5 rounded-2xl p-6">
-        <div className="flex items-center justify-between mb-4">
-          <h3 className="text-xs uppercase tracking-widest text-[#c2aa84] font-bold">
-            🗺️ Carte GeoGrid Lyon — &quot;{data.keyword}&quot;
-          </h3>
-          <div className="flex gap-3">
-            <span className="flex items-center gap-1.5 text-[9px] uppercase tracking-wider text-white/50">
-              <span className="w-3 h-3 rounded-full" style={{ background: 'rgba(34,197,94,0.8)' }} /> Top 3
-            </span>
-            <span className="flex items-center gap-1.5 text-[9px] uppercase tracking-wider text-white/40">
-              <span className="w-3 h-3 rounded-full" style={{ background: 'rgba(194,170,132,0.8)' }} /> 4-5
-            </span>
-            <span className="flex items-center gap-1.5 text-[9px] uppercase tracking-wider text-white/40">
-              <span className="w-3 h-3 rounded-full" style={{ background: 'rgba(234,179,8,0.6)' }} /> 6-10
-            </span>
-            <span className="flex items-center gap-1.5 text-[9px] uppercase tracking-wider text-white/40">
-              <span className="w-3 h-3 rounded-full" style={{ background: 'rgba(239,68,68,0.6)' }} /> 11+
-            </span>
-            <span className="flex items-center gap-1.5 text-[9px] uppercase tracking-wider text-white/40">
-              <span className="w-3 h-3 rounded-full bg-white/5" /> N/A
-            </span>
-          </div>
-        </div>
-
-        {/* SVG Lyon Map */}
-        <div className="relative w-full" style={{ paddingBottom: '65%' }}>
-          <svg
-            viewBox="0 0 1000 650"
-            className="absolute inset-0 w-full h-full"
-            style={{ filter: 'drop-shadow(0 4px 30px rgba(0,51,153,0.15))' }}
-          >
-            {/* Background */}
-            <rect width="1000" height="650" rx="16" fill="#0d1425" />
-
-            {/* Saône River */}
-            <path
-              d="M 380 0 C 370 80, 360 120, 355 180 C 350 220, 360 280, 370 320 C 375 350, 380 380, 400 440 C 415 480, 420 520, 430 580 C 440 620, 445 650, 445 650"
-              fill="none"
-              stroke="rgba(59,130,246,0.15)"
-              strokeWidth="18"
-              strokeLinecap="round"
-            />
-            <path
-              d="M 380 0 C 370 80, 360 120, 355 180 C 350 220, 360 280, 370 320 C 375 350, 380 380, 400 440 C 415 480, 420 520, 430 580 C 440 620, 445 650, 445 650"
-              fill="none"
-              stroke="rgba(59,130,246,0.3)"
-              strokeWidth="6"
-              strokeLinecap="round"
-            />
-            <text x="345" y="200" fill="rgba(59,130,246,0.2)" fontSize="10" fontStyle="italic">Saône</text>
-
-            {/* Rhône River */}
-            <path
-              d="M 550 0 C 545 60, 530 100, 520 160 C 510 220, 505 260, 510 320 C 515 380, 520 420, 530 480 C 540 520, 555 560, 560 620 C 562 640, 565 650, 565 650"
-              fill="none"
-              stroke="rgba(59,130,246,0.15)"
-              strokeWidth="22"
-              strokeLinecap="round"
-            />
-            <path
-              d="M 550 0 C 545 60, 530 100, 520 160 C 510 220, 505 260, 510 320 C 515 380, 520 420, 530 480 C 540 520, 555 560, 560 620 C 562 640, 565 650, 565 650"
-              fill="none"
-              stroke="rgba(59,130,246,0.3)"
-              strokeWidth="7"
-              strokeLinecap="round"
-            />
-            <text x="490" y="200" fill="rgba(59,130,246,0.2)" fontSize="10" fontStyle="italic">Rhône</text>
-
-            {/* Presqu'île shading (land between rivers) */}
-            <path
-              d="M 380 200 C 385 240, 390 280, 395 320 C 400 360, 410 400, 420 440 L 510 440 C 508 400, 505 360, 508 320 C 511 280, 520 240, 530 200 Z"
-              fill="rgba(255,255,255,0.02)"
-            />
-
-            {/* District outlines (subtle) */}
-            {/* Lyon 1 */}
-            <ellipse cx="440" cy="180" rx="50" ry="40" fill="none" stroke="rgba(255,255,255,0.04)" strokeWidth="1" />
-            {/* Lyon 2 */}
-            <ellipse cx="460" cy="290" rx="55" ry="55" fill="none" stroke="rgba(194,170,132,0.08)" strokeWidth="1.5" strokeDasharray="4 4" />
-
-            {/* Data points */}
-            {LYON_MAP_POINTS.map((point) => {
-              const rank = data.rankings[point.id] ?? null;
-              const isRabelais = point.id === 'rabelais';
-              const cx = point.x * 10;
-              const cy = point.y * 6.5;
-
-              return (
-                <g key={point.id}>
-                  {/* Pulse ring for Rabelais */}
-                  {isRabelais && (
-                    <>
-                      <circle cx={cx} cy={cy} r="32" fill="none" stroke="rgba(194,170,132,0.3)" strokeWidth="1.5">
-                        <animate attributeName="r" values="28;40;28" dur="3s" repeatCount="indefinite" />
-                        <animate attributeName="opacity" values="0.4;0;0.4" dur="3s" repeatCount="indefinite" />
-                      </circle>
-                      <circle cx={cx} cy={cy} r="28" fill="none" stroke="rgba(194,170,132,0.4)" strokeWidth="2" />
-                    </>
-                  )}
-
-                  {/* Background glow */}
-                  {rank !== null && (
-                    <circle cx={cx} cy={cy} r="24" fill={getRankColor(rank)} opacity="0.15" />
-                  )}
-
-                  {/* Main circle */}
-                  <circle
-                    cx={cx}
-                    cy={cy}
-                    r="20"
-                    fill={rank !== null ? getRankColor(rank) : 'rgba(255,255,255,0.03)'}
-                    stroke={rank !== null ? getRankTextColor(rank) : 'rgba(255,255,255,0.06)'}
-                    strokeWidth={isRabelais ? 2.5 : 1}
-                    opacity={rank !== null ? 0.25 : 1}
-                  />
-
-                  {/* Rank text */}
-                  <text
-                    x={cx}
-                    y={cy + 1}
-                    textAnchor="middle"
-                    dominantBaseline="middle"
-                    fill={getRankTextColor(rank)}
-                    fontSize={isRabelais ? '16' : '14'}
-                    fontWeight="bold"
-                    fontFamily="system-ui"
-                  >
-                    {rank !== null ? `#${rank}` : '—'}
-                  </text>
-
-                  {/* Label */}
-                  <text
-                    x={cx}
-                    y={cy + 34}
-                    textAnchor="middle"
-                    fill={isRabelais ? 'rgba(194,170,132,0.9)' : 'rgba(255,255,255,0.25)'}
-                    fontSize={isRabelais ? '10' : '8'}
-                    fontWeight={isRabelais ? 'bold' : 'normal'}
-                    fontFamily="system-ui"
-                    letterSpacing="0.5"
-                  >
-                    {point.label}
-                  </text>
-                </g>
-              );
-            })}
-
-            {/* Map title */}
-            <text x="920" y="30" textAnchor="end" fill="rgba(255,255,255,0.1)" fontSize="11" fontFamily="system-ui" letterSpacing="2">LYON MÉTROPOLE</text>
-          </svg>
-        </div>
-
-        <p className="text-white/20 text-[10px] mt-3 text-center">
-          📍 Chaque cercle = position Google Maps depuis ce point géographique. Le cercle doré au centre = Centre Rabelais (Lyon 2).
-        </p>
-      </div>
-    </div>
-  );
-}
 
 export default function AdminDashboard() {
   const [activeTab, setActiveTab] = useState<Tab>('overview');
@@ -562,13 +291,12 @@ export default function AdminDashboard() {
         )}
 
         {/* GEOGRID TAB */}
-        {activeTab === 'geogrid' && <LyonMapGeoGrid />}
+        {activeTab === 'geogrid' && <LyonGeoGrid />}
 
         {/* GBP POSTER TAB */}
         {activeTab === 'gbp-poster' && (() => {
-          // Build scheduled posts: 3x/week (Mon/Wed/Fri) cycling through templates
-          // Today is 2026-03-28 (Saturday). Posts started ~3 weeks ago.
-          const SCHEDULE_START = new Date(2026, 2, 9); // Mon March 9, 2026
+          // Real history: 3 posts were published on March 27, 2026
+          // Future posts are scheduled 3x/week (Mon/Wed/Fri) starting Mon March 30
           const TODAY = new Date(2026, 2, 28);
           const postDays = [1, 3, 5]; // Mon, Wed, Fri
           const allTemplates = GBP_POST_TEMPLATES;
@@ -582,11 +310,38 @@ export default function AdminDashboard() {
             image: string;
           }
 
-          const scheduledPosts: ScheduledPost[] = [];
+          // The 3 real posts from yesterday (March 27)
+          const scheduledPosts: ScheduledPost[] = [
+            {
+              date: new Date(2026, 2, 27),
+              keyword: 'photobiomodulation lyon',
+              text: 'Nouveau au Centre Rabelais : la Photobiomodulation (système Valeda) est désormais disponible pour traiter la DMLA sèche. 9 séances indolores de 5 minutes. Prenez RDV pour évaluer votre éligibilité.',
+              cta: 'Prendre rendez-vous',
+              status: 'posted',
+              image: GBP_IMAGES['photobiomodulation lyon'] || '/admin/gbp/photobiomodulation.png',
+            },
+            {
+              date: new Date(2026, 2, 27),
+              keyword: 'traitement dmla lyon',
+              text: 'Lignes déformées ? Consultez rapidement un rétinologue. Un examen OCT maculaire au Centre Rabelais permet de diagnostiquer la DMLA en quelques secondes, sans dilatation et sans douleur.',
+              cta: 'En savoir plus',
+              status: 'posted',
+              image: GBP_IMAGES['traitement dmla lyon'] || '/admin/gbp/dmla.png',
+            },
+            {
+              date: new Date(2026, 2, 27),
+              keyword: 'injection intravitréenne lyon',
+              text: 'Injections IVT anti-VEGF : un circuit court et sécurisé à Lyon. Diagnostic OCT + consultation rétinologue + injection le même jour, dans un environnement stérile dédié.',
+              cta: 'Contacter le centre',
+              status: 'posted',
+              image: GBP_IMAGES['injection intravitréenne lyon'] || '/admin/gbp/injection.png',
+            },
+          ];
+
+          // Generate future planned posts: Mon/Wed/Fri starting March 30
           let templateIdx = 0;
-          const cursor = new Date(SCHEDULE_START);
-          // Generate posts from start through 4 weeks into the future
-          const endDate = new Date(2026, 3, 18); // April 18
+          const cursor = new Date(2026, 2, 30); // Mon March 30
+          const endDate = new Date(2026, 4, 2); // May 2
           while (cursor <= endDate) {
             if (postDays.includes(cursor.getDay())) {
               const tpl = allTemplates[templateIdx % allTemplates.length];
@@ -595,7 +350,7 @@ export default function AdminDashboard() {
                 keyword: tpl.keyword,
                 text: tpl.textTemplate,
                 cta: tpl.callToAction,
-                status: cursor < TODAY ? 'posted' : 'scheduled',
+                status: 'scheduled',
                 image: GBP_IMAGES[tpl.keyword] || '/admin/gbp/ophtalmologue.png',
               });
               templateIdx++;
