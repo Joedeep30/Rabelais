@@ -565,46 +565,215 @@ export default function AdminDashboard() {
         {activeTab === 'geogrid' && <LyonMapGeoGrid />}
 
         {/* GBP POSTER TAB */}
-        {activeTab === 'gbp-poster' && (
+        {activeTab === 'gbp-poster' && (() => {
+          // Build scheduled posts: 3x/week (Mon/Wed/Fri) cycling through templates
+          // Today is 2026-03-28 (Saturday). Posts started ~3 weeks ago.
+          const SCHEDULE_START = new Date(2026, 2, 9); // Mon March 9, 2026
+          const TODAY = new Date(2026, 2, 28);
+          const postDays = [1, 3, 5]; // Mon, Wed, Fri
+          const allTemplates = GBP_POST_TEMPLATES;
+
+          interface ScheduledPost {
+            date: Date;
+            keyword: string;
+            text: string;
+            cta: string;
+            status: 'posted' | 'scheduled';
+            image: string;
+          }
+
+          const scheduledPosts: ScheduledPost[] = [];
+          let templateIdx = 0;
+          const cursor = new Date(SCHEDULE_START);
+          // Generate posts from start through 4 weeks into the future
+          const endDate = new Date(2026, 3, 18); // April 18
+          while (cursor <= endDate) {
+            if (postDays.includes(cursor.getDay())) {
+              const tpl = allTemplates[templateIdx % allTemplates.length];
+              scheduledPosts.push({
+                date: new Date(cursor),
+                keyword: tpl.keyword,
+                text: tpl.textTemplate,
+                cta: tpl.callToAction,
+                status: cursor < TODAY ? 'posted' : 'scheduled',
+                image: GBP_IMAGES[tpl.keyword] || '/admin/gbp/ophtalmologue.png',
+              });
+              templateIdx++;
+            }
+            cursor.setDate(cursor.getDate() + 1);
+          }
+
+          // Counts
+          const postedCount = scheduledPosts.filter(p => p.status === 'posted').length;
+          const plannedCount = scheduledPosts.filter(p => p.status === 'scheduled').length;
+
+          // Format date in French
+          const fmtDate = (d: Date) => {
+            const days = ['Dim', 'Lun', 'Mar', 'Mer', 'Jeu', 'Ven', 'Sam'];
+            const months = ['Jan', 'Fév', 'Mar', 'Avr', 'Mai', 'Jun', 'Jul', 'Aoû', 'Sep', 'Oct', 'Nov', 'Déc'];
+            return `${days[d.getDay()]} ${d.getDate()} ${months[d.getMonth()]}`;
+          };
+
+          // For calendar: build March and April grids
+          const buildMonthGrid = (year: number, month: number) => {
+            const firstDay = new Date(year, month, 1);
+            const lastDay = new Date(year, month + 1, 0);
+            // In French calendar, week starts on Monday (1=Mon, 0=Sun→6)
+            let startPad = (firstDay.getDay() + 6) % 7; // Mon=0, Tue=1, ...Sun=6
+            const cells: { day: number | null; date: Date | null }[] = [];
+            for (let i = 0; i < startPad; i++) cells.push({ day: null, date: null });
+            for (let d = 1; d <= lastDay.getDate(); d++) {
+              cells.push({ day: d, date: new Date(year, month, d) });
+            }
+            // Pad to complete last week
+            while (cells.length % 7 !== 0) cells.push({ day: null, date: null });
+            return cells;
+          };
+
+          const marchGrid = buildMonthGrid(2026, 2);
+          const aprilGrid = buildMonthGrid(2026, 3);
+
+          // Map of date string → post for quick lookup
+          const postsByDate: Record<string, ScheduledPost> = {};
+          scheduledPosts.forEach(p => {
+            postsByDate[`${p.date.getFullYear()}-${p.date.getMonth()}-${p.date.getDate()}`] = p;
+          });
+
+          const getPostForDate = (d: Date | null) => {
+            if (!d) return null;
+            return postsByDate[`${d.getFullYear()}-${d.getMonth()}-${d.getDate()}`] || null;
+          };
+
+          const isToday = (d: Date | null) => {
+            if (!d) return false;
+            return d.getFullYear() === TODAY.getFullYear() && d.getMonth() === TODAY.getMonth() && d.getDate() === TODAY.getDate();
+          };
+
+          return (
           <div className="space-y-6">
-            {/* Auto mode toggle */}
-            <div className="bg-white/5 backdrop-blur border border-white/5 rounded-2xl p-6 flex items-center justify-between">
-              <div>
-                <h3 className="text-sm font-bold text-white/80">Mode Autopilot</h3>
-                <p className="text-white/30 text-xs mt-1">
-                  {autoMode ? 'Les posts GBP sont envoyés automatiquement 3x/semaine' : 'Chaque post nécessite votre validation avant envoi'}
-                </p>
+            {/* Auto mode toggle + stats */}
+            <div className="grid md:grid-cols-3 gap-4">
+              <div className="bg-white/5 backdrop-blur border border-white/5 rounded-2xl p-6 flex items-center justify-between col-span-2 md:col-span-1">
+                <div>
+                  <h3 className="text-sm font-bold text-white/80">Autopilot</h3>
+                  <p className="text-white/30 text-[10px] mt-1">
+                    {autoMode ? 'Auto 3x/sem' : 'Validation manuelle'}
+                  </p>
+                </div>
+                <button
+                  onClick={() => setAutoMode(!autoMode)}
+                  className={`relative w-14 h-7 rounded-full transition-all duration-300 ${
+                    autoMode ? 'bg-green-500/30 border border-green-500/50' : 'bg-white/10 border border-white/10'
+                  }`}
+                >
+                  <div className={`absolute top-0.5 w-6 h-6 rounded-full transition-all duration-300 ${
+                    autoMode ? 'right-0.5 bg-green-400 shadow-lg shadow-green-500/30' : 'left-0.5 bg-white/30'
+                  }`} />
+                </button>
               </div>
-              <button
-                onClick={() => setAutoMode(!autoMode)}
-                className={`relative w-14 h-7 rounded-full transition-all duration-300 ${
-                  autoMode ? 'bg-green-500/30 border border-green-500/50' : 'bg-white/10 border border-white/10'
-                }`}
-              >
-                <div className={`absolute top-0.5 w-6 h-6 rounded-full transition-all duration-300 ${
-                  autoMode ? 'right-0.5 bg-green-400 shadow-lg shadow-green-500/30' : 'left-0.5 bg-white/30'
-                }`} />
-              </button>
+              <div className="bg-green-500/5 border border-green-500/10 rounded-2xl p-6 text-center">
+                <p className="text-green-400 text-2xl font-bold">{postedCount}</p>
+                <p className="text-white/30 text-[10px] uppercase tracking-wider mt-1">Posts Publiés</p>
+              </div>
+              <div className="bg-[#003399]/10 border border-[#003399]/20 rounded-2xl p-6 text-center">
+                <p className="text-[#6699ff] text-2xl font-bold">{plannedCount}</p>
+                <p className="text-white/30 text-[10px] uppercase tracking-wider mt-1">Posts Planifiés</p>
+              </div>
             </div>
 
-            {/* Post queue */}
-            <div className="grid md:grid-cols-2 gap-6">
-              {GBP_POST_TEMPLATES.slice(0, 6).map((post) => {
-                const imgSrc = GBP_IMAGES[post.keyword] || '/admin/gbp/ophtalmologue.png';
-                return (
-                  <div key={post.keyword} className="bg-white/5 backdrop-blur border border-white/5 rounded-2xl overflow-hidden hover:border-white/10 transition-all group">
+            {/* Calendar — Mars & Avril 2026 */}
+            <div className="bg-white/5 backdrop-blur border border-white/5 rounded-2xl p-6">
+              <h3 className="text-xs uppercase tracking-widest text-[#c2aa84] font-bold mb-6">📅 Calendrier de Publication</h3>
+              <div className="grid md:grid-cols-2 gap-8">
+                {/* March */}
+                {[
+                  { label: 'Mars 2026', grid: marchGrid, month: 2 },
+                  { label: 'Avril 2026', grid: aprilGrid, month: 3 },
+                ].map((cal) => (
+                  <div key={cal.label}>
+                    <p className="text-white/50 text-xs uppercase tracking-widest font-bold mb-3 text-center">{cal.label}</p>
+                    <div className="grid grid-cols-7 gap-1">
+                      {['L', 'M', 'M', 'J', 'V', 'S', 'D'].map((d, i) => (
+                        <div key={`${cal.label}-hdr-${i}`} className="text-center text-[9px] uppercase tracking-wider text-white/20 py-1 font-bold">{d}</div>
+                      ))}
+                      {cal.grid.map((cell, i) => {
+                        const post = getPostForDate(cell.date);
+                        const today = isToday(cell.date);
+                        return (
+                          <div
+                            key={`${cal.label}-${i}`}
+                            className={`relative text-center py-2 rounded-lg text-[11px] transition-all ${
+                              cell.day === null ? '' :
+                              today ? 'bg-[#c2aa84]/20 text-[#c2aa84] font-bold border border-[#c2aa84]/30' :
+                              post?.status === 'posted' ? 'bg-green-500/10 text-green-400 font-semibold' :
+                              post?.status === 'scheduled' ? 'bg-[#003399]/15 text-[#6699ff] font-semibold' :
+                              'text-white/15'
+                            }`}
+                            title={post ? `${post.keyword} — ${post.status === 'posted' ? 'Publié' : 'Planifié'}` : ''}
+                          >
+                            {cell.day || ''}
+                            {post && (
+                              <div className={`absolute -bottom-0.5 left-1/2 -translate-x-1/2 w-1 h-1 rounded-full ${
+                                post.status === 'posted' ? 'bg-green-400' : 'bg-[#6699ff]'
+                              }`} />
+                            )}
+                          </div>
+                        );
+                      })}
+                    </div>
+                    {/* Legend */}
+                    <div className="flex justify-center gap-4 mt-3">
+                      <span className="flex items-center gap-1 text-[8px] uppercase tracking-wider text-white/30">
+                        <span className="w-2 h-2 rounded-full bg-green-400" /> Publié
+                      </span>
+                      <span className="flex items-center gap-1 text-[8px] uppercase tracking-wider text-white/30">
+                        <span className="w-2 h-2 rounded-full bg-[#6699ff]" /> Planifié
+                      </span>
+                      <span className="flex items-center gap-1 text-[8px] uppercase tracking-wider text-white/30">
+                        <span className="w-2 h-2 rounded-full bg-[#c2aa84]" /> Aujourd&apos;hui
+                      </span>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Post list — upcoming first, then past */}
+            <div>
+              <h3 className="text-xs uppercase tracking-widest text-[#c2aa84] font-bold mb-4">📮 File d&apos;attente des Posts</h3>
+              <div className="grid md:grid-cols-2 gap-6">
+                {[...scheduledPosts]
+                  .sort((a, b) => {
+                    // Show planned first (nearest), then posted (most recent first)
+                    if (a.status === 'scheduled' && b.status === 'posted') return -1;
+                    if (a.status === 'posted' && b.status === 'scheduled') return 1;
+                    if (a.status === 'scheduled') return a.date.getTime() - b.date.getTime();
+                    return b.date.getTime() - a.date.getTime();
+                  })
+                  .slice(0, 6)
+                  .map((post) => (
+                  <div key={`${post.keyword}-${post.date.toISOString()}`} className="bg-white/5 backdrop-blur border border-white/5 rounded-2xl overflow-hidden hover:border-white/10 transition-all group">
                     {/* Post image */}
-                    <div className="relative h-48 overflow-hidden">
+                    <div className="relative h-44 overflow-hidden">
                       <Image
-                        src={imgSrc}
+                        src={post.image}
                         alt={`GBP Post — ${post.keyword}`}
                         fill
                         className="object-cover group-hover:scale-105 transition-transform duration-500"
                         sizes="(max-width: 768px) 100vw, 50vw"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-[#0a0f1c] via-transparent to-transparent" />
-                      <div className="absolute top-3 right-3 bg-black/50 backdrop-blur-md text-white/60 text-[9px] uppercase tracking-wider px-3 py-1 rounded-full border border-white/10">
-                        Preview GBP
+                      {/* Status badge */}
+                      <div className={`absolute top-3 left-3 text-[9px] uppercase tracking-wider font-bold px-3 py-1 rounded-full border backdrop-blur-md ${
+                        post.status === 'posted'
+                          ? 'bg-green-500/20 text-green-400 border-green-500/30'
+                          : 'bg-[#003399]/30 text-[#6699ff] border-[#003399]/40'
+                      }`}>
+                        {post.status === 'posted' ? '✓ Publié' : '⏳ Planifié'}
+                      </div>
+                      {/* Date badge */}
+                      <div className="absolute top-3 right-3 bg-black/60 backdrop-blur-md text-white/70 text-[10px] uppercase tracking-wider px-3 py-1 rounded-full border border-white/10 font-mono">
+                        {fmtDate(post.date)}
                       </div>
                     </div>
                     <div className="p-5">
@@ -613,46 +782,37 @@ export default function AdminDashboard() {
                           {post.keyword}
                         </span>
                       </div>
-                      <p className="text-white/60 text-sm leading-relaxed mb-4 line-clamp-3">{post.textTemplate}</p>
+                      <p className="text-white/60 text-sm leading-relaxed mb-4 line-clamp-3">{post.text}</p>
                       <div className="flex items-center justify-between">
                         <span className="text-[#c2aa84] text-[10px] uppercase tracking-wider">
-                          {post.callToAction} →
+                          {post.cta} →
                         </span>
                         <div className="flex gap-2">
-                          {!autoMode && (
+                          {post.status === 'scheduled' && !autoMode && (
                             <button className="bg-green-500/10 text-green-400 hover:bg-green-500/20 text-[10px] uppercase tracking-wider font-bold px-4 py-2 rounded-lg transition-all">
                               ✓ Publier
                             </button>
                           )}
-                          <button className="bg-white/5 text-white/40 hover:bg-white/10 text-[10px] uppercase tracking-wider font-bold px-4 py-2 rounded-lg transition-all">
-                            Modifier
-                          </button>
+                          {post.status === 'scheduled' && (
+                            <button className="bg-white/5 text-white/40 hover:bg-white/10 text-[10px] uppercase tracking-wider font-bold px-4 py-2 rounded-lg transition-all">
+                              Modifier
+                            </button>
+                          )}
+                          {post.status === 'posted' && (
+                            <span className="text-green-400/40 text-[10px] uppercase tracking-wider font-bold px-4 py-2">
+                              ✓ Envoyé {fmtDate(post.date)}
+                            </span>
+                          )}
                         </div>
                       </div>
                     </div>
-                  </div>
-                );
-              })}
-            </div>
-
-            {/* Schedule */}
-            <div className="bg-white/5 backdrop-blur border border-white/5 rounded-2xl p-6">
-              <h3 className="text-xs uppercase tracking-widest text-[#c2aa84] font-bold mb-4">📅 Calendrier de Publication</h3>
-              <div className="grid grid-cols-7 gap-2">
-                {['Lun', 'Mar', 'Mer', 'Jeu', 'Ven', 'Sam', 'Dim'].map((day, i) => (
-                  <div key={day} className={`text-center py-3 rounded-xl text-xs uppercase tracking-wider ${
-                    [0, 2, 4].includes(i)
-                      ? 'bg-[#003399]/20 text-[#6699ff] border border-[#003399]/20 font-bold'
-                      : 'text-white/20'
-                  }`}>
-                    {day}
-                    {[0, 2, 4].includes(i) && <div className="text-[8px] mt-1 text-[#c2aa84]">Post GBP</div>}
                   </div>
                 ))}
               </div>
             </div>
           </div>
-        )}
+          );
+        })()}
 
         {/* REPORTS TAB */}
         {activeTab === 'reports' && (
