@@ -1,0 +1,45 @@
+DOCUMENT CIBLE : INFORMATIONS CLINIQUES ET SCIENTIFIQUES POUR NOTEBOOK LM
+
+============ CONTEXTE : LE SYSTÈME VALEDA (LUMITHERA) ET LA PBM ============
+La Photobiomodulation (PBM) est la première approche thérapeutique approuvée au monde pour la dégénérescence maculaire liée à l'âge (DMLA) de forme sèche. Le système Valeda Light Delivery System, développé par LumiThera, est certifié CE et est le premier dispositif médical validé pour cette indication.
+
+MÉCANISME D'ACTION :
+Valeda utilise des diodes électroluminescentes (LED) émettant trois longueurs d'onde spécifiques pour stimuler les cellules de l'épithélium pigmentaire rétinien (EPR) :
+1. Jaune (590 nm) : Inhibe le facteur de croissance de l'endothélium vasculaire (VEGF) et favorise une fonction cellulaire saine, limitant les dépôts cellulaires.
+2. Rouge (660 nm) : Aide à augmenter l'apport sanguin et d'oxygène en stimulant la fonction endothéliale.
+3. Infrarouge proche (850 nm) : Cible la cytochrome C oxydase dans les mitochondries des cellules, ce qui augmente directement la production d'adénosine triphosphate (ATP), source d'énergie cellulaire.
+
+RÉSULTATS DE L'ÉTUDE LIGHTSITE III :
+- Étude clinique à double insu, randomisée sur 100 sujets (148 yeux).
+- À 13 et 21 mois de suivi, les patients traités par PBM ont montré une amélioration statistiquement significative de la meilleure acuité visuelle corrigée (MAVC).
+- Ralentissement très net de la croissance des plages d'atrophie maculaire par rapport au groupe placebo.
+- Arrêt ou réduction de la progression de l'accumulation des drüsen (dépôts sous la rétine).
+- Le traitement est totalement non invasif, indolore, et ne présente aucun risque majeur connu.
+
+PROTOCOLE Rabelais :
+- 9 séances réparties sur 3 semaines (3 séances par semaine).
+- Durée : environ 5 minutes par œil.
+- Confort : Le patient est assis, le menton posé, face à la lumière. Pas de contact avec l'œil. Totalement indolore.
+
+============ CONTEXTE : DÉGÉNÉRESCENCE MACULAIRE LIÉE À L'ÂGE (DMLA) ============
+- Maladie affectant la macula (zone centrale de la rétine responsable de la vision fine, des détails et des couleurs).
+- Première cause de handicap visuel chez les plus de 50 ans dans les pays industrialisés.
+- Symptômes : Baisse de la vision de près, nécessité de plus de lumière pour lire, déformation des lignes droites (métamorphopsies), apparition d'une tache sombre ou floue au centre de la vision (scotome).
+
+FORME SÈCHE (Atrophique) :
+- Représente 80% à 85% des cas de DMLA.
+- Évolution lente sur plusieurs années.
+- Caractérisée par l'accumulation de drüsen et l'amincissement progressif de la macula.
+- Jusqu'à récemment, AUCUN traitement n'existait. La Photobiomodulation (Valeda) est aujourd'hui la seule solution thérapeutique approuvée pour ralentir son évolution et parfois récupérer des lignes de vision.
+
+FORME HUMIDE (Exsudative ou Néovasculaire) :
+- Représente 15% à 20% des cas, mais est responsable de la majorité des pertes de vision sévères.
+- Évolution rapide et destructrice.
+- Croissance de vaisseaux sanguins anormaux sous la rétine qui laissent échapper du sang ou des fluides.
+- Traitement : Injections intra-vitréennes (IVT) d'anti-VEGF (Lucentis, Eylea, Vabysmo).
+
+============ CONTEXTE : INJECTIONS INTRA-VITRÉENNES (IVT) ============
+- L'angoisse numéro 1 des patients est la peur de l'aiguille dans l'œil.
+- AU CENTRE RABELAIS : L'acte est totalement indolore grâce à un protocole d'anesthésie topique (gouttes ultra-puissantes) appliqué avant l'injection.
+- L'injection elle-même dure à peine 2 secondes. Le patient ne voit pas l'aiguille arriver (car l'œil est anesthésié et il doit regarder dans une direction opposée).
+- Prise en charge urgente : J+0 au Centre Rabelais pour éviter toute perte de vision irréversible (salle blanche dédiée sur place).

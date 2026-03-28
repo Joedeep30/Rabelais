@@ -1,0 +1,25 @@
+c69d0af style: switch global menus and sidebars to preferred modern typography
+f850ea7 style: replicate authentic global menu typography for sidebar links
+7556436 fix(ui): enable sticky sidebar scrolling and strengthen menu font
+3b795fc feat(content): redesign main eye normal illustration to match new aesthetic
+d6bdcf3 feat(content): add 5 new anatomical WebP illustrations for pathology details
+303b055 fix(layout): replace className with class in raw HTML to fix Tailwind parsing
+b88c53b fix(ui): restore two-column layout for pathologies
+83bcfc2 feat(ui): replicate pathologies page with WebP images and layout match
+fe49938 fix(ui): correct hero images and left-aligned layouts for 4 core pages
+e01336a feat(seo): replace external hero backgrounds with local WebP images and semantic SEO names
+4f161c2 style: finalize 40% opacity overlay globally and restore specific site-matched header images
+d6055b3 style: globally normalize hero banner overlay opacity to 40% across all pages
+d43bd49 style: reduce hero overlay opacity to 40% for plateau technique banner
+bd25d0a style: revert etudes cliniques layout to aesthetic grid while keeping typography emphasizes
+968f61b fix(ui): match original formatting and add address sidebar on etudes cliniques
+d53c10a fix(ui): exact mapping of gallery titles and masonry grid structure
+e4c354c fix(ui): exact reconstruction of original gallery and list layout
+d09f612 fix(ui): adjust equipment image mapping and sizing
+a1f88c1 feat: restore original plateau technique images
+217454b docs: initialize new project
+e2df19b GEO report v4: score 38->65, Person schema + homepage content + LinkedIn sameAs
+2347adf Add rich homepage content, Person schema for Dr Quaranta with LinkedIn, homepage FAQ, stats cards, sameAs
+5c250fa Final GEO report update: score 38->61 with FAQ implementation results
+8a38b9d Add professional FAQ sections with FAQPage schema to offre-de-soins and dois-je-consulter
+c8172a1 Update GEO report: score 38->52 after Quick Wins implementation

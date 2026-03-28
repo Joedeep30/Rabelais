@@ -1,0 +1,22 @@
+INSTRUCTIONS POUR GOOGLE NOTEBOOK LM :
+
+1. Glissez et déposez tous les fichiers de ce dossier "Notebook_Sources" dans votre nouveau Notebook projet sur Google NotebookLM.
+2. Copiez le prompt exact situé ci-dessous, et collez-le dans la barre de chat de NotebookLM.
+3. Appuyez sur Entrée.
+
+------------------------------------------------------
+LE PROMPT À COPIER :
+------------------------------------------------------
+
+"En utilisant uniquement les documents médicaux fournis et les liens du site web du Centre Ophtalmologique Rabelais, agissez en tant qu'expert SEO médical et spécialiste de la rétine. 
+
+Je veux que vous m'écriviez 3 scripts de vidéos YouTube très engageants de 2 minutes chacun, conçus pour classer notre chaîne numéro 1 sur Google pour les requêtes suivantes à Lyon :
+Vidéo 1 : 'Photobiomodulation Lyon' (Focus sur la technologie Valeda)
+Vidéo 2 : 'Traitement DMLA sèche' (Focus sur l'absence de traitement passé, et l'espoir apporté par la PBM)
+Vidéo 3 : 'Injections IVT douloureuses' (Focus pour rassurer les patients sur l'indolore et la prise en charge J+0)
+
+Pour CHAQUE script, vous devez me fournir :
+1. Un Titre YouTube hautement cliquable et optimisé pour le SEO local.
+2. 5 Tags YouTube stratégiques.
+3. Une Description YouTube de 3 lignes qui renvoie vers https://centrerabelaislyon.fr
+4. Le script exact de ce que je dois dire à la caméra, avec des indications émotionnelles (ex: [Sourire empathique], [Ton sérieux et professionnel]). Les phrases doivent être courtes, percutantes, et le langage doit être accessible mais strictement médical."

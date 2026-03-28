@@ -1,0 +1,17 @@
+Dans NotebookLM, vous pouvez ajouter des liens directs vers des pages web. 
+Ajoutez ces URLs comme Sources Web dans votre Notebook :
+
+Page d'accueil : 
+https://centrerabelaislyon.fr
+
+Page Photobiomodulation & Système Valeda : 
+https://centrerabelaislyon.fr/photobiomodulation-lyon
+
+Page DMLA : 
+https://centrerabelaislyon.fr/dmla-lyon
+
+Page Injections Intra-vitréennes (IVT) : 
+https://centrerabelaislyon.fr/injections-intravitreennes-lyon
+
+Page Equipe Médicale (Dr Quaranta) :
+https://centrerabelaislyon.fr/equipe-medicale
