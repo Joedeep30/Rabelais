@@ -570,12 +570,12 @@ export const TARGET_KEYWORDS: KeywordData[] = [
     category: 'service',
     targetPage: '/retine-medicale-lyon',
     monthlyVolume: 170,
-    currentPosition: 2,
-    previousPosition: 5,
-    gmapPosition: 3,
+    currentPosition: 15, // NOT on page 1 — cerk.fr #1, chirurgie-retine-lyon.com #2, centre-kleber.fr #3
+    previousPosition: null,
+    gmapPosition: null, // NO Maps pack for this query — CERK has Knowledge Panel
     previousGmapPosition: null,
-    competitor1: { name: 'CHU Edouard Herriot', position: 1 },
-    competitor2: { name: 'Aucun', position: null },
+    competitor1: { name: 'CERK (cerk.fr)', position: 1 },
+    competitor2: { name: 'Chirurgie Rétine Lyon', position: 2 },
   },
   {
     keyword: 'macula lyon',
