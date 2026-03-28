@@ -151,8 +151,67 @@ const GEOGRID_KEYWORDS: GeoGridKeyword[] = [
       [null, null, null, null, null, null, null],
     ],
   },
+  {
+    keyword: 'ophtalmologiste lyon',
+    grid: [
+      [null, null, null, null, null, null, null],
+      [null, null, 20,   17,   15,   14,   null],
+      [null, null, 18,   15,   11,   13,   null],
+      [null, null, 17,   10,   8,    12,   null],
+      [null, null, null, 14,   11,   10,   null],
+      [null, null, null, null, 14,   null, null],
+      [null, null, null, null, null, null, null],
+    ],
+  },
+  {
+    keyword: 'spécialiste rétine lyon',
+    grid: [
+      [null, null, null, null, null, null, null],
+      [null, null, null, 9,    7,    null, null],
+      [null, null, 8,    6,    4,    7,    null],
+      [null, null, 7,    4,    2,    5,    null],
+      [null, null, null, 7,    4,    6,    null],
+      [null, null, null, null, 7,    null, null],
+      [null, null, null, null, null, null, null],
+    ],
+  },
+  {
+    keyword: 'fond oeil lyon',
+    grid: [
+      [null, null, null, null, null, null, null],
+      [null, null, null, 14,   12,   null, null],
+      [null, null, 12,   10,   8,    11,   null],
+      [null, null, 11,   8,    6,    9,    null],
+      [null, null, null, 10,   8,    9,    null],
+      [null, null, null, null, 12,   null, null],
+      [null, null, null, null, null, null, null],
+    ],
+  },
+  {
+    keyword: 'rétinopathie diabétique lyon',
+    grid: [
+      [null, null, null, null, null, null, null],
+      [null, null, null, 10,   8,    null, null],
+      [null, null, 9,    7,    5,    8,    null],
+      [null, null, 8,    5,    3,    6,    null],
+      [null, null, null, 8,    5,    7,    null],
+      [null, null, null, null, 9,    null, null],
+      [null, null, null, null, null, null, null],
+    ],
+  },
+  {
+    keyword: 'centre rétine lyon',
+    grid: [
+      [null, null, null, null, null, null, null],
+      [null, null, null, 6,    4,    null, null],
+      [null, null, 5,    4,    3,    5,    null],
+      [null, null, 4,    2,    1,    4,    null],
+      [null, null, null, 5,    3,    4,    null],
+      [null, null, null, null, 6,    null, null],
+      [null, null, null, null, null, null, null],
+    ],
+  },
 ];
-
 const getRankColor = (rank: number | null): string => {
   if (rank === null) return '#e2e8f0';
   if (rank <= 3) return '#22c55e';

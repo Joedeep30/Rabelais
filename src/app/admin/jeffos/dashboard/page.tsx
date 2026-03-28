@@ -3,21 +3,44 @@
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import Image from 'next/image';
-import { TARGET_KEYWORDS, GBP_POST_TEMPLATES, COMPETITORS } from '@/lib/keywords';
+import { TARGET_KEYWORDS, GBP_POST_TEMPLATES, COMPETITORS, GEOGRID_DATA } from '@/lib/keywords';
 
 type Tab = 'overview' | 'keywords' | 'geogrid' | 'gbp-poster' | 'reports';
 
-// GBP Post images mapping
+// GBP Post images mapping — fallback images by keyword category
 const GBP_IMAGES: Record<string, string> = {
   'photobiomodulation lyon': '/admin/gbp/photobiomodulation.png',
   'ophtalmologue lyon': '/admin/gbp/ophtalmologue.png',
+  'ophtalmologiste lyon': '/admin/gbp/ophtalmologue.png',
+  'rdv ophtalmologue lyon': '/admin/gbp/ophtalmologue.png',
+  'urgence ophtalmologique lyon': '/admin/gbp/ophtalmologue.png',
   'traitement dmla lyon': '/admin/gbp/dmla.png',
   'injection intravitréenne lyon': '/admin/gbp/injection.png',
   'rétinologue lyon': '/admin/gbp/retinologue.png',
+  'rétinologue villeurbanne': '/admin/gbp/retinologue.png',
   'oct macula lyon': '/admin/gbp/oct.png',
+  'fond oeil lyon': '/admin/gbp/oct.png',
+  'spécialiste rétine lyon': '/admin/gbp/retinologue.png',
+  'rétinopathie diabétique lyon': '/admin/gbp/dmla.png',
+  'centre rétine lyon': '/admin/gbp/retinologue.png',
+  'ophtalmologue lyon 2': '/admin/gbp/ophtalmologue.png',
+  'ophtalmologue lyon 3': '/admin/gbp/ophtalmologue.png',
+  'ophtalmologue lyon 5': '/admin/gbp/ophtalmologue.png',
   'ophtalmologue lyon 6': '/admin/gbp/ophtalmologue.png',
+  'ophtalmologue lyon 7': '/admin/gbp/ophtalmologue.png',
+  'ophtalmologue lyon 8': '/admin/gbp/ophtalmologue.png',
+  'ophtalmologue lyon 9': '/admin/gbp/ophtalmologue.png',
+  'ophtalmologue brotteaux': '/admin/gbp/ophtalmologue.png',
   'ophtalmologue bellecour': '/admin/gbp/ophtalmologue.png',
+  'ophtalmologue villeurbanne': '/admin/gbp/ophtalmologue.png',
+  'ophtalmologue caluire': '/admin/gbp/ophtalmologue.png',
+  'ophtalmologue oullins': '/admin/gbp/ophtalmologue.png',
+  'ophtalmologue bron': '/admin/gbp/ophtalmologue.png',
+  'ophtalmologue part-dieu': '/admin/gbp/ophtalmologue.png',
+  'ophtalmologue vénissieux': '/admin/gbp/ophtalmologue.png',
   'dmla sèche traitement': '/admin/gbp/dmla.png',
+  'dmla lyon 6': '/admin/gbp/dmla.png',
+  'dmla villeurbanne': '/admin/gbp/dmla.png',
 };
 
 /* ─── Lyon Leaflet GeoGrid (dynamic import to avoid SSR issues) ─── */
@@ -425,7 +448,7 @@ export default function AdminDashboard() {
           // Real history: 3 posts were published on March 27, 2026
           // Future posts are scheduled 3x/week (Mon/Wed/Fri) starting Mon March 30
           const TODAY = new Date(2026, 2, 28);
-          const postDays = [1, 3, 5]; // Mon, Wed, Fri
+          const postDays = [1, 2, 3, 4, 5]; // Mon-Fri — AGGRESSIVE 5x/week until all keywords Top 3
           const allTemplates = GBP_POST_TEMPLATES;
 
           interface ScheduledPost {
@@ -808,6 +831,37 @@ export default function AdminDashboard() {
         return '<tr><td><strong>' + kw.keyword + '</strong><br/><span style="color:#94a3b8;font-size:10px">' + kw.targetPage + '</span></td><td style="font-size:11px">' + (catLabels[kw.category] || kw.category) + '</td><td style="text-align:center;color:#94a3b8">' + kw.monthlyVolume.toLocaleString() + '</td><td><span class="pos ' + posClass + '">#' + (kw.currentPosition || '—') + '</span></td><td>' + (gain > 0 ? '<span class="gain">↑ ' + gain + '</span>' : gain < 0 ? '<span class="loss">↓ ' + Math.abs(gain) + '</span>' : '—') + '</td><td><span class="pos ' + (kw.gmapPosition && kw.gmapPosition <= 3 ? 'top3' : kw.gmapPosition ? 'top10' : 'other') + '">' + (kw.gmapPosition ? '#' + kw.gmapPosition : '—') + '</span></td></tr>';
       }).join('')}
     </table>
+  </div>
+
+  <div class="section">
+    <div class="section-title">📊 Progression des Mots-Clés — Gains de Positions</div>
+    <div style="display:flex;flex-direction:column;gap:8px">
+      ${bestMovers.slice(0, 10).map(kw => {
+        const gain = kw.previousPosition! - kw.currentPosition!;
+        const pct = Math.min(gain * 8, 100);
+        return '<div style="display:flex;align-items:center;gap:12px"><div style="width:200px;font-size:12px;font-weight:600;color:#1e293b;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">' + kw.keyword + '</div><div style="flex:1;height:24px;background:#f1f5f9;border-radius:8px;overflow:hidden;position:relative"><div style="height:100%;width:' + pct + '%;background:linear-gradient(90deg,#22c55e,#16a34a);border-radius:8px;display:flex;align-items:center;justify-content:flex-end;padding-right:8px"><span style="color:white;font-size:10px;font-weight:800">+' + gain + '</span></div></div><div style="width:70px;text-align:center;font-size:12px;color:#94a3b8">#' + kw.previousPosition + ' → <strong style="color:#16a34a">#' + kw.currentPosition + '</strong></div></div>';
+      }).join('')}
+    </div>
+  </div>
+
+  <div class="section" style="page-break-before:always">
+    <div class="section-title">🗺️ GeoGrid — Couverture Géographique Google Maps</div>
+    <p style="color:#64748b;font-size:12px;margin-bottom:16px">Chaque grille montre la position du Centre Rabelais dans Google Maps depuis différents points géographiques autour de Lyon. Vert = Top 3, Or = Top 5, Jaune = Top 10, Orange = Top 15, Rouge = 16+.</p>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px">
+      ${GEOGRID_DATA.slice(0, 4).map(gd => {
+        const getColor = (v: number | null) => {
+          if (v === null) return { bg: '#f8fafc', text: '#cbd5e1', border: '#e2e8f0' };
+          if (v <= 3) return { bg: '#dcfce7', text: '#16a34a', border: '#86efac' };
+          if (v <= 5) return { bg: '#fef3c7', text: '#b8860b', border: '#fde68a' };
+          if (v <= 10) return { bg: '#fefce8', text: '#ca8a04', border: '#fde68a' };
+          if (v <= 15) return { bg: '#ffedd5', text: '#ea580c', border: '#fdba74' };
+          return { bg: '#fef2f2', text: '#dc2626', border: '#fca5a5' };
+        };
+        const top3Count = gd.grid.flat().filter(v => v !== null && v <= 3).length;
+        const totalPoints = gd.grid.flat().filter(v => v !== null).length;
+        return '<div style="border:1px solid #e2e8f0;border-radius:12px;padding:16px;background:#fafbfc"><div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px"><p style="font-weight:800;font-size:13px;color:#0f172a">' + gd.keyword + '</p><span style="font-size:10px;background:#dcfce7;color:#16a34a;padding:2px 8px;border-radius:6px;font-weight:700">' + top3Count + '/' + totalPoints + ' Top 3</span></div><table style="width:100%;border-collapse:collapse">' + gd.grid.map(row => '<tr>' + row.map(cell => { const c = getColor(cell); return '<td style="width:36px;height:36px;text-align:center;font-weight:900;font-size:14px;background:' + c.bg + ';color:' + c.text + ';border:1px solid ' + c.border + ';border-radius:6px">' + (cell !== null ? cell : '·') + '</td>'; }).join('') + '</tr>').join('') + '</table></div>';
+      }).join('')}
+    </div>
   </div>
 
   <div class="section">
