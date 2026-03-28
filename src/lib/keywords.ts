@@ -168,12 +168,12 @@ export const TARGET_KEYWORDS: KeywordData[] = [
     category: 'long-tail',
     targetPage: '/dmla-lyon',
     monthlyVolume: 170,
-    currentPosition: 2,
+    currentPosition: 3,
     previousPosition: 8,
-    gmapPosition: 3,
-    previousGmapPosition: 7,
-    competitor1: { name: 'CHU Lyon', position: 1 },
-    competitor2: { name: 'Vision Future', position: 5 },
+    gmapPosition: null, // No Maps pack for this query
+    previousGmapPosition: null,
+    competitor1: { name: 'Pôle Vision Val d\'Ouest', position: 1 },
+    competitor2: { name: 'Ophtalmo Lyon', position: 2 },
   },
   {
     keyword: 'système valeda lyon',
@@ -182,8 +182,8 @@ export const TARGET_KEYWORDS: KeywordData[] = [
     monthlyVolume: 90,
     currentPosition: 1,
     previousPosition: 2,
-    gmapPosition: 1,
-    previousGmapPosition: 3,
+    gmapPosition: null, // No Maps pack for niche medical query
+    previousGmapPosition: null,
     competitor1: { name: 'Aucun', position: null },
     competitor2: { name: 'Aucun', position: null },
   },

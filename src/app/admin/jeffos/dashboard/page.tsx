@@ -33,6 +33,7 @@ export default function AdminDashboard() {
   const [activeTab, setActiveTab] = useState<Tab>('overview');
   const [autoMode, setAutoMode] = useState(false);
   const [sendingReport, setSendingReport] = useState(false);
+  const [expandedKpi, setExpandedKpi] = useState<string | null>(null);
   const [reportSent, setReportSent] = useState(false);
   const router = useRouter();
 
@@ -125,32 +126,158 @@ export default function AdminDashboard() {
         {/* OVERVIEW TAB */}
         {activeTab === 'overview' && (
           <div className="space-y-8">
-            {/* KPI Cards */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-              {[
-                { label: 'Top 3 Organique', value: top3Count, total: totalKeywords, color: '#22c55e' },
-                { label: 'Top 10 Organique', value: top10Count, total: totalKeywords, color: '#003399' },
-                { label: 'Top 3 Google Maps', value: gmapTop3, total: totalKeywords, color: '#c2aa84' },
-                { label: 'Amélioration Moy.', value: `+${avgImprovement.toFixed(1)}`, total: 'positions', color: '#8b5cf6' },
-              ].map((kpi) => (
-                <div key={kpi.label} className="bg-white/5 backdrop-blur border border-white/5 rounded-2xl p-6 hover:border-white/10 transition-all">
-                  <p className="text-white/30 text-[10px] uppercase tracking-widest mb-3">{kpi.label}</p>
-                  <div className="flex items-baseline gap-2">
-                    <span className="text-3xl font-bold" style={{ color: kpi.color }}>{kpi.value}</span>
-                    <span className="text-white/20 text-sm">/ {kpi.total}</span>
+            {/* KPI Cards — Click to expand keywords */}
+            {(() => {
+              // Build the filtered keyword lists for each KPI
+              const kpiSections = [
+                {
+                  id: 'top3',
+                  label: 'Top 3 Organique',
+                  value: top3Count,
+                  total: totalKeywords,
+                  color: '#22c55e',
+                  keywords: TARGET_KEYWORDS.filter(k => k.currentPosition !== null && k.currentPosition <= 3),
+                },
+                {
+                  id: 'top10',
+                  label: 'Top 10 Organique',
+                  value: top10Count,
+                  total: totalKeywords,
+                  color: '#003399',
+                  keywords: TARGET_KEYWORDS.filter(k => k.currentPosition !== null && k.currentPosition <= 10),
+                },
+                {
+                  id: 'maps',
+                  label: 'Top 3 Google Maps',
+                  value: gmapTop3,
+                  total: totalKeywords,
+                  color: '#c2aa84',
+                  keywords: TARGET_KEYWORDS.filter(k => k.gmapPosition !== null && k.gmapPosition <= 3),
+                },
+                {
+                  id: 'improvement',
+                  label: 'Amélioration Moy.',
+                  value: `+${avgImprovement.toFixed(1)}`,
+                  total: 'positions',
+                  color: '#8b5cf6',
+                  keywords: TARGET_KEYWORDS
+                    .filter(k => k.previousPosition !== null && k.currentPosition !== null)
+                    .sort((a, b) => (b.previousPosition! - b.currentPosition!) - (a.previousPosition! - a.currentPosition!)),
+                },
+              ];
+
+              return (
+                <div className="space-y-4">
+                  <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    {kpiSections.map((kpi) => (
+                      <button
+                        key={kpi.id}
+                        onClick={() => setExpandedKpi(expandedKpi === kpi.id ? null : kpi.id)}
+                        className={`text-left bg-white/5 backdrop-blur border rounded-2xl p-6 transition-all cursor-pointer ${
+                          expandedKpi === kpi.id
+                            ? 'border-[' + kpi.color + ']/40 ring-1 ring-[' + kpi.color + ']/20 bg-white/8'
+                            : 'border-white/5 hover:border-white/10'
+                        }`}
+                        style={expandedKpi === kpi.id ? { borderColor: kpi.color + '40', boxShadow: `0 0 20px ${kpi.color}15` } : {}}
+                      >
+                        <p className="text-white/30 text-[10px] uppercase tracking-widest mb-3">{kpi.label}</p>
+                        <div className="flex items-baseline gap-2">
+                          <span className="text-3xl font-bold" style={{ color: kpi.color }}>{kpi.value}</span>
+                          <span className="text-white/20 text-sm">/ {kpi.total}</span>
+                        </div>
+                        <div className="mt-3 h-1.5 bg-white/5 rounded-full overflow-hidden">
+                          <div
+                            className="h-full rounded-full transition-all duration-1000"
+                            style={{
+                              width: typeof kpi.value === 'number' ? `${(kpi.value / (typeof kpi.total === 'number' ? kpi.total : 1)) * 100}%` : '70%',
+                              backgroundColor: kpi.color,
+                            }}
+                          />
+                        </div>
+                        <p className="text-white/20 text-[9px] mt-2 text-center">
+                          {expandedKpi === kpi.id ? '▲ Masquer' : '▼ Voir les mots-clés'}
+                        </p>
+                      </button>
+                    ))}
                   </div>
-                  <div className="mt-3 h-1.5 bg-white/5 rounded-full overflow-hidden">
-                    <div
-                      className="h-full rounded-full transition-all duration-1000"
-                      style={{
-                        width: typeof kpi.value === 'number' ? `${(kpi.value / (typeof kpi.total === 'number' ? kpi.total : 1)) * 100}%` : '70%',
-                        backgroundColor: kpi.color,
-                      }}
-                    />
-                  </div>
+
+                  {/* Expanded keyword detail panel */}
+                  {expandedKpi && (() => {
+                    const section = kpiSections.find(s => s.id === expandedKpi)!;
+                    const isImprovement = section.id === 'improvement';
+                    const isMaps = section.id === 'maps';
+                    return (
+                      <div
+                        className="bg-white/5 backdrop-blur border rounded-2xl p-6 animate-in fade-in slide-in-from-top-2 duration-300"
+                        style={{ borderColor: section.color + '30' }}
+                      >
+                        <div className="flex items-center justify-between mb-4">
+                          <h3 className="text-xs uppercase tracking-widest font-bold" style={{ color: section.color }}>
+                            {section.label} — {section.keywords.length} mot{section.keywords.length > 1 ? 's' : ''}-clé{section.keywords.length > 1 ? 's' : ''}
+                          </h3>
+                          <button onClick={() => setExpandedKpi(null)} className="text-white/30 hover:text-white/60 text-xs">✕ Fermer</button>
+                        </div>
+                        <div className="overflow-x-auto">
+                          <table className="w-full text-sm">
+                            <thead>
+                              <tr className="text-white/30 text-[10px] uppercase tracking-wider border-b border-white/5">
+                                <th className="text-left py-2 px-3">Mot-clé</th>
+                                <th className="text-left py-2 px-3">Page cible</th>
+                                <th className="text-center py-2 px-3">Volume</th>
+                                {isMaps ? (
+                                  <th className="text-center py-2 px-3">Pos. Maps</th>
+                                ) : (
+                                  <th className="text-center py-2 px-3">Pos. Google</th>
+                                )}
+                                <th className="text-center py-2 px-3">Évolution</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              {section.keywords.map((kw) => {
+                                const gain = isMaps
+                                  ? (kw.previousGmapPosition && kw.gmapPosition ? kw.previousGmapPosition - kw.gmapPosition : 0)
+                                  : (kw.previousPosition && kw.currentPosition ? kw.previousPosition - kw.currentPosition : 0);
+                                const currentPos = isMaps ? kw.gmapPosition : kw.currentPosition;
+                                const previousPos = isMaps ? kw.previousGmapPosition : kw.previousPosition;
+                                const posColor = currentPos && currentPos <= 3 ? '#22c55e' : currentPos && currentPos <= 10 ? '#c2aa84' : '#ef4444';
+                                return (
+                                  <tr key={kw.keyword} className="border-b border-white/[0.03] hover:bg-white/[0.03] transition-colors">
+                                    <td className="py-3 px-3">
+                                      <p className="text-white/80 font-medium">{kw.keyword}</p>
+                                      <p className="text-white/20 text-[10px] uppercase tracking-wider">{kw.category}</p>
+                                    </td>
+                                    <td className="py-3 px-3 text-white/30 text-xs">{kw.targetPage}</td>
+                                    <td className="py-3 px-3 text-center text-white/40 text-xs">{kw.monthlyVolume.toLocaleString()}</td>
+                                    <td className="py-3 px-3 text-center">
+                                      <span className="font-bold text-lg" style={{ color: posColor }}>#{currentPos}</span>
+                                    </td>
+                                    <td className="py-3 px-3 text-center">
+                                      {gain > 0 ? (
+                                        <span className="bg-green-500/10 text-green-400 font-bold text-xs px-2 py-1 rounded-lg inline-flex items-center gap-1">
+                                          ↑ {gain}
+                                          {previousPos && <span className="text-white/30 font-normal ml-1">(de #{previousPos})</span>}
+                                        </span>
+                                      ) : gain < 0 ? (
+                                        <span className="bg-red-500/10 text-red-400 font-bold text-xs px-2 py-1 rounded-lg">↓ {Math.abs(gain)}</span>
+                                      ) : (
+                                        <span className="text-white/20 text-xs">—</span>
+                                      )}
+                                    </td>
+                                  </tr>
+                                );
+                              })}
+                            </tbody>
+                          </table>
+                        </div>
+                        {section.keywords.length === 0 && (
+                          <p className="text-white/20 text-sm text-center py-6">Aucun mot-clé dans cette catégorie.</p>
+                        )}
+                      </div>
+                    );
+                  })()}
                 </div>
-              ))}
-            </div>
+              );
+            })()}
 
             {/* Top movers */}
             <div className="bg-white/5 backdrop-blur border border-white/5 rounded-2xl p-6">
@@ -570,8 +697,136 @@ export default function AdminDashboard() {
         })()}
 
         {/* REPORTS TAB */}
-        {activeTab === 'reports' && (
+        {activeTab === 'reports' && (() => {
+          const now = new Date(2026, 2, 28);
+          const dateStr = now.toLocaleDateString('fr-FR', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
+          const rTop3 = TARGET_KEYWORDS.filter(k => k.currentPosition !== null && k.currentPosition <= 3);
+          const rTop10 = TARGET_KEYWORDS.filter(k => k.currentPosition !== null && k.currentPosition <= 10);
+          const rGmapTop3 = TARGET_KEYWORDS.filter(k => k.gmapPosition !== null && k.gmapPosition <= 3);
+          const rAvgGain = TARGET_KEYWORDS.reduce((sum, k) => {
+            if (k.previousPosition && k.currentPosition) return sum + (k.previousPosition - k.currentPosition);
+            return sum;
+          }, 0) / TARGET_KEYWORDS.filter(k => k.previousPosition && k.currentPosition).length;
+          const bestMovers = TARGET_KEYWORDS
+            .filter(k => k.previousPosition && k.currentPosition)
+            .sort((a, b) => (b.previousPosition! - b.currentPosition!) - (a.previousPosition! - a.currentPosition!));
+
+          const openPdfPreview = () => {
+            const win = window.open('', '_blank');
+            if (!win) return;
+            win.document.write(`<!DOCTYPE html>
+<html><head><meta charset="utf-8"><title>Rapport SEO/GEO — Centre Rabelais — ${dateStr}</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800;900&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Inter', system-ui, sans-serif; background: #fff; color: #1e293b; }
+  .page { max-width: 800px; margin: 0 auto; padding: 0; }
+  @media print { .page { max-width: 100%; } .no-print { display: none !important; } }
+  .header { background: linear-gradient(135deg, #0a0f1c 0%, #001a44 50%, #002266 100%); padding: 50px 40px; text-align: center; }
+  .header h1 { color: white; font-size: 28px; font-weight: 300; letter-spacing: 6px; text-transform: uppercase; }
+  .header h1 span { color: #c2aa84; font-weight: 800; }
+  .header .subtitle { color: rgba(255,255,255,0.35); font-size: 11px; letter-spacing: 3px; text-transform: uppercase; margin-top: 8px; }
+  .date-bar { background: linear-gradient(90deg, #c2aa84, #d4bc96); color: white; text-align: center; padding: 14px; font-size: 13px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; }
+  .section { padding: 32px 40px; }
+  .section-title { font-size: 12px; color: #c2aa84; text-transform: uppercase; letter-spacing: 4px; font-weight: 800; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 2px solid #f0f0f0; display: flex; align-items: center; gap: 8px; }
+  .kpi-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-bottom: 8px; }
+  .kpi { text-align: center; padding: 24px 12px; border-radius: 16px; }
+  .kpi.green { background: linear-gradient(135deg, #f0fdf4, #dcfce7); border: 1px solid #86efac; }
+  .kpi.gold { background: linear-gradient(135deg, #fefce8, #fef3c7); border: 1px solid #fde68a; }
+  .kpi.blue { background: linear-gradient(135deg, #eff6ff, #dbeafe); border: 1px solid #93c5fd; }
+  .kpi.purple { background: linear-gradient(135deg, #faf5ff, #f3e8ff); border: 1px solid #c4b5fd; }
+  .kpi-value { font-size: 36px; font-weight: 900; line-height: 1; }
+  .kpi.green .kpi-value { color: #16a34a; }
+  .kpi.gold .kpi-value { color: #c2aa84; }
+  .kpi.blue .kpi-value { color: #2563eb; }
+  .kpi.purple .kpi-value { color: #7c3aed; }
+  .kpi-label { font-size: 9px; color: #94a3b8; text-transform: uppercase; letter-spacing: 2px; margin-top: 6px; font-weight: 600; }
+  table { width: 100%; border-collapse: collapse; }
+  th { text-align: left; color: #94a3b8; font-size: 9px; text-transform: uppercase; letter-spacing: 1.5px; padding: 10px 12px; border-bottom: 2px solid #f0f0f0; font-weight: 700; }
+  td { padding: 12px; border-bottom: 1px solid #f8f8f8; font-size: 13px; }
+  tr:hover { background: #fafbfc; }
+  .pos { font-weight: 900; font-size: 18px; }
+  .pos.top3 { color: #16a34a; }
+  .pos.top10 { color: #c2aa84; }
+  .pos.other { color: #94a3b8; }
+  .gain { background: #f0fdf4; color: #16a34a; font-weight: 700; font-size: 11px; padding: 3px 8px; border-radius: 6px; display: inline-block; }
+  .loss { background: #fef2f2; color: #dc2626; font-weight: 700; font-size: 11px; padding: 3px 8px; border-radius: 6px; display: inline-block; }
+  .exec-summary { background: #f8fafc; border-left: 4px solid #c2aa84; padding: 20px 24px; border-radius: 0 12px 12px 0; margin: 16px 0; }
+  .exec-summary h4 { font-size: 13px; font-weight: 800; color: #0a0f1c; margin-bottom: 8px; }
+  .exec-summary p { font-size: 13px; color: #475569; line-height: 1.6; }
+  .exec-summary ul { list-style: none; padding: 0; margin-top: 10px; }
+  .exec-summary li { padding: 4px 0; font-size: 13px; color: #475569; }
+  .exec-summary li::before { content: "✓ "; color: #16a34a; font-weight: 700; }
+  .competitor-card { display: flex; justify-content: space-between; align-items: center; padding: 14px 16px; background: #f8fafc; border-radius: 10px; margin-bottom: 8px; }
+  .threat-high { color: #dc2626; font-weight: 700; font-size: 11px; background: #fef2f2; padding: 3px 10px; border-radius: 6px; }
+  .threat-medium { color: #d97706; font-weight: 700; font-size: 11px; background: #fffbeb; padding: 3px 10px; border-radius: 6px; }
+  .threat-low { color: #16a34a; font-weight: 700; font-size: 11px; background: #f0fdf4; padding: 3px 10px; border-radius: 6px; }
+  .footer { background: #0a0f1c; padding: 40px; text-align: center; }
+  .footer p { color: rgba(255,255,255,0.3); font-size: 11px; margin: 3px 0; }
+  .footer a { color: #c2aa84; text-decoration: none; }
+  .print-btn { position: fixed; top: 20px; right: 20px; background: #003399; color: white; border: none; padding: 12px 24px; border-radius: 10px; font-weight: 700; font-size: 13px; cursor: pointer; z-index: 100; box-shadow: 0 4px 12px rgba(0,51,153,0.3); }
+  .print-btn:hover { background: #0044cc; }
+</style></head><body>
+<button class="print-btn no-print" onclick="window.print()">📄 Télécharger PDF</button>
+<div class="page">
+  <div class="header">
+    <h1>Centre <span>Rabelais</span></h1>
+    <div class="subtitle">Rapport SEO / GEO Hebdomadaire</div>
+  </div>
+  <div class="date-bar">${dateStr}</div>
+
+  <div class="section">
+    <div class="exec-summary">
+      <h4>📋 Résumé Exécutif</h4>
+      <p>Le Centre Ophtalmologique Rabelais poursuit une progression significative dans le référencement Google et Google Maps. Voici les résultats clés cette semaine :</p>
+      <ul>
+        <li><strong>${rTop3.length} mot${rTop3.length > 1 ? 's' : ''}-clé${rTop3.length > 1 ? 's' : ''}</strong> en Top 3 Google (${rTop3.map(k => '"' + k.keyword + '"').join(', ')})</li>
+        <li><strong>${rTop10.length}</strong> mots-clés en première page Google (Top 10)</li>
+        <li>Gain moyen de <strong>+${rAvgGain.toFixed(1)} positions</strong> par mot-clé</li>
+        <li><strong>${rGmapTop3.length}</strong> mot${rGmapTop3.length > 1 ? 's' : ''}-clé${rGmapTop3.length > 1 ? 's' : ''} en Top 3 Google Maps</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="section" style="padding-top:0">
+    <div class="kpi-grid">
+      <div class="kpi green"><div class="kpi-value">${rTop3.length}</div><div class="kpi-label">Top 3 Google</div></div>
+      <div class="kpi gold"><div class="kpi-value">${rTop10.length}</div><div class="kpi-label">Top 10 Google</div></div>
+      <div class="kpi blue"><div class="kpi-value">${rGmapTop3.length}</div><div class="kpi-label">Top 3 Maps</div></div>
+      <div class="kpi purple"><div class="kpi-value">+${rAvgGain.toFixed(0)}</div><div class="kpi-label">Gain Moyen</div></div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">🎯 Positionnement Google — Détail Complet</div>
+    <table>
+      <tr><th>Mot-clé</th><th>Catégorie</th><th>Volume</th><th>Position</th><th>Évolution</th><th>Maps</th></tr>
+      ${TARGET_KEYWORDS.map(kw => {
+        const gain = kw.previousPosition && kw.currentPosition ? kw.previousPosition - kw.currentPosition : 0;
+        const posClass = kw.currentPosition && kw.currentPosition <= 3 ? 'top3' : kw.currentPosition && kw.currentPosition <= 10 ? 'top10' : 'other';
+        const catLabels: Record<string, string> = { head: '🔵 Principal', service: '🟢 Service', geo: '📍 Local', 'long-tail': '🎯 Longue traîne' };
+        return '<tr><td><strong>' + kw.keyword + '</strong><br/><span style="color:#94a3b8;font-size:10px">' + kw.targetPage + '</span></td><td style="font-size:11px">' + (catLabels[kw.category] || kw.category) + '</td><td style="text-align:center;color:#94a3b8">' + kw.monthlyVolume.toLocaleString() + '</td><td><span class="pos ' + posClass + '">#' + (kw.currentPosition || '—') + '</span></td><td>' + (gain > 0 ? '<span class="gain">↑ ' + gain + '</span>' : gain < 0 ? '<span class="loss">↓ ' + Math.abs(gain) + '</span>' : '—') + '</td><td><span class="pos ' + (kw.gmapPosition && kw.gmapPosition <= 3 ? 'top3' : kw.gmapPosition ? 'top10' : 'other') + '">' + (kw.gmapPosition ? '#' + kw.gmapPosition : '—') + '</span></td></tr>';
+      }).join('')}
+    </table>
+  </div>
+
+  <div class="section">
+    <div class="section-title">⚔️ Veille Concurrentielle</div>
+    ${COMPETITORS.map(c => '<div class="competitor-card"><div><strong style="font-size:14px">' + c.name + '</strong><br/><span style="color:#94a3b8;font-size:11px">' + c.url + ' — ⭐ ' + c.rating + ' (' + c.reviews + ' avis)</span></div><span class="threat-' + c.threat + '">' + (c.threat === 'high' ? '🔴 Menace élevée' : c.threat === 'medium' ? '🟡 Modérée' : '🟢 Faible') + '</span></div>').join('')}
+  </div>
+
+  <div class="footer">
+    <p><a href="https://centrerabelaislyon.fr">centrerabelaislyon.fr</a></p>
+    <p style="margin-top:8px">Rapport généré automatiquement — Ne pas répondre à cet email</p>
+    <p>© 2026 Centre Ophtalmologique Rabelais</p>
+  </div>
+</div></body></html>`);
+            win.document.close();
+          };
+
+          return (
           <div className="space-y-6">
+            {/* Header with actions */}
             <div className="bg-white/5 backdrop-blur border border-white/5 rounded-2xl p-8">
               <div className="flex items-start justify-between mb-8">
                 <div>
@@ -580,13 +835,21 @@ export default function AdminDashboard() {
                     Envoyé automatiquement chaque lundi à 9h00
                   </p>
                 </div>
-                <button
-                  onClick={handleSendReport}
-                  disabled={sendingReport}
-                  className="bg-gradient-to-r from-[#003399] to-[#0044cc] hover:from-[#0044cc] hover:to-[#0055ff] disabled:opacity-50 text-white font-bold text-[11px] uppercase tracking-[2px] px-6 py-3 rounded-xl transition-all shadow-lg shadow-[#003399]/20"
-                >
-                  {sendingReport ? '⏳ Envoi...' : reportSent ? '✅ Envoyé !' : '📧 Envoyer Maintenant'}
-                </button>
+                <div className="flex gap-3">
+                  <button
+                    onClick={openPdfPreview}
+                    className="bg-white/10 hover:bg-white/15 text-white font-bold text-[11px] uppercase tracking-[2px] px-5 py-3 rounded-xl transition-all border border-white/10 hover:border-white/20"
+                  >
+                    📄 Aperçu PDF
+                  </button>
+                  <button
+                    onClick={handleSendReport}
+                    disabled={sendingReport}
+                    className="bg-gradient-to-r from-[#003399] to-[#0044cc] hover:from-[#0044cc] hover:to-[#0055ff] disabled:opacity-50 text-white font-bold text-[11px] uppercase tracking-[2px] px-6 py-3 rounded-xl transition-all shadow-lg shadow-[#003399]/20"
+                  >
+                    {sendingReport ? '⏳ Envoi...' : reportSent ? '✅ Envoyé !' : '📧 Envoyer Maintenant'}
+                  </button>
+                </div>
               </div>
 
               {/* Recipients */}
@@ -600,52 +863,117 @@ export default function AdminDashboard() {
                 ))}
               </div>
 
-              {/* Report preview */}
-              <div className="border border-white/5 rounded-xl overflow-hidden">
-                <div className="bg-white/[0.03] px-6 py-4 border-b border-white/5">
-                  <p className="text-[10px] uppercase tracking-widest text-white/30 font-bold">Aperçu du Rapport</p>
+              {/* Executive Summary */}
+              <div className="bg-[#c2aa84]/5 border border-[#c2aa84]/10 rounded-xl p-6 mb-8">
+                <h4 className="text-xs uppercase tracking-widest text-[#c2aa84] font-bold mb-3">📋 Résumé Exécutif</h4>
+                <div className="grid md:grid-cols-2 gap-4">
+                  <div className="space-y-2">
+                    <p className="text-white/60 text-sm">✓ <strong className="text-white/80">{rTop3.length}</strong> mot{rTop3.length > 1 ? 's' : ''}-clé{rTop3.length > 1 ? 's' : ''} en <span className="text-green-400 font-bold">Top 3</span> Google</p>
+                    <p className="text-white/60 text-sm">✓ <strong className="text-white/80">{rTop10.length}</strong> mots-clés en <span className="text-[#c2aa84] font-bold">première page</span></p>
+                  </div>
+                  <div className="space-y-2">
+                    <p className="text-white/60 text-sm">✓ Gain moyen : <span className="text-purple-400 font-bold">+{rAvgGain.toFixed(1)} positions</span></p>
+                    <p className="text-white/60 text-sm">✓ <strong className="text-white/80">{rGmapTop3.length}</strong> mot{rGmapTop3.length > 1 ? 's' : ''}-clé{rGmapTop3.length > 1 ? 's' : ''} en Top 3 Maps</p>
+                  </div>
                 </div>
-                <div className="p-6 space-y-6">
-                  <div className="grid grid-cols-3 gap-4">
-                    <div className="text-center p-4 bg-green-500/5 rounded-xl border border-green-500/10">
-                      <p className="text-green-400 text-2xl font-bold">{top3Count}</p>
-                      <p className="text-white/30 text-[10px] uppercase tracking-wider mt-1">Top 3</p>
-                    </div>
-                    <div className="text-center p-4 bg-[#c2aa84]/5 rounded-xl border border-[#c2aa84]/10">
-                      <p className="text-[#c2aa84] text-2xl font-bold">{top10Count}</p>
-                      <p className="text-white/30 text-[10px] uppercase tracking-wider mt-1">Top 10</p>
-                    </div>
-                    <div className="text-center p-4 bg-purple-500/5 rounded-xl border border-purple-500/10">
-                      <p className="text-purple-400 text-2xl font-bold">+{avgImprovement.toFixed(0)}</p>
-                      <p className="text-white/30 text-[10px] uppercase tracking-wider mt-1">Moy. Gain</p>
-                    </div>
-                  </div>
+              </div>
 
-                  <div>
-                    <p className="text-white/30 text-[10px] uppercase tracking-widest mb-3">Progressions notables</p>
-                    {TARGET_KEYWORDS
-                      .filter(k => k.previousPosition && k.currentPosition)
-                      .sort((a, b) => ((b.previousPosition! - b.currentPosition!) - (a.previousPosition! - a.currentPosition!)))
-                      .slice(0, 5)
-                      .map((kw) => (
-                        <div key={kw.keyword} className="flex items-center justify-between py-2 border-b border-white/[0.03]">
-                          <span className="text-white/60 text-sm">{kw.keyword}</span>
-                          <div className="flex items-center gap-3">
-                            <span className="text-white/30 text-xs">#{kw.previousPosition}</span>
-                            <span className="text-white/30">→</span>
-                            <span className={`font-bold ${kw.currentPosition! <= 3 ? 'text-green-400' : kw.currentPosition! <= 10 ? 'text-[#c2aa84]' : 'text-white/60'}`}>
-                              #{kw.currentPosition}
-                            </span>
-                            <span className="text-green-400 text-xs">↑{kw.previousPosition! - kw.currentPosition!}</span>
-                          </div>
-                        </div>
-                      ))}
-                  </div>
+              {/* KPI Cards */}
+              <div className="grid grid-cols-4 gap-4 mb-8">
+                <div className="text-center p-4 bg-green-500/5 rounded-xl border border-green-500/10">
+                  <p className="text-green-400 text-3xl font-bold">{rTop3.length}</p>
+                  <p className="text-white/30 text-[9px] uppercase tracking-wider mt-1">Top 3 Google</p>
+                </div>
+                <div className="text-center p-4 bg-[#c2aa84]/5 rounded-xl border border-[#c2aa84]/10">
+                  <p className="text-[#c2aa84] text-3xl font-bold">{rTop10.length}</p>
+                  <p className="text-white/30 text-[9px] uppercase tracking-wider mt-1">Top 10 Google</p>
+                </div>
+                <div className="text-center p-4 bg-blue-500/5 rounded-xl border border-blue-500/10">
+                  <p className="text-blue-400 text-3xl font-bold">{rGmapTop3.length}</p>
+                  <p className="text-white/30 text-[9px] uppercase tracking-wider mt-1">Top 3 Maps</p>
+                </div>
+                <div className="text-center p-4 bg-purple-500/5 rounded-xl border border-purple-500/10">
+                  <p className="text-purple-400 text-3xl font-bold">+{rAvgGain.toFixed(0)}</p>
+                  <p className="text-white/30 text-[9px] uppercase tracking-wider mt-1">Gain Moyen</p>
+                </div>
+              </div>
+
+              {/* Full keyword table */}
+              <div className="mb-8">
+                <p className="text-[10px] uppercase tracking-widest text-white/30 font-bold mb-4">🎯 Positionnement Google — Détail complet</p>
+                <div className="overflow-x-auto">
+                  <table className="w-full text-sm">
+                    <thead>
+                      <tr className="text-white/30 text-[9px] uppercase tracking-wider border-b border-white/5">
+                        <th className="text-left py-2 px-3">Mot-clé</th>
+                        <th className="text-center py-2 px-3">Vol.</th>
+                        <th className="text-center py-2 px-3">Google</th>
+                        <th className="text-center py-2 px-3">Évol.</th>
+                        <th className="text-center py-2 px-3">Maps</th>
+                        <th className="text-left py-2 px-3">Concurrent #1</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {TARGET_KEYWORDS.map((kw) => {
+                        const gain = kw.previousPosition && kw.currentPosition ? kw.previousPosition - kw.currentPosition : 0;
+                        return (
+                          <tr key={kw.keyword} className="border-b border-white/[0.03] hover:bg-white/[0.02]">
+                            <td className="py-3 px-3">
+                              <p className="text-white/80 font-medium">{kw.keyword}</p>
+                              <p className="text-white/20 text-[10px]">{kw.targetPage}</p>
+                            </td>
+                            <td className="py-3 px-3 text-center text-white/30 text-xs">{kw.monthlyVolume.toLocaleString()}</td>
+                            <td className="py-3 px-3 text-center">
+                              <span className={`font-bold text-lg ${kw.currentPosition && kw.currentPosition <= 3 ? 'text-green-400' : kw.currentPosition && kw.currentPosition <= 10 ? 'text-[#c2aa84]' : 'text-white/40'}`}>
+                                #{kw.currentPosition || '—'}
+                              </span>
+                            </td>
+                            <td className="py-3 px-3 text-center">
+                              {gain > 0 ? (
+                                <span className="bg-green-500/10 text-green-400 font-bold text-xs px-2 py-1 rounded">↑{gain}</span>
+                              ) : (
+                                <span className="text-white/20 text-xs">—</span>
+                              )}
+                            </td>
+                            <td className="py-3 px-3 text-center">
+                              <span className={`font-bold ${kw.gmapPosition && kw.gmapPosition <= 3 ? 'text-green-400' : kw.gmapPosition ? 'text-[#c2aa84]' : 'text-white/20'}`}>
+                                {kw.gmapPosition ? `#${kw.gmapPosition}` : '—'}
+                              </span>
+                            </td>
+                            <td className="py-3 px-3 text-white/30 text-xs">{kw.competitor1.name} {kw.competitor1.position ? `(#${kw.competitor1.position})` : ''}</td>
+                          </tr>
+                        );
+                      })}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              {/* Competitors */}
+              <div>
+                <p className="text-[10px] uppercase tracking-widest text-white/30 font-bold mb-4">⚔️ Veille Concurrentielle</p>
+                <div className="space-y-2">
+                  {COMPETITORS.map((comp) => (
+                    <div key={comp.name} className="flex items-center justify-between bg-white/[0.02] rounded-xl px-5 py-3">
+                      <div>
+                        <p className="text-white/70 text-sm font-medium">{comp.name}</p>
+                        <p className="text-white/20 text-[10px]">{comp.url} — ⭐ {comp.rating} ({comp.reviews} avis)</p>
+                      </div>
+                      <span className={`text-[10px] uppercase tracking-wider font-bold px-3 py-1 rounded-full ${
+                        comp.threat === 'high' ? 'bg-red-500/10 text-red-400 border border-red-500/20' :
+                        comp.threat === 'medium' ? 'bg-yellow-500/10 text-yellow-400 border border-yellow-500/20' :
+                        'bg-green-500/10 text-green-400 border border-green-500/20'
+                      }`}>
+                        {comp.threat === 'high' ? '🔴 Élevée' : comp.threat === 'medium' ? '🟡 Modérée' : '🟢 Faible'}
+                      </span>
+                    </div>
+                  ))}
                 </div>
               </div>
             </div>
           </div>
-        )}
+          );
+        })()}
       </main>
     </div>
   );
