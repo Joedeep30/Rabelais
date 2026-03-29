@@ -7,23 +7,35 @@ import { TARGET_KEYWORDS, GBP_POST_TEMPLATES, COMPETITORS, GEOGRID_DATA } from '
 
 type Tab = 'overview' | 'keywords' | 'geogrid' | 'gbp-poster' | 'reports';
 
-// GBP Post images mapping — fallback images by keyword category
+// All available GBP post images — hyper-realistic ophthalmology illustrations
+const IMAGE_POOL = [
+  '/admin/gbp/consultation.png',    // Doctor examining patient at slit lamp
+  '/admin/gbp/oct.png',             // OCT Spectral-Domain device
+  '/admin/gbp/eye.png',             // Macro close-up healthy eye
+  '/admin/gbp/retina_scan.png',     // OCT retina scan on monitor
+  '/admin/gbp/photobiomodulation.png', // Valeda light therapy
+  '/admin/gbp/clinic.png',          // Premium clinic interior
+  '/admin/gbp/doctor.png',          // Retina specialist portrait
+  '/admin/gbp/fundus.png',          // Retinal fundus image
+];
+
+// GBP Post images mapping — keyword → best matching local image
 const GBP_IMAGES: Record<string, string> = {
-  'photobiomodulation lyon': 'https://images.unsplash.com/photo-1584036561566-baf8f5f1b144?q=80&w=800', // high tech light
-  'ophtalmologue lyon': 'https://images.unsplash.com/photo-1579684385127-1ef15d508118?q=80&w=800', // doctor consultation
-  'ophtalmologiste lyon': 'https://images.unsplash.com/photo-1579684385127-1ef15d508118?q=80&w=800',
-  'rdv ophtalmologue lyon': 'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?q=80&w=800',
-  'urgence ophtalmologique lyon': 'https://images.unsplash.com/photo-1581093458791-9f3c3900df4b?q=80&w=800', // medical urgency / lab
-  'traitement dmla lyon': 'https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?q=80&w=800', // macro eye/retina
-  'injection intravitréenne lyon': 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=800', // sterile syringe/medical
-  'rétinologue lyon': 'https://images.unsplash.com/photo-1551076805-e1869033e561?q=80&w=800', // medical pro
-  'rétinologue villeurbanne': 'https://images.unsplash.com/photo-1551076805-e1869033e561?q=80&w=800',
-  'oct macula lyon': 'https://images.unsplash.com/photo-1582719508461-905c673771fd?q=80&w=800', // tech scanning
-  'fond oeil lyon': 'https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?q=80&w=800',
-  'spécialiste rétine lyon': 'https://images.unsplash.com/photo-1551076805-e1869033e561?q=80&w=800',
-  'rétinopathie diabétique lyon': 'https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?q=80&w=800',
-  'centre rétine lyon': 'https://images.unsplash.com/photo-1538108149393-fbbd81895907?q=80&w=800',
-  'dmla sèche traitement': 'https://images.unsplash.com/photo-1584036561566-baf8f5f1b144?q=80&w=800',
+  'photobiomodulation lyon': '/admin/gbp/photobiomodulation.png',
+  'ophtalmologue lyon': '/admin/gbp/consultation.png',
+  'ophtalmologiste lyon': '/admin/gbp/doctor.png',
+  'rdv ophtalmologue lyon': '/admin/gbp/clinic.png',
+  'urgence ophtalmologique lyon': '/admin/gbp/consultation.png',
+  'traitement dmla lyon': '/admin/gbp/retina_scan.png',
+  'injection intravitréenne lyon': '/admin/gbp/oct.png',
+  'rétinologue lyon': '/admin/gbp/doctor.png',
+  'rétinologue villeurbanne': '/admin/gbp/doctor.png',
+  'oct macula lyon': '/admin/gbp/oct.png',
+  'fond oeil lyon': '/admin/gbp/fundus.png',
+  'spécialiste rétine lyon': '/admin/gbp/retina_scan.png',
+  'rétinopathie diabétique lyon': '/admin/gbp/fundus.png',
+  'centre rétine lyon': '/admin/gbp/clinic.png',
+  'dmla sèche traitement': '/admin/gbp/photobiomodulation.png',
 };
 
 /* ─── Lyon Leaflet GeoGrid (dynamic import to avoid SSR issues) ─── */
@@ -52,7 +64,15 @@ export default function AdminDashboard() {
   const [reportSent, setReportSent] = useState(false);
   const [selectedPost, setSelectedPost] = useState<ScheduledPost | null>(null);
   const [editedPosts, setEditedPosts] = useState<Record<string, string>>({});
+  const [imageOverrides, setImageOverrides] = useState<Record<string, string>>({});
   const router = useRouter();
+
+  // Cycle through IMAGE_POOL for a given post key
+  const cycleImage = (postKey: string, currentImage: string) => {
+    const currentIdx = IMAGE_POOL.indexOf(currentImage);
+    const nextIdx = (currentIdx + 1) % IMAGE_POOL.length;
+    setImageOverrides(prev => ({ ...prev, [postKey]: IMAGE_POOL[nextIdx] }));
+  };
 
   const handleLogout = async () => {
     await fetch('/api/admin/auth', { method: 'DELETE' });
@@ -481,13 +501,15 @@ export default function AdminDashboard() {
             if (postDays.includes(cursor.getDay())) {
               const tpl = allTemplates[templateIdx % allTemplates.length];
               const dateKeyKey = `${cursor.getFullYear()}-${cursor.getMonth()}-${cursor.getDate()}`;
+              const baseImg = GBP_IMAGES[tpl.keyword] || '/admin/gbp/consultation.png';
+              const postKey = `${tpl.keyword}-${dateKeyKey}`;
               scheduledPosts.push({
                 date: new Date(cursor),
                 keyword: tpl.keyword,
                 text: editedPosts[`${tpl.keyword}-${dateKeyKey}`] || tpl.textTemplate,
                 cta: tpl.callToAction,
                 status: 'scheduled',
-                image: GBP_IMAGES[tpl.keyword] || '/admin/gbp/ophtalmologue.png',
+                image: imageOverrides[postKey] || baseImg,
               });
               templateIdx++;
             }
@@ -668,9 +690,10 @@ export default function AdminDashboard() {
                       </div>
                       {post.status === 'scheduled' && (
                         <button
-                          onClick={() => {
-                            // Dummy recreate action: would normally cycle through another image prompt via API
-                            alert("Fonctionnalité de regénération d'image à implémenter via l'API.");
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            const postKey = `${post.keyword}-${post.date.getFullYear()}-${post.date.getMonth()}-${post.date.getDate()}`;
+                            cycleImage(postKey, post.image);
                           }}
                           className="absolute bottom-3 right-3 bg-black/60 backdrop-blur border border-white/10 hover:bg-white/10 text-white/70 hover:text-white px-3 py-1 text-[10px] uppercase tracking-wider rounded-lg transition-all"
                         >
