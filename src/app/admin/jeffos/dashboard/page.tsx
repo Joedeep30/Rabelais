@@ -663,10 +663,20 @@ export default function AdminDashboard() {
                       }`}>
                         {post.status === 'posted' ? '✓ Publié' : '⏳ Planifié'}
                       </div>
-                      {/* Date badge */}
                       <div className="absolute top-3 right-3 bg-black/60 backdrop-blur-md text-white/70 text-[10px] uppercase tracking-wider px-3 py-1 rounded-full border border-white/10 font-mono">
                         {fmtDate(post.date)}
                       </div>
+                      {post.status === 'scheduled' && (
+                        <button
+                          onClick={() => {
+                            // Dummy recreate action: would normally cycle through another image prompt via API
+                            alert("Fonctionnalité de regénération d'image à implémenter via l'API.");
+                          }}
+                          className="absolute bottom-3 right-3 bg-black/60 backdrop-blur border border-white/10 hover:bg-white/10 text-white/70 hover:text-white px-3 py-1 text-[10px] uppercase tracking-wider rounded-lg transition-all"
+                        >
+                          🔄 Recréer img
+                        </button>
+                      )}
                     </div>
                     <div className="p-5">
                       <div className="flex items-center gap-2 mb-3">
