@@ -7,35 +7,69 @@ import { TARGET_KEYWORDS, GBP_POST_TEMPLATES, COMPETITORS, GEOGRID_DATA } from '
 
 type Tab = 'overview' | 'keywords' | 'geogrid' | 'gbp-poster' | 'reports';
 
-// All available GBP post images — hyper-realistic ophthalmology illustrations
+// All available GBP post images — 22 unique hyper-realistic ophthalmology photos
+// Each filename is SEO-optimized for the keyword it serves
 const IMAGE_POOL = [
-  '/admin/gbp/consultation.png',    // Doctor examining patient at slit lamp
-  '/admin/gbp/oct.png',             // OCT Spectral-Domain device
-  '/admin/gbp/eye.png',             // Macro close-up healthy eye
-  '/admin/gbp/retina_scan.png',     // OCT retina scan on monitor
-  '/admin/gbp/photobiomodulation.png', // Valeda light therapy
-  '/admin/gbp/clinic.png',          // Premium clinic interior
-  '/admin/gbp/doctor.png',          // Retina specialist portrait
-  '/admin/gbp/fundus.png',          // Retinal fundus image
+  '/admin/gbp/ophtalmologue-lyon-consultation.png',
+  '/admin/gbp/ophtalmologiste-lyon-examen.png',
+  '/admin/gbp/rdv-ophtalmologue-lyon.png',
+  '/admin/gbp/urgence-ophtalmologique-lyon.png',
+  '/admin/gbp/traitement-dmla-lyon-oct.png',
+  '/admin/gbp/injection-intravitreenne-lyon.png',
+  '/admin/gbp/retinologue-lyon-angiographie.png',
+  '/admin/gbp/oct-maculaire-lyon-spectral.png',
+  '/admin/gbp/fond-oeil-lyon-retine.png',
+  '/admin/gbp/specialiste-retine-lyon.png',
+  '/admin/gbp/retinopathie-diabetique-lyon.png',
+  '/admin/gbp/centre-retine-lyon-equipement.png',
+  '/admin/gbp/photobiomodulation-lyon-valeda.png',
+  '/admin/gbp/dmla-seche-traitement-lyon.png',
+  '/admin/gbp/ophtalmologue-villeurbanne.png',
+  '/admin/gbp/ophtalmologue-lyon-6-brotteaux.png',
+  '/admin/gbp/ophtalmologue-brotteaux-autorefracteur.png',
+  '/admin/gbp/ophtalmologue-lyon-3-tonometrie.png',
+  '/admin/gbp/ophtalmologue-lyon-7-camera-retine.png',
+  '/admin/gbp/ophtalmologue-bellecour-laser.png',
+  '/admin/gbp/champ-visuel-lyon-perimetrie.png',
+  '/admin/gbp/dmla-lyon-6-amsler.png',
 ];
 
-// GBP Post images mapping — keyword → best matching local image
+// GBP Post images — EACH keyword has its own UNIQUE image (no duplicates)
 const GBP_IMAGES: Record<string, string> = {
-  'photobiomodulation lyon': '/admin/gbp/photobiomodulation.png',
-  'ophtalmologue lyon': '/admin/gbp/consultation.png',
-  'ophtalmologiste lyon': '/admin/gbp/doctor.png',
-  'rdv ophtalmologue lyon': '/admin/gbp/clinic.png',
-  'urgence ophtalmologique lyon': '/admin/gbp/consultation.png',
-  'traitement dmla lyon': '/admin/gbp/retina_scan.png',
-  'injection intravitréenne lyon': '/admin/gbp/oct.png',
-  'rétinologue lyon': '/admin/gbp/doctor.png',
-  'rétinologue villeurbanne': '/admin/gbp/doctor.png',
-  'oct macula lyon': '/admin/gbp/oct.png',
-  'fond oeil lyon': '/admin/gbp/fundus.png',
-  'spécialiste rétine lyon': '/admin/gbp/retina_scan.png',
-  'rétinopathie diabétique lyon': '/admin/gbp/fundus.png',
-  'centre rétine lyon': '/admin/gbp/clinic.png',
-  'dmla sèche traitement': '/admin/gbp/photobiomodulation.png',
+  'ophtalmologue lyon': '/admin/gbp/ophtalmologue-lyon-consultation.png',
+  'ophtalmologiste lyon': '/admin/gbp/ophtalmologiste-lyon-examen.png',
+  'rdv ophtalmologue lyon': '/admin/gbp/rdv-ophtalmologue-lyon.png',
+  'urgence ophtalmologique lyon': '/admin/gbp/urgence-ophtalmologique-lyon.png',
+  'traitement dmla lyon': '/admin/gbp/traitement-dmla-lyon-oct.png',
+  'injection intravitréenne lyon': '/admin/gbp/injection-intravitreenne-lyon.png',
+  'rétinologue lyon': '/admin/gbp/retinologue-lyon-angiographie.png',
+  'oct macula lyon': '/admin/gbp/oct-maculaire-lyon-spectral.png',
+  'fond oeil lyon': '/admin/gbp/fond-oeil-lyon-retine.png',
+  'spécialiste rétine lyon': '/admin/gbp/specialiste-retine-lyon.png',
+  'rétinopathie diabétique lyon': '/admin/gbp/retinopathie-diabetique-lyon.png',
+  'centre rétine lyon': '/admin/gbp/centre-retine-lyon-equipement.png',
+  'photobiomodulation lyon': '/admin/gbp/photobiomodulation-lyon-valeda.png',
+  'dmla sèche traitement': '/admin/gbp/dmla-seche-traitement-lyon.png',
+  'ophtalmologue villeurbanne': '/admin/gbp/ophtalmologue-villeurbanne.png',
+  'ophtalmologue lyon 6': '/admin/gbp/ophtalmologue-lyon-6-brotteaux.png',
+  'ophtalmologue brotteaux': '/admin/gbp/ophtalmologue-brotteaux-autorefracteur.png',
+  'ophtalmologue lyon 3': '/admin/gbp/ophtalmologue-lyon-3-tonometrie.png',
+  'ophtalmologue lyon 7': '/admin/gbp/ophtalmologue-lyon-7-camera-retine.png',
+  'ophtalmologue bellecour': '/admin/gbp/ophtalmologue-bellecour-laser.png',
+  'champ visuel lyon': '/admin/gbp/champ-visuel-lyon-perimetrie.png',
+  'dmla lyon 6': '/admin/gbp/dmla-lyon-6-amsler.png',
+  // Geo keywords use round-robin from pool (each scheduled post gets next unique image)
+  'ophtalmologue lyon 2': '/admin/gbp/rdv-ophtalmologue-lyon.png',
+  'ophtalmologue lyon 5': '/admin/gbp/specialiste-retine-lyon.png',
+  'ophtalmologue lyon 8': '/admin/gbp/ophtalmologue-lyon-7-camera-retine.png',
+  'ophtalmologue lyon 9': '/admin/gbp/oct-maculaire-lyon-spectral.png',
+  'ophtalmologue caluire': '/admin/gbp/ophtalmologue-lyon-consultation.png',
+  'ophtalmologue oullins': '/admin/gbp/ophtalmologiste-lyon-examen.png',
+  'ophtalmologue bron': '/admin/gbp/ophtalmologue-lyon-3-tonometrie.png',
+  'ophtalmologue part-dieu': '/admin/gbp/ophtalmologue-brotteaux-autorefracteur.png',
+  'ophtalmologue vénissieux': '/admin/gbp/urgence-ophtalmologique-lyon.png',
+  'rétinologue villeurbanne': '/admin/gbp/retinologue-lyon-angiographie.png',
+  'dmla villeurbanne': '/admin/gbp/dmla-seche-traitement-lyon.png',
 };
 
 /* ─── Lyon Leaflet GeoGrid (dynamic import to avoid SSR issues) ─── */
@@ -497,21 +531,42 @@ export default function AdminDashboard() {
 
           // Generate future planned posts: Mon/Wed/Fri starting March 30
           let templateIdx = 0;
+          let imagePoolIdx = 0; // Round-robin counter for IMAGE_POOL
+          const usedImages = new Set<string>(scheduledPosts.map(p => p.image)); // Track used images
           const cursor = new Date(2026, 2, 30); // Mon March 30
           const endDate = new Date(2026, 4, 2); // May 2
           while (cursor <= endDate) {
             if (postDays.includes(cursor.getDay())) {
               const tpl = allTemplates[templateIdx % allTemplates.length];
               const dateKeyKey = `${cursor.getFullYear()}-${cursor.getMonth()}-${cursor.getDate()}`;
-              const baseImg = GBP_IMAGES[tpl.keyword] || '/admin/gbp/consultation.png';
               const postKey = `${tpl.keyword}-${dateKeyKey}`;
+              // Pick a unique image: prefer keyword-specific, fall back to next from pool
+              let chosenImage = GBP_IMAGES[tpl.keyword] || IMAGE_POOL[imagePoolIdx % IMAGE_POOL.length];
+              if (usedImages.has(chosenImage)) {
+                // Find next unused image from pool
+                for (let attempt = 0; attempt < IMAGE_POOL.length; attempt++) {
+                  const candidate = IMAGE_POOL[(imagePoolIdx + attempt) % IMAGE_POOL.length];
+                  if (!usedImages.has(candidate)) {
+                    chosenImage = candidate;
+                    imagePoolIdx = (imagePoolIdx + attempt + 1);
+                    break;
+                  }
+                }
+                // If all used (pool exhausted after 22+ posts), reset and cycle
+                if (usedImages.has(chosenImage) && usedImages.size >= IMAGE_POOL.length) {
+                  usedImages.clear();
+                  chosenImage = IMAGE_POOL[imagePoolIdx % IMAGE_POOL.length];
+                  imagePoolIdx++;
+                }
+              }
+              usedImages.add(chosenImage);
               scheduledPosts.push({
                 date: new Date(cursor),
                 keyword: tpl.keyword,
                 text: editedPosts[`${tpl.keyword}-${dateKeyKey}`] || tpl.textTemplate,
                 cta: tpl.callToAction,
                 status: 'scheduled',
-                image: imageOverrides[postKey] || baseImg,
+                image: imageOverrides[postKey] || chosenImage,
               });
               templateIdx++;
             }
