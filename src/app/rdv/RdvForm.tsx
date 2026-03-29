@@ -35,11 +35,10 @@ export default function RdvForm() {
     const payload = {
       access_key: '27fa05a8-0839-4cc1-a62c-d20c45745a67',
       subject: 'Formulaire de demande de RDV',
-      from_name: 'admin@centrerabelaislyon.fr',
+      from_name: 'Centre Ophtalmologique Rabelais',
       replyto: formData.get('Email') as string,
-      // TO = contact@centrerabelaislyon.fr (set in Web3Forms dashboard Recipient Emails)
-      // BCC both jeffos101 and ophrabelais
-      bccemail: 'jeffos101@gmail.com, ophrabelais@hotmail.fr',
+      // Recipient = set in Web3Forms dashboard → Settings → Recipient Emails
+      // Currently: jeffos101@gmail.com (testing) → later change to ophrabelais@hotmail.fr
       botcheck: '',
       // Field labels matching original email format exactly
       'Civilité': formData.get('Civilite') as string,
