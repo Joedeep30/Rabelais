@@ -9,38 +9,21 @@ type Tab = 'overview' | 'keywords' | 'geogrid' | 'gbp-poster' | 'reports';
 
 // GBP Post images mapping — fallback images by keyword category
 const GBP_IMAGES: Record<string, string> = {
-  'photobiomodulation lyon': '/admin/gbp/photobiomodulation.png',
-  'ophtalmologue lyon': '/admin/gbp/ophtalmologue.png',
-  'ophtalmologiste lyon': '/admin/gbp/ophtalmologue.png',
-  'rdv ophtalmologue lyon': '/admin/gbp/ophtalmologue.png',
-  'urgence ophtalmologique lyon': '/admin/gbp/ophtalmologue.png',
-  'traitement dmla lyon': '/admin/gbp/dmla.png',
-  'injection intravitréenne lyon': '/admin/gbp/injection.png',
-  'rétinologue lyon': '/admin/gbp/retinologue.png',
-  'rétinologue villeurbanne': '/admin/gbp/retinologue.png',
-  'oct macula lyon': '/admin/gbp/oct.png',
-  'fond oeil lyon': '/admin/gbp/oct.png',
-  'spécialiste rétine lyon': '/admin/gbp/retinologue.png',
-  'rétinopathie diabétique lyon': '/admin/gbp/dmla.png',
-  'centre rétine lyon': '/admin/gbp/retinologue.png',
-  'ophtalmologue lyon 2': '/admin/gbp/ophtalmologue.png',
-  'ophtalmologue lyon 3': '/admin/gbp/ophtalmologue.png',
-  'ophtalmologue lyon 5': '/admin/gbp/ophtalmologue.png',
-  'ophtalmologue lyon 6': '/admin/gbp/ophtalmologue.png',
-  'ophtalmologue lyon 7': '/admin/gbp/ophtalmologue.png',
-  'ophtalmologue lyon 8': '/admin/gbp/ophtalmologue.png',
-  'ophtalmologue lyon 9': '/admin/gbp/ophtalmologue.png',
-  'ophtalmologue brotteaux': '/admin/gbp/ophtalmologue.png',
-  'ophtalmologue bellecour': '/admin/gbp/ophtalmologue.png',
-  'ophtalmologue villeurbanne': '/admin/gbp/ophtalmologue.png',
-  'ophtalmologue caluire': '/admin/gbp/ophtalmologue.png',
-  'ophtalmologue oullins': '/admin/gbp/ophtalmologue.png',
-  'ophtalmologue bron': '/admin/gbp/ophtalmologue.png',
-  'ophtalmologue part-dieu': '/admin/gbp/ophtalmologue.png',
-  'ophtalmologue vénissieux': '/admin/gbp/ophtalmologue.png',
-  'dmla sèche traitement': '/admin/gbp/dmla.png',
-  'dmla lyon 6': '/admin/gbp/dmla.png',
-  'dmla villeurbanne': '/admin/gbp/dmla.png',
+  'photobiomodulation lyon': 'https://images.unsplash.com/photo-1584036561566-baf8f5f1b144?q=80&w=800', // high tech light
+  'ophtalmologue lyon': 'https://images.unsplash.com/photo-1579684385127-1ef15d508118?q=80&w=800', // doctor consultation
+  'ophtalmologiste lyon': 'https://images.unsplash.com/photo-1579684385127-1ef15d508118?q=80&w=800',
+  'rdv ophtalmologue lyon': 'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?q=80&w=800',
+  'urgence ophtalmologique lyon': 'https://images.unsplash.com/photo-1581093458791-9f3c3900df4b?q=80&w=800', // medical urgency / lab
+  'traitement dmla lyon': 'https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?q=80&w=800', // macro eye/retina
+  'injection intravitréenne lyon': 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=800', // sterile syringe/medical
+  'rétinologue lyon': 'https://images.unsplash.com/photo-1551076805-e1869033e561?q=80&w=800', // medical pro
+  'rétinologue villeurbanne': 'https://images.unsplash.com/photo-1551076805-e1869033e561?q=80&w=800',
+  'oct macula lyon': 'https://images.unsplash.com/photo-1582719508461-905c673771fd?q=80&w=800', // tech scanning
+  'fond oeil lyon': 'https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?q=80&w=800',
+  'spécialiste rétine lyon': 'https://images.unsplash.com/photo-1551076805-e1869033e561?q=80&w=800',
+  'rétinopathie diabétique lyon': 'https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?q=80&w=800',
+  'centre rétine lyon': 'https://images.unsplash.com/photo-1538108149393-fbbd81895907?q=80&w=800',
+  'dmla sèche traitement': 'https://images.unsplash.com/photo-1584036561566-baf8f5f1b144?q=80&w=800',
 };
 
 /* ─── Lyon Leaflet GeoGrid (dynamic import to avoid SSR issues) ─── */
@@ -52,12 +35,23 @@ const LyonGeoGrid = dynamic(() => import('@/components/LyonGeoGrid'), { ssr: fal
 )});
 
 
+interface ScheduledPost {
+  date: Date;
+  keyword: string;
+  text: string;
+  cta: string;
+  status: 'posted' | 'scheduled';
+  image: string;
+}
+
 export default function AdminDashboard() {
   const [activeTab, setActiveTab] = useState<Tab>('overview');
   const [autoMode, setAutoMode] = useState(false);
   const [sendingReport, setSendingReport] = useState(false);
   const [expandedKpi, setExpandedKpi] = useState<string | null>(null);
   const [reportSent, setReportSent] = useState(false);
+  const [selectedPost, setSelectedPost] = useState<ScheduledPost | null>(null);
+  const [editedPosts, setEditedPosts] = useState<Record<string, string>>({});
   const router = useRouter();
 
   const handleLogout = async () => {
@@ -451,21 +445,12 @@ export default function AdminDashboard() {
           const postDays = [1, 2, 3, 4, 5]; // Mon-Fri — AGGRESSIVE 5x/week until all keywords Top 3
           const allTemplates = GBP_POST_TEMPLATES;
 
-          interface ScheduledPost {
-            date: Date;
-            keyword: string;
-            text: string;
-            cta: string;
-            status: 'posted' | 'scheduled';
-            image: string;
-          }
-
           // The 3 real posts from yesterday (March 27)
           const scheduledPosts: ScheduledPost[] = [
             {
               date: new Date(2026, 2, 27),
               keyword: 'photobiomodulation lyon',
-              text: 'Nouveau au Centre Rabelais : la Photobiomodulation (système Valeda) est désormais disponible pour traiter la DMLA sèche. 9 séances indolores de 5 minutes. Prenez RDV pour évaluer votre éligibilité.',
+              text: editedPosts['photobiomodulation lyon-2026-02-27'] || 'Nouveau au Centre Rabelais : la Photobiomodulation (système Valeda) est désormais disponible pour traiter la DMLA sèche. 9 séances indolores de 5 minutes. Prenez RDV pour évaluer votre éligibilité.',
               cta: 'Prendre rendez-vous',
               status: 'posted',
               image: GBP_IMAGES['photobiomodulation lyon'] || '/admin/gbp/photobiomodulation.png',
@@ -495,10 +480,11 @@ export default function AdminDashboard() {
           while (cursor <= endDate) {
             if (postDays.includes(cursor.getDay())) {
               const tpl = allTemplates[templateIdx % allTemplates.length];
+              const dateKeyKey = `${cursor.getFullYear()}-${cursor.getMonth()}-${cursor.getDate()}`;
               scheduledPosts.push({
                 date: new Date(cursor),
                 keyword: tpl.keyword,
-                text: tpl.textTemplate,
+                text: editedPosts[`${tpl.keyword}-${dateKeyKey}`] || tpl.textTemplate,
                 cta: tpl.callToAction,
                 status: 'scheduled',
                 image: GBP_IMAGES[tpl.keyword] || '/admin/gbp/ophtalmologue.png',
@@ -607,7 +593,8 @@ export default function AdminDashboard() {
                         return (
                           <div
                             key={`${cal.label}-${i}`}
-                            className={`relative text-center py-2 rounded-lg text-[11px] transition-all ${
+                            onClick={() => { if(post) setSelectedPost(post); }}
+                            className={`relative text-center py-2 rounded-lg text-[11px] transition-all ${post ? 'cursor-pointer hover:bg-white/10' : ''} ${
                               cell.day === null ? '' :
                               today ? 'bg-[#c2aa84]/20 text-[#c2aa84] font-bold border border-[#c2aa84]/30' :
                               post?.status === 'posted' ? 'bg-green-500/10 text-green-400 font-semibold' :
@@ -699,7 +686,10 @@ export default function AdminDashboard() {
                             </button>
                           )}
                           {post.status === 'scheduled' && (
-                            <button className="bg-white/5 text-white/40 hover:bg-white/10 text-[10px] uppercase tracking-wider font-bold px-4 py-2 rounded-lg transition-all">
+                            <button 
+                              onClick={() => setSelectedPost(post)}
+                              className="bg-white/5 text-white/40 hover:bg-white/10 text-[10px] uppercase tracking-wider font-bold px-4 py-2 rounded-lg transition-all"
+                            >
                               Modifier
                             </button>
                           )}
@@ -1028,6 +1018,66 @@ export default function AdminDashboard() {
           </div>
           );
         })()}
+
+        {/* Modal for viewing/editing post */}
+        {selectedPost && (
+          <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm">
+            <div className="bg-[#0a0f1c] border border-white/10 rounded-2xl p-6 w-full max-w-lg shadow-2xl relative">
+              <button 
+                onClick={() => setSelectedPost(null)}
+                className="absolute top-4 right-4 text-white/40 hover:text-white"
+              >
+                ✕
+              </button>
+              <h2 className="text-[#c2aa84] font-bold uppercase tracking-widest text-xs mb-4">
+                {selectedPost.status === 'posted' ? '👁️ Voir le Post' : '✏️ Modifier le Post'}
+              </h2>
+              <div className="space-y-4">
+                <div>
+                  <label className="text-white/40 text-[10px] uppercase tracking-wider">Mot-clé cible</label>
+                  <p className="text-[#6699ff] bg-[#003399]/20 px-3 py-1 rounded-md mt-1 font-bold inline-block text-[13px]">
+                    {selectedPost.keyword}
+                  </p>
+                </div>
+                <div>
+                  <label className="text-white/40 text-[10px] uppercase tracking-wider">Date</label>
+                  <p className="text-white/80 mt-1 capitalize text-[13px] font-medium">{selectedPost.date.toLocaleDateString('fr-FR', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}</p>
+                </div>
+                <div>
+                  <label className="text-white/40 text-[10px] uppercase tracking-wider flex justify-between">
+                    <span>Texte de la publication</span>
+                    {selectedPost.status === 'scheduled' && <span className="text-green-400">Modifiable</span>}
+                  </label>
+                  {selectedPost.status === 'scheduled' ? (
+                    <textarea 
+                      className="w-full mt-1 bg-white/5 border border-white/10 rounded-xl p-3 text-white text-sm h-32 focus:border-[#6699ff] outline-none transition-colors resize-none"
+                      value={editedPosts[`${selectedPost.keyword}-${selectedPost.date.getFullYear()}-${selectedPost.date.getMonth()}-${selectedPost.date.getDate()}`] ?? selectedPost.text}
+                      onChange={(e) => setEditedPosts(prev => ({ ...prev, [`${selectedPost.keyword}-${selectedPost.date.getFullYear()}-${selectedPost.date.getMonth()}-${selectedPost.date.getDate()}`]: e.target.value }))}
+                    />
+                  ) : (
+                    <div className="w-full mt-1 bg-white/5 border border-white/10 rounded-xl p-3 text-white text-sm">
+                      {selectedPost.text}
+                    </div>
+                  )}
+                </div>
+                <div>
+                  <label className="text-white/40 text-[10px] uppercase tracking-wider mb-2 block">Image Visuelle</label>
+                  <div className="relative h-44 w-full rounded-xl overflow-hidden border border-white/10">
+                    <Image src={selectedPost.image} alt="Visuel post" fill className="object-cover" />
+                  </div>
+                </div>
+                {selectedPost.status === 'scheduled' && (
+                  <button 
+                    onClick={() => setSelectedPost(null)}
+                    className="w-full bg-[#003399] hover:bg-blue-800 text-white font-bold py-3 mt-2 rounded-xl transition-colors text-xs tracking-wider uppercase"
+                  >
+                    Vérifier et Enregistrer
+                  </button>
+                )}
+              </div>
+            </div>
+          </div>
+        )}
       </main>
     </div>
   );
