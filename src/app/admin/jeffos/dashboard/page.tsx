@@ -65,6 +65,8 @@ export default function AdminDashboard() {
   const [selectedPost, setSelectedPost] = useState<ScheduledPost | null>(null);
   const [editedPosts, setEditedPosts] = useState<Record<string, string>>({});
   const [imageOverrides, setImageOverrides] = useState<Record<string, string>>({});
+  const [allPostsForDate, setAllPostsForDate] = useState<ScheduledPost[]>([]);
+  const [modalPostIndex, setModalPostIndex] = useState(0);
   const router = useRouter();
 
   // Cycle through IMAGE_POOL for a given post key
@@ -546,15 +548,17 @@ export default function AdminDashboard() {
           const marchGrid = buildMonthGrid(2026, 2);
           const aprilGrid = buildMonthGrid(2026, 3);
 
-          // Map of date string → post for quick lookup
-          const postsByDate: Record<string, ScheduledPost> = {};
+          // Map of date string → array of posts for quick lookup
+          const postsByDate: Record<string, ScheduledPost[]> = {};
           scheduledPosts.forEach(p => {
-            postsByDate[`${p.date.getFullYear()}-${p.date.getMonth()}-${p.date.getDate()}`] = p;
+            const key = `${p.date.getFullYear()}-${p.date.getMonth()}-${p.date.getDate()}`;
+            if (!postsByDate[key]) postsByDate[key] = [];
+            postsByDate[key].push(p);
           });
 
-          const getPostForDate = (d: Date | null) => {
-            if (!d) return null;
-            return postsByDate[`${d.getFullYear()}-${d.getMonth()}-${d.getDate()}`] || null;
+          const getPostsForDate = (d: Date | null): ScheduledPost[] => {
+            if (!d) return [];
+            return postsByDate[`${d.getFullYear()}-${d.getMonth()}-${d.getDate()}`] || [];
           };
 
           const isToday = (d: Date | null) => {
@@ -610,12 +614,13 @@ export default function AdminDashboard() {
                         <div key={`${cal.label}-hdr-${i}`} className="text-center text-[9px] uppercase tracking-wider text-white/20 py-1 font-bold">{d}</div>
                       ))}
                       {cal.grid.map((cell, i) => {
-                        const post = getPostForDate(cell.date);
+                        const datePosts = getPostsForDate(cell.date);
+                        const post = datePosts.length > 0 ? datePosts[0] : null;
                         const today = isToday(cell.date);
                         return (
                           <div
                             key={`${cal.label}-${i}`}
-                            onClick={() => { if(post) setSelectedPost(post); }}
+                            onClick={() => { if(datePosts.length > 0) { setAllPostsForDate(datePosts); setModalPostIndex(0); setSelectedPost(datePosts[0]); } }}
                             className={`relative text-center py-2 rounded-lg text-[11px] transition-all ${post ? 'cursor-pointer hover:bg-white/10' : ''} ${
                               cell.day === null ? '' :
                               today ? 'bg-[#c2aa84]/20 text-[#c2aa84] font-bold border border-[#c2aa84]/30' :
@@ -1057,14 +1062,42 @@ export default function AdminDashboard() {
           <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm">
             <div className="bg-[#0a0f1c] border border-white/10 rounded-2xl p-6 w-full max-w-lg shadow-2xl relative">
               <button 
-                onClick={() => setSelectedPost(null)}
-                className="absolute top-4 right-4 text-white/40 hover:text-white"
+                onClick={() => { setSelectedPost(null); setAllPostsForDate([]); setModalPostIndex(0); }}
+                className="absolute top-4 right-4 text-white/40 hover:text-white text-lg"
               >
                 ✕
               </button>
-              <h2 className="text-[#c2aa84] font-bold uppercase tracking-widest text-xs mb-4">
-                {selectedPost.status === 'posted' ? '👁️ Voir le Post' : '✏️ Modifier le Post'}
-              </h2>
+
+              {/* Title + post counter */}
+              <div className="flex items-center gap-3 mb-4">
+                <h2 className="text-[#c2aa84] font-bold uppercase tracking-widest text-xs">
+                  {selectedPost.status === 'posted' ? '👁️ Voir le Post' : '✏️ Modifier le Post'}
+                </h2>
+                {allPostsForDate.length > 1 && (
+                  <span className="text-white/30 text-[10px] bg-white/5 px-2 py-0.5 rounded-full">
+                    {modalPostIndex + 1} / {allPostsForDate.length}
+                  </span>
+                )}
+              </div>
+
+              {/* Navigation arrows for multiple posts on same date */}
+              {allPostsForDate.length > 1 && (
+                <>
+                  <button
+                    onClick={() => { const prev = (modalPostIndex - 1 + allPostsForDate.length) % allPostsForDate.length; setModalPostIndex(prev); setSelectedPost(allPostsForDate[prev]); }}
+                    className="absolute left-2 top-1/2 -translate-y-1/2 bg-white/10 hover:bg-white/20 text-white w-8 h-8 rounded-full flex items-center justify-center transition-all text-sm"
+                  >
+                    ←
+                  </button>
+                  <button
+                    onClick={() => { const next = (modalPostIndex + 1) % allPostsForDate.length; setModalPostIndex(next); setSelectedPost(allPostsForDate[next]); }}
+                    className="absolute right-2 top-1/2 -translate-y-1/2 bg-white/10 hover:bg-white/20 text-white w-8 h-8 rounded-full flex items-center justify-center transition-all text-sm"
+                  >
+                    →
+                  </button>
+                </>
+              )}
+
               <div className="space-y-4">
                 <div>
                   <label className="text-white/40 text-[10px] uppercase tracking-wider">Mot-clé cible</label>
@@ -1097,11 +1130,27 @@ export default function AdminDashboard() {
                   <label className="text-white/40 text-[10px] uppercase tracking-wider mb-2 block">Image Visuelle</label>
                   <div className="relative h-44 w-full rounded-xl overflow-hidden border border-white/10">
                     <Image src={selectedPost.image} alt="Visuel post" fill className="object-cover" />
+                    <button
+                      onClick={() => {
+                        const postKey = `${selectedPost.keyword}-${selectedPost.date.getFullYear()}-${selectedPost.date.getMonth()}-${selectedPost.date.getDate()}`;
+                        cycleImage(postKey, selectedPost.image);
+                        const nextIdx = (IMAGE_POOL.indexOf(selectedPost.image) + 1) % IMAGE_POOL.length;
+                        setSelectedPost({ ...selectedPost, image: IMAGE_POOL[nextIdx] });
+                        if (allPostsForDate.length > 0) {
+                          const updated = [...allPostsForDate];
+                          updated[modalPostIndex] = { ...updated[modalPostIndex], image: IMAGE_POOL[nextIdx] };
+                          setAllPostsForDate(updated);
+                        }
+                      }}
+                      className="absolute bottom-2 right-2 bg-black/60 backdrop-blur border border-white/10 hover:bg-white/10 text-white/70 hover:text-white px-3 py-1 text-[10px] uppercase tracking-wider rounded-lg transition-all"
+                    >
+                      🔄 Recréer
+                    </button>
                   </div>
                 </div>
                 {selectedPost.status === 'scheduled' && (
                   <button 
-                    onClick={() => setSelectedPost(null)}
+                    onClick={() => { setSelectedPost(null); setAllPostsForDate([]); setModalPostIndex(0); }}
                     className="w-full bg-[#003399] hover:bg-blue-800 text-white font-bold py-3 mt-2 rounded-xl transition-colors text-xs tracking-wider uppercase"
                   >
                     Vérifier et Enregistrer
