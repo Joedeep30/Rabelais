@@ -64,7 +64,7 @@ export default function RootLayout({
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": ["MedicalClinic", "Organization", "MedicalBusiness"],
+        "@type": ["LocalBusiness", "MedicalClinic", "MedicalBusiness", "Organization"],
         "@id": "https://centrerabelaislyon.fr/#clinic",
         "name": "Centre Ophtalmologique Rabelais",
         "alternateName": ["Centre Rabelais", "Centre Rétine Lyon Rabelais", "Ophtalmologue Rabelais Lyon"],
@@ -104,8 +104,14 @@ export default function RootLayout({
           {
             "@type": "OpeningHoursSpecification",
             "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-            "opens": "08:30",
-            "closes": "18:00"
+            "opens": "08:15",
+            "closes": "12:30"
+          },
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+            "opens": "13:45",
+            "closes": "17:30"
           }
         ],
         "aggregateRating": {
@@ -123,11 +129,22 @@ export default function RootLayout({
           "Diabetic Retinopathy",
           "Intravitreal Injections"
         ],
-        "areaServed": {
-          "@type": "City",
-          "name": "Lyon",
-          "sameAs": "https://www.wikidata.org/wiki/Q456"
-        },
+        "areaServed": [
+          { "@type": "City", "name": "Lyon", "sameAs": "https://www.wikidata.org/wiki/Q456" },
+          { "@type": "City", "name": "Villeurbanne" },
+          { "@type": "City", "name": "Caluire-et-Cuire" },
+          { "@type": "City", "name": "Bron" },
+          { "@type": "City", "name": "Vénissieux" },
+          { "@type": "City", "name": "Oullins" },
+          { "@type": "City", "name": "Vaulx-en-Velin" },
+          { "@type": "City", "name": "Saint-Priest" },
+          { "@type": "City", "name": "Écully" },
+          { "@type": "City", "name": "Tassin-la-Demi-Lune" },
+          { "@type": "City", "name": "Sainte-Foy-lès-Lyon" },
+          { "@type": "City", "name": "Rillieux-la-Pape" },
+          { "@type": "City", "name": "Meyzieu" },
+          { "@type": "City", "name": "Décines-Charpieu" }
+        ],
         "employee": [
           {
             "@type": "Person",

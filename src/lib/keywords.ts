@@ -712,6 +712,10 @@ export interface GbpPostTemplate {
   textTemplate: string;
   imagePrompt: string;
   callToAction: string;
+  links?: {
+    website: string;
+    googleMaps: string;
+  };
 }
 
 export const GBP_POST_TEMPLATES: GbpPostTemplate[] = [

@@ -13,21 +13,32 @@ export async function GET(request: NextRequest) {
     const templateIndex = dayOfYear % GBP_POST_TEMPLATES.length;
     const template = GBP_POST_TEMPLATES[templateIndex];
 
+    // Build enriched post text with links (per video strategy)
+    const GOOGLE_MAPS_URL = 'https://g.co/kgs/Centre-Ophtalmologique-Rabelais';
+    const websiteLink = template.links?.website || template.targetPage;
+    const mapsLink = template.links?.googleMaps || GOOGLE_MAPS_URL;
+    
+    // Get next template for cross-post link (video strategy: link to another GBP post page)
+    const nextTemplate = GBP_POST_TEMPLATES[(templateIndex + 1) % GBP_POST_TEMPLATES.length];
+    
+    // Enriched text: original + links at bottom
+    const enrichedText = `${template.textTemplate}\n\n🔗 ${websiteLink}\n📍 ${mapsLink}\n➡️ ${nextTemplate.targetPage}`;
+
     // In production, this would call the Google Business Profile API
-    // For now, log the post that would be published
-    console.log(`[GBP Auto-Post] Publishing: "${template.keyword}" → ${template.targetPage}`);
-    console.log(`[GBP Auto-Post] Text: ${template.textTemplate}`);
-    console.log(`[GBP Auto-Post] Image prompt: ${template.imagePrompt}`);
+    console.log(`[GBP Auto-Post] Publishing: "${template.keyword}" → ${websiteLink}`);
+    console.log(`[GBP Auto-Post] Text: ${enrichedText}`);
 
     // TODO: Integrate Google Business Profile API when credentials are configured
-    // const gbpResponse = await publishToGBP(template);
+    // const gbpResponse = await publishToGBP({ ...template, text: enrichedText });
 
     return NextResponse.json({
       success: true,
       published: {
         keyword: template.keyword,
-        text: template.textTemplate,
-        targetPage: template.targetPage,
+        text: enrichedText,
+        targetPage: websiteLink,
+        googleMapsLink: mapsLink,
+        crossPostLink: nextTemplate.targetPage,
         callToAction: template.callToAction,
         timestamp: new Date().toISOString(),
       },
