@@ -361,33 +361,19 @@ export default function OffreDeSoinsPage() {
         </div>
       </section>
 
-      {/* ======= 6. OCT-ANGIOGRAPHIE + LASER MACULAIRE ======= */}
+      {/* ======= 6. OCT-ANGIOGRAPHIE ======= */}
       <section className="flex flex-col md:flex-row-reverse w-full bg-white">
         <div className="w-full md:w-1/2 flex items-center justify-center p-12 md:p-24 z-10">
           <div className="max-w-[500px] flex flex-col items-start">
             <h2 className="text-[#003399] text-[24px] md:text-[32px] font-light tracking-[2px] mb-[20px] relative">
-              OCT-Angiographie &amp; Laser Maculaire
+              OCT-Angiographie
               <span className="block w-[40px] h-[2px] bg-[#003399] mt-4"></span>
             </h2>
-            <h3 className="text-[#c2aa84] text-[18px] font-bold mb-[10px]">OCT-Angiographie</h3>
-            <p className="text-[#888888] text-[15px] font-light leading-[1.8] mb-[15px]">
+            <p className="text-[#888888] text-[15px] font-light leading-[1.8] mt-[10px] mb-[15px]">
               C&apos;est une nouvelle technique d&apos;imagerie qui permet d&apos;obtenir une projection en face de l&apos;arbre vasculaire par l&apos;analyse du déplacement des globules rouges dans les vaisseaux à partir de la technologie OCT. Le Centre Ophtalmologique Rabelais dispose de cet outil depuis son état prototype et a participé activement au développement de cette nouvelle investigation.
             </p>
-            <h3 className="text-[#c2aa84] text-[18px] font-bold mb-[10px]">Laser Maculaire</h3>
-            <p className="text-[#888888] text-[15px] font-light leading-[1.8] mb-[15px]">
-              Le laser maculaire désigne l&apos;utilisation d&apos;un laser de faible puissance appliqué à la région maculaire pour traiter l&apos;œdème maculaire, stabiliser la vision centrale et limiter l&apos;hyperperméabilité vasculaire.
-            </p>
-            <div className="bg-[#f8f8f8] p-6 border-l-4 border-[#c2aa84] mb-[20px]">
-              <h4 className="font-bold text-[#c2aa84] mb-2">Indications :</h4>
-              <ul className="list-disc list-inside text-[#888888] text-[14px] font-light leading-[1.6] space-y-1">
-                <li>Œdème maculaire diabétique</li>
-                <li>Œdème après occlusion veineuse rétinienne</li>
-                <li>Fuites focales liées à des micro-anévrismes</li>
-                <li>Choroïdopathie séreuse centrale (laser micropulsé)</li>
-              </ul>
-            </div>
             <p className="text-[#888888] text-[15px] font-light leading-[1.8] mb-[20px]">
-              Le laser micropulsé subseuil délivre l&apos;énergie par trains très courts sans brûlure visible, préservant au mieux la macula centrale. Résultats évalués entre 6 et 12 semaines après la séance.
+              <strong className="font-bold">Avantage clé :</strong> l&apos;OCT-Angiographie cartographie la vascularisation rétinienne <strong className="font-bold text-[#003399]">sans injection de colorant</strong>, offrant un suivi régulier non invasif et indolore pour les patients atteints de DMLA, rétinopathie diabétique ou occlusions veineuses.
             </p>
           </div>
         </div>
@@ -411,6 +397,45 @@ export default function OffreDeSoinsPage() {
               className="w-full max-w-[380px] h-auto object-contain rounded"
             />
             <p className="text-[#c2aa84] text-[11px] font-bold tracking-[1.5px] uppercase text-center mt-3">OCT — DMLA humide (néovaisseaux)</p>
+          </div>
+        </div>
+      </section>
+
+      {/* ======= 6b. LASER MACULAIRE ======= */}
+      <section className="flex flex-col md:flex-row w-full bg-[#f8f8f8]">
+        <div className="w-full md:w-1/2 flex items-center justify-center p-12 md:p-24 z-10">
+          <div className="max-w-[500px] flex flex-col items-start">
+            <h2 className="text-[#c2aa84] text-[24px] md:text-[32px] font-light tracking-[2px] mb-[20px] relative">
+              Laser Maculaire
+              <span className="block w-[40px] h-[2px] bg-[#c2aa84] mt-4"></span>
+            </h2>
+            <p className="text-[#888888] text-[15px] font-light leading-[1.8] mt-[10px] mb-[15px]">
+              Le laser maculaire désigne l&apos;utilisation d&apos;un laser de faible puissance appliqué à la région maculaire pour traiter l&apos;œdème maculaire, stabiliser la vision centrale et limiter l&apos;hyperperméabilité vasculaire.
+            </p>
+            <div className="bg-white p-6 border-l-4 border-[#003399] mb-[20px]">
+              <h4 className="font-bold text-[#003399] mb-2">Indications :</h4>
+              <ul className="list-disc list-inside text-[#888888] text-[14px] font-light leading-[1.6] space-y-1">
+                <li>Œdème maculaire diabétique</li>
+                <li>Œdème après occlusion veineuse rétinienne</li>
+                <li>Fuites focales liées à des micro-anévrismes</li>
+                <li>Choroïdopathie séreuse centrale (laser micropulsé)</li>
+              </ul>
+            </div>
+            <p className="text-[#888888] text-[15px] font-light leading-[1.8] mb-[20px]">
+              Le laser micropulsé subseuil délivre l&apos;énergie par trains très courts sans brûlure visible, préservant au mieux la macula centrale. Résultats évalués entre 6 et 12 semaines après la séance.
+            </p>
+          </div>
+        </div>
+        <div className="relative w-full md:w-1/2 min-h-[400px] overflow-hidden flex items-center justify-center p-10" style={{background: 'linear-gradient(135deg, #0a1628 0%, #112240 50%, #0d1b30 100%)'}}>
+          <div className="bg-white/5 backdrop-blur-sm rounded-lg p-6 border border-white/10 shadow-xl">
+            <img 
+              src="https://centrerabelaislyon.fr/wp-content/uploads/2015/10/7.jpg"
+              alt="Laser maculaire micropulsé — traitement de l'œdème maculaire au Centre Ophtalmologique Rabelais"
+              title="Laser maculaire — Centre Rabelais Lyon"
+              loading="lazy"
+              className="w-full max-w-[380px] h-auto object-contain rounded"
+            />
+            <p className="text-[#c2aa84] text-[11px] font-bold tracking-[1.5px] uppercase text-center mt-3">Laser maculaire micropulsé</p>
           </div>
         </div>
       </section>
