@@ -1,4 +1,4 @@
-﻿import Link from 'next/link';
+import Link from 'next/link';
 import { FaLinkedinIn } from 'react-icons/fa';
 
 export default function Footer() {
@@ -71,7 +71,7 @@ export default function Footer() {
         {/* Right Banner */}
         <div className="bg-[#a68d71] flex-1 py-8 px-6 md:px-12 flex items-center justify-center md:justify-start">
           <p className="text-white text-[13px] md:text-[15px] font-normal leading-relaxed text-center md:text-left">
-            La directrice de la publication est le Dr<br/>Maddalena Quaranta
+            La directrice de la publication est le Dr Maddalena Quaranta
           </p>
         </div>
       </div>
