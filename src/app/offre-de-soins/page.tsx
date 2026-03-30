@@ -604,16 +604,26 @@ export default function OffreDeSoinsPage() {
             </p>
           </div>
         </div>
-        <div className="relative w-full md:w-1/2 min-h-[400px] overflow-hidden flex items-center justify-center p-10" style={{background: 'linear-gradient(135deg, #0a1628 0%, #112240 50%, #0d1b30 100%)'}}>
-          <div className="bg-white/5 backdrop-blur-sm rounded-lg p-6 border border-white/10 shadow-xl">
+        <div className="relative w-full md:w-1/2 min-h-[400px] overflow-hidden flex flex-col items-center justify-center gap-6 p-10" style={{background: 'linear-gradient(135deg, #0a1628 0%, #112240 50%, #0d1b30 100%)'}}>
+          <div className="bg-white/5 backdrop-blur-sm rounded-lg p-4 border border-white/10 shadow-xl">
             <img 
-              src="https://centrerabelaislyon.fr/wp-content/uploads/2017/06/Sans-titre-1024x1024.png"
-              alt="Dispositif Eyelight pour le traitement de la sécheresse oculaire par photobiomodulation LED"
-              title="Dispositif Eyelight - Traitement sécheresse"
+              src="/images/pathologies/glande-lacrymale-300x300_27.webp"
+              alt="Anatomie de la glande lacrymale et du système lacrymal de l'œil"
+              title="Glande lacrymale — Système lacrymal"
+              loading="lazy"
+              className="w-full max-w-[280px] h-auto object-contain rounded"
+            />
+            <p className="text-[#c2aa84] text-[11px] font-bold tracking-[1.5px] uppercase text-center mt-3">Glande lacrymale — Film lacrymal</p>
+          </div>
+          <div className="bg-white/5 backdrop-blur-sm rounded-lg p-4 border border-white/10 shadow-xl">
+            <img 
+              src="/images/eyelight-machine.webp"
+              alt="Dispositif Eyelight au Centre Ophtalmologique Rabelais Lyon — traitement sécheresse oculaire par photobiomodulation LED"
+              title="Dispositif Eyelight — Centre Rabelais Lyon"
               loading="lazy"
               className="w-full max-w-[380px] h-auto object-contain rounded"
             />
-            <p className="text-[#c2aa84] text-[11px] font-bold tracking-[1.5px] uppercase text-center mt-3">Dispositif Eyelight</p>
+            <p className="text-[#c2aa84] text-[11px] font-bold tracking-[1.5px] uppercase text-center mt-3">Dispositif Eyelight — Centre Rabelais</p>
           </div>
         </div>
       </section>
