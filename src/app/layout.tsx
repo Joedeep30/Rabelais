@@ -1,4 +1,4 @@
-﻿import { Metadata } from "next";
+import { Metadata } from "next";
 import SiteChrome from "@/components/layout/SiteChrome";
 import "./globals.css";
 
@@ -104,14 +104,8 @@ export default function RootLayout({
           {
             "@type": "OpeningHoursSpecification",
             "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-            "opens": "08:15",
-            "closes": "12:30"
-          },
-          {
-            "@type": "OpeningHoursSpecification",
-            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-            "opens": "13:45",
-            "closes": "17:30"
+            "opens": "09:00",
+            "closes": "17:00"
           }
         ],
         "aggregateRating": {

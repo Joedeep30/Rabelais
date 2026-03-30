@@ -1,4 +1,4 @@
-import { Metadata } from 'next';
+﻿import { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Mentions Légales & Confidentialité | Centre Ophtalmologique Rabelais Lyon',
@@ -128,7 +128,7 @@ export default function MentionsLegalesPage() {
                 Heures d'ouverture
               </h4>
               <p className="text-[#888888] text-[14px] font-light leading-[1.8]">
-                Le secrétariat est ouvert du lundi au vendredi de 8h15 à 12h30 et de 13h45 à 17h30.
+                Le secrétariat est ouvert du lundi au vendredi de 9h00 à 17h.
               </p>
             </div>
             

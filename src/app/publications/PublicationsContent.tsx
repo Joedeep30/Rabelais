@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 import { useState } from 'react';
 import PublicationImage from '@/components/PublicationImage';
 type AuthorDetails = {
@@ -28,11 +28,7 @@ const defaultAuthor: AuthorDetails = {
   imageUrl: "/images/team/maddalena-quaranta-thumb.jpg",
   linkedinUrl: "https://fr.linkedin.com/pub/maddalena-quaranta-el-maftouhi/58/586/604"
 };
-const authorAdil: AuthorDetails = {
-  name: "DR ADIL EL MAFTOUHI",
-  role: "Consultant Scientifique / Expert en Imagerie",
-  description: "Centre Ophtalmologique Rabelais"
-};
+
 const publications: Publication[] = [
   // ===== 2021 =====
   {
@@ -57,29 +53,9 @@ const publications: Publication[] = [
     imageUrl: "/thumbs/The-long-term-effects-of-anti-vascular-endothelial-growth-factor-therapy-on-the-optical-coherence-tomography-angiographic-appearance-of-neovascularization-in-age-related-macular-degeneration-pdf-1024x1024.jpg",
     authorDetails: defaultAuthor
   },
-  {
-    title: "Place de l'OCT dans le bilan de chirurgie réfractive 🇫🇷",
-    description: "OCT dans le bilan de chirurgie réfractive",
-    authors: "Dr Adil El Maftouhi",
-    journal: "Réalités Ophtalmologiques",
-    date: "Janvier 2020",
-    year: 2020,
-    pdfUrl: "/pdfs/oct-chirurgie-refractive-2020.pdf",
-    imageUrl: "/images/publications/chirurgie-refractive-flat.png",
-    authorDetails: authorAdil
-  },
+
   // ===== 2019 =====
-  {
-    title: "Le rapport de la société Française d'ophtalmologie sur le thème de l'imagerie par OCT 🇫🇷",
-    authors: "Dr Adil El Maftouhi",
-    journal: "Rapport SFO",
-    date: "2019",
-    year: 2019,
-    imageUrl: "/images/publications/book-rapport-sfo-2019.jpg",
-    type: "book",
-    externalLink: "https://scholar.google.com/scholar?q=Le%20rapport%20de%20la%20soci%C3%A9t%C3%A9%20Fran%C3%A7aise%20d'ophtalmologie%20sur%20le%20th%C3%A8me%20de%20l'imagerie%20par%20OCT",
-    authorDetails: authorAdil
-  },
+
   {
     title: "Dégénérescence kystique de la couche nucléaire interne chez les patients glaucomateux 🇫🇷",
     authors: "Dr Maddalena Quaranta",
@@ -90,16 +66,7 @@ const publications: Publication[] = [
     imageUrl: "/images/publications/thumb_degenerescence-kystique-glaucome-2019.png",
     authorDetails: defaultAuthor
   },
-  {
-    title: "Intérêt de l'OCT dans la quantification de la sécheresse oculaire 🇫🇷",
-    authors: "Dr Adil El Maftouhi",
-    journal: "Les Cahiers d'Ophtalmologie",
-    date: "Février 2019",
-    year: 2019,
-    pdfUrl: "/pdfs/oct-secheresse-oculaire-2019.pdf",
-    imageUrl: "/images/publications/art-secheresse-2019.jpg",
-    authorDetails: authorAdil
-  },
+
   // ===== 2017 =====
   {
     title: "Dual Antagonism of PDGF and VEGF in Neovascular Age-Related Macular Degeneration",

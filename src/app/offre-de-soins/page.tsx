@@ -159,13 +159,13 @@ export default function OffreDeSoinsPage() {
         <div className="relative w-full md:w-1/2 min-h-[400px] overflow-hidden flex items-center justify-center p-10" style={{background: 'linear-gradient(135deg, #0a1628 0%, #112240 50%, #0d1b30 100%)'}}>
           <div className="bg-white/5 backdrop-blur-sm rounded-lg p-6 border border-white/10 shadow-xl">
             <img 
-              src="https://centrerabelaislyon.fr/wp-content/uploads/2017/06/c044114a-6cb7-42c0-9a37-b37841d4e8c4-300x300.jpg"
-              alt="Système Valeda Air Light Delivery pour Photobiomodulation Au Centre Ophtalmologique Rabelais"
-              title="Dispositif Valeda - Photobiomodulation"
+              src="/images/valeda-air-light-delivery-system.png"
+              alt="Système VALEDA Air Light Delivery pour Photobiomodulation — traitement DMLA sèche au Centre Ophtalmologique Rabelais Lyon"
+              title="Dispositif Valeda Air Light Delivery System - Photobiomodulation"
               loading="lazy"
               className="w-full max-w-[400px] h-auto object-contain rounded"
             />
-            <p className="text-[#c2aa84] text-[11px] font-bold tracking-[1.5px] uppercase text-center mt-3">Dr. Quaranta — Système Valeda</p>
+            <p className="text-[#c2aa84] text-[11px] font-bold tracking-[1.5px] uppercase text-center mt-3">Système Valeda — Photobiomodulation</p>
           </div>
         </div>
       </section>
