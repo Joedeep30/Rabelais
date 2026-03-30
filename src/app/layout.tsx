@@ -1,4 +1,4 @@
-﻿import { Metadata } from "next";
+import { Metadata } from "next";
 import SiteChrome from "@/components/layout/SiteChrome";
 import "./globals.css";
 
@@ -170,6 +170,7 @@ export default function RootLayout({
         "sameAs": [
           "https://www.linkedin.com/in/maddalena-quaranta-60458658/",
           "https://www.linkedin.com/company/centre-ophtalmologique-rabelais",
+          "https://www.youtube.com/@CentreOphtalmoRabelais",
           "https://www.google.com/maps/place/Centre+Ophtalmologique+Rabelais",
           "https://www.doctolib.fr/ophtalmologue/lyon/maddalena-quaranta-el-maftouhi",
           "https://www.pagesjaunes.fr/pros/55769640"
