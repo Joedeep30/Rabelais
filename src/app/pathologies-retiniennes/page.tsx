@@ -525,20 +525,6 @@ export default function PathologiesOculairesPage() {
 <p><iframe src="https://www.youtube.com/embed/7n8YU1SfRUA" width="560" height="315" frameborder="0" allowfullscreen="allowfullscreen"></iframe></p>
 <ul>
 <li>
-<p><strong><u>•Traitement de soin des paupière par Blephex :</u></strong></p>
-<p><strong> </strong></p>
-<ul>
-<li><strong>•BlephEx</strong><strong><sup>®</sup></strong>est une <strong>procédure indolore de soins des paupières d’une grande précision</strong> réalisée en <strong>cabinet</strong>. Une <strong>nouvelle pièce à main associée </strong>une <strong>micro-éponge rotative</strong> de <strong>qualité médicale est appliquée</strong> le long du <strong>bord</strong> des <strong>paupières </strong>et des <strong>cils</strong>, de façon à <strong>enlever</strong> le <strong>biofilm</strong>, les <strong>débris</strong> et <strong>exfolier</strong> les <strong>paupières</strong> principales causes de l’inflammation oculaire dans la blépharite.
-<p>La <strong>micro-éponge</strong> brevetée est <strong>jetable</strong> pour un <strong>nettoyage</strong> et une <strong>exfoliation optimale</strong>.. Les <strong>yeux</strong> sont ensuite <strong>bien nettoyés</strong>. La <strong>procédure</strong> dure environ <strong>6-8 minutes</strong>. La plupart des patients rapportent simplement une <strong>sensation</strong> de <strong>chatouillement</strong>. Une <strong>goutte anesthésiante</strong> est <strong>généralement placée</strong> dans chaque œil avant le traitement pour un <strong>confort accru</strong>. </p>
-</li>
-</ul>
-<p>&nbsp;</p>
-<ul>
-<li><strong>•</strong>Après la procédure, le patient reçoit des <strong>instructions </strong>sur la façon de <strong>maintenir</strong> ses <strong>paupières propres</strong> avec une <strong>hygiène régulière</strong>. Comme les traitements que les <strong>patients effectuent eux-mêmes</strong> ne sont pas toujours optimales et régulier, la <strong>procédure</strong> est généralement <strong>répétée</strong> tous les <strong>4 à 6 mois</strong>.</li>
-</ul>
-</li>
-</ul>
-<p><img class="size-medium wp-image-1623 aligncenter" src="/images/pathologies/Image-Blephex-BlephEx-01-300x300_30.webp" alt="" width="300" height="300" /></p>
 <p><strong>•</strong><strong><em><u>LE TRAITEMENT de la sècheresse par lumière pulsée EYELIGHT:</u></em></strong></p>
 <p><strong>•</strong>Le traitement est articulé en 2 temps avec dans une premier temps l'application de lumière pulsée <strong>OPE</strong> qui dure environ 5 minutes puis dans un second temps l'application d'un masque dit <strong>LIGHT MODULATION </strong>qui dure environ 15 minutes </p>
 <p><strong>•OPE</strong>®: Il s’agit d’une lumière polychromatique, qui sous l’effet d’impulsions thermiques, stimule les glandes de Meibomius afin qu’elles puissent reprendre une activité normale. Appliquée sur les zones péri-orbitales et les pommettes, elle stimule la contraction des glandes afin d’améliorer la couche lipidique des larmes et ainsi réduire l’évaporation du film lacrymal.</p>

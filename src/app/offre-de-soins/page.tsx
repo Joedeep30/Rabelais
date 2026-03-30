@@ -435,7 +435,7 @@ export default function OffreDeSoinsPage() {
               loading="lazy"
               className="w-full max-w-[380px] h-auto object-contain rounded"
             />
-            <p className="text-[#c2aa84] text-[11px] font-bold tracking-[1.5px] uppercase text-center mt-3">Laser maculaire</p>
+            <p className="text-[#c2aa84] text-[11px] font-bold tracking-[1.5px] uppercase text-center mt-3">Appareil YAG</p>
           </div>
         </div>
       </section>
@@ -471,13 +471,13 @@ export default function OffreDeSoinsPage() {
         <div className="relative w-full md:w-1/2 min-h-[400px] overflow-hidden flex items-center justify-center p-10" style={{background: 'linear-gradient(135deg, #0a1628 0%, #112240 50%, #0d1b30 100%)'}}>
           <div className="bg-white/5 backdrop-blur-sm rounded-lg p-6 border border-white/10 shadow-xl">
             <img 
-              src="https://centrerabelaislyon.fr/wp-content/uploads/2017/06/dech-optos-300x300.png"
-              alt="Déchirure rétinienne en fer à cheval avec barrage laser PPR"
-              title="Barrage laser PPR sur déchirure rétinienne"
+              src="/images/yag-laser-device.webp"
+              alt="Appareil laser YAG utilisé pour le traitement rétinien PPR au Centre Ophtalmologique Rabelais Lyon"
+              title="Appareil YAG — Laser rétinien périphérique"
               loading="lazy"
-              className="w-full max-w-[300px] h-auto object-contain rounded"
+              className="w-full max-w-[380px] h-auto object-contain rounded"
             />
-            <p className="text-[#c2aa84] text-[11px] font-bold tracking-[1.5px] uppercase text-center mt-3">Déchirure avec barrage laser</p>
+            <p className="text-[#c2aa84] text-[11px] font-bold tracking-[1.5px] uppercase text-center mt-3">Appareil YAG</p>
           </div>
         </div>
       </section>
@@ -514,13 +514,13 @@ export default function OffreDeSoinsPage() {
         <div className="relative w-full md:w-1/2 min-h-[400px] overflow-hidden flex items-center justify-center p-10" style={{background: 'linear-gradient(135deg, #0a1628 0%, #112240 50%, #0d1b30 100%)'}}>
           <div className="bg-white/5 backdrop-blur-sm rounded-lg p-6 border border-white/10 shadow-xl">
             <img 
-              src="https://centrerabelaislyon.fr/wp-content/uploads/2015/11/313.png"
-              alt="Mesure de l'épaisseur des fibres optiques par OCT pour diagnostic glaucome"
-              title="OCT nerf optique - Diagnostic glaucome"
+              src="/images/yag-laser-device.webp"
+              alt="Appareil laser YAG utilisé pour le traitement SLT du glaucome au Centre Ophtalmologique Rabelais Lyon"
+              title="Appareil YAG — SLT Glaucome"
               loading="lazy"
               className="w-full max-w-[380px] h-auto object-contain rounded"
             />
-            <p className="text-[#c2aa84] text-[11px] font-bold tracking-[1.5px] uppercase text-center mt-3">Fibres optiques — Diagnostic glaucome</p>
+            <p className="text-[#c2aa84] text-[11px] font-bold tracking-[1.5px] uppercase text-center mt-3">Appareil YAG</p>
           </div>
         </div>
       </section>
@@ -556,13 +556,13 @@ export default function OffreDeSoinsPage() {
         <div className="relative w-full md:w-1/2 min-h-[400px] overflow-hidden flex items-center justify-center p-10" style={{background: 'linear-gradient(135deg, #0a1628 0%, #112240 50%, #0d1b30 100%)'}}>
           <div className="bg-white/5 backdrop-blur-sm rounded-lg p-6 border border-white/10 shadow-xl">
             <img 
-              src="https://centrerabelaislyon.fr/wp-content/uploads/2015/11/Untitled.png"
-              alt="Segment antérieur de l'œil - Iridotomie périphérique au laser"
-              title="Iridotomie périphérique au laser"
+              src="/images/yag-laser-device.webp"
+              alt="Appareil laser Nd:YAG utilisé pour l'iridotomie périphérique au Centre Ophtalmologique Rabelais Lyon"
+              title="Appareil YAG — Iridotomie périphérique"
               loading="lazy"
               className="w-full max-w-[380px] h-auto object-contain rounded"
             />
-            <p className="text-[#c2aa84] text-[11px] font-bold tracking-[1.5px] uppercase text-center mt-3">Iridotomie périphérique</p>
+            <p className="text-[#c2aa84] text-[11px] font-bold tracking-[1.5px] uppercase text-center mt-3">Appareil YAG</p>
           </div>
         </div>
       </section>
@@ -592,13 +592,13 @@ export default function OffreDeSoinsPage() {
         <div className="relative w-full md:w-1/2 min-h-[400px] overflow-hidden flex items-center justify-center p-10" style={{background: 'linear-gradient(135deg, #0a1628 0%, #112240 50%, #0d1b30 100%)'}}>
           <div className="bg-white/5 backdrop-blur-sm rounded-lg p-6 border border-white/10 shadow-xl">
             <img 
-              src="https://centrerabelaislyon.fr/wp-content/uploads/2015/11/oct-position-patient.jpg"
-              alt="Patient installé dans la mentonnière lors d'un examen ophtalmologique laser"
-              title="Position patient - Examen laser YAG"
+              src="/images/yag-laser-device.webp"
+              alt="Appareil laser YAG utilisé pour la capsulotomie au Centre Ophtalmologique Rabelais Lyon"
+              title="Appareil YAG — Capsulotomie"
               loading="lazy"
               className="w-full max-w-[380px] h-auto object-contain rounded"
             />
-            <p className="text-[#c2aa84] text-[11px] font-bold tracking-[1.5px] uppercase text-center mt-3">Position patient — Examen laser</p>
+            <p className="text-[#c2aa84] text-[11px] font-bold tracking-[1.5px] uppercase text-center mt-3">Appareil YAG</p>
           </div>
         </div>
       </section>
