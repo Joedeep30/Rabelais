@@ -159,7 +159,7 @@ export default function OffreDeSoinsPage() {
         <div className="relative w-full md:w-1/2 min-h-[400px] overflow-hidden flex items-center justify-center p-10" style={{background: 'linear-gradient(135deg, #0a1628 0%, #112240 50%, #0d1b30 100%)'}}>
           <div className="bg-white/5 backdrop-blur-sm rounded-lg p-6 border border-white/10 shadow-xl">
             <img 
-              src="/images/valeda-air-light-delivery-system.png"
+              src="/images/valeda-air-light-delivery-system.jpg"
               alt="Système VALEDA Air Light Delivery pour Photobiomodulation — traitement DMLA sèche au Centre Ophtalmologique Rabelais Lyon"
               title="Dispositif Valeda Air Light Delivery System - Photobiomodulation"
               loading="lazy"
