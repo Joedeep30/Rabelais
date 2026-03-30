@@ -1,4 +1,4 @@
-import Link from 'next/link';
+﻿import Link from 'next/link';
 import { FaLinkedinIn } from 'react-icons/fa';
 
 export default function Footer() {
@@ -55,7 +55,7 @@ export default function Footer() {
             <a href="https://www.linkedin.com/in/maddalena-quaranta-60458658/" target="_blank" rel="noopener noreferrer" className="w-[45px] h-[45px] rounded-full border border-[#a68d71] flex items-center justify-center text-[#a68d71] hover:bg-[#a68d71] hover:text-white transition-all text-[18px]" aria-label="LinkedIn">
               <FaLinkedinIn />
             </a>
-            <a href="https://www.youtube.com/@CentreOphtalmoRabelais" target="_blank" rel="noopener noreferrer" className="w-[45px] h-[45px] rounded-full border border-[#a68d71] flex items-center justify-center text-[#a68d71] hover:bg-[#a68d71] hover:text-white transition-all" aria-label="YouTube">
+            <a href="https://www.youtube.com/@CentreRabelaisLyon" target="_blank" rel="noopener noreferrer" className="w-[45px] h-[45px] rounded-full border border-[#a68d71] flex items-center justify-center text-[#a68d71] hover:bg-[#a68d71] hover:text-white transition-all" aria-label="YouTube">
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
             </a>
           </div>
