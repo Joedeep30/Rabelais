@@ -1,10 +1,10 @@
-import Link from 'next/link';
+﻿import Link from 'next/link';
 
 export default function Home() {
   const personJsonLd = {
     "@context": "https://schema.org",
     "@type": "Person",
-    "name": "Dr Maddalena Quaranta-El Maftouhi",
+    "name": "Dr Maddalena Quaranta",
     "jobTitle": "Ophtalmologiste — Rétinologue",
     "description": "Rétinologue spécialisée en DMLA, imagerie rétinienne (OCT, OCT-Angiographie) et photobiomodulation. Directrice du Centre Ophtalmologique Rabelais à Lyon.",
     "url": "https://centrerabelaislyon.fr/equipe-medicale",
@@ -34,7 +34,7 @@ export default function Home() {
         "name": "Qu'est-ce que le Centre Ophtalmologique Rabelais à Lyon ?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Le Centre Ophtalmologique Rabelais est un cabinet médical privé situé à Lyon 2ème (2, rue Antoine de Saint-Exupéry, métro Bellecour), spécialisé en rétine médicale et en imagerie ophtalmologique. Dirigé par le Dr Maddalena Quaranta-El Maftouhi, rétinologue, le centre dispose d'un plateau technique complet comprenant OCT Spectral-Domain, OCT-Angiographie, rétinographe grand champ Optos 200°, angiographe numérisé et salle blanche dédiée aux injections intravitréennes. Il prend en charge la DMLA, la rétinopathie diabétique, les occlusions veineuses rétiniennes et le glaucome."
+          "text": "Le Centre Ophtalmologique Rabelais est un cabinet médical privé situé à Lyon 2ème (2, rue Antoine de Saint-Exupéry, métro Bellecour), spécialisé en rétine médicale et en imagerie ophtalmologique. Dirigé par le Dr Maddalena Quaranta, rétinologue, le centre dispose d'un plateau technique complet comprenant OCT Spectral-Domain, OCT-Angiographie, rétinographe grand champ Optos 200°, angiographe numérisé et salle blanche dédiée aux injections intravitréennes. Il prend en charge la DMLA, la rétinopathie diabétique, les occlusions veineuses rétiniennes et le glaucome."
         }
       },
       {
@@ -63,10 +63,10 @@ export default function Home() {
       },
       {
         "@type": "Question",
-        "name": "Qui est le Dr Quaranta-El Maftouhi ?",
+        "name": "Qui est le Dr QUARANTA ?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Le Dr Maddalena Quaranta-El Maftouhi est ophtalmologiste rétinologue, directrice du Centre Ophtalmologique Rabelais à Lyon. Elle est membre de l'American Academy of Ophthalmology (AAO), de l'Association for Research in Vision and Ophthalmology (ARVO), de la Société Française d'Ophtalmologie, et du comité scientifique de l'association DMLA. Elle est auteure de plus de 30 publications scientifiques dans des revues internationales à comité de lecture, et consultante experte pour différents laboratoires pharmacologiques. Elle parle français, anglais et italien."
+          "text": "Le Dr Maddalena Quaranta est ophtalmologiste rétinologue, directrice du Centre Ophtalmologique Rabelais à Lyon. Elle est membre de l'American Academy of Ophthalmology (AAO), de l'Association for Research in Vision and Ophthalmology (ARVO), de la Société Française d'Ophtalmologie, et du comité scientifique de l'association DMLA. Elle est auteure de plus de 30 publications scientifiques dans des revues internationales à comité de lecture, et consultante experte pour différents laboratoires pharmacologiques. Elle parle français, anglais et italien."
         }
       }
     ]
@@ -157,7 +157,7 @@ export default function Home() {
               <div className="h-[1px] w-full bg-[#c2aa84]/60"></div>
             </div>
             <p className="text-[#888888] text-[16px] font-[Gotham] font-light leading-[1.8] max-w-3xl mx-auto">
-              Le Centre Ophtalmologique Rabelais est un pôle hyper-spécialisé en rétine médicale situé à Lyon 2ème (métro Bellecour). Dirigé par le <strong className="font-bold text-slate-700">Dr Maddalena Quaranta-El Maftouhi</strong>, rétinologue et auteure de plus de 30 publications scientifiques internationales, le centre regroupe un plateau technique complet — <Link prefetch={true} href="/oct-macula-lyon" className="text-[#003399] hover:underline">OCT Spectral-Domain</Link>, <Link prefetch={true} href="/offre-de-soins" className="text-[#003399] hover:underline">OCT-Angiographie</Link>, rétinographe grand champ Optos 200°, salle blanche d&apos;injections — pour le diagnostic et le traitement de la <Link prefetch={true} href="/dmla-lyon" className="text-[#003399] hover:underline">DMLA</Link>, de la rétinopathie diabétique, des occlusions veineuses rétiniennes et du glaucome.
+              Le Centre Ophtalmologique Rabelais est un pôle hyper-spécialisé en rétine médicale situé à Lyon 2ème (métro Bellecour). Dirigé par le <strong className="font-bold text-slate-700">Dr Maddalena Quaranta</strong>, rétinologue et auteure de plus de 30 publications scientifiques internationales, le centre regroupe un plateau technique complet — <Link prefetch={true} href="/oct-macula-lyon" className="text-[#003399] hover:underline">OCT Spectral-Domain</Link>, <Link prefetch={true} href="/offre-de-soins" className="text-[#003399] hover:underline">OCT-Angiographie</Link>, rétinographe grand champ Optos 200°, salle blanche d&apos;injections — pour le diagnostic et le traitement de la <Link prefetch={true} href="/dmla-lyon" className="text-[#003399] hover:underline">DMLA</Link>, de la rétinopathie diabétique, des occlusions veineuses rétiniennes et du glaucome.
             </p>
           </div>
 
@@ -240,7 +240,7 @@ export default function Home() {
 
               <details className="group bg-[#f8f8f8] border border-gray-200">
                 <summary className="flex items-center justify-between cursor-pointer p-5 text-[14px] font-bold text-slate-800 hover:text-[#003399] transition-colors">
-                  <span>Qui est le Dr Quaranta-El Maftouhi ?</span>
+                  <span>Qui est le Dr QUARANTA ?</span>
                   <span className="text-[#c2aa84] text-[18px] group-open:rotate-45 transition-transform">+</span>
                 </summary>
                 <div className="px-5 pb-5 text-[13px] text-[#888888] font-light leading-[1.8] border-t border-gray-200 pt-3">

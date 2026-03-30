@@ -1,4 +1,4 @@
-import { Metadata } from 'next';
+﻿import { Metadata } from 'next';
 import Link from 'next/link';
 import YoutubeVideo from '@/components/ui/YoutubeVideo';
 export const metadata: Metadata = {
@@ -52,7 +52,7 @@ export default function PhotobiomodulationLyonPage() {
             "name": "Où faire de la photobiomodulation à Lyon pour la DMLA ?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Le Centre Ophtalmologique Rabelais (2, Rue Antoine de Saint-Exupéry, Lyon 2ème) est le centre de référence pour la photobiomodulation en région lyonnaise. Dirigé par le Dr Quaranta-El Maftouhi, rétinologue spécialisée, le centre dispose du système VALEDA® de LumiThera, le seul dispositif médical cliniquement validé dédié à la PBM ophtalmologique. Le centre est accessible par métro (station Bellecour)."
+              "text": "Le Centre Ophtalmologique Rabelais (2, Rue Antoine de Saint-Exupéry, Lyon 2ème) est le centre de référence pour la photobiomodulation en région lyonnaise. Dirigé par le Dr QUARANTA, rétinologue spécialisée, le centre dispose du système VALEDA® de LumiThera, le seul dispositif médical cliniquement validé dédié à la PBM ophtalmologique. Le centre est accessible par métro (station Bellecour)."
             }
           },
           {

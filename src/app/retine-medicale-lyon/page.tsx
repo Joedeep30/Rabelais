@@ -1,4 +1,4 @@
-import { Metadata } from 'next';
+﻿import { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
@@ -36,7 +36,7 @@ export default function RetineMedicaleLyonPage() {
             "name": "Quelle est la différence entre un ophtalmologue et un rétinologue ?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "L'ophtalmologue généraliste prend en charge l'ensemble des pathologies oculaires (réfraction, cataracte, glaucome, pédiatrie). Le rétinologue est un ophtalmologue hyper-spécialisé exclusivement dans les maladies de la rétine et de la macula. Il possède une expertise avancée en imagerie rétinienne (OCT, OCT-Angiographie, angiographie à la fluorescéine) et en traitements spécialisés (injections intravitréennes, laser, photobiomodulation). Au Centre Ophtalmologique Rabelais, le Dr Quaranta-El Maftouhi est rétinologue exclusif."
+              "text": "L'ophtalmologue généraliste prend en charge l'ensemble des pathologies oculaires (réfraction, cataracte, glaucome, pédiatrie). Le rétinologue est un ophtalmologue hyper-spécialisé exclusivement dans les maladies de la rétine et de la macula. Il possède une expertise avancée en imagerie rétinienne (OCT, OCT-Angiographie, angiographie à la fluorescéine) et en traitements spécialisés (injections intravitréennes, laser, photobiomodulation). Au Centre Ophtalmologique Rabelais, le Dr QUARANTA est rétinologue exclusif."
             }
           },
           {

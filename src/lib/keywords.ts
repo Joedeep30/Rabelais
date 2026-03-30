@@ -1,4 +1,4 @@
-// Core keyword tracking data for SEO/GEO reporting
+﻿// Core keyword tracking data for SEO/GEO reporting
 // ACCURATE data based on real Google SERP/GMAP rankings (March 2026)
 
 export interface KeywordData {
@@ -779,7 +779,7 @@ export const GBP_POST_TEMPLATES: GbpPostTemplate[] = [
   {
     keyword: 'rétinologue lyon',
     targetPage: 'https://centrerabelaislyon.fr/retinologue-lyon-6',
-    textTemplate: '🏥 Dr Quaranta-El Maftouhi, rétinologue exclusif au Centre Rabelais Lyon. Spécialiste de la rétine médicale : DMLA, rétinopathie diabétique, occlusions veineuses, membranes épirétiniennes. Diagnostic + traitement le même jour.',
+    textTemplate: '🏥 Dr QUARANTA, rétinologue exclusif au Centre Rabelais Lyon. Spécialiste de la rétine médicale : DMLA, rétinopathie diabétique, occlusions veineuses, membranes épirétiniennes. Diagnostic + traitement le même jour.',
     imagePrompt: 'Professional retina specialist doctor examining eye with advanced OCT imaging device, premium ophthalmology clinic, warm lighting, photorealistic, no text',
     callToAction: 'Prendre rendez-vous',
   },
@@ -957,7 +957,7 @@ export const GBP_POST_TEMPLATES: GbpPostTemplate[] = [
   {
     keyword: 'rétinologue villeurbanne',
     targetPage: 'https://centrerabelaislyon.fr/retinologue-lyon-6',
-    textTemplate: '📍 Villeurbanne : votre rétinologue exclusif est au Centre Rabelais (Place Bellecour, 10 min en métro A). Dr Quaranta-El Maftouhi, spécialiste de la rétine médicale depuis 20 ans.',
+    textTemplate: '📍 Villeurbanne : votre rétinologue exclusif est au Centre Rabelais (Place Bellecour, 10 min en métro A). Dr QUARANTA, spécialiste de la rétine médicale depuis 20 ans.',
     imagePrompt: 'Professional retina specialist in premium clinic with OCT device, Villeurbanne to Lyon direction, photorealistic, no text',
     callToAction: 'Prendre rendez-vous',
   },

@@ -47,7 +47,7 @@ export default function MentionsLegalesPage() {
               <p>
                 Le propriétaire et éditeur du présent site internet est la Société d’exercice libéral CENTRE OPHTALMOLOGIQUE RABELAIS, société d’exercice libéral par actions simplifiées au capital de 764 000€, inscrite au Registre du Commerce et des Sociétés de Lyon sous le numéro 424 444 552 , dont le siège social est situé au 2, Rue Antoine de Saint-Exupéry, 69002 Lyon. Numéro d’inscription au tableau du CDOM : 69/ 12919.
                 <br /><br />
-                La directrice de la publication est le Docteur Maddalena Quaranta-El-Maftouhi.
+                La directrice de la publication est le Docteur Maddalena Quaranta.
               </p>
 
               <div className="h-[1px] w-full bg-gray-100 my-10"></div>
@@ -94,7 +94,7 @@ export default function MentionsLegalesPage() {
                 Le site centrerabelaislyon.fr utilise des formulaires et des cookies. Les informations recueillies comme les données personnelles sont collectées afin d’échanger avec les utilisateurs du site. Elles ne sont pas revendues à des tiers. Elles peuvent être transmises à des fins techniques et médicales et utilisées pour des campagnes de mailings de suivi Qualité. La transmission des données est sécurisée par protocole HTTPS.
               </p>
               <p>
-                L’intégralité des données est stockée sur des serveurs sécurisés (non externalisés) et sauvegardée durant 3 ans. La déléguée à la protection des données est le Dr Maddalena Quaranta-El-Maftouhi, Centre Ophtalmologique Rabelais.
+                L’intégralité des données est stockée sur des serveurs sécurisés (non externalisés) et sauvegardée durant 3 ans. La déléguée à la protection des données est le Dr Maddalena Quaranta, Centre Ophtalmologique Rabelais.
               </p>
 
               <div className="h-[1px] w-full bg-gray-100 my-10"></div>

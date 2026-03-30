@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 import { useState } from 'react';
 import PublicationImage from '@/components/PublicationImage';
 type AuthorDetails = {
@@ -37,7 +37,7 @@ const publications: Publication[] = [
   // ===== 2021 =====
   {
     title: "Cystic maculopathy in the internal nuclear layer in glaucoma patients 🇫🇷",
-    authors: "Dr Maddalena Quaranta-El Maftouhi",
+    authors: "Dr Maddalena Quaranta",
     journal: "Graefe's Archive for Clinical and Experimental Ophthalmology",
     date: "Juin 2021",
     year: 2021,
@@ -49,7 +49,7 @@ const publications: Publication[] = [
   {
     title: "The long-term effects of anti-vascular endothelial growth factor therapy on the optical coherence tomography angiographic appearance of neovascularization in age-related macular degeneration",
     description: "Notre équipe a collaboré avec d'autres équipes américaines pour cette publication dans le journal International Journal of Retina and Vitreous sur le comportement des néovaisseaux observé en OCT-Angiographie durant le traitement par injections intravitréennes.",
-    authors: "Dr Maddalena Quaranta-El Maftouhi",
+    authors: "Dr Maddalena Quaranta",
     journal: "International Journal of Retina and Vitreous",
     date: "Août 2020",
     year: 2020,
@@ -82,7 +82,7 @@ const publications: Publication[] = [
   },
   {
     title: "Dégénérescence kystique de la couche nucléaire interne chez les patients glaucomateux 🇫🇷",
-    authors: "Dr Maddalena Quaranta-El Maftouhi",
+    authors: "Dr Maddalena Quaranta",
     journal: "Réalités Ophtalmologiques",
     date: "Mai 2019",
     year: 2019,
@@ -103,7 +103,7 @@ const publications: Publication[] = [
   // ===== 2017 =====
   {
     title: "Dual Antagonism of PDGF and VEGF in Neovascular Age-Related Macular Degeneration",
-    authors: "Dr Maddalena Quaranta-El Maftouhi",
+    authors: "Dr Maddalena Quaranta",
     journal: "Ophthalmology",
     date: "2017",
     year: 2017,
@@ -114,7 +114,7 @@ const publications: Publication[] = [
   },
   {
     title: "Angio-OCT In Everyday Ophthalmic Practice",
-    authors: "Dr Maddalena Quaranta-El Maftouhi, Dr Adil El Maftouhi",
+    authors: "Dr Maddalena Quaranta, Dr Adil El Maftouhi",
     journal: "Jaypee Brothers Medical Publishers",
     date: "Juillet 2017",
     year: 2017,
@@ -126,7 +126,7 @@ const publications: Publication[] = [
   {
     title: "Optimiser son acquisition en OCT-angiographie 🇫🇷",
     description: "L'OCT-A (OCT-angiographie) représente une évolution de l'OCT dit «en face» constitué de nombreux B-scans avec des temps d'acquisition plus longs que le simple B-scan et donc plus propices aux artéfacts liés aux mouvements du patient, aux microsaccades de fixation ou...",
-    authors: "Dr Maddalena Quaranta-El Maftouhi",
+    authors: "Dr Maddalena Quaranta",
     journal: "Les Cahiers d'Ophtalmologie",
     date: "Février 2017",
     year: 2017,
@@ -137,7 +137,7 @@ const publications: Publication[] = [
   // ===== 2016 =====
   {
     title: "Comparison between OCT-A and fluorescein angiography for the imaging of Type 1 Neovascularization",
-    authors: "Dr Maddalena Quaranta-El Maftouhi",
+    authors: "Dr Maddalena Quaranta",
     journal: "Investigative Ophthalmology & Visual Science",
     date: "Mai 2016",
     year: 2016,
@@ -147,7 +147,7 @@ const publications: Publication[] = [
   },
   {
     title: "Practical Handbook of OCT Angiography",
-    authors: "Dr Maddalena Quaranta-El Maftouhi, Dr Adil El Maftouhi",
+    authors: "Dr Maddalena Quaranta, Dr Adil El Maftouhi",
     journal: "Jaypee Brothers Medical Publishers",
     date: "2016",
     year: 2016,
@@ -158,7 +158,7 @@ const publications: Publication[] = [
   },
   {
     title: "Global Trends in Retina Survey",
-    authors: "Dr Maddalena Quaranta-El Maftouhi",
+    authors: "Dr Maddalena Quaranta",
     journal: "Retina Times",
     date: "2016",
     year: 2016,
@@ -168,7 +168,7 @@ const publications: Publication[] = [
   },
   {
     title: "L'imagerie multimodale dans la DMLA : ne pas se limiter à l'OCT 🇫🇷",
-    authors: "Dr Maddalena Quaranta-El Maftouhi",
+    authors: "Dr Maddalena Quaranta",
     journal: "Réalités Ophtalmologiques",
     date: "Janvier 2016",
     year: 2016,
@@ -180,7 +180,7 @@ const publications: Publication[] = [
   // ===== 2015 =====
   {
     title: "Manuale pratico di Angiografia OCT - Angiografia OCT non invasiva, senza coloranti",
-    authors: "Dr Maddalena Quaranta-El Maftouhi, Dr Adil El Maftouhi",
+    authors: "Dr Maddalena Quaranta, Dr Adil El Maftouhi",
     journal: "FGE Editore",
     date: "2015",
     year: 2015,
@@ -191,7 +191,7 @@ const publications: Publication[] = [
   },
   {
     title: "L'angio-OCT en pratique 🇫🇷",
-    authors: "Dr Maddalena Quaranta-El Maftouhi, Dr Adil El Maftouhi",
+    authors: "Dr Maddalena Quaranta, Dr Adil El Maftouhi",
     journal: "Novartis Pharmaceuticals",
     date: "2015",
     year: 2015,
@@ -202,7 +202,7 @@ const publications: Publication[] = [
   },
   {
     title: "ANGIO-OCT : Premier retour d'expérience 🇫🇷",
-    authors: "Dr Maddalena Quaranta-El Maftouhi",
+    authors: "Dr Maddalena Quaranta",
     journal: "Les Cahiers d'Ophtalmologie n°188",
     date: "2015",
     year: 2015,
@@ -213,7 +213,7 @@ const publications: Publication[] = [
   },
   {
     title: "ANGIO-OCT : aspects techniques et appareils disponibles en 2015 🇫🇷",
-    authors: "Dr Maddalena Quaranta-El Maftouhi",
+    authors: "Dr Maddalena Quaranta",
     journal: "Réalités Ophtalmologiques #225",
     date: "2015",
     year: 2015,
@@ -223,7 +223,7 @@ const publications: Publication[] = [
   },
   {
     title: "Chronic Central Serous Chorioretinopathy Imaged by Optical Coherence Tomographic Angiography",
-    authors: "Dr Maddalena Quaranta-El Maftouhi",
+    authors: "Dr Maddalena Quaranta",
     journal: "Am J Ophthalmol",
     date: "2015",
     year: 2015,
@@ -234,7 +234,7 @@ const publications: Publication[] = [
   },
   {
     title: "OCT : Quelles Nouveautés en 2015 🇫🇷",
-    authors: "Dr Maddalena Quaranta-El Maftouhi",
+    authors: "Dr Maddalena Quaranta",
     journal: "Congrès SFO",
     date: "2015",
     year: 2015,
@@ -245,7 +245,7 @@ const publications: Publication[] = [
   // ===== 2014 =====
   {
     title: "Clinical Guide to Angio-OCT: Non Invasive, Dyeless OCT Angiography",
-    authors: "Dr Maddalena Quaranta-El Maftouhi, Dr Adil El Maftouhi",
+    authors: "Dr Maddalena Quaranta, Dr Adil El Maftouhi",
     journal: "JP Medical Ltd",
     date: "2014",
     year: 2014,
@@ -256,7 +256,7 @@ const publications: Publication[] = [
   },
   {
     title: "Imagerie en ophtalmologie 🇫🇷",
-    authors: "Dr Maddalena Quaranta-El Maftouhi",
+    authors: "Dr Maddalena Quaranta",
     journal: "Elsevier",
     date: "2014",
     year: 2014,
@@ -268,7 +268,7 @@ const publications: Publication[] = [
   {
     title: "Switch from aflibercept to ranibizumab: Up to 2 years follow-up post View2 study 🇫🇷",
     description: "Purpose: Outcomes of patients treated solely with aflibercept A2 mg or ranibizumab R0.5 mg, after the end of the VIEW2 study, over a period of up to 2 years.",
-    authors: "Dr Maddalena Quaranta-El Maftouhi",
+    authors: "Dr Maddalena Quaranta",
     journal: "Investigative Ophthalmology & Visual Science",
     date: "2014",
     year: 2014,
@@ -279,7 +279,7 @@ const publications: Publication[] = [
   // ===== 2013 =====
   {
     title: "Inner nuclear layer cystic degeneration, in macular area of glaucomatous patients, on 'en face' and B-scan OCT scanning",
-    authors: "Dr Maddalena Quaranta-El Maftouhi",
+    authors: "Dr Maddalena Quaranta",
     journal: "Clinical En Face OCT Atlas - Jaypee",
     date: "2013",
     year: 2013,
@@ -291,7 +291,7 @@ const publications: Publication[] = [
   {
     title: "Molteno implant and the vicryl tie technique: role of Visante anterior segment OCT 🇫🇷",
     description: "L'implant de Molteno est un dispositif de drainage de l'humeur aqueuse qui n'est pas muni de système régulateur de flux. Pour limiter les risques d'hypotonie oculaire dans les semaines qui suivent la chirurgie, on peut placer une ou deux sutures...",
-    authors: "Dr Maddalena Quaranta-El Maftouhi",
+    authors: "Dr Maddalena Quaranta",
     journal: "J Fr Ophtalmol",
     date: "Mai 2013",
     year: 2013,
@@ -302,7 +302,7 @@ const publications: Publication[] = [
   // ===== 2012 =====
   {
     title: "Co Auteur de l'Encyclopédie RÉTINE 🇫🇷",
-    authors: "Dr Maddalena Quaranta-El Maftouhi",
+    authors: "Dr Maddalena Quaranta",
     journal: "Ed LAVOISIER",
     date: "2012",
     year: 2012,
@@ -314,7 +314,7 @@ const publications: Publication[] = [
   // ===== 2010 =====
   {
     title: "Outer retinal cysts in exudative age-related macular degeneration: a spectral domain OCT study",
-    authors: "Dr Maddalena Quaranta-El Maftouhi",
+    authors: "Dr Maddalena Quaranta",
     journal: "J Fr Ophtalmol",
     date: "2010",
     year: 2010,
@@ -325,7 +325,7 @@ const publications: Publication[] = [
   // ===== 2009 =====
   {
     title: "La Nouvelle Imagerie du Segment Antérieur BSOF 2009 🇫🇷",
-    authors: "Dr Maddalena Quaranta-El Maftouhi",
+    authors: "Dr Maddalena Quaranta",
     journal: "Édition L / Groupe CIEL",
     date: "2009",
     year: 2009,
@@ -336,7 +336,7 @@ const publications: Publication[] = [
   },
   {
     title: "New diagnosis approaches: iridocorneal angle in optical coherence tomography 🇫🇷",
-    authors: "Dr Maddalena Quaranta-El Maftouhi",
+    authors: "Dr Maddalena Quaranta",
     journal: "J Fr Ophtalmol",
     date: "2009",
     year: 2009,
@@ -347,7 +347,7 @@ const publications: Publication[] = [
   // ===== 2008 =====
   {
     title: "Application of anterior segment OCT in glaucoma 🇫🇷",
-    authors: "Dr Maddalena Quaranta-El Maftouhi",
+    authors: "Dr Maddalena Quaranta",
     journal: "J Fr Ophtalmol",
     date: "2008",
     year: 2008,
@@ -359,7 +359,7 @@ const publications: Publication[] = [
   // ===== 2007 =====
   {
     title: "Visante OCT and the Ahmed valve: from the anterior chamber to the posterior chamber 🇫🇷",
-    authors: "Dr Maddalena Quaranta-El Maftouhi",
+    authors: "Dr Maddalena Quaranta",
     journal: "J Fr Ophtalmol",
     date: "2007",
     year: 2007,
@@ -369,7 +369,7 @@ const publications: Publication[] = [
   },
   {
     title: "Tear meniscus in Visante OCT 🇫🇷",
-    authors: "Dr Maddalena Quaranta-El Maftouhi",
+    authors: "Dr Maddalena Quaranta",
     journal: "J Fr Ophtalmol",
     date: "2007",
     year: 2007,
@@ -379,7 +379,7 @@ const publications: Publication[] = [
   },
   {
     title: "Co Auteur du rapport sur la DMLA de la SFO 🇫🇷",
-    authors: "Dr Maddalena Quaranta-El Maftouhi",
+    authors: "Dr Maddalena Quaranta",
     journal: "Elsevier / Masson - Rapport SFO",
     date: "2007",
     year: 2007,
@@ -390,7 +390,7 @@ const publications: Publication[] = [
   },
   {
     title: "Nonpenetrating deep sclerectomy with Aquaflow drain 🇫🇷",
-    authors: "Dr Maddalena Quaranta-El Maftouhi",
+    authors: "Dr Maddalena Quaranta",
     journal: "J Fr Ophtalmol",
     date: "2007",
     year: 2007,
@@ -401,7 +401,7 @@ const publications: Publication[] = [
   // ===== 2006 =====
   {
     title: "Optical coherence tomography in tamoxifen retinopathy",
-    authors: "Dr Maddalena Quaranta-El Maftouhi",
+    authors: "Dr Maddalena Quaranta",
     journal: "Breast Cancer Res Treat",
     date: "2006",
     year: 2006,
@@ -411,7 +411,7 @@ const publications: Publication[] = [
   },
   {
     title: "Anomalous vitreoretinal adhesions in patients with exudative age-related macular degeneration: an OCT study",
-    authors: "Dr Maddalena Quaranta-El Maftouhi",
+    authors: "Dr Maddalena Quaranta",
     journal: "Invest Ophthalmol Vis Sci",
     date: "2006",
     year: 2006,
@@ -421,7 +421,7 @@ const publications: Publication[] = [
   },
   {
     title: "Exudative idiopathic polypoidal choroidal vasculopathy and photodynamic therapy with verteporfin",
-    authors: "Dr Maddalena Quaranta-El Maftouhi",
+    authors: "Dr Maddalena Quaranta",
     journal: "Eur J Ophthalmol",
     date: "2006",
     year: 2006,
@@ -432,7 +432,7 @@ const publications: Publication[] = [
   // ===== 2004 =====
   {
     title: "Failure of photocoagulation therapy for diabetic macular edema 🇫🇷",
-    authors: "Dr Maddalena Quaranta-El Maftouhi",
+    authors: "Dr Maddalena Quaranta",
     journal: "J Fr Ophtalmol",
     date: "2004",
     year: 2004,
@@ -442,7 +442,7 @@ const publications: Publication[] = [
   },
   {
     title: "OCT3 exploration of anterior segment 🇫🇷",
-    authors: "Dr Maddalena Quaranta-El Maftouhi",
+    authors: "Dr Maddalena Quaranta",
     journal: "J Fr Ophtalmol",
     date: "2004",
     year: 2004,
@@ -453,7 +453,7 @@ const publications: Publication[] = [
   // ===== 2002 =====
   {
     title: "Exudative idiopathic polypoidal choroidal vasculopathy and photodynamic therapy with verteporfin",
-    authors: "Dr Maddalena Quaranta-El Maftouhi",
+    authors: "Dr Maddalena Quaranta",
     journal: "Am J Ophthalmol",
     date: "2002",
     year: 2002,
@@ -464,7 +464,7 @@ const publications: Publication[] = [
   // ===== 2000 =====
   {
     title: "Multiple choroidal neovascularizations at the border of a myopic posterior macular staphyloma",
-    authors: "Dr Maddalena Quaranta-El Maftouhi",
+    authors: "Dr Maddalena Quaranta",
     journal: "Graefes Arch Clin Exp Ophthalmol",
     date: "2000",
     year: 2000,
@@ -475,7 +475,7 @@ const publications: Publication[] = [
   // ===== 1998 =====
   {
     title: "Indocyanine green angiography of basal laminar drusen associated with vitelliform macular degeneration",
-    authors: "Dr Maddalena Quaranta-El Maftouhi",
+    authors: "Dr Maddalena Quaranta",
     journal: "J Fr Ophtalmol",
     date: "1998",
     year: 1998,
@@ -486,7 +486,7 @@ const publications: Publication[] = [
   // ===== 1997 =====
   {
     title: "Indocyanine green angiography of drusen",
-    authors: "Dr Maddalena Quaranta-El Maftouhi",
+    authors: "Dr Maddalena Quaranta",
     journal: "Am J Ophthalmol",
     date: "1997",
     year: 1997,
@@ -497,7 +497,7 @@ const publications: Publication[] = [
   // ===== 1996 =====
   {
     title: "Indocyanine green angiographic features of pathologic myopia",
-    authors: "Dr Maddalena Quaranta-El Maftouhi",
+    authors: "Dr Maddalena Quaranta",
     journal: "Am J Ophthalmol",
     date: "1996",
     year: 1996,
@@ -508,7 +508,7 @@ const publications: Publication[] = [
   // ===== 1995 =====
   {
     title: "Indocyanine green videoangiography of angioid streaks",
-    authors: "Dr Maddalena Quaranta-El Maftouhi",
+    authors: "Dr Maddalena Quaranta",
     journal: "British Journal of Ophthalmology",
     date: "1995",
     year: 1995,

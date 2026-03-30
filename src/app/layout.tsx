@@ -1,4 +1,4 @@
-import { Metadata } from "next";
+﻿import { Metadata } from "next";
 import SiteChrome from "@/components/layout/SiteChrome";
 import "./globals.css";
 
@@ -149,7 +149,7 @@ export default function RootLayout({
           {
             "@type": "Person",
             "@id": "https://centrerabelaislyon.fr/#dr-quaranta",
-            "name": "Dr Maddalena Quaranta-El Maftouhi",
+            "name": "Dr Maddalena Quaranta",
             "jobTitle": "Ophtalmologue spécialiste de la rétine médicale",
             "medicalSpecialty": "Retina Specialist",
             "url": "https://centrerabelaislyon.fr/equipe-medicale",

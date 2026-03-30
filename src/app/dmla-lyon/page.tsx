@@ -90,7 +90,7 @@ export default function DmlaLyonPage() {
             "name": "Où consulter un spécialiste DMLA à Lyon ?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Le Centre Ophtalmologique Rabelais (2, Rue Antoine de Saint-Exupéry, Lyon 2ème, métro Bellecour) est un pôle hyper-spécialisé en rétine médicale dédié au diagnostic et au traitement de la DMLA. Dirigé par le Dr Quaranta-El Maftouhi, rétinologue expérimentée, le centre regroupe un plateau technique complet (OCT-Angiographie, laser, salle d'injection stérile, système Valeda) et une équipe d'orthoptistes formés en imagerie rétinienne. Téléphone secrétariat : 04 78 95 09 08."
+              "text": "Le Centre Ophtalmologique Rabelais (2, Rue Antoine de Saint-Exupéry, Lyon 2ème, métro Bellecour) est un pôle hyper-spécialisé en rétine médicale dédié au diagnostic et au traitement de la DMLA. Dirigé par le Dr QUARANTA, rétinologue expérimentée, le centre regroupe un plateau technique complet (OCT-Angiographie, laser, salle d'injection stérile, système Valeda) et une équipe d'orthoptistes formés en imagerie rétinienne. Téléphone secrétariat : 04 78 95 09 08."
             }
           }
         ]
@@ -162,7 +162,7 @@ export default function DmlaLyonPage() {
 
                 <h2 className="text-[#c2aa84] text-[26px] font-bold uppercase tracking-wider mb-6">Prise en charge des deux formes de la Maladie</h2>
                 <p>
-                    L'<Link prefetch={true} href="/equipe-medicale#dr-quaranta" className="text-[#003399] font-bold hover:underline">équipe du Dr Quaranta-El-Maftouhi</Link> structure votre dépistage avec une exploration du fond d'œil couplée systématiquement à un <strong><Link prefetch={true} href="/oct-macula-lyon" className="text-[#c2aa84] hover:underline">OCT Maculaire (Tomographie en Cohérence Optique)</Link></strong>. Ce dispositif met en lumière la typologie exacte de l'atteinte :
+                    L'<Link prefetch={true} href="/equipe-medicale#dr-quaranta" className="text-[#003399] font-bold hover:underline">équipe du Dr Quaranta</Link> structure votre dépistage avec une exploration du fond d'œil couplée systématiquement à un <strong><Link prefetch={true} href="/oct-macula-lyon" className="text-[#c2aa84] hover:underline">OCT Maculaire (Tomographie en Cohérence Optique)</Link></strong>. Ce dispositif met en lumière la typologie exacte de l'atteinte :
                 </p>
 
                 <h3 className="text-slate-800 text-[18px] font-bold uppercase mt-8 mb-3">1. La DMLA Exsudative (Humide)</h3>
