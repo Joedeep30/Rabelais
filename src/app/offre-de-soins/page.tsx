@@ -429,13 +429,13 @@ export default function OffreDeSoinsPage() {
         <div className="relative w-full md:w-1/2 min-h-[400px] overflow-hidden flex items-center justify-center p-10" style={{background: 'linear-gradient(135deg, #0a1628 0%, #112240 50%, #0d1b30 100%)'}}>
           <div className="bg-white/5 backdrop-blur-sm rounded-lg p-6 border border-white/10 shadow-xl">
             <img 
-              src="https://centrerabelaislyon.fr/wp-content/uploads/2015/10/7.jpg"
-              alt="Laser maculaire micropulsé — traitement de l'œdème maculaire au Centre Ophtalmologique Rabelais"
+              src="/images/yag-laser-device.webp"
+              alt="Laser maculaire micropulsé — traitement de l'œdème maculaire au Centre Ophtalmologique Rabelais Lyon"
               title="Laser maculaire — Centre Rabelais Lyon"
               loading="lazy"
               className="w-full max-w-[380px] h-auto object-contain rounded"
             />
-            <p className="text-[#c2aa84] text-[11px] font-bold tracking-[1.5px] uppercase text-center mt-3">Laser maculaire micropulsé</p>
+            <p className="text-[#c2aa84] text-[11px] font-bold tracking-[1.5px] uppercase text-center mt-3">Laser maculaire</p>
           </div>
         </div>
       </section>
