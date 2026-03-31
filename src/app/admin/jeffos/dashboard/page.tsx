@@ -5,7 +5,7 @@ import { useRouter } from 'next/navigation';
 import Image from 'next/image';
 import { TARGET_KEYWORDS, GBP_POST_TEMPLATES, COMPETITORS, GEOGRID_DATA } from '@/lib/keywords';
 
-type Tab = 'overview' | 'keywords' | 'geogrid' | 'gbp-poster' | 'reports';
+type Tab = 'overview' | 'keywords' | 'geogrid' | 'gbp-poster' | 'gap-analysis' | 'reports';
 
 // All available GBP post images — 22 unique hyper-realistic ophthalmology photos
 // Each filename is SEO-optimized for the keyword it serves
@@ -90,6 +90,78 @@ interface ScheduledPost {
   image: string;
 }
 
+// ─── SITE PAGES (Source of Truth for Gap Analysis) ──────────────────────────
+const SITE_PAGES = [
+  { url: '/', label: 'Homepage', services: ['ophtalmologue lyon', 'ophtalmologiste lyon', 'centre ophtalmologique', 'urgence ophtalmologique'] },
+  { url: '/dmla-lyon', label: 'DMLA Lyon', services: ['dmla', 'dégénérescence maculaire', 'dmla humide', 'dmla sèche', 'traitement dmla'] },
+  { url: '/dmla-traitement-villeurbanne', label: 'DMLA Villeurbanne', services: ['dmla villeurbanne'] },
+  { url: '/photobiomodulation-lyon', label: 'Photobiomodulation', services: ['photobiomodulation', 'valeda', 'luminothérapie oculaire', 'système valeda'] },
+  { url: '/injections-intravitreennes-lyon', label: 'Injections IVT', services: ['injection intravitréenne', 'ivt', 'anti-vegf', 'eylea', 'vabysmo', 'ranibizumab'] },
+  { url: '/oct-macula-lyon', label: 'OCT Macula', services: ['oct', 'oct macula', 'fond oeil', 'angiographie rétinienne', 'angiographie fluorescéine', 'rétinographie'] },
+  { url: '/retine-medicale-lyon', label: 'Rétine Médicale', services: ['rétine', 'médecine rétinienne', 'spécialiste rétine', 'centre rétine', 'rétine lyon'] },
+  { url: '/retinologue-lyon-6', label: 'Rétinologue Lyon 6', services: ['rétinologue', 'rétinologue lyon', 'ophtalmologue spécialiste rétine'] },
+  { url: '/pathologies-retiniennes', label: 'Pathologies Rétiniennes', services: ['rétinopathie diabétique', 'décollement rétine', 'membrane épirétinienne', 'trou maculaire', 'glaucome', 'occlusion veineuse', 'œdème maculaire'] },
+  { url: '/plateau-technique', label: 'Plateau Technique', services: ['équipement', 'plateau technique', 'champ visuel', 'tonométrie', 'biomicroscope', 'laser yag', 'laser argon'] },
+  { url: '/offre-de-soins', label: 'Offre de Soins', services: ['offre de soins', 'tarifs', 'secteur 2', 'remboursement', 'mutuelle'] },
+  { url: '/equipe-medicale', label: 'Équipe Médicale', services: ['dr quaranta', 'dr maftouhi', 'équipe médicale', 'médecins'] },
+  { url: '/etudes-cliniques', label: 'Études Cliniques', services: ['études cliniques', 'essais cliniques', 'recherche médicale'] },
+  { url: '/dois-je-consulter', label: 'Dois-je Consulter ?', services: ['symptômes', 'baisse vision', 'urgence oculaire', 'éclairs lumineux', 'voile gris'] },
+  { url: '/ophtalmologue-lyon-6', label: 'Ophtalmologue Lyon 6', services: ['ophtalmologue lyon 6', 'lyon 6', 'brotteaux'] },
+  { url: '/ophtalmologue-lyon-3', label: 'Ophtalmologue Lyon 3', services: ['ophtalmologue lyon 3', 'lyon 3', 'part-dieu'] },
+  { url: '/ophtalmologue-lyon-5', label: 'Ophtalmologue Lyon 5', services: ['ophtalmologue lyon 5', 'lyon 5', 'saint-jean'] },
+  { url: '/ophtalmologue-lyon-7', label: 'Ophtalmologue Lyon 7', services: ['ophtalmologue lyon 7', 'lyon 7', 'jean macé', 'gerland'] },
+  { url: '/ophtalmologue-lyon-8', label: 'Ophtalmologue Lyon 8', services: ['ophtalmologue lyon 8', 'lyon 8', 'monplaisir'] },
+  { url: '/ophtalmologue-lyon-9', label: 'Ophtalmologue Lyon 9', services: ['ophtalmologue lyon 9', 'lyon 9', 'vaise'] },
+  { url: '/ophtalmologue-bron', label: 'Ophtalmologue Bron', services: ['ophtalmologue bron', 'bron'] },
+  { url: '/ophtalmologue-brotteaux', label: 'Ophtalmologue Brotteaux', services: ['ophtalmologue brotteaux', 'brotteaux'] },
+  { url: '/ophtalmologue-caluire-et-cuire', label: 'Ophtalmologue Caluire', services: ['ophtalmologue caluire', 'caluire'] },
+  { url: '/ophtalmologue-oullins', label: 'Ophtalmologue Oullins', services: ['ophtalmologue oullins', 'oullins'] },
+  { url: '/ophtalmologue-part-dieu', label: 'Ophtalmologue Part-Dieu', services: ['ophtalmologue part-dieu', 'part-dieu'] },
+  { url: '/ophtalmologue-retine-lyon-2', label: 'Ophtalmologue Lyon 2', services: ['ophtalmologue lyon 2', 'lyon 2', 'bellecour', 'presqu\'île'] },
+  { url: '/ophtalmologue-venissieux', label: 'Ophtalmologue Vénissieux', services: ['ophtalmologue vénissieux', 'vénissieux'] },
+  { url: '/ophtalmologue-villeurbanne', label: 'Ophtalmologue Villeurbanne', services: ['ophtalmologue villeurbanne', 'villeurbanne'] },
+  { url: '/rdv', label: 'Prise de RDV', services: ['rdv', 'rendez-vous', 'réservation', 'prise en charge'] },
+  { url: '/centre-ophtalmologique-lyon-6', label: 'Centre Ophtalmo Lyon 6', services: ['centre ophtalmologique lyon 6', 'clinique ophtalmologique lyon 6'] },
+];
+
+// Missed coverage — services from GBP that we should have pages for
+const SUGGESTED_MISSING = [
+  { service: 'Corps flottants / Myodésopsies', slug: '/corps-flottants-lyon', volume: 320, reason: 'Plainte commune, grosse recherche, 0 page dédiée' },
+  { service: 'Sécheresse oculaire', slug: '/secheresse-oculaire-lyon', volume: 480, reason: 'Service GBP sans page web = invisibilité Google' },
+  { service: 'Glaucome Lyon', slug: '/glaucome-lyon', volume: 480, reason: 'Pathologie majeure traitée mais pas de page service' },
+  { service: 'Laser YAG Capsulotomie', slug: '/laser-yag-lyon', volume: 260, reason: 'Procédure courante, compétition faible sur ce terme' },
+  { service: 'Cataracte Lyon (orientation)', slug: '/cataracte-lyon', volume: 1600, reason: 'Volume énorme — même une page d\'orientation génère du trafic' },
+  { service: 'Chirurgie réfractive / Lasik (orientation)', slug: '/chirurgie-refractive-lyon', volume: 720, reason: 'Page d\'orientation vers partenaires = backlink + trafic' },
+  { service: 'Basse vision', slug: '/basse-vision-lyon', volume: 140, reason: 'Niche peu couverte, forte autorité e-patients' },
+  { service: 'Strabisme adulte', slug: '/strabisme-lyon', volume: 210, reason: 'Service GBP présent, aucune page dédiée' },
+  { service: 'Rétinopathie des prématurés', slug: '/retinopathie-prematures-lyon', volume: 90, reason: 'Ultra-spécifique = Top 1 facile, backlink CHU' },
+  { service: 'Uvéite / Inflammation oculaire', slug: '/uveite-lyon', volume: 170, reason: 'Service GBP présent, aucune page dédiée' },
+];
+
+// Topical relevance — PAA-style questions not yet covered
+const TOPICAL_IDEAS = [
+  { topic: 'Comment se déroule une injection intravitréenne ?', type: 'faq', priority: 'high', targetPage: '/injections-intravitreennes-lyon' },
+  { topic: 'Quand faut-il consulter en urgence pour la rétine ?', type: 'faq', priority: 'high', targetPage: '/dois-je-consulter' },
+  { topic: 'DMLA sèche vs humide : quelle différence ?', type: 'article', priority: 'high', targetPage: '/dmla-lyon' },
+  { topic: 'OCT sans dilatation : comment ça marche ?', type: 'faq', priority: 'medium', targetPage: '/oct-macula-lyon' },
+  { topic: 'Photobiomodulation : combien de séances Valeda ?', type: 'faq', priority: 'high', targetPage: '/photobiomodulation-lyon' },
+  { topic: 'Remboursement injections anti-VEGF Sécurité Sociale', type: 'faq', priority: 'medium', targetPage: '/injections-intravitreennes-lyon' },
+  { topic: 'Différence rétinologue et ophtalmologue généraliste', type: 'article', priority: 'medium', targetPage: '/retinologue-lyon-6' },
+  { topic: 'Corps flottants : quand faut-il s\'inquiéter ?', type: 'article', priority: 'high', targetPage: '/' },
+  { topic: 'Bilan ophtalmologique complet : que comprend-il ?', type: 'faq', priority: 'medium', targetPage: '/plateau-technique' },
+  { topic: 'Délai pour obtenir un RDV urgence rétine à Lyon', type: 'faq', priority: 'high', targetPage: '/rdv' },
+];
+
+// Geo opportunities — areas where we rank 4-8 on Maps
+const GEO_OPPORTUNITIES = [
+  { area: 'Villeurbanne Centre', distance: '3.2km NE', mapRank: 4, landmark: 'Palais du Travail, Tonkin', keyword: 'ophtalmologue villeurbanne', volume: 1900 },
+  { area: 'Lyon 8 — Monplaisir', distance: '3.8km SE', mapRank: 5, landmark: 'Parilly, Grange Blanche', keyword: 'ophtalmologue lyon 8', volume: 590 },
+  { area: 'Caluire-et-Cuire', distance: '4.1km N', mapRank: null, landmark: 'Cuire, Val de Saône', keyword: 'ophtalmologue caluire', volume: 320 },
+  { area: 'Bron — Lyon Est', distance: '6km E', mapRank: null, landmark: 'Eurexpo, CHU Hôpital Est', keyword: 'ophtalmologue bron', volume: 390 },
+  { area: 'Lyon 9 — Vaise', distance: '4.5km NW', mapRank: null, landmark: 'Gorge-de-Loup, Champvert', keyword: 'ophtalmologue lyon 9', volume: 390 },
+  { area: 'Oullins — Sud Lyon', distance: '5km S', mapRank: null, landmark: 'Clinique du Val d\'Ouest, Pierre-Bénite', keyword: 'ophtalmologue oullins', volume: 260 },
+];
+
 export default function AdminDashboard() {
   const [activeTab, setActiveTab] = useState<Tab>('overview');
   const [autoMode, setAutoMode] = useState(false);
@@ -101,6 +173,9 @@ export default function AdminDashboard() {
   const [imageOverrides, setImageOverrides] = useState<Record<string, string>>({});
   const [allPostsForDate, setAllPostsForDate] = useState<ScheduledPost[]>([]);
   const [modalPostIndex, setModalPostIndex] = useState(0);
+  const [gbpInput, setGbpInput] = useState('');
+  const [parsedGbp, setParsedGbp] = useState<string[]>([]);
+  const [gapFilter, setGapFilter] = useState<'all' | 'missing' | 'covered'>('all');
   const router = useRouter();
 
   // Cycle through IMAGE_POOL for a given post key
@@ -142,6 +217,7 @@ export default function AdminDashboard() {
     { id: 'keywords', label: 'Mots-clés', icon: '🎯' },
     { id: 'geogrid', label: 'GeoGrid', icon: '🗺️' },
     { id: 'gbp-poster', label: 'GBP Poster', icon: '📮' },
+    { id: 'gap-analysis', label: 'Gap Analysis', icon: '🔬' },
     { id: 'reports', label: 'Rapports', icon: '📧' },
   ];
 
@@ -821,6 +897,231 @@ export default function AdminDashboard() {
               </div>
             </div>
           </div>
+          );
+        })()}
+
+        {/* GAP ANALYSIS TAB */}
+        {activeTab === 'gap-analysis' && (() => {
+          // Parse GBP input into services list
+          const parseGbp = () => {
+            const lines = gbpInput.split(/[\n,;]+/).map(l => l.trim()).filter(Boolean);
+            setParsedGbp(lines);
+          };
+
+          // Match a GBP service against existing site pages
+          const findCoverage = (service: string): { status: 'covered' | 'partial' | 'missing'; page?: string } => {
+            const s = service.toLowerCase();
+            for (const page of SITE_PAGES) {
+              const exact = page.services.some(kw => s.includes(kw.toLowerCase()) || kw.toLowerCase().includes(s));
+              if (exact) return { status: 'covered', page: page.url };
+            }
+            // Partial: url slug contains a word from service
+            const words = s.split(' ').filter(w => w.length > 4);
+            for (const page of SITE_PAGES) {
+              if (words.some(w => page.url.includes(w) || page.label.toLowerCase().includes(w))) {
+                return { status: 'partial', page: page.url };
+              }
+            }
+            return { status: 'missing' };
+          };
+
+          const gapResults = parsedGbp.map(svc => ({ service: svc, ...findCoverage(svc) }));
+          const missingCount = gapResults.filter(r => r.status === 'missing').length;
+          const coveredCount = gapResults.filter(r => r.status === 'covered').length;
+          const filteredResults = gapFilter === 'all' ? gapResults : gapResults.filter(r => r.status === gapFilter);
+
+          return (
+            <div className="space-y-6">
+              {/* Hero header */}
+              <div className="bg-gradient-to-r from-purple-500/10 via-blue-500/5 to-transparent border border-purple-500/20 rounded-2xl p-6 relative overflow-hidden">
+                <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-5" />
+                <div className="relative">
+                  <div className="flex items-center gap-3 mb-2">
+                    <span className="bg-purple-500/20 text-purple-300 text-[10px] font-bold uppercase tracking-wider px-3 py-1 rounded-full border border-purple-500/30">Core 30 Framework</span>
+                    <span className="text-white/20 text-[10px]">Inspiré par la méthode d&apos;alignement GBP ↔ Site</span>
+                  </div>
+                  <h2 className="text-xl font-bold text-white mb-1">Analyse des Écarts — GBP vs Pages Web</h2>
+                  <p className="text-white/40 text-sm">Collez vos services GBP ci-dessous pour détecter les pages manquantes. Chaque service sans page = une position Google perdue.</p>
+                </div>
+              </div>
+
+              {/* Stats row — only show if we have results */}
+              {parsedGbp.length > 0 && (
+                <div className="grid grid-cols-3 gap-4">
+                  <div className="bg-green-500/5 border border-green-500/10 rounded-2xl p-5 text-center">
+                    <p className="text-green-400 text-3xl font-bold">{coveredCount}</p>
+                    <p className="text-white/30 text-[10px] uppercase tracking-wider mt-1">✓ Couverts</p>
+                  </div>
+                  <div className="bg-yellow-500/5 border border-yellow-500/10 rounded-2xl p-5 text-center">
+                    <p className="text-yellow-400 text-3xl font-bold">{gapResults.filter(r => r.status === 'partial').length}</p>
+                    <p className="text-white/30 text-[10px] uppercase tracking-wider mt-1">⚡ Partiels</p>
+                  </div>
+                  <div className="bg-red-500/5 border border-red-500/10 rounded-2xl p-5 text-center">
+                    <p className="text-red-400 text-3xl font-bold">{missingCount}</p>
+                    <p className="text-white/30 text-[10px] uppercase tracking-wider mt-1">✗ Manquants</p>
+                  </div>
+                </div>
+              )}
+
+              {/* Input + existing pages */}
+              <div className="grid md:grid-cols-2 gap-6">
+                {/* GBP input */}
+                <div className="bg-white/5 backdrop-blur border border-white/10 rounded-2xl p-6">
+                  <h3 className="text-xs uppercase tracking-widest text-[#c2aa84] font-bold mb-4">① Collez vos Services GBP</h3>
+                  <p className="text-white/30 text-[11px] mb-3">Un service par ligne, ou séparés par virgules. Copiez directement depuis votre fiche Google.</p>
+                  <textarea
+                    value={gbpInput}
+                    onChange={e => setGbpInput(e.target.value)}
+                    placeholder={`Exemples:\nDMAL humide\nDMLA sèche\nPhotobiomodulation Valeda\nInjections intravitréennes\nOCT macula\nRétinopathie diabétique\nCorps flottants\nSécheresse oculaire\nGlaucome`}
+                    className="w-full h-52 bg-white/5 border border-white/10 rounded-xl p-3 text-white/70 text-sm resize-none focus:border-purple-500/40 focus:outline-none transition-colors placeholder:text-white/15"
+                  />
+                  <button
+                    onClick={parseGbp}
+                    disabled={!gbpInput.trim()}
+                    className="mt-3 w-full bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-500 hover:to-blue-500 disabled:opacity-30 text-white font-bold text-[11px] uppercase tracking-[2px] py-3 rounded-xl transition-all"
+                  >
+                    🔬 Analyser les Écarts
+                  </button>
+                </div>
+
+                {/* Existing pages */}
+                <div className="bg-white/5 backdrop-blur border border-white/10 rounded-2xl p-6">
+                  <h3 className="text-xs uppercase tracking-widest text-[#c2aa84] font-bold mb-4">② Pages Existantes ({SITE_PAGES.length})</h3>
+                  <div className="space-y-1 max-h-64 overflow-y-auto pr-1">
+                    {SITE_PAGES.map(p => (
+                      <div key={p.url} className="flex items-center gap-2 py-1">
+                        <span className="text-green-400 text-xs">✓</span>
+                        <span className="text-white/50 text-xs font-mono">{p.url}</span>
+                        <span className="text-white/20 text-[10px] truncate">{p.label}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+
+              {/* Gap results */}
+              {parsedGbp.length > 0 && (
+                <div className="bg-white/5 backdrop-blur border border-white/10 rounded-2xl overflow-hidden">
+                  <div className="p-5 border-b border-white/5 flex items-center justify-between">
+                    <h3 className="text-xs uppercase tracking-widest text-[#c2aa84] font-bold">③ Résultats — {gapResults.length} services analysés</h3>
+                    <div className="flex gap-1">
+                      {(['all', 'missing', 'covered'] as const).map(f => (
+                        <button key={f} onClick={() => setGapFilter(f)} className={`text-[10px] uppercase tracking-wider px-3 py-1 rounded-lg transition-all ${
+                          gapFilter === f ? 'bg-white/10 text-white' : 'text-white/30 hover:text-white/60'
+                        }`}>
+                          {f === 'all' ? 'Tous' : f === 'missing' ? '✗ Manquants' : '✓ Couverts'}
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+                  <div className="divide-y divide-white/[0.03]">
+                    {filteredResults.map(r => (
+                      <div key={r.service} className="flex items-center justify-between px-5 py-3 hover:bg-white/[0.02] transition-colors">
+                        <div className="flex items-center gap-3">
+                          <span className={`text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded ${
+                            r.status === 'covered' ? 'bg-green-500/10 text-green-400' :
+                            r.status === 'partial' ? 'bg-yellow-500/10 text-yellow-400' :
+                            'bg-red-500/10 text-red-400'
+                          }`}>
+                            {r.status === 'covered' ? '✓ OK' : r.status === 'partial' ? '⚡ Partiel' : '✗ Manquant'}
+                          </span>
+                          <span className="text-white/70 text-sm">{r.service}</span>
+                        </div>
+                        <div className="text-right">
+                          {r.page ? (
+                            <span className="text-white/30 text-xs font-mono">{r.page}</span>
+                          ) : (
+                            <span className="text-red-400/60 text-xs">Créer une page →</span>
+                          )}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {/* Suggested missing pages — always visible */}
+              <div className="bg-white/5 backdrop-blur border border-red-500/10 rounded-2xl overflow-hidden">
+                <div className="p-5 border-b border-white/5">
+                  <h3 className="text-xs uppercase tracking-widest text-red-400 font-bold">🚨 Pages Manquantes Identifiées — Opportunités Prioritaires</h3>
+                  <p className="text-white/30 text-[11px] mt-1">Services probablement listés sur votre GBP sans page dédiée sur le site — chaque ligne = du trafic perdu</p>
+                </div>
+                <div className="divide-y divide-white/[0.03]">
+                  {SUGGESTED_MISSING.map(item => (
+                    <div key={item.slug} className="flex items-start justify-between px-5 py-4 hover:bg-white/[0.02] transition-colors">
+                      <div className="flex-1">
+                        <div className="flex items-center gap-2 mb-1">
+                          <span className="text-white/80 text-sm font-medium">{item.service}</span>
+                          <span className="bg-red-500/10 text-red-400 text-[9px] font-bold uppercase tracking-wider px-2 py-0.5 rounded">Page manquante</span>
+                        </div>
+                        <p className="text-white/30 text-[11px]">{item.reason}</p>
+                        <p className="text-white/20 text-[10px] font-mono mt-0.5">Slug suggéré: {item.slug}</p>
+                      </div>
+                      <div className="text-right ml-4 shrink-0">
+                        <p className="text-[#c2aa84] font-bold text-sm">{item.volume.toLocaleString()}</p>
+                        <p className="text-white/20 text-[9px] uppercase tracking-wider">recherches/mois</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Topical relevance */}
+              <div className="bg-white/5 backdrop-blur border border-[#003399]/20 rounded-2xl overflow-hidden">
+                <div className="p-5 border-b border-white/5">
+                  <h3 className="text-xs uppercase tracking-widest text-[#6699ff] font-bold">💡 Contenu de Soutien — Pertinence Thématique</h3>
+                  <p className="text-white/30 text-[11px] mt-1">Questions PAA et sujets Reddit que vos patients cherchent — à ajouter en FAQ ou article de soutien</p>
+                </div>
+                <div className="divide-y divide-white/[0.03]">
+                  {TOPICAL_IDEAS.map(idea => (
+                    <div key={idea.topic} className="flex items-center justify-between px-5 py-3 hover:bg-white/[0.02] transition-colors">
+                      <div className="flex items-center gap-3">
+                        <span className={`text-[9px] font-bold uppercase tracking-wider px-2 py-0.5 rounded ${
+                          idea.priority === 'high' ? 'bg-orange-500/10 text-orange-400' : 'bg-blue-500/10 text-blue-400'
+                        }`}>
+                          {idea.priority === 'high' ? '🔥 Urgent' : '📌 Normal'}
+                        </span>
+                        <span className="text-[10px] bg-white/5 text-white/30 px-2 py-0.5 rounded uppercase tracking-wider">{idea.type}</span>
+                        <span className="text-white/70 text-sm">{idea.topic}</span>
+                      </div>
+                      <span className="text-white/20 text-xs font-mono shrink-0">{idea.targetPage}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Geo planner */}
+              <div className="bg-white/5 backdrop-blur border border-green-500/10 rounded-2xl overflow-hidden">
+                <div className="p-5 border-b border-white/5">
+                  <h3 className="text-xs uppercase tracking-widest text-green-400 font-bold">🗺️ Geo Planner — Zones à Conquérir</h3>
+                  <p className="text-white/30 text-[11px] mt-1">Zones où nous sommes en position 4–8 sur Maps — une page géo avec landmarks locaux suffit pour passer Top 3</p>
+                </div>
+                <div className="divide-y divide-white/[0.03]">
+                  {GEO_OPPORTUNITIES.map(geo => (
+                    <div key={geo.area} className="flex items-center justify-between px-5 py-4 hover:bg-white/[0.02] transition-colors">
+                      <div>
+                        <div className="flex items-center gap-2 mb-1">
+                          <span className="text-white/80 text-sm font-medium">{geo.area}</span>
+                          <span className="text-white/20 text-[10px]">• {geo.distance}</span>
+                        </div>
+                        <p className="text-white/30 text-[11px]">Landmarks: {geo.landmark}</p>
+                        <p className="text-white/20 text-[10px] font-mono mt-0.5">Keyword cible: {geo.keyword}</p>
+                      </div>
+                      <div className="text-right shrink-0 ml-4">
+                        <div className={`text-xl font-bold ${ geo.mapRank && geo.mapRank <= 3 ? 'text-green-400' : geo.mapRank ? 'text-yellow-400' : 'text-red-400' }`}>
+                          {geo.mapRank ? `#${geo.mapRank}` : 'NR'}
+                        </div>
+                        <p className="text-white/20 text-[9px] uppercase tracking-wider">Maps</p>
+                        <p className="text-[#c2aa84] font-bold text-xs mt-1">{geo.volume.toLocaleString()}/mois</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+                <div className="p-4 bg-green-500/5 border-t border-green-500/10">
+                  <p className="text-green-400/60 text-[11px] text-center">💡 Stratégie: écrire 1 page par zone avec 3–5 landmarks Google Maps locaux. Ex: <em>&ldquo;Ophtalmologue près du Palais du Travail à Villeurbanne&rdquo;</em></p>
+                </div>
+              </div>
+            </div>
           );
         })()}
 
