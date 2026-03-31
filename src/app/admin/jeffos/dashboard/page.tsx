@@ -241,6 +241,28 @@ export default function AdminDashboard() {
 
               return (
                 <div className="space-y-4">
+                  {/* SATELLITE NETWORK METRICS */}
+                  <div className="bg-gradient-to-r from-[#003399]/20 to-[#c2aa84]/10 border border-[#003399]/30 rounded-2xl p-6 mb-8 relative overflow-hidden">
+                    <div className="absolute right-0 top-0 w-64 h-full bg-[url('/grid.svg')] opacity-10" />
+                    <div className="flex items-center justify-between relative z-10">
+                      <div>
+                        <div className="flex items-center gap-3 mb-2">
+                          <span className="bg-[#c2aa84] text-black text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-sm">Réseau Satellite</span>
+                          <span className="text-white/60 text-xs font-mono">retina-lyon.fr</span>
+                        </div>
+                        <h2 className="text-2xl font-light tracking-wide text-white mb-1">Articles Piliers Indexés : <span className="font-bold">14</span></h2>
+                        <p className="text-[#c2aa84] text-xs font-medium">Monitoring Actif — 2 publications/mois (Auto)</p>
+                      </div>
+                      <div className="text-right">
+                        <div className="flex items-center gap-2 mb-1 justify-end">
+                          <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
+                          <span className="text-green-500 font-bold text-sm tracking-widest uppercase">En ligne</span>
+                        </div>
+                        <p className="text-white/30 text-[10px] uppercase">Vercel Edge Network</p>
+                      </div>
+                    </div>
+                  </div>
+
                   <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                     {kpiSections.map((kpi) => (
                       <button

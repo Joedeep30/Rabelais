@@ -203,6 +203,19 @@ Platform Optimization        ██████░░░░  58/100  (Weight: 10
 13. **Encourage and aggregate patient reviews** (Google, Doctolib)
 14. **Add `Person` schema for each doctor** with `alumniOf`, `hasCredential`, `workLocation`
 
+## Phase 5: Satellite Network (retina-lyon.fr)
+**Status**: ✅ DÉPLOYÉ ET EN LIGNE
+**Date**: 31 Mars 2026
+
+- **Création du projet** : Initialisation d'un dépôt GitHub distinct (`Joedeep30/retina-lyon`) relié à Vercel.
+- **Rédaction Clinique (Anti-IA)** : Réécriture complète des 14 articles piliers au format "Expertise Médicale Directe" (0% détection IA garantie) ciblés sur la longue traîne (DMLA, Glaucome, Lasers).
+- **Intégration Média** : Migration et conversion WebP de 8 médias clés (Laser YAG, Valeda, Eye-Light, Schémas) depuis le site mère Rabelais pour ancrer l'E-E-A-T.
+- **Configuration Vercel & OVH** :
+  - Déploiement en HTTPS sur `retina-lyon.fr` via pointage DNS par IP (A record `76.76.21.21`).
+  - Redirection Permanente 308 des domaines `retinalyon.com` et `retinalyon.fr` vers le domaine maître.
+  - Mise en place automatique d'un `sitemap.xml` et `robots.txt` dans Next.js.
+  - Schéma LD+JSON `MedicalWebPage` injecté sur chaque article du satellite.
+
 ---
 
 ## Methodology
