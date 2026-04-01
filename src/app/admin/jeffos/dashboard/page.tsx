@@ -162,6 +162,142 @@ const GEO_OPPORTUNITIES = [
   { area: 'Oullins — Sud Lyon', distance: '5km S', mapRank: null, landmark: 'Clinique du Val d\'Ouest, Pierre-Bénite', keyword: 'ophtalmologue oullins', volume: 260 },
 ];
 
+// ─── COMPETITOR INTELLIGENCE ───────────────────────────────────────────
+const COMPETITOR_PROFILES = [
+  {
+    name: 'Vision Future Lyon',
+    url: 'visionfuture.fr',
+    threat: 'high' as const,
+    reviews: 346,
+    rating: 4.7,
+    description: 'Centre généraliste fort sur les mots-clés de volume — #1 pour ophtalmologue lyon',
+    gbpCategories: ['Ophtalmologiste', 'Chirurgien ophtalmologue', 'Centre ophtalmologique', 'Spécialiste cataracte', 'Spécialiste glaucome'],
+    theirPages: [
+      { service: 'DMLA', hasPage: true },
+      { service: 'Glaucome', hasPage: true },
+      { service: 'Cataracte', hasPage: true },
+      { service: 'Chirurgie réfractive / Lasik', hasPage: true },
+      { service: 'Sécheresse oculaire', hasPage: true },
+      { service: 'Rétinopathie diabétique', hasPage: true },
+      { service: 'Corps flottants', hasPage: true },
+      { service: 'Photobiomodulation Valeda', hasPage: false },
+      { service: 'IVT spécialiste exclusif', hasPage: false },
+    ],
+    ourAdvantages: [
+      'Seul centre proposant Photobiomodulation Valeda (DMLA sèche) — ils ne peuvent pas suivre',
+      'Ultra-spécialisation rétine médicale — ils sont généralistes',
+      'Dr Quaranta = référence nationale DMLA',
+    ],
+    pagesToCreate: [
+      { page: '/corps-flottants-lyon', reason: 'Ils se classent Top 5 sur ce terme, nous 0 impression' },
+      { page: '/secheresse-oculaire-lyon', reason: 'Service présent sur leur site, manquant chez nous' },
+      { page: '/glaucome-lyon', reason: 'Ils ont une page dédiée et 480 recherches/mois' },
+    ],
+    keywordBattlefield: [
+      { keyword: 'dégénérescence maculaire lyon', them: 2, us: null },
+      { keyword: 'glaucome lyon', them: 2, us: null },
+      { keyword: 'ophtalmologue lyon', them: 1, us: 16 },
+      { keyword: 'traitement dmla lyon', them: 1, us: null },
+      { keyword: 'corps flottants lyon', them: 4, us: null },
+    ],
+  },
+  {
+    name: 'Centre Kléber',
+    url: 'centre-kleber.fr',
+    threat: 'high' as const,
+    reviews: 2900,
+    rating: 4.7,
+    description: '2900 avis Google — autorité locale écrasante. Ophtalmo généraliste très établi.',
+    gbpCategories: ['Ophtalmologiste', 'Centre ophtalmologique', 'Chirurgien de la vue', 'Opticien'],
+    theirPages: [
+      { service: 'Consultation générale', hasPage: true },
+      { service: 'Cataracte', hasPage: true },
+      { service: 'Glaucome', hasPage: true },
+      { service: 'DMLA', hasPage: true },
+      { service: 'Sécheresse oculaire', hasPage: true },
+      { service: 'Strabisme', hasPage: true },
+      { service: 'Basse vision', hasPage: true },
+      { service: 'Photobiomodulation Valeda', hasPage: false },
+      { service: 'Rétinologie exclusive', hasPage: false },
+      { service: 'Injections IVT spécialisées', hasPage: false },
+    ],
+    ourAdvantages: [
+      'Valeda = notre monopole lyonnais sur DMLA sèche',
+      'Spécialisation rétine exclusive — eux sont généralistes avec 15+ spécialités',
+      'Plus agiles pour le contenu SEO (ils ont peu de pages blog/FAQs)',
+    ],
+    pagesToCreate: [
+      { page: '/strabisme-lyon', reason: 'Kléber a une page, 210 recherches/mois, niche = facile Top 5' },
+      { page: '/basse-vision-lyon', reason: 'Service présent chez Kléber, 0 concurrence directe en SEO' },
+      { page: '/cataracte-lyon', reason: 'Kléber Top 3 sur ce terme (1600 recherches/mois)' },
+    ],
+    keywordBattlefield: [
+      { keyword: 'centre ophtalmologique lyon', them: 2, us: 8 },
+      { keyword: 'ophtalmologue lyon', them: 2, us: 16 },
+      { keyword: 'ophtalmologue lyon 6', them: 3, us: null },
+      { keyword: 'ophtalmologue brotteaux', them: 1, us: null },
+      { keyword: 'clinique ophtalmologique lyon', them: 3, us: 14 },
+    ],
+  },
+  {
+    name: 'Dr Seifeddine',
+    url: 'cliniquedelavuelyon.fr',
+    threat: 'medium' as const,
+    reviews: 843,
+    rating: 4.7,
+    description: 'Chirurgien réfractif fort sur laser/cataracte. Moins compétitif sur rétine médicale.',
+    gbpCategories: ['Ophtalmologiste', 'Chirurgien ophtalmologue', 'Chirurgien réfractif', 'Chirurgien cataracte'],
+    theirPages: [
+      { service: 'Chirurgie Lasik', hasPage: true },
+      { service: 'Cataracte', hasPage: true },
+      { service: 'Glaucome', hasPage: true },
+      { service: 'Présbyopie', hasPage: true },
+      { service: 'DMLA spécialisée', hasPage: false },
+      { service: 'Photobiomodulation Valeda', hasPage: false },
+      { service: 'IVT anti-VEGF spécialisé', hasPage: false },
+    ],
+    ourAdvantages: [
+      'Seifeddine est chirurgien — nous sommes médecins rétiniens — marchés différents',
+      'Aucune compétition réelle sur DMLA, IVT, Valeda',
+      'Nous pouvons cibler ses patients DMLA qui cherchent un médecin (pas un chirurgien)',
+    ],
+    pagesToCreate: [
+      { page: '/presbiopia-lyon', reason: 'Il est Top 3 sur présbyopie, facile d\'orientation + backlink' },
+    ],
+    keywordBattlefield: [
+      { keyword: 'ophtalmologue lyon 2', them: 3, us: 1 },
+      { keyword: 'rétinopathie diabétique lyon', them: 5, us: null },
+      { keyword: 'chirurgie réfractive lyon', them: 1, us: null },
+    ],
+  },
+  {
+    name: 'Point Vision Lyon',
+    url: 'pointvision.com',
+    threat: 'medium' as const,
+    reviews: 580,
+    rating: 4.3,
+    description: 'Chaîne nationale, présente à Lyon. Ophtalmo générale + optique.',
+    gbpCategories: ['Ophtalmologiste', 'Opticien', 'Centre de santé visuel'],
+    theirPages: [
+      { service: 'Consultation générale', hasPage: true },
+      { service: 'DMLA', hasPage: true },
+      { service: 'Glaucome', hasPage: true },
+      { service: 'Lunettes / Lentilles', hasPage: true },
+      { service: 'Photobiomodulation Valeda', hasPage: false },
+      { service: 'Rétinologie exclusive', hasPage: false },
+    ],
+    ourAdvantages: [
+      'Chaîne = moins d’expertise perçue — nous jouons la carte spécialiste',
+      'Valeda et IVT = notre différenciateur clé',
+    ],
+    pagesToCreate: [],
+    keywordBattlefield: [
+      { keyword: 'ophtalmologue lyon 3', them: 2, us: null },
+      { keyword: 'centre rétine lyon', them: 4, us: null },
+    ],
+  },
+];
+
 export default function AdminDashboard() {
   const [activeTab, setActiveTab] = useState<Tab>('overview');
   const [autoMode, setAutoMode] = useState(false);
@@ -1120,6 +1256,129 @@ export default function AdminDashboard() {
                 <div className="p-4 bg-green-500/5 border-t border-green-500/10">
                   <p className="text-green-400/60 text-[11px] text-center">💡 Stratégie: écrire 1 page par zone avec 3–5 landmarks Google Maps locaux. Ex: <em>&ldquo;Ophtalmologue près du Palais du Travail à Villeurbanne&rdquo;</em></p>
                 </div>
+              </div>
+              {/* ── COMPETITOR INTELLIGENCE ── */}
+              <div className="space-y-4">
+                <div className="bg-gradient-to-r from-red-500/10 via-orange-500/5 to-transparent border border-red-500/20 rounded-2xl p-6">
+                  <h2 className="text-xl font-bold text-white mb-1">⚔️ Intelligence Concurrentielle</h2>
+                  <p className="text-white/40 text-sm">Catégories GBP, pages manquantes et mots-clés où les concurrents vous dépassent.</p>
+                </div>
+
+                {/* Competitor cards */}
+                {COMPETITOR_PROFILES.map(comp => (
+                  <div key={comp.name} className="bg-white/5 backdrop-blur border border-white/10 rounded-2xl overflow-hidden">
+                    {/* Header */}
+                    <div className="flex items-center justify-between p-5 border-b border-white/5">
+                      <div className="flex items-center gap-4">
+                        <div>
+                          <div className="flex items-center gap-2">
+                            <h3 className="text-white font-bold">{comp.name}</h3>
+                            <span className={`text-[9px] font-bold uppercase tracking-wider px-2 py-0.5 rounded ${
+                              comp.threat === 'high' ? 'bg-red-500/10 text-red-400' :
+                              comp.threat === 'medium' ? 'bg-yellow-500/10 text-yellow-400' :
+                              'bg-green-500/10 text-green-400'
+                            }`}>
+                              {comp.threat === 'high' ? '🔴 Men. élevée' : comp.threat === 'medium' ? '🟡 Modérée' : '🟢 Faible'}
+                            </span>
+                          </div>
+                          <p className="text-white/30 text-[11px] mt-0.5">{comp.url} • ⭐ {comp.rating} ({comp.reviews.toLocaleString()} avis) • {comp.description}</p>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="grid md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-white/[0.05]">
+                      {/* GBP Categories they have */}
+                      <div className="p-4">
+                        <p className="text-[9px] uppercase tracking-widest text-white/30 font-bold mb-3">Catégories GBP</p>
+                        <div className="space-y-1">
+                          {comp.gbpCategories.map(cat => (
+                            <div key={cat} className="flex items-center gap-2">
+                              <span className="text-orange-400 text-xs">▶</span>
+                              <span className="text-white/60 text-xs">{cat}</span>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+
+                      {/* Their pages vs ours */}
+                      <div className="p-4">
+                        <p className="text-[9px] uppercase tracking-widest text-white/30 font-bold mb-3">Services ↔ Couverture</p>
+                        <div className="space-y-1">
+                          {comp.theirPages.map(svc => (
+                            <div key={svc.service} className="flex items-center justify-between">
+                              <span className="text-white/50 text-xs">{svc.service}</span>
+                              <span className={`text-[10px] font-bold ${svc.hasPage ? 'text-red-400' : 'text-green-400'}`}>
+                                {svc.hasPage ? '✓ Eux' : '✓ Nous'}
+                              </span>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+
+                      {/* Pages we need to build */}
+                      <div className="p-4">
+                        <p className="text-[9px] uppercase tracking-widest text-white/30 font-bold mb-3">🚀 Notre avantage</p>
+                        <div className="space-y-1.5 mb-3">
+                          {comp.ourAdvantages.map(adv => (
+                            <div key={adv} className="flex items-start gap-1.5">
+                              <span className="text-green-400 text-[10px] mt-0.5">★</span>
+                              <span className="text-green-400/70 text-[10px] leading-snug">{adv}</span>
+                            </div>
+                          ))}
+                        </div>
+                        {comp.pagesToCreate.length > 0 && (
+                          <>
+                            <p className="text-[9px] uppercase tracking-widest text-red-400/60 font-bold mb-2">Pages à créer pour les battre</p>
+                            {comp.pagesToCreate.map(p => (
+                              <div key={p.page} className="mb-1.5">
+                                <p className="text-[#c2aa84] text-[10px] font-mono">{p.page}</p>
+                                <p className="text-white/20 text-[9px]">{p.reason}</p>
+                              </div>
+                            ))}
+                          </>
+                        )}
+                      </div>
+                    </div>
+
+                    {/* Keyword battlefield */}
+                    {comp.keywordBattlefield.length > 0 && (
+                      <div className="border-t border-white/[0.05] p-4">
+                        <p className="text-[9px] uppercase tracking-widest text-white/30 font-bold mb-3">🔥 Battlefield — Mots-clés clés</p>
+                        <div className="grid grid-cols-1 gap-1.5">
+                          {comp.keywordBattlefield.map(kw => {
+                            const winning = kw.us !== null && (kw.them === null || kw.us < kw.them);
+                            const losing = kw.us === null || (kw.them !== null && kw.them < kw.us);
+                            return (
+                              <div key={kw.keyword} className="flex items-center justify-between bg-white/[0.02] rounded-lg px-3 py-2">
+                                <span className="text-white/60 text-xs">{kw.keyword}</span>
+                                <div className="flex items-center gap-4 shrink-0">
+                                  <div className="text-center">
+                                    <p className={`text-xs font-bold ${ kw.them && kw.them <= 3 ? 'text-red-400' : kw.them && kw.them <= 10 ? 'text-orange-400' : 'text-white/30' }`}>
+                                      #{kw.them ?? '—'}
+                                    </p>
+                                    <p className="text-[8px] text-white/20">Eux</p>
+                                  </div>
+                                  <span className="text-white/10">vs</span>
+                                  <div className="text-center">
+                                    <p className={`text-xs font-bold ${ winning ? 'text-green-400' : losing ? 'text-red-400' : 'text-white/40' }`}>
+                                      {kw.us !== null ? `#${kw.us}` : 'NR'}
+                                    </p>
+                                    <p className="text-[8px] text-white/20">Nous</p>
+                                  </div>
+                                  <span className={`text-[9px] font-bold px-2 py-0.5 rounded ${
+                                    winning ? 'bg-green-500/10 text-green-400' : 'bg-red-500/10 text-red-400'
+                                  }`}>
+                                    {winning ? '✓ Gagné' : '✖ Perdu'}
+                                  </span>
+                                </div>
+                              </div>
+                            );
+                          })}
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                ))}
               </div>
             </div>
           );
