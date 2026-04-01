@@ -1,4 +1,4 @@
-﻿import Link from 'next/link';
+import Link from 'next/link';
 import { FaLinkedinIn } from 'react-icons/fa';
 
 export default function Footer() {
@@ -7,6 +7,20 @@ export default function Footer() {
       
       {/* Decorative top border (subtle shadow if any, or none based on live site) */}
       <div className="absolute top-0 left-0 w-full h-[1px] bg-black/5"></div>
+
+      {/* Address + Map row */}
+      <div className="w-full flex flex-col md:flex-row items-center justify-center gap-6 py-10 px-6 border-b border-black/5">
+        <div className="text-center">
+          <p className="text-[#003399] text-[13px] font-bold uppercase tracking-[1px] mb-1">Centre Ophtalmologique RABELAIS</p>
+          <p className="text-[#666666] text-[12px] leading-relaxed">2, Rue Antoine de Saint-Exupéry — 69002 Lyon</p>
+          <p className="text-[#666666] text-[12px]">Tél : <a href="tel:+33478950908" className="hover:text-[#a68d71] transition-colors">04 78 95 09 08</a></p>
+        </div>
+        <img
+          src="/wp-content/uploads/2015/09/map.png"
+          alt="Plan d'accès au Centre Ophtalmologique Rabelais Lyon 2"
+          className="max-h-[120px] w-auto object-contain"
+        />
+      </div>
 
       {/* Main Links Area */}
       <div className="container mx-auto px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 max-w-7xl pb-16">
