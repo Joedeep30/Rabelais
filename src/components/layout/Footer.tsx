@@ -18,7 +18,7 @@ export default function Footer() {
         <img
           src="/wp-content/uploads/2015/09/map.png"
           alt="Plan d'accès au Centre Ophtalmologique Rabelais Lyon 2"
-          className="max-h-[120px] w-auto object-contain"
+          className="max-w-[280px] md:max-w-[320px] w-full h-auto object-contain drop-shadow-sm ml-0 md:ml-8"
         />
       </div>
 
