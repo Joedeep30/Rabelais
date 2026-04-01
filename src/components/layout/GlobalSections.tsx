@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
@@ -175,12 +175,44 @@ export default function GlobalSections() {
 
           </section>
 
-          {/* Lyon Panorama Section (matches original - no embedded form) */}
-          <section 
-            id="home-page-contact" 
-            className="w-full h-[400px] md:h-[500px] bg-cover bg-center relative"
-            style={{ backgroundImage: "url('https://centrerabelaislyon.fr/wp-content/themes/Placeholder/images/new-img-background.png')" }}
+          {/* Quai de Saône — Location Section */}
+          <section
+            id="home-page-contact"
+            className="relative w-full h-[420px] md:h-[520px] overflow-hidden"
           >
+            <img
+              src="/quai-saone-lyon.webp"
+              alt="Vue sur le Quai de Saône et la Basilique de Fourvière — Lyon 2ème, siège du Centre Ophtalmologique Rabelais"
+              title="Centre Ophtalmologique Rabelais — Lyon, Quai de Saône"
+              className="w-full h-full object-cover object-center"
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-[#003399]/70 via-[#003399]/30 to-transparent flex items-center">
+              <div className="px-8 md:px-[8%] max-w-[600px]">
+                <p className="text-white/70 text-[11px] font-[Gotham] font-bold uppercase tracking-[3px] mb-3">Notre localisation</p>
+                <h2 className="text-white text-[28px] md:text-[38px] font-[Gotham] font-light leading-[1.2] mb-4">
+                  Au cœur de <strong className="font-bold">Lyon 2ème</strong>,<br />près de Bellecour
+                </h2>
+                <div className="flex items-center gap-0 w-[120px] mb-5">
+                  <div className="h-[1px] w-full bg-[#c2aa84]/60"></div>
+                  <i className="block w-[10px] h-[10px] bg-[#c2aa84] rounded-full mx-[-5px] z-10 shrink-0"></i>
+                  <div className="h-[1px] w-full bg-[#c2aa84]/60"></div>
+                </div>
+                <p className="text-white/80 text-[15px] font-[Gotham] font-light leading-[1.7] mb-6">
+                  2, rue Antoine de Saint-Exupéry<br />
+                  Lyon 69002 — Métro Bellecour (D)<br />
+                  <span className="text-[#c2aa84]">Tél : 04 78 95 09 08</span>
+                </p>
+                <a
+                  href="https://www.google.com/maps/place/Centre+Ophtalmologique+Rabelais"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 border border-[#c2aa84] hover:bg-[#c2aa84]/20 text-white text-[11px] font-[Gotham] font-bold tracking-[2px] uppercase px-[28px] py-[12px] rounded-[50px] transition-colors"
+                >
+                  <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                  Voir sur Google Maps
+                </a>
+              </div>
+            </div>
           </section>
         </>
       )}
