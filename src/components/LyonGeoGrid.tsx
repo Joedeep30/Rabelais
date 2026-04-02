@@ -179,8 +179,18 @@ export default function LyonGeoGrid() {
           opacity: hasRank ? 1 : 0.3,
         }).addTo(map);
 
-        // Open standard SERP when node is clicked
-        const mapsUrl = `https://www.google.fr/search?q=${encodeURIComponent(data.keyword)}&hl=fr&gl=FR`;
+        // Dynamically spoof Google's exact GPS location using a TextFormat Protobuf UULE
+        const getGpsUule = (lat: number, lng: number) => {
+          const latE7 = Math.round(lat * 10000000);
+          const lngE7 = Math.round(lng * 10000000);
+          const timestamp = Date.now() * 1000;
+          const textFormat = `role: 1\nproducer: 12\ntimestamp: ${timestamp}\nlatlng {\n  latitude_e7: ${latE7}\n  longitude_e7: ${lngE7}\n}\nradius: 100000\nprovenance: 6\n`;
+          return 'a+' + btoa(textFormat);
+        };
+        const uule = getGpsUule(point.lat, point.lng);
+
+        // Open standard SERP when node is clicked with the EXACT coordinate spoof applied
+        const mapsUrl = `https://www.google.fr/search?q=${encodeURIComponent(data.keyword)}&hl=fr&gl=FR&uule=${uule}`;
         
         marker.on('click', () => {
           window.open(mapsUrl, '_blank', 'noopener,noreferrer');
