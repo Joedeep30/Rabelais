@@ -36,8 +36,23 @@ export const metadata: Metadata = {
     description: "Expertise en rétine médicale, traitement DMLA, photobiomodulation et imagerie (OCT) à Lyon.",
     url: "https://centrerabelaislyon.fr",
     siteName: "Centre Ophtalmologique Rabelais",
+    images: [
+      {
+        url: 'https://centrerabelaislyon.fr/thumbs/logo.png',
+        width: 1024,
+        height: 1024,
+        alt: 'Logo Centre Ophtalmologique Rabelais',
+      },
+    ],
     locale: "fr_FR",
     type: "website",
+  },
+  icons: {
+    icon: [
+      { url: '/thumbs/logo.png', type: 'image/png' },
+      { url: '/favicon.ico', sizes: 'any' }
+    ],
+    apple: '/thumbs/logo.png',
   },
   robots: {
     index: true,
@@ -146,18 +161,11 @@ export default function RootLayout({
             "name": "Dr Maddalena Quaranta",
             "jobTitle": "Ophtalmologue spécialiste de la rétine médicale",
             "medicalSpecialty": "Retina Specialist",
+            "image": "https://centrerabelaislyon.fr/images/team/maddalena-quaranta-thumb.jpg",
             "url": "https://centrerabelaislyon.fr/equipe-medicale",
             "sameAs": [
               "https://www.linkedin.com/in/maddalena-quaranta-60458658/"
             ],
-            "worksFor": { "@id": "https://centrerabelaislyon.fr/#clinic" }
-          },
-          {
-            "@type": "Person",
-            "name": "Dr Adil El Maftouhi",
-            "jobTitle": "Ophtalmologue spécialiste de la rétine médicale",
-            "medicalSpecialty": "Retina Specialist",
-            "url": "https://centrerabelaislyon.fr/equipe-medicale",
             "worksFor": { "@id": "https://centrerabelaislyon.fr/#clinic" }
           }
         ],
