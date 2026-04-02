@@ -82,6 +82,18 @@ export default function LyonGeoGrid() {
   const [selectedKeyword, setSelectedKeyword] = useState(0);
   const [mapLoaded, setMapLoaded] = useState(false);
 
+  // Helper moved into module scope to be usable by tabs
+  const getGpsUule = (lat: number, lng: number) => {
+    const latE7 = Math.round(lat * 10000000);
+    const lngE7 = Math.round(lng * 10000000);
+    const timestamp = Date.now() * 1000;
+    const textFormat = `role: 1\nproducer: 12\ntimestamp: ${timestamp}\nlatlng {\n  latitude_e7: ${latE7}\n  longitude_e7: ${lngE7}\n}\nradius: 100000\nprovenance: 6\n`;
+    if (typeof window !== 'undefined') {
+      return 'a+' + btoa(textFormat);
+    }
+    return '';
+  };
+
   // Initialize Leaflet map
   useEffect(() => {
     if (!mapRef.current || leafletMapRef.current) return;
@@ -179,17 +191,8 @@ export default function LyonGeoGrid() {
           opacity: 1,
         }).addTo(map);
 
-        // Dynamically spoof Google's exact GPS location using a TextFormat Protobuf UULE
-        const getGpsUule = (lat: number, lng: number) => {
-          const latE7 = Math.round(lat * 10000000);
-          const lngE7 = Math.round(lng * 10000000);
-          const timestamp = Date.now() * 1000;
-          const textFormat = `role: 1\nproducer: 12\ntimestamp: ${timestamp}\nlatlng {\n  latitude_e7: ${latE7}\n  longitude_e7: ${lngE7}\n}\nradius: 100000\nprovenance: 6\n`;
-          return 'a+' + btoa(textFormat);
-        };
-        const uule = getGpsUule(point.lat, point.lng);
-
         // Open standard SERP when node is clicked with the EXACT coordinate spoof applied
+        const uule = getGpsUule(point.lat, point.lng);
         const mapsUrl = `https://www.google.fr/search?q=${encodeURIComponent(data.keyword)}&hl=fr&gl=FR&uule=${uule}`;
         
         marker.on('click', () => {
@@ -264,19 +267,39 @@ export default function LyonGeoGrid() {
     <div className="space-y-6">
       {/* Keyword selector - scrollable pills */}
       <div className="flex gap-2 flex-wrap">
-        {GEOGRID_KEYWORDS.map((g, i) => (
-          <button
-            key={g.keyword}
-            onClick={() => setSelectedKeyword(i)}
-            className={`px-3 py-1.5 rounded-lg text-[10px] uppercase tracking-wider font-bold transition-all ${
-              selectedKeyword === i
-                ? 'bg-[#003399]/30 text-[#6699ff] border border-[#003399]/40'
-                : 'bg-white/5 text-white/30 hover:text-white/60 border border-white/5'
-            }`}
-          >
-            {g.keyword}
-          </button>
-        ))}
+        {GEOGRID_KEYWORDS.map((g, i) => {
+          const centerUule = getGpsUule(CENTER_LAT, CENTER_LNG);
+          const active = selectedKeyword === i;
+          return (
+            <div key={g.keyword} className={`flex items-stretch rounded-lg border overflow-hidden transition-all ${
+              active ? 'border-[#003399]/40 bg-[#003399]/10' : 'border-white/5 bg-white/5'
+            }`}>
+              <button
+                onClick={() => setSelectedKeyword(i)}
+                className={`px-3 py-1.5 text-[10px] uppercase tracking-wider font-bold transition-all ${
+                  active
+                    ? 'text-[#6699ff]'
+                    : 'text-white/30 hover:text-white/60 hover:bg-white/5'
+                }`}
+              >
+                {g.keyword}
+              </button>
+              <a 
+                href={`https://www.google.fr/search?q=${encodeURIComponent(g.keyword)}&hl=fr&gl=FR&uule=${centerUule}`}
+                target="_blank" 
+                rel="noopener noreferrer"
+                title={`Vérifier le Local Pack SERP (Centre Lyon)`}
+                className={`px-2 flex items-center justify-center border-l transition-colors ${
+                  active 
+                    ? 'border-[#003399]/40 text-[#6699ff] hover:bg-[#003399]/30' 
+                    : 'border-white/5 text-white/20 hover:text-white/80 hover:bg-white/10'
+                }`}
+              >
+                <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>
+              </a>
+            </div>
+          );
+        })}
       </div>
 
       {/* Map container */}
