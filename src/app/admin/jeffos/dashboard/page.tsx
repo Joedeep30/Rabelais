@@ -3,7 +3,23 @@
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import Image from 'next/image';
-import { TARGET_KEYWORDS, GBP_POST_TEMPLATES, COMPETITORS, GEOGRID_DATA } from '@/lib/keywords';
+import { TARGET_KEYWORDS as STATIC_KEYWORDS, GBP_POST_TEMPLATES, COMPETITORS, GEOGRID_DATA } from '@/lib/keywords';
+import organicDataRaw from '@/lib/organic_data.json';
+
+// Dynamically patch the static keyword data with the LIVE DataForSEO tracking results
+const TARGET_KEYWORDS = STATIC_KEYWORDS.map(kw => {
+  const liveData = (organicDataRaw as any[]).find(d => d.keyword === kw.keyword);
+  if (liveData) {
+    return {
+      ...kw,
+      // We use the real API data. If previousPosition is set, we still show the delta.
+      currentPosition: liveData.organic_rank ?? null,
+      gmapPosition: liveData.local_pack_rank ?? null,
+    };
+  }
+  return kw;
+});
+
 
 type Tab = 'overview' | 'keywords' | 'geogrid' | 'gbp-poster' | 'gap-analysis' | 'reports';
 
