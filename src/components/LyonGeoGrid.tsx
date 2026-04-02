@@ -57,7 +57,7 @@ interface GeoGridKeyword {
 import dynamicData from '@/lib/geogrid_data.json';
 const GEOGRID_KEYWORDS: GeoGridKeyword[] = dynamicData as GeoGridKeyword[];
 const getRankColor = (rank: number | null): string => {
-  if (rank === null) return '#e2e8f0';
+  if (rank === null) return '#ef4444'; // Red for Unranked (Not in Map Pack)
   if (rank <= 3) return '#22c55e';
   if (rank <= 5) return '#c2aa84';
   if (rank <= 10) return '#eab308';
@@ -66,7 +66,7 @@ const getRankColor = (rank: number | null): string => {
 };
 
 const getRankBg = (rank: number | null): string => {
-  if (rank === null) return '#f1f5f9';
+  if (rank === null) return '#fecaca'; // Light red background
   if (rank <= 3) return '#dcfce7';
   if (rank <= 5) return '#fef3c7';
   if (rank <= 10) return '#fef9c3';
@@ -171,12 +171,12 @@ export default function LyonGeoGrid() {
 
         // Circle marker
         const marker = L.circleMarker([point.lat, point.lng], {
-          radius: isCenter ? 20 : hasRank ? 16 : 10,
+          radius: isCenter ? 20 : 16,
           fillColor: bgColor,
-          fillOpacity: hasRank ? 0.95 : 0.4,
+          fillOpacity: 0.95,
           color: color,
-          weight: isCenter ? 3 : hasRank ? 2 : 1,
-          opacity: hasRank ? 1 : 0.3,
+          weight: isCenter ? 3 : 2,
+          opacity: 1,
         }).addTo(map);
 
         // Dynamically spoof Google's exact GPS location using a TextFormat Protobuf UULE
@@ -200,7 +200,7 @@ export default function LyonGeoGrid() {
         const tooltipContent = `
           <div style="text-align:center;font-family:system-ui;min-width:${isCenter ? '28' : '22'}px;">
             <div style="font-size:${isCenter ? '14' : '12'}px;font-weight:900;color:${color};line-height:1;">
-              ${hasRank ? rank : '—'}
+              ${hasRank ? rank : '20+'}
             </div>
           </div>
         `;
@@ -240,7 +240,7 @@ export default function LyonGeoGrid() {
 
         // Add hover tooltip with location name
         marker.bindTooltip(
-          `<div style="font-family:system-ui;font-size:11px;"><strong>${point.label}</strong>${hasRank ? `<br/>Position: <span style="color:${color};font-weight:bold">#${rank}</span>` : '<br/><span style="color:#94a3b8">Non classé</span>'}</div>`,
+          `<div style="font-family:system-ui;font-size:11px;"><strong>${point.label}</strong><br/>${hasRank ? `Position Pack: <span style="color:${color};font-weight:bold">#${rank}</span>` : '<span style="color:#ef4444;font-weight:bold">Absent du Local Pack</span>'}</div>`,
           { direction: 'top', offset: [0, -20], className: 'geogrid-hover' }
         );
 
