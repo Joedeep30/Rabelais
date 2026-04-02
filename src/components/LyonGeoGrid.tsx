@@ -179,6 +179,12 @@ export default function LyonGeoGrid() {
           opacity: hasRank ? 1 : 0.3,
         }).addTo(map);
 
+        const mapsUrl = `https://www.google.fr/maps/search/${encodeURIComponent(data.keyword)}/@${point.lat},${point.lng},15z`;
+        
+        marker.on('click', () => {
+          window.open(mapsUrl, '_blank', 'noopener,noreferrer');
+        });
+
         // Tooltip with rank number
         const tooltipContent = `
           <div style="text-align:center;font-family:system-ui;min-width:${isCenter ? '28' : '22'}px;">
@@ -193,10 +199,19 @@ export default function LyonGeoGrid() {
           direction: 'center',
           className: 'geogrid-label',
           offset: [0, 0],
+          interactive: true, // Make tooltip clickable
         })
           .setLatLng([point.lat, point.lng])
           .setContent(tooltipContent)
           .addTo(map);
+
+        // Map tooltip click as well (since tooltip sits on top of circle)
+        if ((tooltip as any)._container) {
+          (tooltip as any)._container.style.cursor = 'pointer';
+          (tooltip as any)._container.addEventListener('click', () => {
+             window.open(mapsUrl, '_blank', 'noopener,noreferrer');
+          });
+        }
 
         // Pulsing ring for Rabelais center
         if (isCenter) {
@@ -324,6 +339,8 @@ export default function LyonGeoGrid() {
           box-shadow: none !important;
           padding: 0 !important;
           margin: 0 !important;
+          cursor: pointer !important;
+          pointer-events: auto !important;
         }
         .geogrid-label::before {
           display: none !important;
