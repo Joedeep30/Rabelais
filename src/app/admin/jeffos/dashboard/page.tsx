@@ -20,6 +20,12 @@ const TARGET_KEYWORDS = STATIC_KEYWORDS.map(kw => {
   return kw;
 });
 
+// Helper function to generate a localized Google search link for Lyon, France
+// Uses the UULE encoding for "Lyon,Auvergne-Rhone-Alpes,France" to emulate exact Geo-location
+const getSerpUrl = (keyword: string) => {
+  const uule = 'w+CAIQICIfTHlvbixBdXZlcmduZS1SaG9uZS1BbHBlcyxGcmFuY2U';
+  return `https://www.google.fr/search?q=${encodeURIComponent(keyword)}&hl=fr&gl=FR&uule=${uule}`;
+};
 
 type Tab = 'overview' | 'keywords' | 'geogrid' | 'gbp-poster' | 'gap-analysis' | 'reports';
 
@@ -566,8 +572,16 @@ export default function AdminDashboard() {
                                 return (
                                   <tr key={kw.keyword} className="border-b border-white/[0.03] hover:bg-white/[0.03] transition-colors">
                                     <td className="py-3 px-3">
-                                      <p className="text-white/80 font-medium">{kw.keyword}</p>
-                                      <p className="text-white/20 text-[10px] uppercase tracking-wider">{kw.category}</p>
+                                      <a 
+                                        href={getSerpUrl(kw.keyword)} 
+                                        target="_blank" 
+                                        rel="noopener noreferrer" 
+                                        className="text-white/80 font-medium hover:text-[#c2aa84] hover:underline transition-colors flex items-center gap-1 group"
+                                      >
+                                        {kw.keyword}
+                                        <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="opacity-0 group-hover:opacity-100 transition-opacity"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>
+                                      </a>
+                                      <p className="text-white/20 text-[10px] uppercase tracking-wider mt-0.5">{kw.category}</p>
                                     </td>
                                     <td className="py-3 px-3 text-white/30 text-xs">{kw.targetPage}</td>
                                     <td className="py-3 px-3 text-center text-white/40 text-xs">{kw.monthlyVolume.toLocaleString()}</td>
@@ -616,8 +630,16 @@ export default function AdminDashboard() {
                       <div key={kw.keyword} className="flex items-center justify-between bg-white/[0.02] rounded-xl px-5 py-3 hover:bg-white/[0.04] transition-all">
                         <div className="flex items-center gap-4">
                           <div>
-                            <p className="text-white/80 text-sm font-medium">{kw.keyword}</p>
-                            <p className="text-white/20 text-[10px] uppercase tracking-wider">{kw.category}</p>
+                            <a 
+                              href={getSerpUrl(kw.keyword)} 
+                              target="_blank" 
+                              rel="noopener noreferrer" 
+                              className="text-white/80 text-sm font-medium hover:text-[#c2aa84] hover:underline transition-colors flex items-center gap-2 group"
+                            >
+                              {kw.keyword}
+                              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="opacity-0 group-hover:opacity-100 transition-opacity"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>
+                            </a>
+                            <p className="text-white/20 text-[10px] uppercase tracking-wider mt-0.5">{kw.category}</p>
                           </div>
                         </div>
                         <div className="flex items-center gap-6">
@@ -692,8 +714,16 @@ export default function AdminDashboard() {
                       return (
                         <tr key={kw.keyword} className="border-b border-white/[0.03] hover:bg-white/[0.02] transition-colors">
                           <td className="px-5 py-4">
-                            <p className="text-white/80 text-sm font-medium">{kw.keyword}</p>
-                            <p className="text-white/20 text-[10px]">{kw.targetPage}</p>
+                            <a 
+                              href={getSerpUrl(kw.keyword)} 
+                              target="_blank" 
+                              rel="noopener noreferrer" 
+                              className="text-white/80 text-sm font-medium hover:text-[#c2aa84] hover:underline transition-colors flex items-center gap-2 group"
+                            >
+                              {kw.keyword}
+                              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="opacity-0 group-hover:opacity-100 transition-opacity"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>
+                            </a>
+                            <p className="text-white/20 text-[10px] mt-0.5">{kw.targetPage}</p>
                           </td>
                           <td className="px-5 py-4">
                             <span className={`text-[10px] uppercase tracking-wider font-bold px-2 py-0.5 rounded ${
