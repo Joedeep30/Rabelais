@@ -39,7 +39,7 @@ export default function GlobalSections() {
           {/* Image Container (Right) */}
           <div 
             className="w-full md:w-1/2 min-h-[450px] md:min-h-[550px] bg-cover bg-center"
-            style={{ backgroundImage: "url('https://centrerabelaislyon.fr/wp-content/uploads/2015/09/post1.png')" }}
+            style={{ backgroundImage: "url('/wp-content/uploads/2015/09/post1.png')" }}
           ></div>
         </div>
 
@@ -66,7 +66,7 @@ export default function GlobalSections() {
           {/* Image Container (Left) */}
           <div 
             className="w-full md:w-1/2 min-h-[450px] md:min-h-[550px] bg-cover bg-center"
-            style={{ backgroundImage: "url('https://centrerabelaislyon.fr/wp-content/uploads/2015/09/post2.png')" }}
+            style={{ backgroundImage: "url('/wp-content/uploads/2015/09/post2.png')" }}
           ></div>
         </div>
 
@@ -96,7 +96,7 @@ export default function GlobalSections() {
           {/* Image Container (Right) */}
           <div 
             className="w-full md:w-1/2 min-h-[450px] md:min-h-[550px] bg-cover bg-center"
-            style={{ backgroundImage: "url('https://centrerabelaislyon.fr/wp-content/uploads/2015/09/post4.png')" }}
+            style={{ backgroundImage: "url('/wp-content/uploads/2015/09/post4.png')" }}
           ></div>
         </div>
 
@@ -133,7 +133,7 @@ export default function GlobalSections() {
           {/* Publications (Center) */}
           <div 
             className="w-full md:w-1/3 min-h-[350px] bg-cover bg-center flex items-center justify-center relative"
-            style={{ backgroundImage: "url('https://centrerabelaislyon.fr/wp-content/uploads/2015/09/post2.png')" }}
+            style={{ backgroundImage: "url('/wp-content/uploads/2015/09/post2.png')" }}
           >
             <div className="absolute inset-0 bg-black/50"></div>
             <div className="relative z-10 text-center">

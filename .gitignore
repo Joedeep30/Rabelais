@@ -65,3 +65,4 @@ GBP-contenu-optimise.txt
 
 # Google Search Console service account key — NEVER commit this
 gsc-credentials.json
+rabelais-seo-*.json

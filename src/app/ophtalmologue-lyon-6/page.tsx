@@ -15,7 +15,7 @@ export default function OphtalmologueLyon6Page() {
     "@context": "https://schema.org",
     "@type": "MedicalBusiness",
     "name": "Ophtalmologue Lyon 6 - Centre Ophtalmologique Rabelais",
-    "image": "https://centrerabelaislyon.fr/wp-content/uploads/2015/09/slider1.jpg",
+    "image": "/wp-content/uploads/2015/09/slider1.jpg",
     "url": "https://centrerabelaislyon.fr/ophtalmologue-lyon-6",
     "telephone": "+33478950908",
     "description": "Consultation ophtalmologique d'expertise pour les patients du 6ème arrondissement de Lyon. Dépistage et traitement DMLA, pathologies de la rétine.",
@@ -41,7 +41,7 @@ export default function OphtalmologueLyon6Page() {
       <section className="relative h-[400px] md:h-[500px] w-full flex items-center justify-center overflow-hidden">
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat z-0"
-          style={{ backgroundImage: "url('https://centrerabelaislyon.fr/wp-content/uploads/2015/09/post1.png')" }}
+          style={{ backgroundImage: "url('/wp-content/uploads/2015/09/post1.png')" }}
         >
           <div className="absolute inset-0 bg-black/40"></div>
         </div>

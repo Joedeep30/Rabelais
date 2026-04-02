@@ -28,7 +28,7 @@ export default function Header() {
           {!isHomePage && (
             <Link prefetch={true} href="/">
               <img 
-                src="https://centrerabelaislyon.fr/wp-content/uploads/2015/09/ai1.png" 
+                src="/wp-content/uploads/2015/09/ai1.png" 
                 alt="Logo Centre Rabelais" 
                 className="w-[100px] md:w-[130px] hover:scale-105 transition-transform drop-shadow-md"
               />

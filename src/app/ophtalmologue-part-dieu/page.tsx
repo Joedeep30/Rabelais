@@ -15,7 +15,7 @@ export default function OphtalmologuePartDieuPage() {
     "@context": "https://schema.org",
     "@type": "MedicalClinic",
     "name": "Centre Ophtalmologique Proche La Part-Dieu - Lyon",
-    "image": "https://centrerabelaislyon.fr/wp-content/uploads/2015/09/slider1.jpg",
+    "image": "/wp-content/uploads/2015/09/slider1.jpg",
     "url": "https://centrerabelaislyon.fr/ophtalmologue-part-dieu",
     "telephone": "+33478950908",
     "description": "Prise en charge spécialisée pour la rétine et la DMLA. Accès très facile depuis la Gare de Lyon Part-Dieu et son quartier d'affaires.",
@@ -41,7 +41,7 @@ export default function OphtalmologuePartDieuPage() {
       <section className="relative h-[400px] md:h-[500px] w-full flex items-center justify-center overflow-hidden">
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat z-0"
-          style={{ backgroundImage: "url('https://centrerabelaislyon.fr/wp-content/uploads/2015/09/post4.png')" }}
+          style={{ backgroundImage: "url('/wp-content/uploads/2015/09/post4.png')" }}
         >
           <div className="absolute inset-0 bg-black/40"></div>
         </div>

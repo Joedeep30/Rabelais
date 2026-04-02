@@ -17,7 +17,7 @@ export default function RdvPage() {
       <section className="relative h-[400px] md:h-[500px] w-full flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img
-            src="https://centrerabelaislyon.fr/wp-content/uploads/2015/10/banner8.jpg"
+            src="/wp-content/uploads/2015/10/banner8.jpg"
             alt="Prise de rendez-vous Centre Ophtalmologique Rabelais Lyon"
             title="Prise de Rendez-vous"
             className="w-full h-full object-cover"

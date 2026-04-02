@@ -15,7 +15,7 @@ export default function OphtalmologueLyon7Page() {
     "@context": "https://schema.org",
     "@type": "MedicalBusiness",
     "name": "Ophtalmologie & Rétine — Proche Lyon 7",
-    "image": "https://centrerabelaislyon.fr/wp-content/uploads/2015/09/post1.png",
+    "image": "/wp-content/uploads/2015/09/post1.png",
     "url": "https://centrerabelaislyon.fr/ophtalmologue-lyon-7",
     "telephone": "+33478950908",
     "description": "Cabinet d'ophtalmologie expert de la rétine accessible depuis tout le 7ème arrondissement de Lyon (Gerland, Jean Macé, Guillotière Sud).",

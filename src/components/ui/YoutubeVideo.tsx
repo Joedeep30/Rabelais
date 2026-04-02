@@ -28,7 +28,7 @@ export default function YoutubeVideo({ videoId, title, description, thumbnailUrl
       "name": "Centre Ophtalmologique Rabelais",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://centrerabelaislyon.fr/wp-content/uploads/2015/09/ai1.png"
+        "url": "/wp-content/uploads/2015/09/ai1.png"
       }
     }
   };

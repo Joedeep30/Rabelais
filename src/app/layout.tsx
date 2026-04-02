@@ -71,13 +71,13 @@ export default function RootLayout({
         "url": "https://centrerabelaislyon.fr",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://centrerabelaislyon.fr/wp-content/uploads/2015/09/ai1.png",
+          "url": "/wp-content/uploads/2015/09/ai1.png",
           "width": 400,
           "height": 400
         },
         "image": [
-          "https://centrerabelaislyon.fr/wp-content/uploads/2015/09/slider1.jpg",
-          "https://centrerabelaislyon.fr/wp-content/uploads/2015/09/slider2.jpg"
+          "/wp-content/uploads/2015/09/slider1.jpg",
+          "/wp-content/uploads/2015/09/slider2.jpg"
         ],
         "description": "Centre Ophtalmologique Rabelais : le centre de rétine médicale de référence à Lyon. Spécialistes exclusifs de la rétine et de la macula. Traitements DMLA (injections anti-VEGF, Photobiomodulation Valeda®), OCT Spectral-Domain, angiographie rétinienne, laser rétinien. Situé Place Bellecour, Lyon 2.",
         "slogan": "Le Centre de Rétine Médicale de Référence à Lyon",

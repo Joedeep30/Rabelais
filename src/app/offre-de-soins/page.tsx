@@ -209,7 +209,7 @@ export default function OffreDeSoinsPage() {
         <div className="relative w-full md:w-1/2 min-h-[400px] overflow-hidden flex items-center justify-center p-10" style={{background: 'linear-gradient(135deg, #0a1628 0%, #112240 50%, #0d1b30 100%)'}}>
           <div className="bg-white/5 backdrop-blur-sm rounded-lg p-6 border border-white/10 shadow-xl">
             <img 
-              src="https://centrerabelaislyon.fr/wp-content/uploads/2015/10/7.jpg"
+              src="/wp-content/uploads/2015/10/7.jpg"
               alt="Salle de laser diode pour Photothérapie Dynamique PDT à la Visudyne"
               title="Salle de PDT - Centre Ophtalmologique Rabelais"
               loading="lazy"
@@ -255,7 +255,7 @@ export default function OffreDeSoinsPage() {
         <div className="relative w-full md:w-1/2 min-h-[400px] overflow-hidden flex items-center justify-center p-10" style={{background: 'linear-gradient(135deg, #0a1628 0%, #112240 50%, #0d1b30 100%)'}}>
           <div className="bg-white/5 backdrop-blur-sm rounded-lg p-6 border border-white/10 shadow-xl">
             <img 
-              src="https://centrerabelaislyon.fr/wp-content/uploads/2015/10/9.jpg"
+              src="/wp-content/uploads/2015/10/9.jpg"
               alt="Fond d'œil rétinien — Injection intra-vitréenne Au Centre Ophtalmologique Rabelais"
               title="Imagerie rétinienne — IVT"
               loading="lazy"
@@ -298,7 +298,7 @@ export default function OffreDeSoinsPage() {
         <div className="relative w-full md:w-1/2 min-h-[400px] overflow-hidden flex items-center justify-center p-10" style={{background: 'linear-gradient(135deg, #0a1628 0%, #112240 50%, #0d1b30 100%)'}}>
           <div className="bg-white/5 backdrop-blur-sm rounded-lg p-6 border border-white/10 shadow-xl">
             <img 
-              src="https://centrerabelaislyon.fr/wp-content/uploads/2015/11/angio-e1458514116774.png"
+              src="/wp-content/uploads/2015/11/angio-e1458514116774.png"
               alt="Angiographie à la fluorescéine — néovaisseaux choroïdiens (DMLA humide)"
               title="Angiographie rétinienne numérisée"
               loading="lazy"
@@ -340,7 +340,7 @@ export default function OffreDeSoinsPage() {
         <div className="relative w-full md:w-1/2 min-h-[400px] overflow-hidden flex flex-col items-center justify-center gap-6 p-10" style={{background: 'linear-gradient(135deg, #0a1628 0%, #112240 50%, #0d1b30 100%)'}}>
           <div className="bg-white/5 backdrop-blur-sm rounded-lg p-4 border border-white/10 shadow-xl">
             <img 
-              src="https://centrerabelaislyon.fr/wp-content/uploads/2015/11/314.png"
+              src="/wp-content/uploads/2015/11/314.png"
               alt="Mire lumineuse observée par le patient lors de l'examen OCT"
               title="Mire OCT vue patient"
               loading="lazy"
@@ -350,7 +350,7 @@ export default function OffreDeSoinsPage() {
           </div>
           <div className="bg-white/5 backdrop-blur-sm rounded-lg p-4 border border-white/10 shadow-xl">
             <img 
-              src="https://centrerabelaislyon.fr/wp-content/uploads/2015/11/oct-resultat.jpg"
+              src="/wp-content/uploads/2015/11/oct-resultat.jpg"
               alt="Résultat d'un examen OCT maculaire sur écran de contrôle"
               title="Résultat OCT maculaire"
               loading="lazy"
@@ -380,7 +380,7 @@ export default function OffreDeSoinsPage() {
         <div className="relative w-full md:w-1/2 min-h-[400px] overflow-hidden flex flex-col items-center justify-center gap-6 p-10" style={{background: 'linear-gradient(135deg, #0a1628 0%, #112240 50%, #0d1b30 100%)'}}>
           <div className="bg-white/5 backdrop-blur-sm rounded-lg p-4 border border-white/10 shadow-xl">
             <img 
-              src="https://centrerabelaislyon.fr/wp-content/uploads/2015/11/311.png"
+              src="/wp-content/uploads/2015/11/311.png"
               alt="Image en coupe OCT d'une rétine normale"
               title="Coupe OCT rétinienne"
               loading="lazy"
@@ -390,7 +390,7 @@ export default function OffreDeSoinsPage() {
           </div>
           <div className="bg-white/5 backdrop-blur-sm rounded-lg p-4 border border-white/10 shadow-xl">
             <img 
-              src="https://centrerabelaislyon.fr/wp-content/uploads/2015/11/312.png"
+              src="/wp-content/uploads/2015/11/312.png"
               alt="Image OCT d'une DMLA humide avec néovaisseaux choroïdiens"
               title="OCT DMLA humide"
               loading="lazy"
@@ -677,7 +677,7 @@ export default function OffreDeSoinsPage() {
         <div className="relative w-full md:w-1/2 min-h-[400px] overflow-hidden flex flex-col items-center justify-center gap-6 p-10" style={{background: 'linear-gradient(135deg, #0a1628 0%, #112240 50%, #0d1b30 100%)'}}>
           <div className="bg-white/5 backdrop-blur-sm rounded-lg p-4 border border-white/10 shadow-xl">
             <img 
-              src="https://centrerabelaislyon.fr/wp-content/uploads/2017/06/optos-plein-champ--1024x1024.png"
+              src="/wp-content/uploads/2017/06/optos-plein-champ--1024x1024.png"
               alt="Rétinographie Optos grand champ de 200° du fond d'œil"
               title="Rétinographie grand champ Optos 200°"
               loading="lazy"
@@ -687,7 +687,7 @@ export default function OffreDeSoinsPage() {
           </div>
           <div className="bg-white/5 backdrop-blur-sm rounded-lg p-4 border border-white/10 shadow-xl">
             <img 
-              src="https://centrerabelaislyon.fr/wp-content/uploads/2017/06/COMPARAISON-ANGIO-e1535826938880.png"
+              src="/wp-content/uploads/2017/06/COMPARAISON-ANGIO-e1535826938880.png"
               alt="Comparaison angiographie conventionnelle vs grand champ"
               title="Angiographie grand champ vs conventionnelle"
               loading="lazy"
@@ -720,7 +720,7 @@ export default function OffreDeSoinsPage() {
         <div className="relative w-full md:w-1/2 min-h-[400px] overflow-hidden flex flex-col items-center justify-center gap-6 p-10" style={{background: 'linear-gradient(135deg, #0a1628 0%, #112240 50%, #0d1b30 100%)'}}>
           <div className="bg-white/5 backdrop-blur-sm rounded-lg p-4 border border-white/10 shadow-xl">
             <img 
-              src="https://centrerabelaislyon.fr/wp-content/uploads/2015/11/PACHY.png"
+              src="/wp-content/uploads/2015/11/PACHY.png"
               alt="Pachymétrie cornéenne non contact par OCT"
               title="Pachymétrie cornéenne"
               loading="lazy"
@@ -730,7 +730,7 @@ export default function OffreDeSoinsPage() {
           </div>
           <div className="bg-white/5 backdrop-blur-sm rounded-lg p-4 border border-white/10 shadow-xl">
             <img 
-              src="https://centrerabelaislyon.fr/wp-content/uploads/2017/06/epimapp-ktc1-300x300.jpg"
+              src="/wp-content/uploads/2017/06/epimapp-ktc1-300x300.jpg"
               alt="Epi-Mapping d'un kératocône comparé à la pachymétrie totale"
               title="Epi-Mapping kératocône"
               loading="lazy"

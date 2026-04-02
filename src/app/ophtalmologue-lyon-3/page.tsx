@@ -15,7 +15,7 @@ export default function OphtalmologueLyon3Page() {
     "@context": "https://schema.org",
     "@type": "MedicalClinic",
     "name": "Centre Pôle Rétine Proche Lyon 3",
-    "image": "https://centrerabelaislyon.fr/wp-content/uploads/2015/09/post2.png",
+    "image": "/wp-content/uploads/2015/09/post2.png",
     "url": "https://centrerabelaislyon.fr/ophtalmologue-lyon-3",
     "telephone": "+33478950908",
     "description": "Clinique des yeux spécialisée dans les pathologies du fond d'œil depuis 20 ans pour les patients du 3ème arrondissement (Guillotière, Préfecture, Montchat).",

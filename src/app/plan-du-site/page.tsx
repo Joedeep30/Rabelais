@@ -17,7 +17,7 @@ export default function PlanDuSitePage() {
       <section className="relative h-[400px] md:h-[500px] w-full overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img 
-            src="https://centrerabelaislyon.fr/wp-content/uploads/2015/10/banner3.jpg"
+            src="/wp-content/uploads/2015/10/banner3.jpg"
             alt="Plan du Site"
             className="w-full h-full object-cover"
             fetchPriority="low"

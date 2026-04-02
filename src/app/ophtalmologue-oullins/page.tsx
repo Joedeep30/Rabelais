@@ -15,7 +15,7 @@ export default function OphtalmologueOullinsPage() {
     "@context": "https://schema.org",
     "@type": "MedicalBusiness",
     "name": "Ophtalmologie & Rétine — Proche Oullins",
-    "image": "https://centrerabelaislyon.fr/wp-content/uploads/2015/09/post1.png",
+    "image": "/wp-content/uploads/2015/09/post1.png",
     "url": "https://centrerabelaislyon.fr/ophtalmologue-oullins",
     "telephone": "+33478950908",
     "description": "Centre ophtalmologique expert de la rétine pour les patients d'Oullins-Pierre-Bénite (69600). Accessible en métro B direct.",

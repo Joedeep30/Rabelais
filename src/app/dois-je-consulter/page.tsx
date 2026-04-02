@@ -142,7 +142,7 @@ export default function DoisJeConsulterPage() {
 
             <div className="mt-8 bg-[#f8f8f8] p-6 text-center border border-[#c2aa84]">
                 <p className="text-[#888888] text-[15px] mb-4">Un auto-contrôle de votre vision, grâce à la grille d’Amsler, vous permettra de mettre en évidence ces anomalies.</p>
-                <a href="https://centrerabelaislyon.fr/wp-content/uploads/2015/11/GrilleAmsler_fr.pdf" target="_blank" rel="noopener noreferrer" className="text-[#003399] font-bold text-[13px] uppercase tracking-[1px] hover:underline">
+                <a href="/wp-content/uploads/2015/11/GrilleAmsler_fr.pdf" target="_blank" rel="noopener noreferrer" className="text-[#003399] font-bold text-[13px] uppercase tracking-[1px] hover:underline">
                     &gt;&gt; Télécharger la Grille d'Amsler (PDF) &lt;&lt;
                 </a>
             </div>

@@ -119,7 +119,7 @@ export default function PhotobiomodulationLyonPage() {
       <section className="relative h-[500px] md:h-[600px] w-full flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img 
-            src="https://centrerabelaislyon.fr/wp-content/uploads/2015/09/post1.png"
+            src="/wp-content/uploads/2015/09/post1.png"
             alt="Salles de traitement photobiomodulation et lasers du Centre Ophtalmologique Rabelais"
             title="Photobiomodulation Valeda Lyon"
             className="w-full h-full object-cover"

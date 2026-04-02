@@ -15,7 +15,7 @@ export default function OphtalmologueBrotteauxPage() {
     "@context": "https://schema.org",
     "@type": "MedicalBusiness",
     "name": "Ophtalmologie & Rétine - Proche Brotteaux",
-    "image": "https://centrerabelaislyon.fr/wp-content/uploads/2015/09/post1.png",
+    "image": "/wp-content/uploads/2015/09/post1.png",
     "url": "https://centrerabelaislyon.fr/ophtalmologue-brotteaux",
     "telephone": "+33478950908",
     "description": "Cabinet d'ophtalmologie médicale expert de la rétine situé à quelques minutes des Brotteaux (Lyon 6).",

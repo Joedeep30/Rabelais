@@ -15,7 +15,7 @@ export default function OphtalmologueCaluirePage() {
     "@context": "https://schema.org",
     "@type": "MedicalBusiness",
     "name": "Ophtalmologue & Rétine - Bassin Caluire-et-Cuire",
-    "image": "https://centrerabelaislyon.fr/wp-content/uploads/2015/09/post1.png",
+    "image": "/wp-content/uploads/2015/09/post1.png",
     "url": "https://centrerabelaislyon.fr/ophtalmologue-caluire-et-cuire",
     "telephone": "+33478950908",
     "description": "Expertise en Rétinopathie (Diabète, DMLA) assurée par les praticiens du Centre Ophtalmologique Rabelais pour les patients provenant de Caluire-et-Cuire (69300).",

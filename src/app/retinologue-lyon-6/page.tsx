@@ -15,7 +15,7 @@ export default function RetinologueLyon6Page() {
     "@context": "https://schema.org",
     "@type": "Physician",
     "name": "Rétinologue d'Expertise proche Lyon 6 - Centre Ophtalmologique Rabelais",
-    "image": "https://centrerabelaislyon.fr/wp-content/uploads/2015/09/post4.png",
+    "image": "/wp-content/uploads/2015/09/post4.png",
     "url": "https://centrerabelaislyon.fr/retinologue-lyon-6",
     "telephone": "+33478950908",
     "description": "Spécialiste en chirurgie et médecine de la rétine. Diagnostic et traitement des dégénérescences maculaires, trous et membranes maculaires pour l'arrondissement du 6ème.",

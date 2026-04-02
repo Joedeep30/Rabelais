@@ -36,7 +36,7 @@ export default function LocalDMLAVilleurbannePage() {
       <section className="relative h-[400px] md:h-[500px] w-full flex items-center justify-center overflow-hidden">
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat z-0"
-          style={{ backgroundImage: "url('https://centrerabelaislyon.fr/wp-content/uploads/2015/09/post2.png')" }}
+          style={{ backgroundImage: "url('/wp-content/uploads/2015/09/post2.png')" }}
         >
           <div className="absolute inset-0 bg-black/40"></div>
         </div>

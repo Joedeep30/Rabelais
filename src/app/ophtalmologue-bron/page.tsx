@@ -15,7 +15,7 @@ export default function OphtalmologueBronPage() {
     "@context": "https://schema.org",
     "@type": "MedicalBusiness",
     "name": "Ophtalmologie & Rétine — Proche Bron",
-    "image": "https://centrerabelaislyon.fr/wp-content/uploads/2015/09/post2.png",
+    "image": "/wp-content/uploads/2015/09/post2.png",
     "url": "https://centrerabelaislyon.fr/ophtalmologue-bron",
     "telephone": "+33478950908",
     "description": "Centre ophtalmologique expert de la rétine pour les patients de Bron (69500). Diagnostic OCT, traitement DMLA et injections IVT.",

@@ -15,7 +15,7 @@ export default function OphtalmologueLyon8Page() {
     "@context": "https://schema.org",
     "@type": "MedicalBusiness",
     "name": "Ophtalmologie & Rétine — Proche Lyon 8",
-    "image": "https://centrerabelaislyon.fr/wp-content/uploads/2015/09/post2.png",
+    "image": "/wp-content/uploads/2015/09/post2.png",
     "url": "https://centrerabelaislyon.fr/ophtalmologue-lyon-8",
     "telephone": "+33478950908",
     "description": "Centre expert rétine et macula pour les patients du 8ème arrondissement de Lyon (Monplaisir, Mermoz, Bachut, Laënnec).",

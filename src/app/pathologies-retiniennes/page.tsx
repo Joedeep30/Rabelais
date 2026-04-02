@@ -111,7 +111,7 @@ export default function PathologiesOculairesPage() {
 				</div>
 								<div id="menupage12" class="box-offresoi">
 										<b><h3><span class="cicle"></span><u>A) DMLA Néovasculaire ou « Humide »</u></h3></b>
-															<p><p><a href="/images/pathologies/37_8.webp"><img class="alignright wp-image-312 size-full" title="Photo d'un fond d'oeil présentant une DMLA Humide" src="https://centrerabelaislyon.fr/wp-content/uploads/2015/11/37.png" alt="3" width="325" height="244" /></a><b><strong> • </strong>Ce stade est caractérisé par l'apparition de vaisseaux anormaux appelés </b><b>néovaisseaux</b><b> choroïdiens dans ou sous la rétine <br /></b></p>
+															<p><p><a href="/images/pathologies/37_8.webp"><img class="alignright wp-image-312 size-full" title="Photo d'un fond d'oeil présentant une DMLA Humide" src="/wp-content/uploads/2015/11/37.png" alt="3" width="325" height="244" /></a><b><strong> • </strong>Ce stade est caractérisé par l'apparition de vaisseaux anormaux appelés </b><b>néovaisseaux</b><b> choroïdiens dans ou sous la rétine <br /></b></p>
 <p><strong> • </strong>La présence de ces néovaisseaux s'accompagne très souvent de la présence d'hémorragie au fond d'oeil et de fluide , d'oedème intrarétinien responsable d' une baisse d'acuité visuelle.</p>
 <p><strong> • </strong>Une prise en charge thérapeutique par l'intermédiaire d'injection d'un médicament dans la cavité intra-vitréenne permettra de réduire la croissance de ces néovaisseaux et de résorber les signes indirects de l'activité de ces vaisseaux que sont l'oedème et le fluide intra-rétinien.</p>
 <hr />

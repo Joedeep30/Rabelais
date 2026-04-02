@@ -75,8 +75,8 @@ const publications: Publication[] = [
     date: "2017",
     year: 2017,
     imageUrl: "/images/publications/pdgf_vegf_dual_antagonism.png",
-    pdfUrl: "https://centrerabelaislyon.fr/wp-content/uploads/2018/10/PIIS0161642016316360.pdf",
-    externalLink: "https://centrerabelaislyon.fr/wp-content/uploads/2018/10/PIIS0161642016316360.pdf",
+    pdfUrl: "/wp-content/uploads/2018/10/PIIS0161642016316360.pdf",
+    externalLink: "/wp-content/uploads/2018/10/PIIS0161642016316360.pdf",
     authorDetails: defaultAuthor
   },
   {
@@ -140,8 +140,8 @@ const publications: Publication[] = [
     date: "Janvier 2016",
     year: 2016,
     imageUrl: "/images/publications/art-tubulations-2016.png",
-    pdfUrl: "https://centrerabelaislyon.fr/wp-content/uploads/2016/03/imagerie-multimodale-DMLA-2016.pdf",
-    externalLink: "https://centrerabelaislyon.fr/wp-content/uploads/2016/03/imagerie-multimodale-DMLA-2016.pdf",
+    pdfUrl: "/wp-content/uploads/2016/03/imagerie-multimodale-DMLA-2016.pdf",
+    externalLink: "/wp-content/uploads/2016/03/imagerie-multimodale-DMLA-2016.pdf",
     authorDetails: defaultAuthor
   },
   // ===== 2015 =====
@@ -195,8 +195,8 @@ const publications: Publication[] = [
     date: "2015",
     year: 2015,
     imageUrl: "/images/publications/chronic-csc-oct-a.png",
-    pdfUrl: "https://centrerabelaislyon.fr/wp-content/uploads/2015/11/Am-J-Ophthalmol.-2015-Sep-Chronic-Central-Serous-Chorioretinopathy-Imaged-by-Optical-Coherence-Tomographic-Angiography.pdf",
-    externalLink: "https://centrerabelaislyon.fr/wp-content/uploads/2015/11/Am-J-Ophthalmol.-2015-Sep-Chronic-Central-Serous-Chorioretinopathy-Imaged-by-Optical-Coherence-Tomographic-Angiography.pdf",
+    pdfUrl: "/wp-content/uploads/2015/11/Am-J-Ophthalmol.-2015-Sep-Chronic-Central-Serous-Chorioretinopathy-Imaged-by-Optical-Coherence-Tomographic-Angiography.pdf",
+    externalLink: "/wp-content/uploads/2015/11/Am-J-Ophthalmol.-2015-Sep-Chronic-Central-Serous-Chorioretinopathy-Imaged-by-Optical-Coherence-Tomographic-Angiography.pdf",
     authorDetails: defaultAuthor
   },
   {

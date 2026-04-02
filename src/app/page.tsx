@@ -8,7 +8,7 @@ export default function Home() {
     "jobTitle": "Ophtalmologiste — Rétinologue",
     "description": "Rétinologue spécialisée en DMLA, imagerie rétinienne (OCT, OCT-Angiographie) et photobiomodulation. Directrice du Centre Ophtalmologique Rabelais à Lyon.",
     "url": "https://centrerabelaislyon.fr/equipe-medicale",
-    "image": "https://centrerabelaislyon.fr/wp-content/uploads/2015/09/post4.png",
+    "image": "/wp-content/uploads/2015/09/post4.png",
     "sameAs": [
       "https://www.linkedin.com/in/maddalena-quaranta-60458658/"
     ],
@@ -87,7 +87,7 @@ export default function Home() {
       <section className="relative h-[100vh] min-h-[600px] w-full flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img 
-            src="https://centrerabelaislyon.fr/wp-content/uploads/2015/09/slider1.jpg"
+            src="/wp-content/uploads/2015/09/slider1.jpg"
             alt="Le cabinet du Centre Ophtalmologique Rabelais à Lyon"
             title="Centre Ophtalmologique Rabelais Lyon"
             className="w-full h-full object-cover"
@@ -102,7 +102,7 @@ export default function Home() {
           
           <Link prefetch={true} href="/">
             <img 
-              src="https://centrerabelaislyon.fr/wp-content/uploads/2015/09/ai1.png" 
+              src="/wp-content/uploads/2015/09/ai1.png" 
               alt="Logo du Centre Ophtalmologique Rabelais Lyon" 
               title="Centre Ophtalmologique Rabelais"
               width="190"

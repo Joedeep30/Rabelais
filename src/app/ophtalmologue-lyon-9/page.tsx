@@ -15,7 +15,7 @@ export default function OphtalmologueLyon9Page() {
     "@context": "https://schema.org",
     "@type": "MedicalBusiness",
     "name": "Ophtalmologie & Rétine — Proche Lyon 9",
-    "image": "https://centrerabelaislyon.fr/wp-content/uploads/2015/09/slider1.jpg",
+    "image": "/wp-content/uploads/2015/09/slider1.jpg",
     "url": "https://centrerabelaislyon.fr/ophtalmologue-lyon-9",
     "telephone": "+33478950908",
     "description": "Centre expert rétine et macula pour les patients du 9ème arrondissement de Lyon (Vaise, Duchère, Gorge de Loup).",

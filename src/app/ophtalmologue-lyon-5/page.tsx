@@ -15,7 +15,7 @@ export default function OphtalmologueLyon5Page() {
     "@context": "https://schema.org",
     "@type": "MedicalBusiness",
     "name": "Ophtalmologie & Rétine — Proche Lyon 5",
-    "image": "https://centrerabelaislyon.fr/wp-content/uploads/2015/09/post1.png",
+    "image": "/wp-content/uploads/2015/09/post1.png",
     "url": "https://centrerabelaislyon.fr/ophtalmologue-lyon-5",
     "telephone": "+33478950908",
     "description": "Centre ophtalmologique expert de la rétine pour les patients du 5ème arrondissement de Lyon (Vieux Lyon, Point du Jour, Saint-Just).",

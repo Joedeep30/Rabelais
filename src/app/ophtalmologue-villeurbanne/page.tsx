@@ -15,7 +15,7 @@ export default function OphtalmologueVilleurbannePage() {
     "@context": "https://schema.org",
     "@type": "MedicalClinic",
     "name": "Spécialiste Ophtalmologiste pour l'Ensemble de Villeurbanne",
-    "image": "https://centrerabelaislyon.fr/wp-content/uploads/2015/09/slider1.jpg",
+    "image": "/wp-content/uploads/2015/09/slider1.jpg",
     "url": "https://centrerabelaislyon.fr/ophtalmologue-villeurbanne",
     "telephone": "+33478950908",
     "description": "Cabinet Ophtalmo Expert : Le Centre Ophtalmologique Rabelais accueille les patients du grand Villeurbanne (Charpennes, Gratte-Ciel, Tonkin) pour les diagnostics profonds de la rétine.",
@@ -41,7 +41,7 @@ export default function OphtalmologueVilleurbannePage() {
       <section className="relative h-[400px] md:h-[500px] w-full flex items-center justify-center overflow-hidden">
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat z-0"
-          style={{ backgroundImage: "url('https://centrerabelaislyon.fr/wp-content/uploads/2015/09/post1.png')" }}
+          style={{ backgroundImage: "url('/wp-content/uploads/2015/09/post1.png')" }}
         >
           <div className="absolute inset-0 bg-black/40"></div>
         </div>

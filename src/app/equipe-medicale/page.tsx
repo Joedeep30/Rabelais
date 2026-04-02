@@ -22,7 +22,7 @@ export default function EquipeMedicalePage() {
       "url": "https://centrerabelaislyon.fr"
     },
     "url": "https://centrerabelaislyon.fr/equipe-medicale",
-    "image": "https://centrerabelaislyon.fr/wp-content/uploads/bfi_thumb/t2-34whis4k12b7eqiii51uyo.jpg",
+    "image": "/wp-content/uploads/bfi_thumb/t2-34whis4k12b7eqiii51uyo.jpg",
     "alumniOf": "Clinique Universitaire de Créteil",
     "description": "Spécialiste de la Rétine Médicale & DMLA. Ancien Fellow du Wills Eye Institute, Philadelphie USA (Oncologie)."
   };
@@ -72,7 +72,7 @@ export default function EquipeMedicalePage() {
       <section id="dr-quaranta" className="flex flex-col md:flex-row w-full bg-[#f8f8f8]">
         <div className="relative w-full md:w-1/3 min-h-[400px] md:min-h-[auto] bg-[#003399] overflow-hidden">
           <img 
-            src="https://centrerabelaislyon.fr/wp-content/uploads/bfi_thumb/t2-34whis4k12b7eqiii51uyo.jpg"
+            src="/wp-content/uploads/bfi_thumb/t2-34whis4k12b7eqiii51uyo.jpg"
             alt="Portrait du Dr Maddalena Quaranta, Ophtalmologiste spécialiste de la Rétine à Lyon"
             title="Dr Maddalena Quaranta - Centre Ophtalmologique Rabelais"
             loading="lazy"

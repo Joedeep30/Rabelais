@@ -15,7 +15,7 @@ export default function CentreOphtalmologiqueLyon6Page() {
     "@context": "https://schema.org",
     "@type": "MedicalClinic",
     "name": "Centre Ophtalmologique près de Lyon 6 - Rabelais",
-    "image": "https://centrerabelaislyon.fr/wp-content/uploads/2015/09/slider1.jpg",
+    "image": "/wp-content/uploads/2015/09/slider1.jpg",
     "url": "https://centrerabelaislyon.fr/centre-ophtalmologique-lyon-6",
     "telephone": "+33478950908",
     "description": "Centre Ophtalmologique spécialisé pour le secteur Lyon 6 (Brotteaux, Parc Tête d'or, Foch). Examens de fond de l'œil, traitements DMLA et macula.",
@@ -41,7 +41,7 @@ export default function CentreOphtalmologiqueLyon6Page() {
       <section className="relative h-[400px] md:h-[500px] w-full flex items-center justify-center overflow-hidden">
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat z-0"
-          style={{ backgroundImage: "url('https://centrerabelaislyon.fr/wp-content/uploads/2015/09/post2.png')" }}
+          style={{ backgroundImage: "url('/wp-content/uploads/2015/09/post2.png')" }}
         >
           <div className="absolute inset-0 bg-black/40"></div>
         </div>

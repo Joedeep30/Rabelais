@@ -109,7 +109,7 @@ export default function DmlaLyonPage() {
       <section className="relative h-[400px] md:h-[500px] w-full flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img 
-            src="https://centrerabelaislyon.fr/wp-content/uploads/2015/09/post2.png"
+            src="/wp-content/uploads/2015/09/post2.png"
             alt="Dépistage et traitement de la DMLA au Centre Ophtalmologique Rabelais à Lyon"
             title="Traitement DMLA Lyon"
             className="w-full h-full object-cover"

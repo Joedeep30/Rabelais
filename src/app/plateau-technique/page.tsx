@@ -13,7 +13,7 @@ export default function PlateauTechniquePage() {
   const GALLERY = [
     {
       title: "3 Angiographes HRA Heidelberg",
-      src: "https://centrerabelaislyon.fr/wp-content/uploads/2015/10/pla2.jpg"
+      src: "/wp-content/uploads/2015/10/pla2.jpg"
     },
     {
       title: "Rétinographe Canon numérisé",
@@ -21,23 +21,23 @@ export default function PlateauTechniquePage() {
     },
     {
       title: "3 OCT Spectralis, Heidelberg",
-      src: "https://centrerabelaislyon.fr/wp-content/uploads/2015/10/pla1.jpg"
+      src: "/wp-content/uploads/2015/10/pla1.jpg"
     },
     {
       title: "Champ Visuel Humphrey, Zeiss",
-      src: "https://centrerabelaislyon.fr/wp-content/uploads/2015/10/pla3.jpg"
+      src: "/wp-content/uploads/2015/10/pla3.jpg"
     },
     {
       title: "Rétinographe Eidon de Centervue",
-      src: "https://centrerabelaislyon.fr/wp-content/uploads/2025/12/iCare_EIDON.png"
+      src: "/wp-content/uploads/2025/12/iCare_EIDON.png"
     },
     {
       title: "Rétinographe grand champ Eidon AD UWF",
-      src: "https://centrerabelaislyon.fr/wp-content/uploads/2015/10/pla6.jpg"
+      src: "/wp-content/uploads/2015/10/pla6.jpg"
     },
     {
       title: "Solix Expert",
-      src: "https://centrerabelaislyon.fr/wp-content/uploads/2025/12/VX65-Product-page-picture-900x900-px-4.webp"
+      src: "/wp-content/uploads/2025/12/VX65-Product-page-picture-900x900-px-4.webp"
     }
   ];
 
@@ -83,7 +83,7 @@ export default function PlateauTechniquePage() {
             <div className="flex flex-col border border-[#e5e5e5] bg-white shadow-sm">
               <div className="flex-grow flex items-center justify-center p-2 h-full">
                 <img 
-                  src="https://centrerabelaislyon.fr/wp-content/uploads/2015/10/pla1.jpg" 
+                  src="/wp-content/uploads/2015/10/pla1.jpg" 
                   alt="3 Angiographes HRA Heidelberg" 
                   className="w-full h-full object-cover" 
                   loading="lazy" 
@@ -99,7 +99,7 @@ export default function PlateauTechniquePage() {
               <div className="flex flex-col border border-[#e5e5e5] bg-white shadow-sm flex-1">
                 <div className="flex-grow flex items-center justify-center p-2 h-full">
                   <img 
-                    src="https://centrerabelaislyon.fr/wp-content/uploads/2015/10/pla2.jpg" 
+                    src="/wp-content/uploads/2015/10/pla2.jpg" 
                     alt="Rétinographe Canon numérisé" 
                     className="w-full h-full object-contain mix-blend-multiply" 
                     loading="lazy" 
@@ -112,7 +112,7 @@ export default function PlateauTechniquePage() {
               <div className="flex flex-col border border-[#e5e5e5] bg-white shadow-sm flex-1">
                 <div className="flex-grow flex items-center justify-center p-2 h-full">
                   <img 
-                    src="https://centrerabelaislyon.fr/wp-content/uploads/2015/10/pla3.jpg" 
+                    src="/wp-content/uploads/2015/10/pla3.jpg" 
                     alt="3 OCT Spectralis, Heidelberg" 
                     className="w-full h-full object-cover mix-blend-multiply bg-[#f5f5f5]" 
                     loading="lazy" 
@@ -132,7 +132,7 @@ export default function PlateauTechniquePage() {
             <div className="flex flex-col border border-[#e5e5e5] bg-[#f8f8f8] shadow-sm">
               <div className="h-[280px] w-full bg-white flex items-center justify-center p-4">
                 <img 
-                  src="https://centrerabelaislyon.fr/wp-content/uploads/2015/10/pla6.jpg" 
+                  src="/wp-content/uploads/2015/10/pla6.jpg" 
                   alt="Champ Visuel Humphrey, Zeiss" 
                   className="max-w-full max-h-full object-contain mix-blend-multiply" 
                   loading="lazy" 
@@ -160,7 +160,7 @@ export default function PlateauTechniquePage() {
             <div className="flex flex-col border border-[#e5e5e5] bg-[#f8f8f8] shadow-sm">
               <div className="h-[280px] w-full bg-[#f6f6f6] flex items-center justify-center p-4">
                 <img 
-                  src="https://centrerabelaislyon.fr/wp-content/uploads/2025/12/iCare_EIDON.png" 
+                  src="/wp-content/uploads/2025/12/iCare_EIDON.png" 
                   alt="Rétinographe grand champ Eidon AD UWF" 
                   className="max-w-full max-h-full object-contain mix-blend-multiply" 
                   loading="lazy" 
@@ -174,7 +174,7 @@ export default function PlateauTechniquePage() {
             <div className="flex flex-col border border-[#e5e5e5] bg-[#f8f8f8] shadow-sm">
               <div className="h-[280px] w-full bg-[#f6f6f6] flex items-center justify-center p-4">
                 <img 
-                  src="https://centrerabelaislyon.fr/wp-content/uploads/2025/12/VX65-Product-page-picture-900x900-px-4.webp" 
+                  src="/wp-content/uploads/2025/12/VX65-Product-page-picture-900x900-px-4.webp" 
                   alt="Solix Expert" 
                   className="max-w-full max-h-full object-contain mix-blend-multiply" 
                   loading="lazy" 

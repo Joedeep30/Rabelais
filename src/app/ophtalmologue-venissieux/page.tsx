@@ -15,7 +15,7 @@ export default function OphtalmologueVenissieuxPage() {
     "@context": "https://schema.org",
     "@type": "MedicalBusiness",
     "name": "Ophtalmologie & Rétine — Proche Vénissieux",
-    "image": "https://centrerabelaislyon.fr/wp-content/uploads/2015/09/post1.png",
+    "image": "/wp-content/uploads/2015/09/post1.png",
     "url": "https://centrerabelaislyon.fr/ophtalmologue-venissieux",
     "telephone": "+33478950908",
     "description": "Centre ophtalmologique expert de la rétine pour les patients de Vénissieux (69200). Diagnostic OCT, traitement DMLA et injections IVT.",
@@ -41,7 +41,7 @@ export default function OphtalmologueVenissieuxPage() {
       <section className="relative h-[400px] md:h-[500px] w-full flex items-center justify-center overflow-hidden">
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat z-0"
-          style={{ backgroundImage: "url('https://centrerabelaislyon.fr/wp-content/uploads/2015/09/post2.png')" }}
+          style={{ backgroundImage: "url('/wp-content/uploads/2015/09/post2.png')" }}
         >
           <div className="absolute inset-0 bg-black/40"></div>
         </div>
