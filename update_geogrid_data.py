@@ -52,8 +52,8 @@ def generate_grid_points():
 
 
 def query_maps(keyword, lat, lng):
-    """Query DataForSEO Google Maps Live endpoint for a single coordinate."""
-    url = "https://api.dataforseo.com/v3/serp/google/maps/live/advanced"
+    """Query DataForSEO Google Organic Live endpoint to extract the Local Pack (SERP) ranking."""
+    url = "https://api.dataforseo.com/v3/serp/google/organic/live/advanced"
     headers = {
         "Authorization": f"Basic {AUTH_TOKEN}",
         "Content-Type": "application/json",
@@ -65,6 +65,7 @@ def query_maps(keyword, lat, lng):
             "language_code": "fr",
             "device": "desktop",
             "os": "windows",
+            "depth": 30,
         }
     ]
 
@@ -82,10 +83,17 @@ def query_maps(keyword, lat, lng):
 
         items = tasks[0]["result"][0].get("items", [])
         for item in items:
-            title = (item.get("title") or "").lower()
-            for name in CLINIC_NAMES:
-                if name in title:
-                    return item.get("rank_group", item.get("rank_absolute"))
+            if item.get("type") == "local_pack":
+                pack_items = item.get("items", [])
+                for pi in pack_items:
+                    title = (pi.get("title") or "").lower()
+                    for name in CLINIC_NAMES:
+                        if name in title:
+                            return pi.get("rank_group")
+                # If we see a local pack but we are not in it, we return None (not in SERP pack)
+                return None
+        
+        # If no local pack at all was triggered
         return None
 
     except requests.exceptions.Timeout:

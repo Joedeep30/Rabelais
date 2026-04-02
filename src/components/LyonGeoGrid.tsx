@@ -179,7 +179,8 @@ export default function LyonGeoGrid() {
           opacity: hasRank ? 1 : 0.3,
         }).addTo(map);
 
-        const mapsUrl = `https://www.google.fr/maps/search/${encodeURIComponent(data.keyword)}/@${point.lat},${point.lng},15z`;
+        // Open standard SERP when node is clicked
+        const mapsUrl = `https://www.google.fr/search?q=${encodeURIComponent(data.keyword)}&hl=fr&gl=FR`;
         
         marker.on('click', () => {
           window.open(mapsUrl, '_blank', 'noopener,noreferrer');
